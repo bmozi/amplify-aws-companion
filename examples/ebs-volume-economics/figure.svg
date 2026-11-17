@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="850" viewBox="0 0 360 850" role="img" aria-labelledby="title description">
+  <title id="title">EBS volume performance and fictional cost shapes</title>
+  <desc id="description">A 600 GiB database needs 6000 sustained IOPS and 200 MiB per second in separate peaks. Gp2 needs 2000 provisioned GiB for its IOPS baseline; gp3 uses 600 GiB plus extra IOPS and throughput; io2 has separate capacity and IOPS charges and requires a measured latency reason. All prices are fictional.</desc>
+  <rect width="360" height="850" fill="#f7fafb"/>
+  <g font-family="Arial,sans-serif">
+    <text x="18" y="38" font-size="23" font-weight="700" fill="#12334b">One database</text>
+    <text x="18" y="66" font-size="17" fill="#345364">600 GiB data</text>
+    <text x="18" y="90" font-size="17" fill="#345364">6,000 sustained IOPS</text>
+    <text x="18" y="114" font-size="17" fill="#345364">200 MiB/s in another peak</text>
+    <rect x="16" y="143" width="328" height="177" rx="12" fill="#fff7ec" stroke="#c58c36" stroke-width="2"/>
+    <text x="32" y="174" font-size="21" font-weight="700" fill="#5e3a10">gp2 · more shelves</text>
+    <text x="32" y="205" font-size="17" fill="#243d4b">2,000 provisioned GiB</text>
+    <text x="32" y="231" font-size="17" fill="#243d4b">to sustain 6,000 IOPS</text>
+    <text x="32" y="262" font-size="17" font-weight="700" fill="#5e3a10">Invented cost: $200/mo</text>
+    <text x="32" y="290" font-size="15" fill="#6c4b28">600 GiB alone: 1,800 baseline.</text>
+    <rect x="16" y="337" width="328" height="190" rx="12" fill="#eef8f7" stroke="#2f867d" stroke-width="2"/>
+    <text x="32" y="368" font-size="21" font-weight="700" fill="#15554f">gp3 · separate speed</text>
+    <text x="32" y="398" font-size="17" fill="#243d4b">600 GiB storage: $48</text>
+    <text x="32" y="424" font-size="17" fill="#243d4b">Extra IOPS: $15</text>
+    <text x="32" y="450" font-size="17" fill="#243d4b">Extra throughput: $4.50</text>
+    <text x="32" y="487" font-size="18" font-weight="700" fill="#15554f">Invented total: $67.50/mo</text>
+    <rect x="16" y="544" width="328" height="167" rx="12" fill="#f0f2f9" stroke="#6976a7" stroke-width="2"/>
+    <text x="32" y="575" font-size="21" font-weight="700" fill="#34406d">io2 · measured need</text>
+    <text x="32" y="606" font-size="17" fill="#243d4b">600 GiB: $75</text>
+    <text x="32" y="632" font-size="17" fill="#243d4b">6,000 IOPS: $390</text>
+    <text x="32" y="662" font-size="17" font-weight="700" fill="#34406d">Invented total: $465/mo</text>
+    <text x="32" y="692" font-size="15" fill="#44517d">Latency evidence can change choice.</text>
+    <text x="18" y="750" font-size="17" font-weight="700" fill="#12334b">Check the instance ceiling.</text>
+    <text x="18" y="776" font-size="17" font-weight="700" fill="#12334b">Measure customer latency.</text>
+    <text x="18" y="820" font-size="15" fill="#506675">Invented rates · no AWS quote</text>
+  </g>
+</svg>

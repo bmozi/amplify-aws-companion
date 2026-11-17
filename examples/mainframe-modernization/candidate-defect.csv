@@ -1,0 +1,5 @@
+claim_id,amount_cents,status
+C-101,12500,PAID
+C-102,8400,PAID
+C-103,3400,REVERSED
+C-104,5050,PAID

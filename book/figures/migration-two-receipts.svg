@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 510" role="img" aria-labelledby="title desc">
+<title id="title">A migration return needs a data receipt and an outside effect receipt</title>
+<desc id="desc">A fictional order e has two separate paths. The target order is replayed to the old source and compared. A separate provider authorization with a lost reply remains unknown until a matching provider lookup; its receipt is then copied to the old application's record. The local return gate waits for both. A footer says that writer fencing, real payment semantics and AWS routing are not tested.</desc>
+<defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#18313d}.title{font-size:31px;font-weight:700}.sub{font-size:22px}.head{font-size:27px;font-weight:700}.body{font-size:23px}.note{font-size:20px}.gate{font-size:24px;font-weight:700}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#315c6e"/></marker></defs>
+<rect width="1000" height="510" fill="#fff"/>
+<text x="24" y="44" class="title">Two receipts before returning to the old app</text>
+<text x="24" y="76" class="sub">A saved order cannot prove an outside authorization.</text>
+<rect x="22" y="105" width="463" height="257" rx="14" fill="#edf5f6" stroke="#315c6e" stroke-width="2"/>
+<text x="42" y="145" class="head">1 · Data receipt</text>
+<text x="42" y="185" class="body">Target has order e for 250 cents.</text>
+<text x="42" y="221" class="body">Replay to the old store.</text>
+<text x="42" y="257" class="body">Compare ID and amount.</text>
+<text x="42" y="335" class="note">A matching row proves only this path.</text>
+<rect x="515" y="105" width="463" height="257" rx="14" fill="#faf3e3" stroke="#977a35" stroke-width="2"/>
+<text x="535" y="145" class="head">2 · Effect receipt</text>
+<text x="535" y="185" class="body">Reply lost: outcome unknown.</text>
+<text x="535" y="221" class="body">Look up the same operation.</text>
+<text x="535" y="257" class="body">If confirmed, copy its receipt.</text>
+<text x="535" y="335" class="note">Unknown or uncopied? HOLD.</text>
+<path d="M253 366 V386" fill="none" stroke="#315c6e" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M747 366 V386" fill="none" stroke="#315c6e" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="22" y="392" width="956" height="75" rx="13" fill="#eaf4ed" stroke="#3d7450" stroke-width="2"/>
+<text x="42" y="424" class="gate">Local return gate</text>
+<text x="42" y="454" class="body">Matching order + copied provider receipt → consider old route.</text>
+<text x="24" y="498" class="note">SQLite fixture only: no real payment, writer fence or AWS cutover.</text>
+</svg>

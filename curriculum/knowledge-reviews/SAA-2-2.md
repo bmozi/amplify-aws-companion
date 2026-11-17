@@ -1,0 +1,46 @@
+# Individual knowledge review for SAA-C03 task 2.2
+
+Internal editorial review, October 18, 2026. All twelve knowledge bullets now have individual partial teaching, assessment and remaining-evidence mappings; no entry is complete. The ordinal is our positional identifier, not an AWS-issued score. [Official domain source](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain2.html#solutions-architect-associate-03-domain2-task2).
+
+Fetched the official Markdown and parsed task 2.2 as twelve knowledge entries and eight skills. Ordinal 06 matches the accepted inventory SHA-256 `4697d2795d1d32a25bb061dbdd35e821b6aaffcaa25169ddd737de6ccabc3e05`. Domain source SHA-256 is `23b2af5036a5ed0531a7dcd7d7df8f12fc8d7a084efe17e45780381e765bcfb7`; retained source is `artifacts/curriculum-research/saa-failover-review-source.md`.
+
+## Teaching and assessment evidence
+
+Unit 05's “A global entry point does not move the business state,” “A timeout leaves a question to resolve” and “A read fallback is not a booking failover” connect routing to state authority and method-specific service behavior. Readers distinguish a cached public response from a reachable origin, a committed booking from a received confirmation, and duplicate-request handling at one authority from independent stores. The text links official CloudFront origin-failover behavior and preserves the limits of its local demonstration.
+
+Unit 07's “Routing and write authority are separate controls” and “Failback is another migration” supply the corresponding recovery decisions: control old writers, reconcile the new destination, preserve newly confirmed history and validate before returning traffic. These sections support failover reasoning beyond changing a destination address. They do not implement a database fencing protocol.
+
+The [network selection assessment](../../examples/network-selection/README.md#a21-extension-the-guide-loads-but-the-booking-is-uncertain) provides three staged A21 packets and [separate assessor criteria](../../examples/network-selection/ASSESSOR.md). Packet 8 explicitly supplies a committed booking and a stale second store; readers must reject absence in that store as proof of nonacceptance. Packet 9 tests whether a read-fallback feature supports booking POST requests. The [regional recovery assessment](../../examples/regional-recovery/README.md) changes old-writer reachability, journal availability, keys, capacity and failback history. E05 is the assigned exercise anchor and now includes the bounded resilience rehearsal.
+
+The [lost-response executable](../../examples/network-selection/lost_response.py) supplies a local subprocess exercise: commit before forced exit, no printed response, stable same-authority retry, conflicting-content rejection and a second independent store creating another appointment. An owner-only dated receipt binds the author's source and suite report; this review did not rerun the executable. Follow the [lab instructions](../../examples/network-selection/README.md) to collect your own result. The empty second store is a counterexample to independent deduplication, not an implemented replica, coordinated regional service or real network failure.
+
+## Boundary and next evidence
+
+Coverage remains partial. The learner has design explanations, fictional decisions and a bounded local process example. Missing service implementation includes actual routing configuration, relevant timeouts and connection behavior, authenticated outcome lookup, tested write authority, replication semantics, capacity, key/sign-in access, rollback/failback and measured customer outcomes under the declared failure. CloudFront method restrictions do not constitute a general failover design for all AWS services.
+
+A stronger assessment would provide an unfamiliar workload and require the reader to choose between a single regional authority with a bounded interruption and a prepared recovery destination. Require the failure assumption, accepted-data requirement, evidence for reopening, recurring cost and cleanup. Then change the case so the original writer remains reachable or an external payment completed before its response was lost. Evaluate the revised authority and reconciliation decision; do not award credit merely for selecting “multi-region.” Independent responses and rubric calibration remain uncollected.
+
+Do not increase any implementation-skill coverage because this knowledge mapping was added. Any selected live test needs scoped access, current plan and credit review, and a whole-run estimate against spending and reserve limits chosen for the account.
+
+## The ten additional objective mappings
+
+Ten additional objectives were reviewed on October 18 after checking each digest against the retained official Domain 2 Markdown. The current official domain page was also rechecked; its twelve bullet texts match the retained source and inventory digests. New source material and an illustrated chapter section have been added. All twelve mappings remain partial.
+
+| ID | Teaching and changed-case assessment | What remains |
+|---|---|---|
+| 01 — Global infrastructure | Unit 07 compares AZ and Region failure scope, DNS and data location; case 1 changes failure from one AZ to a Region. | Verify service/Region support, actual resources/data/identity/keys/routes/quotas, measured failover and reconciled business state. |
+| 02 — Managed services | Unit 07 now follows the October 31 generic managed-services wording: Comprehend and Polly have distinct workload functions; mandatory versus optional dependencies change resilience. AMS is a separate operations offering. Case 2 makes an AI helper optional or unavailable. | Check selected service scope, data handling, Region/feature fit, quotas, failure behavior, costs and learner transfer. |
+| 03 — Route tables | Unit 05 distinguishes destination/next hop from traffic permission and application routing; case 3 supplies both a bad route and a deny rule. | Verify actual routes, return path, effective controls and observed behavior for a selected VPC. |
+| 05 — Distributed patterns | Unit 07 teaches shared dependencies, bulkheads and bounded failure cells; case 4 adds a slow-job flood competing with bookings. The [local booking-lane model](../../examples/bulkhead-capacity/README.md) compares shared workers, separated workers and a hidden shared database limit under one fixed workload. | Test selected queue/work-pool/status dependencies, overload, retries, customer outcomes and full cost. The local schedule is not a deployed failure test. |
+| 07 — Immutable infrastructure | Unit 03 teaches controlled replacement from a reviewed artifact; case 5 changes a manual patch and stale-image replacement. | Verify the actual pipeline, artifact identity, rollback and drift behavior. |
+| 08 — Load balancing | Unit 07 explains ALB target checks, surviving capacity and all-targets-unhealthy fail-open; case 6 changes every health result. | Test chosen target/health/listener behavior, failure-mode capacity and current cost. |
+| 09 — Proxy concepts | Unit 21 and Unit 07 explain RDS Proxy pooling, supported failover and interrupted writes; case 7 times out a booking transaction. | Verify chosen engine/driver/pinning behavior, uncertain-write handling, real failover and price. |
+| 10 — Quotas and throttling | Unit 22 teaches per-Region quota readiness; case 8 constrains recovery workers and an optional service. | Check current quotas, available capacity, bounded backpressure and measured recovery behavior. |
+| 11 — Storage durability and replication | Unit 07 separates copies, replication and backup; case 9 changes a replicated object to corrupted data. | Test actual versioning/replication/retention/restore and application reconciliation; confirm costs. |
+| 12 — Workload visibility | Unit 08 distinguishes metrics, logs and traces and X-Ray's move to OTel instrumentation; case 10 has sparse sampled traces. | Verify collection, sampling, missing data, correlation and operational response on the selected system. |
+
+The [resilience path review](../../examples/resilience-path-review/README.md) is a design-only exercise with a separate assessor. The [illustrated unit section](../../reader/BOOK-LOCATORS.md#book-a346fb244e83ae0e) connects these components without claiming one multi-service cloud design. The manuscript links current primary AWS guidance for DNS, routes, ALB health behavior, RDS Proxy, storage replication, quotas, AMS, Comprehend, Polly and tracing. The ten new rows raise individual knowledge mappings from 94 to 104. All remain partial; the other 155 entries remain inventory-only. The 76 partial skill mappings are a separate population.
+
+No resource, quota, account setting, price or AWS failure test was changed or queried. Independent technical/learner review, selected service implementation, regional pricing and service support, and final-format visual review remain pending.
+
+October 31 source refresh: the official Markdown now uses generic AWS managed services for knowledge item 02. Updated the source hash and teaching explanation; partial coverage and learner/live-service limits remain.

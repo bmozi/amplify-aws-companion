@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 985" role="img" aria-labelledby="title desc">
+  <title id="title">From customer symptom to recovery proof</title>
+  <desc id="desc">Six decision cards follow an incident from customer impact and bounded scope through matched evidence, competing explanations, a safe distinguishing check, a bounded response, and customer recovery with accepted-work reconciliation. The evidence-source table in the lesson supplies specific AWS tools. Harm may need containment before a cause is proven; an event or status label alone proves neither cause nor recovery.</desc>
+  <defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M1 1 L11 6 L1 11 Z" fill="#31566b"/></marker></defs>
+  <rect width="720" height="985" fill="#fff"/>
+  <g font-family="Arial,sans-serif" fill="#173243">
+    <text x="42" y="47" font-size="27" font-weight="700">From customer symptom to recovery proof</text>
+    <text x="42" y="78" font-size="18" fill="#49606a">Follow the question; keep what you know separate from what you infer.</text>
+    <g stroke-width="2.2">
+      <rect x="42" y="105" width="636" height="112" rx="14" fill="#e8f3f8" stroke="#39718d"/>
+      <rect x="42" y="238" width="636" height="112" rx="14" fill="#eef4f8" stroke="#557487"/>
+      <rect x="42" y="371" width="636" height="112" rx="14" fill="#fff2d9" stroke="#a77b2e"/>
+      <rect x="42" y="504" width="636" height="112" rx="14" fill="#e8f3f8" stroke="#39718d"/>
+      <rect x="42" y="637" width="636" height="112" rx="14" fill="#fff2d9" stroke="#a77b2e"/>
+      <rect x="42" y="770" width="636" height="112" rx="14" fill="#e8f5ed" stroke="#43816a"/>
+    </g>
+    <g font-size="21" font-weight="700">
+      <text x="64" y="145">1  Name the harm and owner</text>
+      <text x="64" y="278">2  Bound scope and choose evidence</text>
+      <text x="64" y="411">3  Keep competing explanations visible</text>
+      <text x="64" y="544">4  Run one safe distinguishing check</text>
+      <text x="64" y="677">5  Make a bounded response decision</text>
+      <text x="64" y="810">6  Prove customer recovery</text>
+    </g>
+    <g font-size="18">
+      <text x="64" y="178">Who cannot do what, since when? Who coordinates?</text>
+      <text x="64" y="311">Which account, Region, resource and time window?</text>
+      <text x="64" y="444">Mark each fact observed, inferred or still unknown.</text>
+      <text x="64" y="577">What result would rule out a likely cause?</text>
+      <text x="64" y="710">Name target, owner, risk and reversal path.</text>
+      <text x="64" y="843">Check fresh work and reconcile accepted requests.</text>
+    </g>
+    <g stroke="#31566b" stroke-width="3.2" marker-end="url(#arrow)">
+      <path d="M360 218 V233"/><path d="M360 351 V366"/>
+      <path d="M360 484 V499"/><path d="M360 617 V632"/>
+      <path d="M360 750 V765"/>
+    </g>
+    <rect x="42" y="909" width="636" height="54" rx="10" fill="#f1f4f6" stroke="#70838d" stroke-width="1.8"/>
+    <text x="60" y="933" font-size="16.5" font-weight="700">Contain urgent harm sooner if needed; record the uncertainty.</text>
+    <text x="60" y="952" font-size="16.5">An event or status label alone proves neither cause nor recovery.</text>
+  </g>
+</svg>

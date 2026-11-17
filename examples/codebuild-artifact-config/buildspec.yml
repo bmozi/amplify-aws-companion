@@ -1,0 +1,21 @@
+# Teaching example for a Node application whose build creates dist/.
+# Review the project image, role, source, output settings, costs, and paths.
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: "20"
+    commands:
+      - npm ci
+  pre_build:
+    commands:
+      - npm run lint
+      - npm test
+  build:
+    commands:
+      - npm run build
+      - printf 'source=%s\n' "$CODEBUILD_RESOLVED_SOURCE_VERSION" > dist/build-info.txt
+artifacts:
+  base-directory: dist
+  files:
+    - '**/*'

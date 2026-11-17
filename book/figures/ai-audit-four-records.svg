@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="810" viewBox="0 0 360 810" role="img" aria-labelledby="title desc">
+  <title id="title">Four records for one AI-assisted customer decision</title>
+  <desc id="desc">A customer request produces four separate evidence paths: a CloudTrail API call, an optional model content log, an instrumented agent trace and an application-owned business receipt. A reviewer joins only matching account, Region, request, case and time records. The first three paths cannot establish the customer outcome.</desc>
+  <rect width="360" height="810" fill="#f8fafc"/>
+  <g font-family="Arial,sans-serif">
+    <text x="18" y="34" font-size="22" font-weight="700" fill="#142e3c">One request, four records</text>
+    <text x="18" y="59" font-size="16" fill="#405966">Each record answers a different question.</text>
+    <rect x="18" y="78" width="324" height="67" rx="10" fill="#132f45"/>
+    <text x="34" y="105" font-size="17" font-weight="700" fill="#ffffff">Customer asks for a warranty</text>
+    <text x="34" y="129" font-size="17" font-weight="700" fill="#ffffff">answer</text>
+    <rect x="18" y="161" width="324" height="105" rx="10" fill="#e8f4fb" stroke="#24769d" stroke-width="2"/>
+    <text x="34" y="190" font-size="18" font-weight="700" fill="#075985">1 · CloudTrail API call</text>
+    <text x="34" y="218" font-size="16" fill="#18313d">Who called the model API?</text>
+    <text x="34" y="244" font-size="16" fill="#405966">Count AwsApiCall once.</text>
+    <rect x="18" y="279" width="324" height="105" rx="10" fill="#fff2d9" stroke="#ae732a" stroke-width="2"/>
+    <text x="34" y="308" font-size="18" font-weight="700" fill="#704713">2 · Model content log</text>
+    <text x="34" y="336" font-size="16" fill="#3c321f">What input or output was kept?</text>
+    <text x="34" y="362" font-size="16" fill="#5a4930">Optional; original input may remain.</text>
+    <rect x="18" y="397" width="324" height="105" rx="10" fill="#eee9f8" stroke="#7254a5" stroke-width="2"/>
+    <text x="34" y="426" font-size="18" font-weight="700" fill="#453271">3 · Agent trace</text>
+    <text x="34" y="454" font-size="16" fill="#382b54">Which instrumented steps ran?</text>
+    <text x="34" y="480" font-size="16" fill="#5b4b74">Coverage and sampling matter.</text>
+    <rect x="18" y="515" width="324" height="105" rx="10" fill="#e6f4e9" stroke="#2b7752" stroke-width="2"/>
+    <text x="34" y="544" font-size="18" font-weight="700" fill="#20583e">4 · Business receipt</text>
+    <text x="34" y="572" font-size="16" fill="#274d3b">Approved, held or corrected?</text>
+    <text x="34" y="598" font-size="16" fill="#315f4c">The application owns this proof.</text>
+    <rect x="18" y="637" width="324" height="90" rx="10" fill="#ffffff" stroke="#36566a" stroke-width="2"/>
+    <text x="34" y="665" font-size="17" font-weight="700" fill="#142e3c">Join the exact case</text>
+    <text x="34" y="690" font-size="16" fill="#405966">Account, Region, request ID,</text>
+    <text x="34" y="713" font-size="16" fill="#405966">case ID and time must match.</text>
+    <text x="18" y="758" font-size="15" fill="#8b2740">A model answer alone is not a</text>
+    <text x="18" y="780" font-size="15" fill="#8b2740">customer outcome. Design only.</text>
+  </g>
+</svg>

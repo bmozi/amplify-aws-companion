@@ -1,0 +1,214 @@
+name: Reviewed Amplify publication job
+
+on:
+  workflow_call:
+    inputs:
+      confirm_publish:
+        required: true
+        type: string
+      cost_scenario:
+        required: true
+        type: string
+      source_commit:
+        required: true
+        type: string
+    secrets:
+      AMPLIFY_OUTPUTS_JSON:
+        required: true
+
+permissions: {}
+
+jobs:
+  build:
+    if: >-
+      github.event_name == 'workflow_dispatch' &&
+      github.ref == 'refs/heads/main' &&
+      github.workflow == 'Publish the Amplify lab frontend' &&
+      github.workflow_ref == 'bmozi/aws-capabilities-lab/.github/workflows/amplify-publish.yml@refs/heads/main' &&
+      github.sha == inputs.source_commit &&
+      vars.AMPLIFY_PUBLISH_ENABLED == 'true' &&
+      inputs.confirm_publish == 'yes' &&
+      inputs.cost_scenario == 'static_smoke_100_visit_1d'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      archive_sha256: ${{ steps.package.outputs.archive_sha256 }}
+    steps:
+      - name: Check out the reviewed source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/frontend-publisher/package-lock.json
+
+      - name: Install locked frontend dependencies without lifecycle scripts
+        working-directory: app/frontend-publisher
+        run: npm ci --ignore-scripts
+
+      - name: Stop publication on a current frontend toolchain advisory
+        working-directory: app/frontend-publisher
+        run: npm audit --audit-level=moderate
+
+      - name: Stage only browser source and public files
+        run: python3 scripts/stage-frontend-publisher.py
+
+      - name: Add the generated Amplify browser configuration
+        working-directory: app/frontend-publisher
+        env:
+          AMPLIFY_OUTPUTS_JSON: ${{ secrets.AMPLIFY_OUTPUTS_JSON }}
+        run: |
+          test -n "$AMPLIFY_OUTPUTS_JSON" || { echo "Missing repository secret AMPLIFY_OUTPUTS_JSON"; exit 1; }
+          printf '%s' "$AMPLIFY_OUTPUTS_JSON" > amplify_outputs.json
+          python3 - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          browser_config = Path("amplify_outputs.json")
+          json.loads(browser_config.read_text())
+          Path(".browser-config.sha256").write_text(hashlib.sha256(browser_config.read_bytes()).hexdigest() + "\n")
+          PY
+
+      - name: Build the static frontend without AWS credentials
+        working-directory: app/frontend-publisher
+        run: npm run build
+
+      - name: Package the built site
+        id: package
+        env:
+          SOURCE_COMMIT: ${{ github.sha }}
+          WORKFLOW_RUN_ID: ${{ github.run_id }}
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          import re
+          from pathlib import Path
+          from zipfile import ZIP_DEFLATED, ZipFile
+          root = Path("app/frontend-publisher/dist")
+          if not (root / "index.html").is_file():
+              raise SystemExit("Build did not produce the frontend publisher index.html")
+          outputs_file = Path("app/frontend-publisher/amplify_outputs.json")
+          if not outputs_file.is_file():
+              raise SystemExit("Build has no browser configuration to bind to the review")
+          outputs_digest = hashlib.sha256(outputs_file.read_bytes()).hexdigest()
+          before_build_digest = Path("app/frontend-publisher/.browser-config.sha256").read_text().strip()
+          if outputs_digest != before_build_digest:
+              raise SystemExit("Browser configuration changed during the build")
+          (root / "config.sha256").write_text(outputs_digest + "\n")
+          commit = os.environ["SOURCE_COMMIT"]
+          run_id = os.environ["WORKFLOW_RUN_ID"]
+          if not re.fullmatch(r"[0-9a-f]{40}", commit) or not re.fullmatch(r"[0-9]+", run_id):
+              raise SystemExit("Missing exact source or workflow run identity")
+          (root / "deployment.json").write_text(json.dumps({"source_commit": commit, "workflow_run_id": run_id}) + "\n")
+          with ZipFile("frontend.zip", "w", ZIP_DEFLATED) as archive:
+              for path in sorted(root.rglob("*")):
+                  if path.is_file():
+                      archive.write(path, path.relative_to(root))
+          digest = hashlib.sha256(Path("frontend.zip").read_bytes()).hexdigest()
+          with Path(os.environ["GITHUB_OUTPUT"]).open("a") as output:
+              output.write(f"archive_sha256={digest}\n")
+          PY
+
+      - name: Save the frontend artifact for the isolated publisher job
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: amplify-frontend
+          path: frontend.zip
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    needs: build
+    if: >-
+      github.event_name == 'workflow_dispatch' &&
+      github.ref == 'refs/heads/main' &&
+      github.workflow == 'Publish the Amplify lab frontend' &&
+      github.workflow_ref == 'bmozi/aws-capabilities-lab/.github/workflows/amplify-publish.yml@refs/heads/main' &&
+      github.sha == inputs.source_commit &&
+      vars.AMPLIFY_PUBLISH_ENABLED == 'true' &&
+      inputs.confirm_publish == 'yes' &&
+      inputs.cost_scenario == 'static_smoke_100_visit_1d'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Check out the reviewed deployment helper
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Download the build from this workflow run
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: amplify-frontend
+          path: artifacts/frontend
+
+      - name: Validate this run's reviewed cost record before requesting AWS credentials
+        id: estimate
+        env:
+          AWS_LAB_EXPECTED_ACCOUNT_ID: ${{ vars.AWS_LAB_EXPECTED_ACCOUNT_ID }}
+          AWS_LAB_AMPLIFY_APP_ID: ${{ vars.AWS_LAB_AMPLIFY_APP_ID }}
+          COST_SCENARIO: ${{ inputs.cost_scenario }}
+          EXPECTED_ARCHIVE_SHA256: ${{ needs.build.outputs.archive_sha256 }}
+        run: |
+          python3 scripts/publisher-run-estimate.py examples/costs/publisher-smoke-run-estimate.json \
+            --account-id "$AWS_LAB_EXPECTED_ACCOUNT_ID" \
+            --app-id "$AWS_LAB_AMPLIFY_APP_ID" \
+            --branch lab --scenario "$COST_SCENARIO" \
+            --app-tree-sha "$(git rev-parse HEAD:app)" \
+            --archive artifacts/frontend/frontend.zip \
+            --archive-sha256 "$EXPECTED_ARCHIVE_SHA256"
+
+      - name: Assume the branch-scoped AWS role with GitHub OIDC
+        uses: aws-actions/configure-aws-credentials@61815dcd50bd041e203e49132bacad1fd04d2708 # v5.1.1
+        with:
+          role-to-assume: ${{ vars.AWS_LAB_AMPLIFY_PUBLISH_ROLE_ARN }}
+          aws-region: us-east-2
+          role-session-name: github-amplify-${{ github.run_id }}
+          role-duration-seconds: 900
+          mask-aws-account-id: true
+
+      - name: Verify current Free plan and reserved credits before AWS publication
+        env:
+          AWS_LAB_EXPECTED_ACCOUNT_ID: ${{ vars.AWS_LAB_EXPECTED_ACCOUNT_ID }}
+          ESTIMATED_RUN_USD: ${{ steps.estimate.outputs.estimated_run_usd }}
+          PLANNED_END_EPOCH: ${{ steps.estimate.outputs.planned_end_epoch }}
+        run: |
+          python3 scripts/credit-check.py \
+            --account-id "$AWS_LAB_EXPECTED_ACCOUNT_ID" \
+            --estimated-run-usd "$ESTIMATED_RUN_USD" \
+            --planned-end-epoch "$PLANNED_END_EPOCH" \
+            --quiet
+
+      - name: Keep the gross monthly budget below its limit
+        env:
+          AWS_LAB_EXPECTED_ACCOUNT_ID: ${{ vars.AWS_LAB_EXPECTED_ACCOUNT_ID }}
+          AWS_LAB_BUDGET_NAME: ${{ vars.AWS_LAB_BUDGET_NAME }}
+          ESTIMATED_RUN_USD: ${{ steps.estimate.outputs.estimated_run_usd }}
+        run: |
+          python3 scripts/publisher-budget-check.py \
+            --account-id "$AWS_LAB_EXPECTED_ACCOUNT_ID" \
+            --budget-name "$AWS_LAB_BUDGET_NAME" \
+            --estimated-run-usd "$ESTIMATED_RUN_USD" \
+            --quiet
+
+      - name: Refuse publication if main has advanced during this run
+        env:
+          SOURCE_COMMIT: ${{ inputs.source_commit }}
+        run: python3 scripts/check-publisher-source-head.py
+
+      - name: Publish and verify the selected Amplify branch
+        env:
+          AWS_LAB_AMPLIFY_APP_ID: ${{ vars.AWS_LAB_AMPLIFY_APP_ID }}
+          AWS_LAB_AMPLIFY_BRANCH: lab
+          AWS_LAB_EXPECTED_ACCOUNT_ID: ${{ vars.AWS_LAB_EXPECTED_ACCOUNT_ID }}
+          AWS_LAB_EXPECTED_ROLE_NAME: AmplifyLabGitHubPublisher
+          AWS_REGION: us-east-2
+          SOURCE_COMMIT: ${{ inputs.source_commit }}
+          WORKFLOW_RUN_ID: ${{ github.run_id }}
+          EXPECTED_ARCHIVE_SHA256: ${{ needs.build.outputs.archive_sha256 }}
+        run: python3 scripts/deploy-frontend-from-github.py artifacts/frontend/frontend.zip

@@ -1,0 +1,6 @@
+{
+  "lesson": "", "date": "", "account": "", "region": "", "environment": "",
+  "source_revision_or_archive_hash": "", "prediction": "", "resources_created": [],
+  "observations": [], "negative_test": "", "result": "not-run",
+  "cost_assumptions": "", "cleanup_observed": "", "remaining_questions": []
+}

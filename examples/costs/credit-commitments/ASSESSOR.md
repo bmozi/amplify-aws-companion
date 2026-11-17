@@ -1,0 +1,9 @@
+# Credit-commitment assessor reasoning
+
+These are authored teaching criteria, not independent learner or live billing evidence.
+
+Each operator's isolated arithmetic is `80 − 3 = 77`, so both separate checks pass the invented USD 75 reserve. They are competing for the same USD 5 of headroom. The combined promise is `80 − 3 − 3 = 74`, one dollar below the reserve. The local SQLite transaction makes both fixture writers observe a single committed total in turn. Whichever writes first reserves USD 3; the second must be refused because only USD 2 remains above the reserve. A pass for one run does not imply both may proceed.
+
+The changed case needs investigation before releasing the old commitment. A stopped application task does not prove its queue, logs, data or background work are gone. A completed destroy may omit retained or unrelated resources. A new account credit snapshot is delayed, account-wide and not an atomic reservation. Identify the remaining resource owner, expected cost and removal/retention decision; reconcile later usage before calling the prior run closed. A real shared process would also need to handle duplicate or uncertain submissions, stale registrations and independent writers. This fixture does none of that across hosts or AWS.
+
+For the second changed case, the **estimate** stays USD 3 in the local register while the hypothetical **actual charge** is USD 6. The difference can appear only through later attributable usage or billing evidence, not through the original claim. `80 − 6 = 74` breaches the invented USD 75 reserve if there are no other changes. Hold another run, inspect the account balance and remaining resources, and reconcile the charge and cleanup. The local model never limited the bill; the three extra tests establish only selected register invariants and duplicate behavior.

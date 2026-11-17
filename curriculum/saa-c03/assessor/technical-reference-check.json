@@ -1,0 +1,198 @@
+{
+  "checked_utc": "2026-11-01T01:02:46.353652+00:00",
+  "scope": "Direct reference availability and byte identity, not independent semantic review",
+  "sources": [
+    {
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html",
+      "resolved_url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html",
+      "sha256": "13d3dc0e2213810ea2ff8a918bcfef37b584330cf2dc6176b641d7d890fea07f",
+      "title": "Spot Instances - Amazon Elastic Compute Cloud",
+      "bytes": 20343,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html",
+      "resolved_url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html",
+      "sha256": "e83a324ba9929725eaac730e9f8d1e10bf2d5b0fba4e3f1a8b5e20a1be2b4e90",
+      "title": "Amazon SQS standard queues - Amazon Simple Queue Service",
+      "bytes": 14325,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html",
+      "sha256": "5e645c827958c4848d50921041dd2cb5f687203e434133643645aa18adf2956c",
+      "title": "Architect for AWS Fargate for Amazon ECS - Amazon Elastic Container Service",
+      "bytes": 19630,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html",
+      "sha256": "0fbb3b2b17d66ab57ba92480a168f39a8dc6306fa98d342f86495b3924fac7c0",
+      "title": "Configuring and managing a Multi-AZ deployment for Amazon RDS - Amazon Relational Database Service",
+      "bytes": 14365,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html",
+      "sha256": "8f2ffbcb8fa3920e97f96125785e0d2694ff3db256570b113afa3ab5e188dedf",
+      "title": "Working with DB instance read replicas - Amazon Relational Database Service",
+      "bytes": 26486,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html",
+      "sha256": "d53504e67effc6d738fdd35bbc205527e337c7aeb0224ff549bc8ef816e0e858",
+      "title": "Amazon RDS Proxy - Amazon Relational Database Service",
+      "bytes": 38229,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+      "sha256": "289d0c0d98acfb20cc820adb44bae9c76da2eed3228a3d355fad11f79c8ba217",
+      "title": "Using server-side encryption with AWS KMS keys (SSE-KMS) - Amazon Simple Storage Service",
+      "bytes": 42599,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html",
+      "resolved_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html",
+      "sha256": "128ad9ff78f49ceb17cf4d799b816d5363e2a767fe7b970f483df42f17f2519a",
+      "title": "Understanding and managing Amazon S3 storage classes - Amazon Simple Storage Service",
+      "bytes": 43669,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html",
+      "resolved_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html",
+      "sha256": "315db10db01d6577bf1230664b31ca5ebbb1d31f5a8c2870e6a3e4f208ab6ab6",
+      "title": "IAM roles - AWS Identity and Access Management",
+      "bytes": 34251,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html",
+      "resolved_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html",
+      "sha256": "e14e7f9015beadc33105468ceb68e4ce16f35b138ba4c35824d1f85f0e3aa969",
+      "title": "Policy evaluation logic - AWS Identity and Access Management",
+      "bytes": 17642,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/athena/latest/ug/columnar-storage.html",
+      "resolved_url": "https://docs.aws.amazon.com/athena/latest/ug/columnar-storage.html",
+      "sha256": "4bc6f5c02334f62d5f867330bd9a6d474204e8de45cd3c1e5a992019916741eb",
+      "title": "Use columnar storage formats - Amazon Athena",
+      "bytes": 17472,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html",
+      "resolved_url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html",
+      "sha256": "78a255fb80d0377a14cec1b5dd3fc0740597e4bdd91e3eb5e9dd4661da56ef0d",
+      "title": "What is AWS Backup? - AWS Backup",
+      "bytes": 32867,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/decision-guides/latest/decision-guides/databases-on-aws-how-to-choose.html",
+      "resolved_url": "https://docs.aws.amazon.com/decision-guides/latest/decision-guides/databases-on-aws-how-to-choose.html",
+      "sha256": "8fd22ae83182e43e628a7abe768e184079598f37b131249f3d6b724ae3a0453f",
+      "title": "Choosing an AWS database service - AWS Decision Guides",
+      "bytes": 86132,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html",
+      "resolved_url": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html",
+      "sha256": "6440eb175e140d94283958a6653a9ae58e1a06c47b5068dcc29b5a8edcd9a17f",
+      "title": "What is Amazon Elastic File System? - Amazon Elastic File System",
+      "bytes": 16708,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html",
+      "resolved_url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html",
+      "sha256": "2a43d9f452db0dd600dd2498fbd83eb408a0b28d028a85c94c8a3f20288abd75",
+      "title": "What is an Application Load Balancer? - Elastic Load Balancing",
+      "bytes": 26552,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-update-security-groups.html",
+      "resolved_url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-update-security-groups.html",
+      "sha256": "931fbf8e0150be1a6275b91a67da31c22dbc3dde44b825b3d08fce963da78ee0",
+      "title": "Security groups for your Application Load Balancer - Elastic Load Balancing",
+      "bytes": 31029,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html",
+      "resolved_url": "https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html",
+      "sha256": "216f5f61176275b658a08510c4d362d9e61914a409abaeaf70d019ec70fd08fa",
+      "title": "Lambda quotas - AWS Lambda",
+      "bytes": 52768,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html",
+      "resolved_url": "https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html",
+      "sha256": "945ef6d28b867de6ac8f8838728f65c531485ab6bc21aa5a95fa11a7295fac72",
+      "title": "Welcome to the Amazon MSK Developer Guide - Amazon Managed Streaming for Apache Kafka",
+      "bytes": 16357,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html",
+      "resolved_url": "https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html",
+      "sha256": "c9640cb30d84543bbcd70c2074dacb15e4af5e2443d850094567ae399655a6d1",
+      "title": "What are Savings Plans? - Savings Plans",
+      "bytes": 13380,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html",
+      "resolved_url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html",
+      "sha256": "3757433d2c77ad110c0ab2bfd30e6bd9b89a29b9b3f42630bb8bcd91b43034b1",
+      "title": "What is AWS Secrets Manager? - AWS Secrets Manager",
+      "bytes": 17773,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/sns/latest/dg/sns-sqs-as-subscriber.html",
+      "resolved_url": "https://docs.aws.amazon.com/sns/latest/dg/sns-sqs-as-subscriber.html",
+      "sha256": "64b1d48715557df052b4f8f73c5969405119b45450835bc5f400123a5a8e73f1",
+      "title": "Fanout Amazon SNS notifications to Amazon SQS queues for asynchronous processing - Amazon Simple Notification Service",
+      "bytes": 13942,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html",
+      "resolved_url": "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html",
+      "sha256": "b7e6557bfd24bb4012f9657279ed71dd0254d6002f5cef91173ba1535610d2d4",
+      "title": "Gateway endpoints - Amazon Virtual Private Cloud",
+      "bytes": 26634,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-basics.html",
+      "resolved_url": "https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-basics.html",
+      "sha256": "e6e169bad4509690fe0340dd99427e0ddab756829f8d41e982848ef688e609de",
+      "title": "NAT gateway basics - Amazon Virtual Private Cloud",
+      "bytes": 18926,
+      "fetched": true
+    },
+    {
+      "url": "https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html",
+      "resolved_url": "https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html",
+      "sha256": "af51bccd91d08d6d907f1aeafb05f546b879fcea84126c228f74f44a063c4445",
+      "title": "What is AWS Client VPN? - AWS Client VPN",
+      "bytes": 26775,
+      "fetched": true
+    }
+  ]
+}

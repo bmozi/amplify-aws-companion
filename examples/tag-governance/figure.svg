@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 670" role="img" aria-labelledby="title desc">
+  <title id="title">Four different jobs in a tag-governance design</title>
+  <desc id="desc">A resource request passes through a supported infrastructure-as-code required-tag check, a member-account SCP create guard where the API supports request tags, and a tag-policy value rule for supported tagged operations. After creation, AWS Config can detect a missing or wrong tag on supported recorded resources and send it for reviewed remediation. Each layer has exceptions.</desc>
+  <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1b496b"/></marker></defs>
+  <rect width="1160" height="670" fill="#f9fbfd"/>
+  <path d="M0 50H1160 M0 100H1160 M0 150H1160 M0 200H1160 M0 250H1160 M0 300H1160 M0 350H1160 M0 400H1160 M0 450H1160 M0 500H1160 M0 550H1160 M0 600H1160" stroke="#e7eef3" stroke-width="1"/>
+  <text x="44" y="49" fill="#0c3151" font-family="Arial,sans-serif" font-size="30" font-weight="bold">ONE TAG RULE. FOUR DIFFERENT JOBS.</text>
+  <text x="44" y="80" fill="#3c5a70" font-family="Arial,sans-serif" font-size="18">Ask whether the control warns, blocks, detects, or repairs this exact operation.</text>
+  <rect x="44" y="160" width="190" height="210" rx="15" fill="#e8f2fa" stroke="#4c88b7" stroke-width="2"/>
+  <text x="61" y="200" fill="#153c5e" font-family="Arial,sans-serif" font-size="20" font-weight="bold">Resource request</text>
+  <text x="61" y="245" fill="#375a75" font-family="Arial,sans-serif" font-size="17">Create / update</text>
+  <text x="61" y="280" fill="#375a75" font-family="Arial,sans-serif" font-size="17">Tag / untag</text>
+  <text x="61" y="335" fill="#60798b" font-family="Arial,sans-serif" font-size="15">Which API + principal?</text>
+  <rect x="274" y="160" width="190" height="210" rx="15" fill="#eaf5f2" stroke="#448e80" stroke-width="2"/>
+  <text x="291" y="200" fill="#15594f" font-family="Arial,sans-serif" font-size="20" font-weight="bold">IaC validation</text>
+  <text x="291" y="245" fill="#346b61" font-family="Arial,sans-serif" font-size="17">Required key</text>
+  <text x="291" y="280" fill="#346b61" font-family="Arial,sans-serif" font-size="17">Warn or fail</text>
+  <text x="291" y="335" fill="#60798b" font-family="Arial,sans-serif" font-size="15">Covered workflow only</text>
+  <rect x="504" y="160" width="190" height="210" rx="15" fill="#fff3e6" stroke="#ca963b" stroke-width="2"/>
+  <text x="521" y="200" fill="#705018" font-family="Arial,sans-serif" font-size="20" font-weight="bold">SCP guard</text>
+  <text x="521" y="245" fill="#7b6238" font-family="Arial,sans-serif" font-size="17">Missing key?</text>
+  <text x="521" y="280" fill="#7b6238" font-family="Arial,sans-serif" font-size="17">Deny supported API</text>
+  <text x="521" y="335" fill="#60798b" font-family="Arial,sans-serif" font-size="15">Member accounts only</text>
+  <rect x="734" y="160" width="190" height="210" rx="15" fill="#eef0fa" stroke="#7a81b1" stroke-width="2"/>
+  <text x="751" y="200" fill="#3b4375" font-family="Arial,sans-serif" font-size="20" font-weight="bold">Tag policy</text>
+  <text x="751" y="245" fill="#565e86" font-family="Arial,sans-serif" font-size="17">Case + value</text>
+  <text x="751" y="280" fill="#565e86" font-family="Arial,sans-serif" font-size="17">Tagged requests</text>
+  <text x="751" y="335" fill="#60798b" font-family="Arial,sans-serif" font-size="15">Untagged blind spot</text>
+  <rect x="964" y="160" width="152" height="210" rx="15" fill="#f4eff8" stroke="#a078aa" stroke-width="2"/>
+  <text x="981" y="200" fill="#633f72" font-family="Arial,sans-serif" font-size="20" font-weight="bold">Resource</text>
+  <text x="981" y="245" fill="#775c80" font-family="Arial,sans-serif" font-size="17">Actual tags</text>
+  <text x="981" y="280" fill="#775c80" font-family="Arial,sans-serif" font-size="17">Cost owner?</text>
+  <path d="M234 265H273 M464 265H503 M694 265H733 M924 265H963" stroke="#1b496b" stroke-width="3" marker-end="url(#arr)"/>
+  <path d="M139 159V126H599V159" fill="none" stroke="#70889a" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arr)"/>
+  <text x="274" y="117" fill="#60788a" font-family="Arial,sans-serif" font-size="15">Direct API request skips IaC validation</text>
+  <path d="M1040 371V433H342" fill="none" stroke="#a85c37" stroke-width="3" marker-end="url(#arr)"/>
+  <rect x="44" y="435" width="586" height="140" rx="15" fill="#fff8eb" stroke="#d5a058" stroke-width="2"/>
+  <text x="66" y="475" fill="#77501b" font-family="Arial,sans-serif" font-size="21" font-weight="bold">AWS Config observes later</text>
+  <text x="66" y="510" fill="#775d35" font-family="Arial,sans-serif" font-size="17">Supported recorded resource → finding → fresh review</text>
+  <text x="66" y="542" fill="#775d35" font-family="Arial,sans-serif" font-size="17">Remediation needs an exact target and owner</text>
+  <text x="44" y="627" fill="#a0442c" font-family="Arial,sans-serif" font-size="17" font-weight="bold">A policy file is not a denied create, a current tag, or a reconciled bill.</text>
+</svg>

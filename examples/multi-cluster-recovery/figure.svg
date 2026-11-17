@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 650" role="img" aria-labelledby="title desc">
+  <title id="title">Two clusters need a complete recovery path</title>
+  <desc id="desc">Customer traffic passes a routing decision to a primary or recovery Region. Each Region has application containers and a data store. A separate recovery gate checks image and configuration, capacity, data freshness, key access, customer health and old-writer fencing before traffic shifts.</desc>
+  <rect width="1100" height="650" fill="#f9fbfd"/>
+  <text x="45" y="55" fill="#102a43" font-family="Arial,sans-serif" font-size="31" font-weight="700">A second cluster is only one piece of recovery</text>
+  <text x="45" y="87" fill="#52677a" font-family="Arial,sans-serif" font-size="18">Follow the customer request, then inspect every dependency before a regional switch.</text>
+  <rect x="45" y="132" width="170" height="72" rx="12" fill="#d9eff8" stroke="#1d719a" stroke-width="2"/>
+  <text x="130" y="176" text-anchor="middle" fill="#12344a" font-family="Arial,sans-serif" font-size="20" font-weight="700">Customer</text>
+  <path d="M215 168H293" fill="none" stroke="#db8b18" stroke-width="5" marker-end="url(#arrow)"/>
+  <rect x="305" y="132" width="190" height="72" rx="12" fill="#fff1d6" stroke="#b46d0c" stroke-width="2"/>
+  <text x="400" y="162" text-anchor="middle" fill="#563709" font-family="Arial,sans-serif" font-size="18" font-weight="700">Traffic decision</text>
+  <text x="400" y="187" text-anchor="middle" fill="#563709" font-family="Arial,sans-serif" font-size="15">health + authority</text>
+  <path d="M495 168H570V195" fill="none" stroke="#1d719a" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M495 168H815V195" fill="none" stroke="#db8b18" stroke-width="4" marker-end="url(#arrow)"/>
+  <rect x="540" y="218" width="235" height="156" rx="14" fill="#e6f2fa" stroke="#1d719a" stroke-width="3"/>
+  <text x="658" y="250" text-anchor="middle" fill="#12344a" font-family="Arial,sans-serif" font-size="19" font-weight="700">Primary Region</text>
+  <text x="658" y="282" text-anchor="middle" fill="#12344a" font-family="Arial,sans-serif" font-size="17">cluster + containers</text>
+  <text x="658" y="314" text-anchor="middle" fill="#12344a" font-family="Arial,sans-serif" font-size="17">identity + secret access</text>
+  <text x="658" y="346" text-anchor="middle" fill="#12344a" font-family="Arial,sans-serif" font-size="17">authoritative data writer</text>
+  <rect x="810" y="218" width="245" height="156" rx="14" fill="#fff1d6" stroke="#b46d0c" stroke-width="3"/>
+  <text x="933" y="250" text-anchor="middle" fill="#563709" font-family="Arial,sans-serif" font-size="19" font-weight="700">Recovery Region</text>
+  <text x="933" y="282" text-anchor="middle" fill="#563709" font-family="Arial,sans-serif" font-size="17">cluster + containers</text>
+  <text x="933" y="314" text-anchor="middle" fill="#563709" font-family="Arial,sans-serif" font-size="17">identity + key access</text>
+  <text x="933" y="346" text-anchor="middle" fill="#563709" font-family="Arial,sans-serif" font-size="17">verified data checkpoint</text>
+  <path d="M775 323H797" fill="none" stroke="#557489" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+  <text x="786" y="399" text-anchor="middle" fill="#52677a" font-family="Arial,sans-serif" font-size="15">data copy is separate from container deployment</text>
+  <rect x="45" y="447" width="1010" height="145" rx="14" fill="#ffffff" stroke="#9cabb8" stroke-width="2"/>
+  <text x="68" y="484" fill="#102a43" font-family="Arial,sans-serif" font-size="22" font-weight="700">Recovery gate</text>
+  <text x="68" y="516" fill="#23445c" font-family="Arial,sans-serif" font-size="18">Same reviewed image + configuration?  Enough warm capacity?  Current enough data?</text>
+  <text x="68" y="546" fill="#23445c" font-family="Arial,sans-serif" font-size="18">Can the app decrypt and sign in?  Does a customer request work?  Is the old writer fenced?</text>
+  <text x="68" y="576" fill="#9a5511" font-family="Arial,sans-serif" font-size="16" font-weight="700">A paper gate can hold a bad switch; a passing paper gate cannot prove a live recovery.</text>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="context-stroke"/></marker></defs>
+</svg>

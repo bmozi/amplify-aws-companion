@@ -1,0 +1,10 @@
+# Assessor: user, agent, credential and action
+
+- **Wrong user:** A token for Leo cannot be accepted as Maya's delegated calendar authority. Verify the authenticated caller and the token-vault/user binding before use; the local fixture only compares strings.
+- **M2M substitution:** A client-credentials token represents machine authority. Do not treat it as Maya's personal consent. It may be appropriate for a separately authorized company calendar, with its own scope and action policy.
+- **Wrong workload or provider:** Restrict the workload identity and IAM role to the selected credential provider; then verify the returned token belongs to the intended workload/user context. The application must not choose an arbitrary provider from a model suggestion.
+- **Revocation:** A revoked shop grant should fail the current repair action gate. Provider-side token revocation may be detected only when the outside service rejects a cached token; AWS does not promise that every token AgentCore returns is still valid. A user-facing retry may need a new auth flow after the failure, and a prior successful action is not undone by revocation.
+- **Broad scope:** `calendar.write` permits some calendar writes, but it does not prove the proposed repair or operation is approved. A different tool, repair or operation ID needs its own application authorization.
+- **Replay:** A completed operation ID must not create another outside effect. The local `completed` set demonstrates a deny condition, not durable idempotency. A lost provider response requires reconciliation under the provider's actual API contract; see the [operation ledger](../agent-tool-boundary/OPERATION-LEDGER-ASSESSOR.md).
+
+Accept a learner answer only if it separates inbound caller authentication, workload/provider access, user-delegated consent and token scope, current business authorization, downstream acceptance, and audit evidence. The code's `Credential` and `TrustedState` are supplied fixtures, not authenticated AWS artifacts. No real token, action, CloudTrail event, customer grant, or external provider state was observed.

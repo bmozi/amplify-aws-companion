@@ -1,0 +1,12 @@
+# Optional local analytics and Moto suites. Build after Dockerfile has tagged
+# amplify-companion-linux:local; both dependency lists are staged from source.
+FROM amplify-companion-linux:local
+
+COPY domain.txt analytics.txt /tmp/
+RUN python -m venv /opt/domain \
+    && /opt/domain/bin/pip install --disable-pip-version-check --no-cache-dir -r /tmp/domain.txt \
+    && /opt/domain/bin/pip check \
+    && python -m venv /opt/analytics \
+    && /opt/analytics/bin/pip install --disable-pip-version-check --no-cache-dir -r /tmp/analytics.txt \
+    && /opt/analytics/bin/pip check \
+    && rm -f /tmp/domain.txt /tmp/analytics.txt

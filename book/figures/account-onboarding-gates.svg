@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 1260" role="img" aria-labelledby="title desc">
+  <title id="title">Account creation and account readiness are separate gates</title>
+  <desc id="desc">First review owner, purpose, data, Region, organization unit, access, cost and recovery. A new member account needs its resulting ID and powerful default role checked. An invited existing account needs owner acceptance and resource inventory; the invitation does not create the default admin role. Both paths require baseline, scoped-access, workload and recovery evidence before owner acceptance. Stop and reconcile partial failures. Fictional design only.</desc>
+  <rect width="760" height="1260" fill="#fff"/>
+  <g font-family="Arial,sans-serif" fill="#173544">
+    <text x="38" y="58" font-size="34" font-weight="bold">An account is not ready when it exists</text>
+    <text x="38" y="97" font-size="23">Review first. Then choose one starting path.</text>
+    <rect x="38" y="128" width="684" height="137" rx="15" fill="#fff1d7" stroke="#8b6018" stroke-width="3"/>
+    <text x="62" y="169" font-size="27" font-weight="bold">1  Approve the request</text>
+    <text x="62" y="208" font-size="22">Owner, purpose, data, Regions and OU;</text>
+    <text x="62" y="241" font-size="22">access, baseline, cost and recovery owner.</text>
+    <text x="38" y="313" font-size="26" font-weight="bold">Choose the account's starting path:</text>
+    <rect x="38" y="331" width="684" height="182" rx="15" fill="#e5f1f4" stroke="#285669" stroke-width="3"/>
+    <text x="62" y="372" font-size="27" font-weight="bold">Create a new member account</text>
+    <text x="62" y="411" font-size="22">Verify the request and resulting account ID.</text>
+    <text x="62" y="445" font-size="22">Review OrganizationAccountAccessRole:</text>
+    <text x="62" y="479" font-size="22">powerful default, not routine operator access.</text>
+    <rect x="38" y="531" width="684" height="183" rx="15" fill="#e7f3e8" stroke="#386548" stroke-width="3"/>
+    <text x="62" y="572" font-size="27" font-weight="bold">Invite an existing account</text>
+    <text x="62" y="611" font-size="22">Get owner acceptance; inventory live work.</text>
+    <text x="62" y="645" font-size="22">Prove access separately: the invitation</text>
+    <text x="62" y="679" font-size="22">adds no default admin role.</text>
+    <text x="38" y="764" font-size="26" font-weight="bold">Both paths need readiness evidence:</text>
+    <rect x="38" y="782" width="684" height="108" rx="15" fill="#e5f1f4" stroke="#285669" stroke-width="3"/>
+    <text x="62" y="823" font-size="25" font-weight="bold">2  Reconcile the approved baseline</text>
+    <text x="62" y="858" font-size="22">OU, policies, logging and control status.</text>
+    <rect x="38" y="904" width="684" height="108" rx="15" fill="#e5f1f4" stroke="#285669" stroke-width="3"/>
+    <text x="62" y="945" font-size="25" font-weight="bold">3  Test scoped access and workload</text>
+    <text x="62" y="980" font-size="22">Allowed, denied and recovery checks.</text>
+    <rect x="38" y="1026" width="684" height="107" rx="15" fill="#fff1d7" stroke="#8b6018" stroke-width="3"/>
+    <text x="62" y="1067" font-size="25" font-weight="bold">4  Named owner accepts the evidence</text>
+    <text x="62" y="1102" font-size="22">Include cost, recovery and next review date.</text>
+    <text x="38" y="1181" font-size="22" fill="#883e32">Partial failure? Stop, inspect and reconcile.</text>
+    <text x="38" y="1216" font-size="21" fill="#365262">Fictional design; no organization account was created.</text>
+  </g>
+</svg>

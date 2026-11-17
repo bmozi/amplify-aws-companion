@@ -1,0 +1,40 @@
+# Skill practice assessor routes
+
+Open only after saving the learner attempt. The linked internal review documents contain provisional criteria and evidence limits, not validated scoring rules.
+- SAA-C03:1.1:skill-01: [Skill 01 — Protect human and root access](../../skill-reviews/SAA-1-1.md).
+- SAA-C03:1.1:skill-02: [Skill 02 — Compose an authorization model](../../skill-reviews/SAA-1-1.md).
+- SAA-C03:1.1:skill-03: [Skill 03 — Design role-based access](../../skill-reviews/SAA-1-1.md).
+- SAA-C03:1.1:skill-04: [Skill 04 — Design account-level controls](../../skill-reviews/SAA-1-1.md).
+- SAA-C03:1.1:skill-05: [Skill 05 — Choose resource-policy access](../../skill-reviews/SAA-1-1.md).
+- SAA-C03:1.1:skill-06: [Skill 06 — Decide when workforce federation fits](../../skill-reviews/SAA-1-1.md).
+- SAA-C03:1.2:skill-01: [Skill 01 — Combine network controls](../../skill-reviews/SAA-1-2.md).
+- SAA-C03:1.2:skill-02: [Skill 02 — Segment by required communication](../../skill-reviews/SAA-1-2.md).
+- SAA-C03:1.2:skill-03: [Skill 03 — Combine application protections](../../skill-reviews/SAA-1-2.md).
+- SAA-C03:1.2:skill-04: [Skill 04 — Secure the external path](../../skill-reviews/SAA-1-2.md).
+- SAA-C03:1.3:skill-01: [Skill 01 — Translate obligations into controls](../../skill-reviews/SAA-1-3.md).
+- SAA-C03:1.3:skill-02: [Skill 02 — Protect stored data](../../skill-reviews/SAA-1-3.md).
+- SAA-C03:1.3:skill-03: [Skill 03 — Protect data connections](../../skill-reviews/SAA-1-3.md).
+- SAA-C03:1.3:skill-04: [Skill 04 — Authorize key use](../../skill-reviews/SAA-1-3.md).
+- SAA-C03:1.3:skill-05: [Skill 05 — Protect recoverable copies](../../skill-reviews/SAA-1-3.md).
+- SAA-C03:1.3:skill-06: [Skill 06 — Govern access and lifecycle](../../skill-reviews/SAA-1-3.md).
+- SAA-C03:1.3:skill-07: [Skill 07 — Maintain keys and certificates](../../skill-reviews/SAA-1-3.md).
+- SAA-C03:2.1:skill-01: [Skill 01 — Design boundaries from requirements](../../skill-reviews/SAA-2-1.md).
+- SAA-C03:2.1:skill-02: [Skill 02 — Choose scaling by the limiting resource](../../skill-reviews/SAA-2-1.md).
+- SAA-C03:2.1:skill-03: [Skill 03 — Choose a decoupling mechanism](../../skill-reviews/SAA-2-1.md).
+- SAA-C03:2.1:skill-04: [Skill 04 — Decide whether containers fit](../../skill-reviews/SAA-2-1.md).
+- SAA-C03:2.1:skill-05: [Skill 05 — Decide whether serverless fits](../../skill-reviews/SAA-2-1.md).
+- SAA-C03:2.1:skill-06: [Skill 06 — Select the whole technology path](../../skill-reviews/SAA-2-1.md).
+- SAA-C03:2.1:skill-07: [Skill 07 — Prefer a supported service when its contract fits](../../skill-reviews/SAA-2-1.md).
+- SAA-C03:3.1:skill-01: [Skill 01 — Match storage to performance requirements](../../skill-reviews/SAA-3-1.md).
+- SAA-C03:3.1:skill-02: [Skill 02 — Plan storage growth](../../skill-reviews/SAA-3-1.md).
+- SAA-C03:3.2:skill-01: [Skill 01 — Separate independently scaling work](../../skill-reviews/SAA-3-2.md).
+- SAA-C03:3.2:skill-02: [Skill 02 — Choose scaling signals and conditions](../../skill-reviews/SAA-3-2.md).
+- SAA-C03:3.2:skill-03: [Skill 03 — Match compute characteristics to requirements](../../skill-reviews/SAA-3-2.md).
+- SAA-C03:3.2:skill-04: [Skill 04 — Choose resource size from outcomes](../../skill-reviews/SAA-3-2.md).
+- SAA-C03:3.3:skill-03: [Skill 03 — Select an engine against actual compatibility needs](../../skill-reviews/SAA-3-3.md).
+- SAA-C03:3.3:skill-04: [Skill 04 — Select a database type from access and correctness requirements](../../skill-reviews/SAA-3-3.md).
+- SAA-C03:3.3:skill-05: [Skill 05 — Integrate caching against requirements](../../skill-reviews/SAA-3-3.md).
+- SAA-C03:3.4:skill-01: [Skill 01 — Draw the topology from required flows](../../skill-reviews/SAA-3-4.md).
+- SAA-C03:3.4:skill-03: [Skill 03 — Place resources using the complete operation](../../skill-reviews/SAA-3-4.md).
+- SAA-C03:3.5:skill-02: [Skill 02 — Give independent consumers recoverable progress](../../skill-reviews/SAA-3-5.md).
+- SAA-C03:3.5:skill-07: [Skill 07 — Preserve meaning while changing representation](../../skill-reviews/SAA-3-5.md).

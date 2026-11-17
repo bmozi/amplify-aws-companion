@@ -1,0 +1,37 @@
+{
+  "currency": "USD",
+  "region": "us-east-2",
+  "checked_date": "REPLACE_WITH_PRICE_CHECK_DATE",
+  "run_review": {
+    "status": "pending",
+    "account_id": "REPLACE_WITH_CONFIRMED_ACCOUNT",
+    "architecture": "A02/A03",
+    "hold_mode": "pending",
+    "schedule_mode": "pending",
+    "contact_worklist_mode": "disabled",
+    "cost_drivers": {
+      "data_transfer": {"decision": "pending", "reason": ""},
+      "tax": {"decision": "pending", "reason": ""},
+      "shared_resources": {"decision": "pending", "reason": ""},
+      "retries": {"decision": "pending", "reason": ""},
+      "repeat_runs": {"decision": "pending", "reason": ""},
+      "retained_storage": {"decision": "pending", "reason": ""},
+      "cleanup_delay": {"decision": "pending", "reason": ""}
+    }
+  },
+  "contingency_percent": 100,
+  "items": [
+    {"meter_id":"lambda_requests", "name":"Lambda requests including retries", "quantity":500, "unit":"request", "usd_per_unit":null, "source_url":"https://aws.amazon.com/lambda/pricing/"},
+    {"meter_id":"lambda_compute", "name":"Lambda compute at 128 MiB and ten-second maximum for 500 invocations", "quantity":625, "unit":"GB-second", "usd_per_unit":null, "source_url":"https://aws.amazon.com/lambda/pricing/"},
+    {"meter_id":"table_writes", "name":"DynamoDB writes including transactional preparation and retries", "quantity":5000, "unit":"write request unit", "usd_per_unit":null, "source_url":"https://aws.amazon.com/dynamodb/pricing/on-demand/"},
+    {"meter_id":"table_reads", "name":"DynamoDB reads including scans, conditions and retries", "quantity":10000, "unit":"read request unit", "usd_per_unit":null, "source_url":"https://aws.amazon.com/dynamodb/pricing/on-demand/"},
+    {"meter_id":"table_storage", "name":"DynamoDB data retained through cleanup", "quantity":0.001, "unit":"GB-month", "usd_per_unit":null, "source_url":"https://aws.amazon.com/dynamodb/pricing/on-demand/"},
+    {"meter_id":"due_gsi_writes", "name":"DynamoDB due-holds GSI write work including backfill if applicable", "quantity":5000, "unit":"write request unit", "usd_per_unit":null, "source_url":"https://aws.amazon.com/dynamodb/pricing/on-demand/"},
+    {"meter_id":"due_gsi_reads", "name":"DynamoDB due-holds GSI query reads and retries", "quantity":1000, "unit":"read request unit", "usd_per_unit":null, "source_url":"https://aws.amazon.com/dynamodb/pricing/on-demand/"},
+    {"meter_id":"due_gsi_storage", "name":"DynamoDB due-holds GSI data retained through cleanup", "quantity":0.001, "unit":"GB-month", "usd_per_unit":null, "source_url":"https://aws.amazon.com/dynamodb/pricing/on-demand/"},
+    {"meter_id":"sqs_standard_requests", "name":"SQS send receive delete and polling", "quantity":10000, "unit":"request unit", "usd_per_unit":null, "source_url":"https://aws.amazon.com/sqs/pricing/"},
+    {"meter_id":"logs_ingest", "name":"CloudWatch log ingestion", "quantity":0.01, "unit":"GB ingested", "usd_per_unit":null, "source_url":"https://aws.amazon.com/cloudwatch/pricing/"},
+    {"meter_id":"logs_retention", "name":"CloudWatch log retention until deletion", "quantity":0.001, "unit":"GB-month", "usd_per_unit":null, "source_url":"https://aws.amazon.com/cloudwatch/pricing/"}
+  ],
+  "limitations":["Illustrative usage quantities, not measured usage or hard quotas.","The GSI lines are separate from base-table estimates; check selected billing-mode units and backfill behavior before a live run.","This template covers the default manual path; the separate opt-in scheduled template and Terraform resources need their own current rate and operator review.","Fill regional prices with matching units; divide per-million prices before entering per-request rates.","No Free Tier or credits assumed. Add applicable data transfer, taxes, existing resources, budget-action charges and any other billable items.","AI provider usage is separate; set and monitor its own budget.","Repeated test runs and retained resources can exceed these assumed quantities."]
+}

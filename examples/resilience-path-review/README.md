@@ -1,0 +1,42 @@
+# Reliability path review
+
+Read [Unit 07's resilience switches lesson](../../reader/BOOK-LOCATORS.md#book-a346fb244e83ae0e) first. Keep the [separate assessor notes](ASSESSOR.md) closed until you have saved your first answers. This is a no-cloud architecture lab: it provisions nothing, changes no account settings, and estimates no AWS bill.
+
+## The fictional system
+
+Maya's repair-booking service runs in one Region. Customers reach it through Route 53 and an Application Load Balancer. Application targets run in two Availability Zones and use a database through RDS Proxy. The team also uses Amazon Comprehend to classify customer notes and Amazon Polly to read some status updates aloud. The team has object copies and scheduled recovery points, but has not recently tested a full restore. A small on-call team owns the service. All service-specific feature and cost choices remain unverified for a real workload.
+
+For every card, draw the request path and the recovery/control path. Identify the customer promise at risk, the relevant mechanism, its dependencies, the evidence needed before reopening, and the added operating or cost work. Do not award yourself credit for naming a service without explaining its role.
+
+## DOP-C02 task 3.1 resilience design route
+
+Use this route after reading Unit 07's [high-availability decision lesson](../../reader/BOOK-LOCATORS.md#book-382878fd78726415) and viewing the [availability decision-path figure](../../book/figures/availability-decision-path.svg). The current AWS exam guide lists four knowledge areas—Multi-AZ/Multi-Region, SLAs, stateful replication/failover and high-availability techniques—and five applied skills. This route practices each skill with a separate changed condition. It is a fictional whiteboard exercise: it creates no AWS resources and validates no service configuration.
+
+1. **Translate the business requirement.** Maya sets an availability objective: the booking service can accept requests for 99.9% of each calendar month. Separately, an acknowledged booking must be correct and durable. A single AZ outage may cause up to five minutes of degraded service; a Region outage may take two hours. Write the customer-facing SLO, data-loss tolerance and acceptance evidence. Explain why a provider SLA does not guarantee this whole application. Change the requirement so no confirmed booking may be lost and name the new design question.
+2. **Find and repair single points of failure.** Draw app, data, identity, keys, DNS/routing, secrets, deployment artifacts, external classification, operator access and monitoring. Mark each dependency as duplicated, service-managed, recoverable or single-copy. Remove one supposed duplicate; show whether it is truly independent and what customer journey now fails.
+3. **Enable a cross-Region path where supported.** For this fictional no-organization exercise, choose one data/service pair from S3, DynamoDB or RDS and design a second-Region copy. Identify service/Region support checks, replication lag, key access, account authority, quota, write owner and the operation needed to promote or restore. If a product feature does not fit the stated constraint, choose an alternative and explain its tradeoff. Do not create a second Region.
+4. **Configure the load-balancing design on paper.** Two application target groups sit in separate AZs. One AZ loses power; then change the fact so both groups report every target unhealthy. State how the selected load balancer's documented behavior affects traffic, what surviving capacity remains, and what overload response protects booking correctness. Separate target health from business acceptance.
+5. **Prepare the application and related services for multiple locations.** A regional failover is declared while one booking write is in flight, some customers use cached DNS, the standby is behind by 90 seconds and its worker quota is half the primary's. Specify writer fencing, client retries/reconciliation, deferred work, routing observation, readiness dependencies and the criteria for restoring full traffic. Then plan failback as a separate controlled migration.
+
+For each answer, keep three columns: **design decision**, **evidence already available**, and **evidence still required**. Consult the separate [assessor notes](ASSESSOR.md) only after the first attempt. A correct design can support partial curriculum evidence; it cannot prove actual service behavior or certification readiness.
+
+## Ten changed-condition cards
+
+1. **Global infrastructure:** One Availability Zone becomes unavailable. Then change the failure to a whole-Region outage. State which resources and data are known to exist in each recovery location, which are merely assumed, and what must be copied or rebuilt.
+2. **Managed-service boundary:** Comprehend is unavailable while new bookings still work. Decide whether classification can wait, be retried or must block a booking. Then compare that workload service with AWS Managed Services as an infrastructure-operations offering. Name what the small team would still own.
+3. **Network path:** A private application times out connecting to its database. One subnet route points to the wrong target; the database security group also denies the connection. Separate route selection from permission and name evidence that distinguishes each failure.
+4. **Distributed design:** A flood of slow photo jobs competes with urgent booking work. First run the [booking-lane capacity exercise](../bulkhead-capacity/README.md) and explain why one shared database slot defeats separate worker lanes. Then design a bounded asynchronous path or justify another isolation boundary. State what happens when the queue, worker pool or status store is unavailable.
+5. **Immutable replacement:** An operator patches one running server after a security finding. It works until the next replacement, which comes from an older image. Explain how a controlled immutable release should preserve the repair and how to roll back without hiding configuration drift.
+6. **Load balancing:** The target group reports that every target is unhealthy. Explain the ALB's documented fail-open behavior and revise the customer-facing protection and health-check design. Do not treat the health result as a universal traffic-denial control.
+7. **Database proxy:** A database failover cancels the transaction that was writing booking 8,417. The client receives a timeout. Explain what RDS Proxy can help with, what it cannot tell the caller, and how a stable operation identity plus reconciliation avoids blind duplicate booking.
+8. **Quota and throttling:** The primary Region can run 40 workers, but the recovery Region has a lower applied quota and a text-analysis service begins throttling. Calculate no prices. Decide which work waits, which quota must be checked or raised, and what limit/backpressure behavior protects the booking path.
+9. **Storage durability:** A bad retention change deletes current photos and the same unwanted state is visible in a replicated bucket. Compare object versions, replication and an independent recovery point. State what an application-level restore test must verify.
+10. **Workload visibility:** Customers report slow confirmations. A trace shows the database call consumes most of one sampled request; the dashboard has no traces for many requests. State what the trace suggests, what it does not prove, and which customer-completion, queue-age and database signals would change the response.
+
+## Transfer challenge
+
+After the learner's first design, change these conditions together: a client resolver still returns a cached endpoint, the surviving AZ has only 55% of peak capacity, and the standby quota permits 40% of required workers. Ask which promise can still be met, what work should be rejected or deferred, and what recovery evidence must be gathered before sending full traffic. A strong answer may accept degraded service. It must not invent capacity or data correctness.
+
+## Ask Codex to challenge your design
+
+Give Codex your diagram and ask it to find a hidden shared dependency, a mechanism being asked to do another mechanism's job, an untested fail-open/timeout case, a cost that repeats during standby, and a statement that exceeds the evidence. Then verify service-specific claims against the linked AWS documentation yourself. Keep your original answer, assistance used, changed-case answer and unresolved questions in the learning record. AI agreement is not independent assessment.

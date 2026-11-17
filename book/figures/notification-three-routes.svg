@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1090" role="img" aria-labelledby="title desc">
+<title id="title">Choose a notification route from the customer's promise</title>
+<desc id="desc">Three design-only routes serve different promises. For one order-ready push, the application checks consent and device identity, sends through AWS End User Messaging and examines separate provider results; an accepted API request is not proof that the customer saw it. For device registration, Amplify defineNotifications uses Auth, a generated signed API and Connect Customer Profiles; a campaign still needs separate audience, consent, schedule and measurement design. For an offer visible only inside a signed-in page, the application authorizes the exact order before showing data; this is a custom feature, not a migrated Pinpoint in-app campaign. None was deployed or sent in this lab.</desc>
+<defs><style>text{font-family:Arial,sans-serif;fill:#173340}.title{font-size:30px;font-weight:700}.head{font-size:25px;font-weight:700}.body{font-size:22px}.note{font-size:20px}</style></defs>
+<rect width="800" height="1090" fill="#fff"/>
+<text class="title" x="34" y="52">Start with the promise, then choose the path</text>
+<text class="body" x="34" y="91">A registration, a send and a private page do different jobs.</text>
+<rect x="32" y="126" width="736" height="250" rx="14" fill="#edf5f6" stroke="#315b6a" stroke-width="2"/>
+<text class="head" x="55" y="166">1 · One order-ready push</text>
+<text class="body" x="55" y="207">Check consent and the intended device.</text>
+<text class="body" x="55" y="245">Send through End User Messaging Push.</text>
+<text class="body" x="55" y="283">Inspect provider events and follow up.</text>
+<text class="note" x="55" y="343">API acceptance does not prove device display.</text>
+<rect x="32" y="396" width="736" height="304" rx="14" fill="#eaf4ed" stroke="#39704b" stroke-width="2"/>
+<text class="head" x="55" y="436">2 · Register devices for later outreach</text>
+<text class="body" x="55" y="477">Amplify Auth + signed registration API</text>
+<text class="body" x="55" y="515">→ Connect Customer Profiles.</text>
+<text class="body" x="55" y="553">Review push channel secrets and resources.</text>
+<text class="body" x="55" y="591">Design the campaign separately:</text>
+<text class="note" x="55" y="628">audience, consent, timing and measurement.</text>
+<text class="note" x="55" y="672">Default setup can create Connect + a domain.</text>
+<rect x="32" y="720" width="736" height="258" rx="14" fill="#f0eff8" stroke="#62598b" stroke-width="2"/>
+<text class="head" x="55" y="760">3 · Show a private offer on the site</text>
+<text class="body" x="55" y="801">Sign in; authorize the exact order.</text>
+<text class="body" x="55" y="839">Read selected data; render the page.</text>
+<text class="note" x="55" y="902">A custom app feature, not a migrated</text>
+<text class="note" x="55" y="933">Pinpoint in-app campaign.</text>
+<text class="note" x="34" y="1024">Design only: no Connect resource, provider credential,</text>
+<text class="note" x="34" y="1056">message, recipient or AWS credit used here.</text>
+</svg>

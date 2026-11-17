@@ -1,0 +1,4 @@
+{"account":"111111111111","region":"us-east-1","group":"/app/bookings","event_id":"evt-203","event_time":"2026-10-27T14:00:00Z","result":"confirmed"}
+{"account":"111111111111","region":"us-east-1","group":"/app/bookings","event_id":"evt-204","event_time":"2026-10-27T14:00:01Z","result":"database-timeout"}
+{"account":"111111111111","region":"us-east-1","group":"/app/bookings","event_id":"evt-204","event_time":"2026-10-27T14:00:01Z","result":"database-timeout"}
+{"account":"111111111111","region":"us-east-1","group":"/app/bookings","event_id":"evt-205","event_time":"2026-10-27T14:00:02Z","result":"confirmed"}

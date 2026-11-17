@@ -1,0 +1,9 @@
+# Assessor: arrival shape and the save ceiling
+
+The even and burst traces both accept **36** photos in six buckets, an average of six per bucket. The even trace never leaves unfinished work and has no late photos under this fixture's rule. The burst trace leaves **8** unfinished after bucket 2 and **16** after bucket 3. It clears the remaining work in buckets 4 and 5; **six** bucket-3 photos finish in bucket 5 and count late. These values depend on FIFO, whole-bucket arrivals, a ten-per-minute completion ceiling and the chosen “more than one numbered bucket” rule.
+
+More worker capacity alone leaves the save ceiling at ten, so the burst result is unchanged. When **both** hypothetical stages can handle twelve, the burst peaks at **12** unfinished and clears in bucket 4 with **zero** late by this rule. This does not prove a database can safely save twelve per minute, nor that the customer experienced under two minutes of elapsed wait.
+
+For the transfer, moving six photos from bucket 2 to bucket 0 yields `(6, 0, 12, 18, 0, 0)`. Under the ten-per-minute ceiling, there are 2 unfinished after bucket 2, 10 after bucket 3 and zero after bucket 4; none is more than one numbered bucket late. The six-bucket average is unchanged. A learner should derive the rows from the actual edited run and explain why changing the **shape** changed the outcome. Alternative edited traces need their own row-level answer, not this memorized result.
+
+Award credit for preserving total demand, naming the downstream ceiling, calculating unfinished work after each bucket and keeping model evidence separate from AWS or customer measurements. Reject “the average is below capacity, so every job is on time,” “twelve workers mean twelve saved results,” and any claim that this local fixture authorizes a paid cloud scale test. A useful next experiment would use representative timestamps and service-time distributions with an explicit customer deadline and bounded cost plan.

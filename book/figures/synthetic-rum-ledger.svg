@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="688" viewBox="0 0 360 688" role="img" aria-labelledby="title desc">
+  <title id="title">Three evidence windows on a booking journey</title>
+  <desc id="desc">A scripted synthetic visitor checks one chosen path, sampled real browsers report some client experiences, and a separate accepted-work ledger records promised business work. Each window answers a different question. A green synthetic check or an empty real-user sample cannot establish that all customers succeeded.</desc>
+  <defs>
+    <style>text{font-family:Arial,sans-serif;fill:#173444}.title{font-size:25px;font-weight:700}.lead{font-size:17px}.head{font-size:21px;font-weight:700}.label{font-size:19px;font-weight:700}.body{font-size:18px}.num{font-size:19px;font-weight:700;fill:#fff}</style>
+  </defs>
+  <rect width="360" height="688" fill="#fff"/>
+  <text x="18" y="35" class="title">One journey, three</text>
+  <text x="18" y="64" class="title">evidence windows</text>
+  <text x="18" y="93" class="lead">Each sees part of the booking promise.</text>
+
+  <rect x="16" y="115" width="328" height="163" rx="13" fill="#e7f1f7" stroke="#3f738e" stroke-width="2"/>
+  <circle cx="43" cy="144" r="16" fill="#3f738e"/><text x="43" y="151" class="num" text-anchor="middle">1</text>
+  <text x="68" y="151" class="head">Scripted visitor</text>
+  <text x="34" y="183" class="label">CloudWatch Synthetics</text>
+  <text x="34" y="213" class="body">One route and test identity.</text>
+  <text x="34" y="240" class="body">A pass covers this probe</text>
+  <text x="34" y="264" class="body">at this time.</text>
+
+  <rect x="16" y="291" width="328" height="163" rx="13" fill="#f0eaf8" stroke="#78619a" stroke-width="2"/>
+  <circle cx="43" cy="320" r="16" fill="#78619a"/><text x="43" y="327" class="num" text-anchor="middle">2</text>
+  <text x="68" y="327" class="head">Sampled browsers</text>
+  <text x="34" y="359" class="label">CloudWatch RUM</text>
+  <text x="34" y="389" class="body">Some real sessions, devices</text>
+  <text x="34" y="416" class="body">and client errors.</text>
+  <text x="34" y="440" class="body">No report means unknown.</text>
+
+  <rect x="16" y="467" width="328" height="163" rx="13" fill="#ebf4e8" stroke="#5c835b" stroke-width="2"/>
+  <circle cx="43" cy="496" r="16" fill="#5c835b"/><text x="43" y="503" class="num" text-anchor="middle">3</text>
+  <text x="68" y="503" class="head">Business ledger</text>
+  <text x="34" y="535" class="label">Accepted work</text>
+  <text x="34" y="565" class="body">Which requests were accepted?</text>
+  <text x="34" y="592" class="body">Which are done or still due?</text>
+  <text x="34" y="616" class="body">Check intake is complete.</text>
+
+  <text x="18" y="661" class="lead">Compare the same time and path.</text>
+</svg>

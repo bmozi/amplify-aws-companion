@@ -1,0 +1,15 @@
+{
+  "case": "Fictional standby rehearsal, no AWS prices or credit read",
+  "meters_usd": {
+    "compute": "1.50",
+    "replica_backup_storage": "1.75",
+    "transfer": "2.25",
+    "dns_logs_alarms": "0.75",
+    "test_traffic_teardown_retained": "0.50"
+  },
+  "uncertainty_rate": "0.25",
+  "other_run_whole_estimate_usd": "3.00",
+  "per_run_limit_usd": "9.00",
+  "assumed_eligible_credit_balance_usd": "100.00",
+  "reserve_floor_usd": "90.00"
+}

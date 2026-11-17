@@ -1,0 +1,13 @@
+# SAP-C02 task 1.1 knowledge review
+
+All five current official knowledge bullets now have **partial authored teaching and assessment mappings**. This is the transitional SAP-C02 baseline, not SAP-C03 coverage, exam readiness, live network evidence or measured learner understanding. The ordinals below are editorial positions in the [official task](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-02/solutions-architect-professional-02-domain1.html#solutions-architect-professional-02-domain1-task1), checked 2026-10-19.
+
+| Knowledge point | Teaching and assessment evidence | Remaining evidence |
+| --- | --- | --- |
+| 1. AWS Global Infrastructure | Unit 18 separates Region location/service choice from Availability Zone fault boundaries. The new topology packet changes customer versus office proximity and leaves data-location approval and whole-request latency unknown. | Compare actual candidate Regions, service availability, measured paths, selected resource placement and failure results. |
+| 2. AWS networking concepts | Unit 18 compares VPC peering, Transit Gateway, VPN, Direct Connect and a containerized-worker change. The packet tests the false transitive-peering inference and co-location access options. | Runtime-specific container network details, selected routes/circuits and their observed behavior and prices. |
+| 3. Hybrid DNS concepts | Unit 18 traces office-to-inbound-Resolver and VPC-to-outbound-Resolver query directions, cache limits and hostname/TLS preservation. The original hybrid cases and new topology packet require DNS query and answer ownership. | No live office resolver, private hosted zone, forwarding rule or Resolver endpoint was configured or measured. |
+| 4. Network segmentation | Unit 18 and its figure distinguish duplicate office CIDRs, unique VPC CIDRs, direct peers and explicit transit routing domains. The packet asks whether development should be reachable at all. | No subnet or TGW route table, propagation, translated mapping, security rule or effective isolation was validated in AWS. |
+| 5. Network traffic monitoring | Unit 18's evidence ladder distinguishes resolver answers, Reachability Analyzer configuration analysis, VPC Flow Log records and application results. The hybrid exercise gives an uncorrelated `ACCEPT` row and a 403, then asks what can be inferred. | No AWS logs, routes or requests were inspected; coverage, fields, cost, retention and real incident correlation need an authorized environment. |
+
+Each case is authored, with assessor notes in `examples/hybrid-design/ASSESSOR.md`. Independent technical review and learner attempts remain pending. The linked primary service documentation in unit 18 supports product-specific limits.

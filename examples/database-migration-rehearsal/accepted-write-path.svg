@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="880" viewBox="0 0 1000 880" role="img" aria-labelledby="title desc">
+<title id="title">A safe return must preserve accepted bookings</title>
+<desc id="desc">Before cutover, Source is the writer and a frozen copy is checked at Target. After cutover, Target is the writer and accepts B106, which Source lacks. Before returning to Source, control writes, preserve and reconcile accepted changes, and verify the chosen writer. An arrow showing client routing is not data movement.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#194f78"/></marker></defs>
+<rect width="1000" height="880" fill="#fff"/>
+<g font-family="Arial, sans-serif" fill="#122e45">
+<text x="40" y="46" font-size="29" font-weight="bold">A safe return must preserve accepted bookings</text>
+<text x="40" y="79" font-size="20">Follow the records, not just the direction of customer traffic.</text>
+<rect x="30" y="105" width="940" height="205" rx="12" fill="#f0f6fa" stroke="#94acbc"/>
+<text x="50" y="138" font-size="23" font-weight="bold">1  Before cutover: compare a controlled snapshot</text>
+<rect x="55" y="158" width="280" height="125" rx="8" fill="#fff" stroke="#194f78" stroke-width="2"/>
+<text x="75" y="190" font-size="23" font-weight="bold">SOURCE · writer</text>
+<text x="75" y="221" font-size="21">B101–B104</text>
+<text x="75" y="253" font-size="18">Expected frozen records</text>
+<path d="M 350 217 H 640" stroke="#194f78" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="383" y="197" font-size="19">Copy, then reconcile</text>
+<text x="372" y="248" font-size="18">IDs + fields + business rules</text>
+<rect x="665" y="158" width="280" height="125" rx="8" fill="#fff" stroke="#194f78" stroke-width="2"/>
+<text x="685" y="190" font-size="23" font-weight="bold">TARGET · candidate</text>
+<text x="685" y="221" font-size="21">Must preserve B101–B104</text>
+<text x="685" y="253" font-size="18">A count alone is insufficient</text>
+<rect x="30" y="330" width="940" height="205" rx="12" fill="#fff8e8" stroke="#a78942"/>
+<text x="50" y="363" font-size="23" font-weight="bold">2  After accepted cutover: the target gains a new booking</text>
+<rect x="55" y="383" width="280" height="125" rx="8" fill="#fff" stroke="#194f78" stroke-width="2"/>
+<text x="75" y="415" font-size="23" font-weight="bold">SOURCE · old copy</text>
+<text x="75" y="446" font-size="21">B101–B104</text>
+<text x="75" y="478" font-size="18" font-weight="bold">B106 is missing here</text>
+<text x="376" y="429" font-size="20" font-weight="bold">Client route ≠ data copy</text>
+<text x="375" y="463" font-size="18">A reverse switch loses sight</text>
+<text x="375" y="486" font-size="18">of the newly accepted booking.</text>
+<rect x="665" y="383" width="280" height="125" rx="8" fill="#fff" stroke="#194f78" stroke-width="2"/>
+<text x="685" y="415" font-size="23" font-weight="bold">TARGET · writer</text>
+<text x="685" y="446" font-size="21">B101–B104 + B106</text>
+<text x="685" y="478" font-size="18">Eli's booking is confirmed</text>
+<rect x="30" y="555" width="940" height="225" rx="12" fill="#f0f6fa" stroke="#94acbc"/>
+<text x="50" y="590" font-size="23" font-weight="bold">3  Before rollback: hold at the data-preservation gate</text>
+<rect x="55" y="613" width="255" height="108" rx="8" fill="#fff" stroke="#194f78" stroke-width="2"/>
+<text x="75" y="645" font-size="21" font-weight="bold">Control new writes</text>
+<text x="75" y="677" font-size="18">Capture accepted changes</text>
+<text x="75" y="700" font-size="18">including B106</text>
+<path d="M 320 665 H 357" stroke="#194f78" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="370" y="613" width="260" height="108" rx="8" fill="#fff" stroke="#194f78" stroke-width="2"/>
+<text x="390" y="645" font-size="21" font-weight="bold">Reconcile deliberately</text>
+<text x="390" y="677" font-size="18">Approved method; stable IDs</text>
+<text x="390" y="700" font-size="18">Handle duplicates and retries</text>
+<path d="M 640 665 H 677" stroke="#194f78" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="690" y="613" width="255" height="108" rx="8" fill="#fff" stroke="#194f78" stroke-width="2"/>
+<text x="710" y="645" font-size="21" font-weight="bold">Verify, then reopen</text>
+<text x="710" y="677" font-size="18">Check records + behavior</text>
+<text x="710" y="700" font-size="18">Reopen one chosen writer</text>
+<text x="55" y="754" font-size="19">If the deadline cannot be met, escalate the conflict; do not silently discard B106.</text>
+<text x="40" y="818" font-size="19">Conceptual sequence, not an automatic reverse-replication design.</text>
+<text x="40" y="847" font-size="19">A local MATCH proves only that the supplied frozen records agree.</text>
+</g></svg>

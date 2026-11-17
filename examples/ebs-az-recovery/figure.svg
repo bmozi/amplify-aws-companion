@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="640" viewBox="0 0 360 640" role="img" aria-labelledby="title desc">
+  <title id="title">An EBS volume stays in its Availability Zone</title>
+  <desc id="desc">Zone A contains an EC2 server and its EBS volume. A completed snapshot can create a new volume beside a replacement server in Zone B. Later writes are not in that snapshot.</desc>
+  <rect width="360" height="640" fill="#faf9f5"/>
+  <text x="22" y="37" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#143653">Where can the disk go?</text>
+  <rect x="18" y="57" width="324" height="164" rx="12" fill="#e9f3fa" stroke="#2c6695" stroke-width="2"/>
+  <text x="35" y="84" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#143653">Availability Zone A</text>
+  <rect x="35" y="102" width="129" height="67" rx="7" fill="white" stroke="#2c6695"/>
+  <text x="53" y="130" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#143653">EC2 server</text>
+  <text x="53" y="151" font-family="Arial, sans-serif" font-size="13" fill="#143653">booking app</text>
+  <path d="M164 136 H193" stroke="#2c6695" stroke-width="3"/>
+  <rect x="194" y="102" width="129" height="67" rx="7" fill="white" stroke="#2c6695"/>
+  <text x="211" y="130" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#143653">EBS volume</text>
+  <text x="211" y="151" font-family="Arial, sans-serif" font-size="13" fill="#143653">current writes</text>
+  <text x="36" y="195" font-family="Arial, sans-serif" font-size="13" fill="#143653">This attachment stays inside Zone A.</text>
+  <path d="M258 222 V257" stroke="#b77720" stroke-width="3"/>
+  <path d="M252 250 L258 259 L264 250" fill="none" stroke="#b77720" stroke-width="3"/>
+  <rect x="50" y="259" width="260" height="77" rx="9" fill="#fff2d9" stroke="#b77720" stroke-width="2"/>
+  <text x="69" y="287" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#68430b">Completed snapshot</text>
+  <text x="69" y="310" font-family="Arial, sans-serif" font-size="13" fill="#68430b">Point-in-time data; later writes absent</text>
+  <path d="M180 338 V373" stroke="#b77720" stroke-width="3"/>
+  <path d="M174 366 L180 375 L186 366" fill="none" stroke="#b77720" stroke-width="3"/>
+  <rect x="18" y="376" width="324" height="164" rx="12" fill="#e8f4ed" stroke="#287451" stroke-width="2"/>
+  <text x="35" y="403" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#18553b">Availability Zone B</text>
+  <rect x="35" y="422" width="129" height="67" rx="7" fill="white" stroke="#287451"/>
+  <text x="51" y="450" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#18553b">Replacement</text>
+  <text x="51" y="471" font-family="Arial, sans-serif" font-size="13" fill="#18553b">EC2 server</text>
+  <path d="M164 456 H193" stroke="#287451" stroke-width="3"/>
+  <rect x="194" y="422" width="129" height="67" rx="7" fill="white" stroke="#287451"/>
+  <text x="211" y="450" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#18553b">New volume</text>
+  <text x="211" y="471" font-family="Arial, sans-serif" font-size="13" fill="#18553b">from snapshot</text>
+  <text x="35" y="518" font-family="Arial, sans-serif" font-size="13" fill="#18553b">Restore, check data, then test bookings.</text>
+  <rect x="18" y="558" width="324" height="58" rx="9" fill="#163653"/>
+  <text x="34" y="583" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white">Two clocks to prove</text>
+  <text x="34" y="603" font-family="Arial, sans-serif" font-size="13" fill="white">Lost-write window (RPO) • service return (RTO)</text>
+</svg>

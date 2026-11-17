@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 510" role="img" aria-labelledby="title description">
+  <title id="title">A ready Kubernetes rollout can still return the wrong booking</title>
+  <desc id="description">A first local Deployment has two desired and two ready Pods, yet the Service returns HTTP 200 with a wrong 900-cent booking. A corrected rollout remains two of two ready and returns the expected 2300 cents. A separate worker requesting 1000 CPUs stays Pending because the local node lacks capacity.</desc>
+  <rect width="900" height="510" fill="#f8fafb"/>
+  <text x="32" y="45" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="700" fill="#173650">Three receipts for one Kubernetes change</text>
+  <text x="32" y="78" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#3c5260">Desired state, ready traffic, and the customer answer are separate facts.</text>
+  <rect x="30" y="103" width="840" height="127" rx="13" fill="#e7f1f4" stroke="#31708a" stroke-width="2"/>
+  <text x="50" y="137" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="700" fill="#173650">First rollout</text>
+  <text x="50" y="169" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#173650">Deployment: 2 desired</text>
+  <text x="304" y="169" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#173650">Pods: 2 ready</text>
+  <text x="520" y="169" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#173650">Service: HTTP 200</text>
+  <text x="50" y="204" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="700" fill="#8a3e27">Booking 42 says 900 cents; expected 2,300.</text>
+  <rect x="30" y="249" width="840" height="127" rx="13" fill="#eaf3e9" stroke="#3b7753" stroke-width="2"/>
+  <text x="50" y="283" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="700" fill="#21543b">Corrected rollout</text>
+  <text x="50" y="315" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#173650">Deployment: 2 desired</text>
+  <text x="304" y="315" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#173650">Pods: 2 ready</text>
+  <text x="520" y="315" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#173650">Service: HTTP 200</text>
+  <text x="50" y="350" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="700" fill="#21543b">Booking 42 now says the expected 2,300 cents.</text>
+  <rect x="30" y="394" width="840" height="88" rx="13" fill="#fff2db" stroke="#b37b24" stroke-width="2"/>
+  <text x="50" y="428" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="700" fill="#654812">Separate capacity case</text>
+  <text x="50" y="460" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#654812">Worker asks for 1,000 CPUs → Pending / Unschedulable.</text>
+</svg>

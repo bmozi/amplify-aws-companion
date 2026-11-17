@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 690" role="img" aria-labelledby="title desc">
+  <title id="title">An offline clinic has two receipt clocks</title>
+  <desc id="desc">The clinic device records a request in a local SQLite queue at fictional minute zero. A safety-critical request needs a local human-escalation path by minute 30; a local log at minute 20 records only that the fixture says it happened. The server cannot see the request during the outage. At minute 120 it accepts the synchronized request and gives its own receipt, while a same-ID replay at minute 121 returns the original server receipt. A missing local escalation cannot be repaired by a later server receipt. The local fixture does not prove trusted time, a human call, real identity or AWS behavior.</desc>
+  <rect width="760" height="690" fill="#f6f8fa"/>
+  <g font-family="Arial, sans-serif" fill="#173447">
+    <text x="32" y="49" font-size="30" font-weight="bold">Two receipts, two responsibilities</text>
+    <text x="32" y="79" font-size="19">Fictional two-hour clinic outage</text>
+
+    <rect x="32" y="107" width="330" height="71" rx="13" fill="#e5f2f6" stroke="#32617a" stroke-width="2.5"/>
+    <text x="52" y="140" font-size="24" font-weight="bold">Clinic device</text>
+    <text x="52" y="164" font-size="19">Local queue and staff action</text>
+    <rect x="398" y="107" width="330" height="71" rx="13" fill="#e5f2f6" stroke="#32617a" stroke-width="2.5"/>
+    <text x="418" y="140" font-size="24" font-weight="bold">Intake server</text>
+    <text x="418" y="164" font-size="19">Authoritative server receipt</text>
+
+    <rect x="32" y="201" width="330" height="106" rx="13" fill="#fff" stroke="#32617a" stroke-width="2.5"/>
+    <text x="52" y="236" font-size="23" font-weight="bold">Minute 0 · Local receipt</text>
+    <text x="52" y="268" font-size="20">Request saved on device.</text>
+    <text x="52" y="294" font-size="18" fill="#465767">Not yet received by server.</text>
+    <rect x="398" y="201" width="330" height="106" rx="13" fill="#edf1f5" stroke="#647587" stroke-width="2.5"/>
+    <text x="418" y="236" font-size="23" font-weight="bold">Minutes 0–119 · No view</text>
+    <text x="418" y="268" font-size="20">No server receipt or</text>
+    <text x="418" y="294" font-size="20">server-driven escalation.</text>
+
+    <rect x="32" y="326" width="330" height="112" rx="13" fill="#fff0d9" stroke="#956827" stroke-width="2.5"/>
+    <text x="52" y="361" font-size="23" font-weight="bold">By minute 30 · Escalate</text>
+    <text x="52" y="394" font-size="20">Critical request needs a</text>
+    <text x="52" y="421" font-size="20">local human path.</text>
+    <rect x="398" y="326" width="330" height="112" rx="13" fill="#fbe8e4" stroke="#9b4b3d" stroke-width="2.5"/>
+    <text x="418" y="361" font-size="23" font-weight="bold">A gap remains a gap</text>
+    <text x="418" y="394" font-size="20">A later sync cannot make</text>
+    <text x="418" y="421" font-size="20">a missed call on time.</text>
+
+    <rect x="32" y="457" width="330" height="110" rx="13" fill="#e5f2e9" stroke="#3a7053" stroke-width="2.5"/>
+    <text x="52" y="492" font-size="23" font-weight="bold">Minute 120 · Reconnect</text>
+    <text x="52" y="525" font-size="20">Send saved ID and contents.</text>
+    <text x="52" y="550" font-size="18" fill="#465767">Replay uses that same ID.</text>
+    <rect x="398" y="457" width="330" height="110" rx="13" fill="#e5f2e9" stroke="#3a7053" stroke-width="2.5"/>
+    <text x="418" y="492" font-size="23" font-weight="bold">Minute 120 · Accept</text>
+    <text x="418" y="525" font-size="20">Server receipt starts now.</text>
+    <text x="418" y="550" font-size="18" fill="#465767">Same-ID replay returns it.</text>
+
+    <rect x="32" y="589" width="696" height="71" rx="13" fill="#e7eef3" stroke="#7f93a1" stroke-width="2"/>
+    <text x="52" y="621" font-size="21" font-weight="bold">Evidence boundary</text>
+    <text x="52" y="646" font-size="18">A local log is not proof of a human call, trusted clock or AWS delivery.</text>
+  </g>
+</svg>

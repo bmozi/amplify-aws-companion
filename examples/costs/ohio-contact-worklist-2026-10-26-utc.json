@@ -1,0 +1,441 @@
+{
+  "currency": "USD",
+  "region": "us-east-2",
+  "checked_date": "2026-10-26",
+  "run_review": {
+    "status": "pending",
+    "account_id": "REPLACE_WITH_CONFIRMED_ACCOUNT",
+    "architecture": "A02/A03",
+    "hold_mode": "scan_and_query_due",
+    "schedule_mode": "manual_only",
+    "contact_worklist_mode": "manual_review",
+    "cost_drivers": {
+      "data_transfer": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "tax": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "shared_resources": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "retries": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "repeat_runs": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "retained_storage": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "cleanup_delay": {
+        "decision": "pending",
+        "reason": ""
+      }
+    },
+    "contact_review": {
+      "operator": "pending",
+      "planned_due_checks": null,
+      "planned_worklist_reads": null,
+      "scan_and_cursor_procedure": "pending",
+      "worklist_followup_procedure": "pending",
+      "cleanup_deadline_epoch": null
+    }
+  },
+  "contingency_percent": 100,
+  "items": [
+    {
+      "meter_id": "lambda_requests",
+      "name": "Base A02/A03 Lambda requests excluding contact-worklist invocations",
+      "quantity": 500,
+      "unit": "request",
+      "usd_per_unit": "2.000E-7",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSLambda/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "lambda_compute",
+      "name": "Base A02/A03 Lambda compute excluding contact-worklist compute",
+      "quantity": 625,
+      "unit": "GB-second",
+      "usd_per_unit": "0.0000166667",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSLambda/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "table_writes",
+      "name": "Base A02/A03 table writes excluding contact escalation writes",
+      "quantity": 5000,
+      "unit": "write request unit",
+      "usd_per_unit": "6.250E-7",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "table_reads",
+      "name": "Base A02/A03 table reads excluding contact-worklist reads",
+      "quantity": 10000,
+      "unit": "read request unit",
+      "usd_per_unit": "1.250E-7",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "table_storage",
+      "name": "DynamoDB data retained through cleanup",
+      "quantity": 0.001,
+      "unit": "GB-month",
+      "usd_per_unit": "0.2500000000",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "due_gsi_writes",
+      "name": "DynamoDB due-holds GSI write work including backfill if applicable",
+      "quantity": 5000,
+      "unit": "write request unit",
+      "usd_per_unit": "6.250E-7",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "due_gsi_reads",
+      "name": "DynamoDB due-holds GSI query reads and retries",
+      "quantity": 1000,
+      "unit": "read request unit",
+      "usd_per_unit": "1.250E-7",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "due_gsi_storage",
+      "name": "DynamoDB due-holds GSI data retained through cleanup",
+      "quantity": 0.001,
+      "unit": "GB-month",
+      "usd_per_unit": "0.2500000000",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "sqs_standard_requests",
+      "name": "SQS send receive delete and polling",
+      "quantity": 400000,
+      "unit": "request unit",
+      "usd_per_unit": "4.000E-7",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSQueueService/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "logs_ingest",
+      "name": "Base A02/A03 log ingestion excluding contact-worklist logs",
+      "quantity": 0.01,
+      "unit": "GB ingested",
+      "usd_per_unit": "0.5000000000",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "logs_retention",
+      "name": "Base A02/A03 log retention excluding contact-worklist logs",
+      "quantity": 0.001,
+      "unit": "GB-month",
+      "usd_per_unit": "0.0300000000",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "contact_scan_reads",
+      "name": "Strongly consistent contact-worklist scans and request/contact lookups including repeats",
+      "quantity": 188,
+      "unit": "read request unit",
+      "usd_per_unit": "1.250E-7",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "contact_escalation_writes",
+      "name": "Contact escalation transaction writes and retries",
+      "quantity": 32,
+      "unit": "write request unit",
+      "usd_per_unit": "6.250E-7",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "contact_lambda_requests",
+      "name": "Manual contact due-check and open-worklist Lambda invocations including repeats",
+      "quantity": 9,
+      "unit": "request",
+      "usd_per_unit": "2.000E-7",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSLambda/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "contact_lambda_compute",
+      "name": "Manual contact-worklist Lambda compute",
+      "quantity": "11.250",
+      "unit": "GB-second",
+      "usd_per_unit": "0.0000166667",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSLambda/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "contact_logs_ingest",
+      "name": "Contact-worklist CloudWatch log ingestion",
+      "quantity": "0.001",
+      "unit": "GB ingested",
+      "usd_per_unit": "0.5000000000",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "contact_logs_retention",
+      "name": "Contact-worklist CloudWatch log retention until deletion",
+      "quantity": "0.001",
+      "unit": "GB-month",
+      "usd_per_unit": "0.0300000000",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/us-east-2/index.json"
+    }
+  ],
+  "limitations": [
+    "Pending teaching scenario, not a reviewed live-run estimate, AWS bill or spending cap.",
+    "Public paid-tier rates do not subtract Free Tier or credits; service pages, credit eligibility and account state require current review.",
+    "The optional cloud handler can check due work and read open work; it cannot record customer contact.",
+    "The 188/32 contact demand is a simplified small-item allowance, neither a lower nor an upper AWS capacity bound.",
+    "The base quantities and 10-second contact duration and log buffers are assumptions; they need exact-plan, actual-item and whole-run review.",
+    "Data transfer, tax, shared resources, retries, repeat runs, retained storage and cleanup decisions remain pending.",
+    "A 100% contingency is not a hard cap. Confirm scoped identity, current account budget and USD 100 reserve before any authorized run."
+  ],
+  "scenario": {
+    "kind": "illustrative_not_authorized",
+    "contact_fixture_path": "examples/costs/contact-worklist/scenario.json",
+    "contact_fixture_sha256": "41af38818ce2fbfb1516a8c731574c15b261c9ca292fc142271ac26cd93b191f",
+    "combined_local_model": {
+      "reads": 196,
+      "writes": 40
+    },
+    "optional_cloud_handler_model": {
+      "reads": 188,
+      "writes": 32,
+      "invocations": 9
+    },
+    "excluded_local_contact_record_model": {
+      "reads": 8,
+      "writes": 8
+    },
+    "base_workload": "Template base quantities with a 400000-request SQS quiet-polling stress assumption; no current plan, traffic or cleanup review.",
+    "contact_compute": "Nine assumed invocations times 10 seconds times 0.125 GiB = 11.25 GB-seconds.",
+    "contact_logs": "0.001 GB ingestion and 0.001 GB-month retention are invented buffers."
+  },
+  "price_evidence": {
+    "checked_at_utc": "2026-10-26T03:28:14.682131+00:00",
+    "source": "AWS public Price List Bulk offer files",
+    "services": {
+      "AWSLambda": {
+        "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSLambda/current/us-east-2/index.json",
+        "publication_date": "2026-10-22T18:39:59Z",
+        "sha256": "8ef7a8fb02d8b8bc5dab4263d26b5dd524e243f0ada77897015bb0b5da53a7bf"
+      },
+      "AmazonDynamoDB": {
+        "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/us-east-2/index.json",
+        "publication_date": "2026-09-11T12:44:22Z",
+        "sha256": "6fb852c04a82fb5b92affa62d4b25d2c2e22f4ef6c961b49b98d42309ce73cf3"
+      },
+      "AWSQueueService": {
+        "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSQueueService/current/us-east-2/index.json",
+        "publication_date": "2026-09-11T12:46:07Z",
+        "sha256": "f78db035d72477c7972e79cfaa9120a595900313b67dc210a1ba4ea17f4141f8"
+      },
+      "AmazonCloudWatch": {
+        "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/us-east-2/index.json",
+        "publication_date": "2026-10-07T11:55:40Z",
+        "sha256": "a63198fe9401b27344b8f7824c1254b2cc5c22024497a7f696534b2321914ed0"
+      }
+    },
+    "meters": {
+      "lambda_requests": {
+        "service": "AWSLambda",
+        "sku": "ZEA64MMVK5QRB5TC",
+        "usage_type": "USE2-Request",
+        "aws_unit": "Request",
+        "begin_range": "0",
+        "price_dimension": "ZEA64MMVK5QRB5TC.JRTCKXETXF.6YS6EN2CT7",
+        "description": "AWS Lambda - Total Requests - US East (Ohio)",
+        "worksheet_unit": "request",
+        "priced_as": "lambda_requests"
+      },
+      "lambda_compute": {
+        "service": "AWSLambda",
+        "sku": "3BYZH4NKJN8TJUQ6",
+        "usage_type": "USE2-Lambda-GB-Second",
+        "aws_unit": "Lambda-GB-Second",
+        "begin_range": "0",
+        "price_dimension": "3BYZH4NKJN8TJUQ6.JRTCKXETXF.CUKFZ388N3",
+        "description": "AWS Lambda - Total Compute - US East (Ohio)-Tier-1",
+        "worksheet_unit": "GB-second",
+        "priced_as": "lambda_compute"
+      },
+      "table_writes": {
+        "service": "AmazonDynamoDB",
+        "sku": "GGQSXTNTRBHRVS56",
+        "usage_type": "USE2-WriteRequestUnits",
+        "aws_unit": "WriteRequestUnits",
+        "begin_range": "0",
+        "price_dimension": "GGQSXTNTRBHRVS56.JRTCKXETXF.6YS6EN2CT7",
+        "description": "$0.625 per million write request units (Ohio)",
+        "worksheet_unit": "write request unit",
+        "priced_as": "table_writes"
+      },
+      "table_reads": {
+        "service": "AmazonDynamoDB",
+        "sku": "SGMZJPDKSWXTY4VE",
+        "usage_type": "USE2-ReadRequestUnits",
+        "aws_unit": "ReadRequestUnits",
+        "begin_range": "0",
+        "price_dimension": "SGMZJPDKSWXTY4VE.JRTCKXETXF.6YS6EN2CT7",
+        "description": "$0.125 per million read request units (Ohio)",
+        "worksheet_unit": "read request unit",
+        "priced_as": "table_reads"
+      },
+      "table_storage": {
+        "service": "AmazonDynamoDB",
+        "sku": "GAHPNMT39TQ47AGG",
+        "usage_type": "USE2-TimedStorage-ByteHrs",
+        "aws_unit": "GB-Mo",
+        "begin_range": "25",
+        "price_dimension": "GAHPNMT39TQ47AGG.JRTCKXETXF.VYAP54KATQ",
+        "description": "$0.25 per GB-Month of storage used beyond first 25 free GB-Months",
+        "worksheet_unit": "GB-month",
+        "priced_as": "table_storage"
+      },
+      "due_gsi_writes": {
+        "service": "AmazonDynamoDB",
+        "sku": "GGQSXTNTRBHRVS56",
+        "usage_type": "USE2-WriteRequestUnits",
+        "aws_unit": "WriteRequestUnits",
+        "begin_range": "0",
+        "price_dimension": "GGQSXTNTRBHRVS56.JRTCKXETXF.6YS6EN2CT7",
+        "description": "$0.625 per million write request units (Ohio)",
+        "worksheet_unit": "write request unit",
+        "priced_as": "due_gsi_writes"
+      },
+      "due_gsi_reads": {
+        "service": "AmazonDynamoDB",
+        "sku": "SGMZJPDKSWXTY4VE",
+        "usage_type": "USE2-ReadRequestUnits",
+        "aws_unit": "ReadRequestUnits",
+        "begin_range": "0",
+        "price_dimension": "SGMZJPDKSWXTY4VE.JRTCKXETXF.6YS6EN2CT7",
+        "description": "$0.125 per million read request units (Ohio)",
+        "worksheet_unit": "read request unit",
+        "priced_as": "due_gsi_reads"
+      },
+      "due_gsi_storage": {
+        "service": "AmazonDynamoDB",
+        "sku": "GAHPNMT39TQ47AGG",
+        "usage_type": "USE2-TimedStorage-ByteHrs",
+        "aws_unit": "GB-Mo",
+        "begin_range": "25",
+        "price_dimension": "GAHPNMT39TQ47AGG.JRTCKXETXF.VYAP54KATQ",
+        "description": "$0.25 per GB-Month of storage used beyond first 25 free GB-Months",
+        "worksheet_unit": "GB-month",
+        "priced_as": "due_gsi_storage"
+      },
+      "sqs_standard_requests": {
+        "service": "AWSQueueService",
+        "sku": "9C8YFGPNBKF9HP9A",
+        "usage_type": "USE2-Requests-Tier1",
+        "aws_unit": "Requests",
+        "begin_range": "0",
+        "price_dimension": "9C8YFGPNBKF9HP9A.JRTCKXETXF.VXGXCWQKTY",
+        "description": "$0.40 per million Amazon SQS standard requests in Tier1 in US East (Ohio)",
+        "worksheet_unit": "request unit",
+        "priced_as": "sqs_standard_requests"
+      },
+      "logs_ingest": {
+        "service": "AmazonCloudWatch",
+        "sku": "5T6Z6V26DSR7SZ49",
+        "usage_type": "USE2-DataProcessing-Bytes",
+        "aws_unit": "GB",
+        "begin_range": "0",
+        "price_dimension": "5T6Z6V26DSR7SZ49.JRTCKXETXF.6YS6EN2CT7",
+        "description": "$0.50 per GB custom log data ingested in Standard log class - US East (Ohio)",
+        "worksheet_unit": "GB ingested",
+        "priced_as": "logs_ingest"
+      },
+      "logs_retention": {
+        "service": "AmazonCloudWatch",
+        "sku": "X7X4WD4A95NDR9U5",
+        "usage_type": "USE2-TimedStorage-ByteHrs",
+        "aws_unit": "GB-Mo",
+        "begin_range": "0",
+        "price_dimension": "X7X4WD4A95NDR9U5.JRTCKXETXF.6YS6EN2CT7",
+        "description": "$0.03 per GB-mo of log storage - US East (Ohio)",
+        "worksheet_unit": "GB-month",
+        "priced_as": "logs_retention"
+      },
+      "contact_scan_reads": {
+        "service": "AmazonDynamoDB",
+        "sku": "SGMZJPDKSWXTY4VE",
+        "usage_type": "USE2-ReadRequestUnits",
+        "aws_unit": "ReadRequestUnits",
+        "begin_range": "0",
+        "price_dimension": "SGMZJPDKSWXTY4VE.JRTCKXETXF.6YS6EN2CT7",
+        "description": "$0.125 per million read request units (Ohio)",
+        "worksheet_unit": "read request unit",
+        "priced_as": "table_reads"
+      },
+      "contact_escalation_writes": {
+        "service": "AmazonDynamoDB",
+        "sku": "GGQSXTNTRBHRVS56",
+        "usage_type": "USE2-WriteRequestUnits",
+        "aws_unit": "WriteRequestUnits",
+        "begin_range": "0",
+        "price_dimension": "GGQSXTNTRBHRVS56.JRTCKXETXF.6YS6EN2CT7",
+        "description": "$0.625 per million write request units (Ohio)",
+        "worksheet_unit": "write request unit",
+        "priced_as": "table_writes"
+      },
+      "contact_lambda_requests": {
+        "service": "AWSLambda",
+        "sku": "ZEA64MMVK5QRB5TC",
+        "usage_type": "USE2-Request",
+        "aws_unit": "Request",
+        "begin_range": "0",
+        "price_dimension": "ZEA64MMVK5QRB5TC.JRTCKXETXF.6YS6EN2CT7",
+        "description": "AWS Lambda - Total Requests - US East (Ohio)",
+        "worksheet_unit": "request",
+        "priced_as": "lambda_requests"
+      },
+      "contact_lambda_compute": {
+        "service": "AWSLambda",
+        "sku": "3BYZH4NKJN8TJUQ6",
+        "usage_type": "USE2-Lambda-GB-Second",
+        "aws_unit": "Lambda-GB-Second",
+        "begin_range": "0",
+        "price_dimension": "3BYZH4NKJN8TJUQ6.JRTCKXETXF.CUKFZ388N3",
+        "description": "AWS Lambda - Total Compute - US East (Ohio)-Tier-1",
+        "worksheet_unit": "GB-second",
+        "priced_as": "lambda_compute"
+      },
+      "contact_logs_ingest": {
+        "service": "AmazonCloudWatch",
+        "sku": "5T6Z6V26DSR7SZ49",
+        "usage_type": "USE2-DataProcessing-Bytes",
+        "aws_unit": "GB",
+        "begin_range": "0",
+        "price_dimension": "5T6Z6V26DSR7SZ49.JRTCKXETXF.6YS6EN2CT7",
+        "description": "$0.50 per GB custom log data ingested in Standard log class - US East (Ohio)",
+        "worksheet_unit": "GB ingested",
+        "priced_as": "logs_ingest"
+      },
+      "contact_logs_retention": {
+        "service": "AmazonCloudWatch",
+        "sku": "X7X4WD4A95NDR9U5",
+        "usage_type": "USE2-TimedStorage-ByteHrs",
+        "aws_unit": "GB-Mo",
+        "begin_range": "0",
+        "price_dimension": "X7X4WD4A95NDR9U5.JRTCKXETXF.6YS6EN2CT7",
+        "description": "$0.03 per GB-mo of log storage - US East (Ohio)",
+        "worksheet_unit": "GB-month",
+        "priced_as": "logs_retention"
+      }
+    },
+    "service_pricing_pages": {
+      "AWSLambda": "https://aws.amazon.com/lambda/pricing/",
+      "AmazonDynamoDB": "https://aws.amazon.com/dynamodb/pricing/",
+      "AWSQueueService": "https://aws.amazon.com/sqs/pricing/",
+      "AmazonCloudWatch": "https://aws.amazon.com/cloudwatch/pricing/"
+    }
+  }
+}

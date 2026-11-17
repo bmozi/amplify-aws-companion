@@ -1,0 +1,25 @@
+{
+  "case_id": "repair-042",
+  "account": "111122223333",
+  "region": "us-east-2",
+  "endpoint": "bedrock-runtime",
+  "request_id": "model-request-042",
+  "collection": {
+    "invocation_logging": {"enabled": true, "account": "111122223333", "region": "us-east-2"},
+    "agent_tracing": {"enabled": true, "account": "111122223333", "region": "us-east-2"}
+  },
+  "cloudtrail": [
+    {"eventType": "AwsApiCall", "eventName": "ConverseStream", "endpoint": "bedrock-runtime", "request_id": "model-request-042", "account": "111122223333", "region": "us-east-2"},
+    {"eventType": "AwsServiceEvent", "eventName": "ConverseStream", "endpoint": "bedrock-runtime", "parent_request_id": "model-request-042", "account": "111122223333", "region": "us-east-2"},
+    {"eventType": "AwsApiCall", "eventName": "ConverseStream", "endpoint": "bedrock-runtime", "request_id": "other-account-request", "account": "999900001111", "region": "us-east-2"}
+  ],
+  "invocation_logs": [
+    {"request_id": "model-request-042", "case_id": "repair-042", "account": "111122223333", "region": "us-east-2", "input_contains_synthetic_marker": true, "response_masked": true}
+  ],
+  "agent_traces": [
+    {"case_id": "repair-042", "account": "111122223333", "region": "us-east-2", "steps": ["read approved policy", "propose answer"]}
+  ],
+  "business_receipts": [
+    {"case_id": "repair-042", "account": "111122223333", "region": "us-east-2", "status": "human_review_required"}
+  ]
+}

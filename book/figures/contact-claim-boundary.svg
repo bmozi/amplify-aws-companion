@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1080" viewBox="0 0 800 1080" role="img" aria-labelledby="title desc">
+<title id="title">Taking a customer ticket is not contacting the customer</title>
+<desc id="desc">An overdue request, a temporary operator claim, a first-contact record, and the customer's actual experience are different facts. If a claim expires, reconcile the outcome before trying another call. The overdue clock does not restart. Fictional local lesson only.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#426b79"/></marker></defs>
+<rect width="800" height="1080" fill="#f7faf9"/>
+<g font-family="Arial,sans-serif" fill="#173b4d">
+<text x="42" y="60" font-size="31" font-weight="700">Taking the ticket is not calling</text><text x="42" y="98" font-size="31" font-weight="700">the customer</text>
+<text x="42" y="136" font-size="21" fill="#3b5b67">One overdue request; four different facts</text>
+</g>
+<g font-family="Arial,sans-serif">
+<rect x="42" y="170" width="716" height="142" rx="14" fill="#e6f0f2" stroke="#527d89" stroke-width="3"/>
+<text x="66" y="211" font-size="27" font-weight="700" fill="#173b4d">1  Open work</text><text x="66" y="248" font-size="22" fill="#24424f">The request is overdue. Someone owes action.</text><text x="66" y="283" font-size="20" font-weight="700" fill="#1d687a">Evidence: worklist entry</text>
+<path d="M400 317V348" stroke="#426b79" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="42" y="356" width="716" height="142" rx="14" fill="#fbefd5" stroke="#ab812e" stroke-width="3"/>
+<text x="66" y="397" font-size="27" font-weight="700" fill="#173b4d">2  Temporary claim</text><text x="66" y="434" font-size="22" fill="#24424f">Operator A owns the next attempt for a while.</text><text x="66" y="469" font-size="20" font-weight="700" fill="#8d600a">Evidence: lease, not a completed call</text>
+<path d="M400 503V534" stroke="#426b79" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="42" y="542" width="716" height="142" rx="14" fill="#e8f1e8" stroke="#638a6d" stroke-width="3"/>
+<text x="66" y="583" font-size="27" font-weight="700" fill="#173b4d">3  First-contact record</text><text x="66" y="620" font-size="22" fill="#24424f">A matching live claim writes one local time.</text><text x="66" y="655" font-size="20" font-weight="700" fill="#396a48">Evidence: fixture attestation</text>
+<path d="M400 689V720" stroke="#426b79" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="42" y="728" width="716" height="142" rx="14" fill="#ece9f3" stroke="#807199" stroke-width="3"/>
+<text x="66" y="769" font-size="27" font-weight="700" fill="#173b4d">4  Customer experience</text><text x="66" y="806" font-size="22" fill="#24424f">Did Maya hear from a person, and when?</text><text x="66" y="841" font-size="20" font-weight="700" fill="#695987">Evidence: outside this local lab</text>
+<rect x="42" y="897" width="716" height="133" rx="14" fill="#fff0e9" stroke="#bb7966" stroke-width="3"/>
+<text x="66" y="937" font-size="23" font-weight="700" fill="#883d2e">If the claim expires before the record</text><text x="66" y="972" font-size="20" fill="#24424f">Reconcile whether A called before B tries again.</text><text x="66" y="1005" font-size="20" fill="#24424f">A lease cannot erase a call or restart the clock.</text>
+</g><text x="42" y="1059" font-family="Arial,sans-serif" font-size="17" fill="#4b6571">Fictional SQLite lesson; no actual call or AWS contact service</text>
+</svg>

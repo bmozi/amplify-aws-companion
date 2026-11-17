@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 700" role="img" aria-labelledby="title desc">
+<title id="title">A Region shortlist has hard gates and unknowns</title>
+<desc id="desc">Four numbered gates check customer data-location and service features, whole-path latency and cost with credit reserve, compatible sustainability evidence, and a paper shortlist. A violated hard rule rejects a fictional candidate. Missing cost or impact evidence remains pending. This exercise changes no Region and proves no carbon improvement.</desc>
+<rect width="760" height="700" fill="#f6f8fa"/>
+<g font-family="Arial, sans-serif">
+<text x="34" y="51" font-size="30" font-weight="bold" fill="#173447">Choose a Region with evidence</text>
+<text x="34" y="82" font-size="19" font-weight="normal" fill="#173447">Fictional comparison · no Region is changed</text>
+<rect x="34" y="112" width="330" height="151" rx="15" fill="#e5f2f6" stroke="#32617a" stroke-width="2.5"/>
+<text x="54" y="148" font-size="24" font-weight="bold" fill="#173447">1  Customer rules</text>
+<text x="54" y="182" font-size="21" font-weight="normal" fill="#173447">Allowed data location and</text>
+<text x="54" y="211" font-size="21" font-weight="normal" fill="#173447">required service features.</text>
+<text x="54" y="246" font-size="19" font-weight="normal" fill="#465767">A failed rule rejects.</text>
+<rect x="396" y="112" width="330" height="151" rx="15" fill="#e5f2f6" stroke="#32617a" stroke-width="2.5"/>
+<text x="416" y="148" font-size="24" font-weight="bold" fill="#173447">2  Whole path</text>
+<text x="416" y="182" font-size="21" font-weight="normal" fill="#173447">Latency, transfer, copies,</text>
+<text x="416" y="211" font-size="21" font-weight="normal" fill="#173447">cost and credit reserve.</text>
+<text x="416" y="246" font-size="19" font-weight="normal" fill="#465767">Unknown cost stays pending.</text>
+<rect x="34" y="284" width="330" height="151" rx="15" fill="#fff0d9" stroke="#956827" stroke-width="2.5"/>
+<text x="54" y="320" font-size="24" font-weight="bold" fill="#173447">3  Compare impact</text>
+<text x="54" y="354" font-size="21" font-weight="normal" fill="#173447">Same workload, boundary,</text>
+<text x="54" y="383" font-size="21" font-weight="normal" fill="#173447">period and method.</text>
+<text x="54" y="418" font-size="19" font-weight="normal" fill="#465767">Toy scores prove no carbon.</text>
+<rect x="396" y="284" width="330" height="151" rx="15" fill="#e5f2e9" stroke="#3a7053" stroke-width="2.5"/>
+<text x="416" y="320" font-size="24" font-weight="bold" fill="#173447">4  Paper shortlist</text>
+<text x="416" y="354" font-size="21" font-weight="normal" fill="#173447">Candidate for more evidence,</text>
+<text x="416" y="383" font-size="21" font-weight="normal" fill="#173447">not permission to move.</text>
+<text x="416" y="418" font-size="19" font-weight="normal" fill="#465767">Keep cost and stop gates.</text>
+<rect x="34" y="463" width="330" height="155" rx="15" fill="#fbe8e4" stroke="#9b4b3d" stroke-width="2.5"/>
+<text x="54" y="499" font-size="24" font-weight="bold" fill="#173447">Reject: hard rule fails</text>
+<text x="54" y="533" font-size="21" font-weight="normal" fill="#173447">A lower toy score cannot</text>
+<text x="54" y="562" font-size="21" font-weight="normal" fill="#173447">override data residency</text>
+<text x="54" y="591" font-size="21" font-weight="normal" fill="#173447">or a missing feature.</text>
+<rect x="396" y="463" width="330" height="155" rx="15" fill="#edf1f5" stroke="#647587" stroke-width="2.5"/>
+<text x="416" y="499" font-size="24" font-weight="bold" fill="#173447">Hold: evidence missing</text>
+<text x="416" y="533" font-size="21" font-weight="normal" fill="#173447">Unknown cost is not zero.</text>
+<text x="416" y="562" font-size="21" font-weight="normal" fill="#173447">Incompatible impact</text>
+<text x="416" y="591" font-size="21" font-weight="normal" fill="#173447">methods cannot be ranked.</text>
+<text x="34" y="662" font-size="19" font-weight="normal" fill="#415a69">A shortlist is a question to investigate, not an AWS deployment.</text>
+</g>
+</svg>

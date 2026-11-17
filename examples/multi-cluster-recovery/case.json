@@ -1,0 +1,13 @@
+{
+  "fictional": true,
+  "customer_promise_minutes": "30",
+  "observed_recovery_minutes": "unknown",
+  "gates": {
+    "reviewed_image_and_config": true,
+    "target_capacity": true,
+    "data_checkpoint_within_rpo": false,
+    "key_and_identity_access": true,
+    "customer_path_healthy": true,
+    "old_writer_fenced": true
+  }
+}

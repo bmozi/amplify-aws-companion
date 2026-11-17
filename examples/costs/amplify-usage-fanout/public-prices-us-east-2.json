@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "status": "public on-demand rates; selected meters only; not a whole-run estimate",
+  "region": "us-east-2",
+  "checked_at_utc": "2026-10-25T03:49:20.158120+00:00",
+  "offers": {
+    "AWSAmplify": {
+      "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSAmplify/current/us-east-2/index.json",
+      "sha256": "0a8a40fb7a4f803604790ee99b0dfffc236545fd99a10a92863fb4bfa072522c",
+      "publication_date": "2026-09-11T12:45:22Z",
+      "version": "20260911124522"
+    },
+    "AWSAppSync": {
+      "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSAppSync/current/us-east-2/index.json",
+      "sha256": "9b6effe7eac2d8ad4dc17218ec1ea812cd693b6a86195ea5c5e7085afed1925d",
+      "publication_date": "2026-09-11T12:45:25Z",
+      "version": "20260911124525"
+    },
+    "AWSLambda": {
+      "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSLambda/current/us-east-2/index.json",
+      "sha256": "8ef7a8fb02d8b8bc5dab4263d26b5dd524e243f0ada77897015bb0b5da53a7bf",
+      "publication_date": "2026-10-22T18:39:59Z",
+      "version": "20261022183959"
+    },
+    "AmazonCloudWatch": {
+      "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/us-east-2/index.json",
+      "sha256": "a63198fe9401b27344b8f7824c1254b2cc5c22024497a7f696534b2321914ed0",
+      "publication_date": "2026-10-07T11:55:40Z",
+      "version": "20261007115540"
+    },
+    "AmazonCognito": {
+      "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCognito/current/us-east-2/index.json",
+      "sha256": "75f27bf18a15a5241b1d7d23bc5501a1fff1b38d04cf2d0cbac5f5d261abe87b",
+      "publication_date": "2026-10-20T23:38:14Z",
+      "version": "20261020233814"
+    },
+    "AmazonDynamoDB": {
+      "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/us-east-2/index.json",
+      "sha256": "6fb852c04a82fb5b92affa62d4b25d2c2e22f4ef6c961b49b98d42309ce73cf3",
+      "publication_date": "2026-09-11T12:44:22Z",
+      "version": "20260911124422"
+    },
+    "AmazonS3": {
+      "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonS3/current/us-east-2/index.json",
+      "sha256": "52b93329ad3e132d8195b27b027907322a7a142fafef301d55073605826452da",
+      "publication_date": "2026-10-15T17:35:40Z",
+      "version": "20261015173540"
+    }
+  },
+  "rates": {
+    "hosting_storage_gb_month": {
+      "service": "AWSAmplify",
+      "sku": "9K3KMT4SNEZXVD7F",
+      "usage_type": "USE2-DataStorage",
+      "begin_range": "0",
+      "unit": "GigaBytes",
+      "usd_per_unit": "0.0230000000"
+    },
+    "hosting_transfer_gb": {
+      "service": "AWSAmplify",
+      "sku": "U83YJUBMQZM9DJ9J",
+      "usage_type": "USE2-DataTransferOut",
+      "begin_range": "0",
+      "unit": "GigaBytes",
+      "usd_per_unit": "0.1500000000"
+    },
+    "amplify_waf_month_if_enabled": {
+      "service": "AWSAmplify",
+      "sku": "R3ZW332F5SWHG4FM",
+      "usage_type": "USE2-AmplifyWAF",
+      "begin_range": "0",
+      "unit": "Months",
+      "usd_per_unit": "15.0000000000"
+    },
+    "cognito_essentials_mau_before_free_tier": {
+      "service": "AmazonCognito",
+      "sku": "NQKE2UA6GA2HDANG",
+      "usage_type": "USE2-CognitoEssentialsMAU",
+      "begin_range": "0",
+      "unit": "CognitoUserPoolsMAU",
+      "usd_per_unit": "0.0150000000"
+    },
+    "appsync_graphql_operation": {
+      "service": "AWSAppSync",
+      "sku": "B53XVVE928PX2Y76",
+      "usage_type": "USE2-GraphQLInvocation",
+      "begin_range": "0",
+      "unit": "Requests",
+      "usd_per_unit": "0.0000040000"
+    },
+    "appsync_realtime_message": {
+      "service": "AWSAppSync",
+      "sku": "NVPN927XH8PD55J7",
+      "usage_type": "USE2-GraphQLNotification",
+      "begin_range": "0",
+      "unit": "Messages",
+      "usd_per_unit": "0.0000020000"
+    },
+    "appsync_connection_minute": {
+      "service": "AWSAppSync",
+      "sku": "PGKDMBCRWY5CHV76",
+      "usage_type": "USE2-ConnectionDuration",
+      "begin_range": "0",
+      "unit": "Minutes",
+      "usd_per_unit": "0.0000000800"
+    },
+    "appsync_cache_hour_if_enabled": {
+      "service": "AWSAppSync",
+      "sku": "BP5H5S6JS9QN4WVM",
+      "usage_type": "USE2-AppSyncCacheUsage:1.55GB",
+      "begin_range": "0",
+      "unit": "Hrs",
+      "usd_per_unit": "0.0440000000"
+    },
+    "dynamodb_on_demand_read_unit": {
+      "service": "AmazonDynamoDB",
+      "sku": "SGMZJPDKSWXTY4VE",
+      "usage_type": "USE2-ReadRequestUnits",
+      "begin_range": "0",
+      "unit": "ReadRequestUnits",
+      "usd_per_unit": "0.0000001250"
+    },
+    "dynamodb_on_demand_write_unit": {
+      "service": "AmazonDynamoDB",
+      "sku": "GGQSXTNTRBHRVS56",
+      "usage_type": "USE2-WriteRequestUnits",
+      "begin_range": "0",
+      "unit": "WriteRequestUnits",
+      "usd_per_unit": "0.0000006250"
+    },
+    "dynamodb_standard_storage_gb_month_beyond_free_tier": {
+      "service": "AmazonDynamoDB",
+      "sku": "GAHPNMT39TQ47AGG",
+      "usage_type": "USE2-TimedStorage-ByteHrs",
+      "begin_range": "25",
+      "unit": "GB-Mo",
+      "usd_per_unit": "0.2500000000"
+    },
+    "s3_standard_storage_gb_month": {
+      "service": "AmazonS3",
+      "sku": "YPGKVRB2EKTVDJDT",
+      "usage_type": "USE2-TimedStorage-ByteHrs",
+      "begin_range": "0",
+      "unit": "GB-Mo",
+      "usd_per_unit": "0.0230000000"
+    },
+    "s3_put_or_list_request": {
+      "service": "AmazonS3",
+      "sku": "GJKK9PMSTKPNGZS9",
+      "usage_type": "USE2-Requests-Tier1",
+      "begin_range": "0",
+      "unit": "Requests",
+      "usd_per_unit": "0.0000050000"
+    },
+    "s3_get_request": {
+      "service": "AmazonS3",
+      "sku": "DJEKB32FV4HNZJZY",
+      "usage_type": "USE2-Requests-Tier2",
+      "begin_range": "0",
+      "unit": "Requests",
+      "usd_per_unit": "0.0000004000"
+    },
+    "lambda_request": {
+      "service": "AWSLambda",
+      "sku": "ZEA64MMVK5QRB5TC",
+      "usage_type": "USE2-Request",
+      "begin_range": "0",
+      "unit": "Request",
+      "usd_per_unit": "0.0000002000"
+    },
+    "lambda_gb_second_tier_1": {
+      "service": "AWSLambda",
+      "sku": "3BYZH4NKJN8TJUQ6",
+      "usage_type": "USE2-Lambda-GB-Second",
+      "begin_range": "0",
+      "unit": "Lambda-GB-Second",
+      "usd_per_unit": "0.0000166667"
+    },
+    "cloudwatch_standard_log_ingest_gb": {
+      "service": "AmazonCloudWatch",
+      "sku": "5T6Z6V26DSR7SZ49",
+      "usage_type": "USE2-DataProcessing-Bytes",
+      "begin_range": "0",
+      "unit": "GB",
+      "usd_per_unit": "0.5000000000"
+    },
+    "cloudwatch_standard_log_storage_gb_month": {
+      "service": "AmazonCloudWatch",
+      "sku": "X7X4WD4A95NDR9U5",
+      "usage_type": "USE2-TimedStorage-ByteHrs",
+      "begin_range": "0",
+      "unit": "GB-Mo",
+      "usd_per_unit": "0.0300000000"
+    }
+  }
+}

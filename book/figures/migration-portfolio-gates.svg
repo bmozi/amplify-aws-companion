@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 345" role="img" aria-labelledby="title desc">
+  <title id="title">Migration portfolio decision gates</title>
+  <desc id="desc">Four numbered gates in reading order: inventory business capabilities, owners and dependency evidence; choose a seven-R strategy for each workload and compare full twelve-month cost; schedule dependency groups within team capacity and the change window; then rehearse, reconcile and obtain business-owner acceptance. An unknown critical link at scheduling returns the plan to inventory and discovery. Every wave needs licensing, recovery, overlap, retained-copy and current-rate evidence. A green migration task status does not establish business acceptance.</desc>
+  <defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#18313d}.title{font-size:25px;font-weight:700}.sub{font-size:16px}.head{font-size:20px;font-weight:700}.body{font-size:17px}.note{font-size:16px}.return{fill:#8d382d;font-weight:700}.card{stroke-width:2;rx:11}</style></defs>
+  <rect width="700" height="345" fill="#fff"/>
+  <text x="22" y="35" class="title">Four gates before naming a migration date</text>
+  <text x="22" y="56" class="sub">A green tool status does not prove the business can use the target.</text>
+  <rect class="card" x="20" y="70" width="317" height="99" fill="#edf5f6" stroke="#315c6e"/>
+  <text x="36" y="98" class="head">1 · Inventory</text>
+  <text x="36" y="127" class="body">Owner + purpose + dependencies</text>
+  <text x="36" y="153" class="note">Observed / confirmed / unknown</text>
+  <rect class="card" x="363" y="70" width="317" height="99" fill="#f7f1df" stroke="#856c2b"/>
+  <text x="379" y="98" class="head">2 · Compare</text>
+  <text x="379" y="127" class="body">7R strategy per workload</text>
+  <text x="379" y="153" class="note">Full 12-month cost</text>
+  <rect class="card" x="20" y="182" width="317" height="99" fill="#eaf4ed" stroke="#3d7450"/>
+  <text x="36" y="210" class="head">3 · Schedule</text>
+  <text x="36" y="239" class="body">Linked work + team capacity</text>
+  <text x="36" y="265" class="note return">Unknown link? Return to 1.</text>
+  <rect class="card" x="363" y="182" width="317" height="99" fill="#f0eff8" stroke="#62598b"/>
+  <text x="379" y="210" class="head">4 · Accept</text>
+  <text x="379" y="239" class="body">Rehearse + reconcile</text>
+  <text x="379" y="265" class="note">Owner accepts customer result</text>
+  <rect x="20" y="293" width="660" height="45" rx="9" fill="#e9eff2" stroke="#315c6e" stroke-width="2"/>
+  <text x="34" y="312" class="note">Cost evidence: license + recovery + overlap + retained copies + current rates.</text>
+  <text x="34" y="331" class="note">Business check: bookings, attachments and payment references still work.</text>
+</svg>

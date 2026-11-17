@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="800" viewBox="0 0 900 800" role="img" aria-labelledby="title desc">
+<title id="title">A local round-robin model differs from Amazon SQS fair queues</title>
+<desc id="desc">The local model has exact A1, B1, A2 dispatch and a four-waiting-jobs-per-tenant limit. Amazon SQS standard fair queues use a trusted MessageGroupId to prioritize quiet groups when another is noisy, without that exact order, a per-tenant quota or FIFO. Both need tenant authority and customer-outcome evidence. Current A02/A03 is not a fair-queue run.</desc>
+<defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#17334a}.title{font-size:34px;font-weight:700}.head{font-size:30px;font-weight:700}.body{font-size:27px}.note{font-size:23px}.strong{font-size:28px;font-weight:700}</style></defs>
+<rect width="900" height="800" fill="#fff"/>
+<text class="title" x="42" y="53">One problem. Different promises.</text>
+<text class="note" x="42" y="91">A quiet shop waits while another shop fills the line.</text>
+<rect x="42" y="112" width="816" height="244" rx="18" fill="#e5f1f8" stroke="#397b9b" stroke-width="3"/>
+<text class="head" x="70" y="152">Local round-robin exercise</text>
+<text class="body" x="70" y="191">Shop A: A1  A2  A3  A4</text>
+<text class="body" x="70" y="224">Shop B: B1</text>
+<rect x="70" y="239" width="760" height="51" rx="10" fill="#fff" stroke="#9bb6c5" stroke-width="2"/>
+<text class="strong" x="93" y="274">Exact dispatch: A1 → B1 → A2</text>
+<text class="note" x="70" y="317">Four waiting jobs per shop, then reject.</text>
+<text class="note" x="70" y="345">Timing belongs only to this local fixture.</text>
+<rect x="42" y="375" width="816" height="245" rx="18" fill="#fff1da" stroke="#ad7e32" stroke-width="3"/>
+<text class="head" x="70" y="415">Amazon SQS standard fair queue</text>
+<text class="body" x="70" y="454">Producer sets a trusted MessageGroupId.</text>
+<text class="body" x="70" y="487">SQS detects a noisy group.</text>
+<rect x="70" y="502" width="760" height="51" rx="10" fill="#fff" stroke="#c9ad7a" stroke-width="2"/>
+<text class="strong" x="93" y="537">Prioritize quiet-group delivery</text>
+<text class="note" x="70" y="580">No exact slot, per-tenant quota or FIFO promise.</text>
+<text class="note" x="70" y="608">Grouped requests add a fair-queue price meter.</text>
+<rect x="42" y="639" width="816" height="137" rx="15" fill="#eaf0f5" stroke="#9bb1c0" stroke-width="2"/>
+<text class="strong" x="70" y="677">Both need the application boundary</text>
+<text class="note" x="70" y="711">Verify tenant membership, handle duplicates,</text>
+<text class="note" x="70" y="739">and measure customer completion.</text>
+<text class="note" x="70" y="767">Design comparison; A02/A03 is not a fair-queue run.</text>
+</svg>

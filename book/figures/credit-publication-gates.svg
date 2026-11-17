@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550" role="img" aria-labelledby="title desc">
+  <title id="title">Four checks before one bounded credit-funded run</title>
+  <desc id="desc">Check that the account plan remains eligible, the applicable credits are enabled and unexpired, the whole run fits a limit and reserve chosen for this account, and one named owner will stop, remove, and reconcile the run. Missing evidence means hold. These checks are neither deployment permission nor a spending cap.</desc>
+  <defs>
+    <style>
+      text { font-family: Arial, sans-serif; fill: #17364a; }
+      .heading { font-size: 33px; font-weight: 700; }
+      .intro { font-size: 25px; }
+      .name { font-size: 27px; font-weight: 700; }
+      .question { font-size: 24px; }
+      .limit { font-size: 22px; fill: #35556a; }
+      .hold { fill: #753e38; }
+      .card { stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="900" height="550" fill="#fff"/>
+  <text class="heading" x="38" y="49">Before one credit-funded AWS run</text>
+  <text class="intro" x="38" y="86">A balance is only the first clue.</text>
+
+  <rect class="card" x="38" y="111" width="405" height="159" rx="15" fill="#e7f2f7" stroke="#3d718e"/>
+  <text class="name" x="62" y="148">1  Account plan</text>
+  <text class="question" x="62" y="184">Eligible through the run?</text>
+  <text class="limit" x="62" y="219">Balance does not show</text>
+  <text class="limit" x="62" y="246">service access.</text>
+
+  <rect class="card" x="457" y="111" width="405" height="159" rx="15" fill="#e9f5ee" stroke="#3f805b"/>
+  <text class="name" x="481" y="148">2  Credit terms</text>
+  <text class="question" x="481" y="184">Enabled and unexpired?</text>
+  <text class="limit" x="481" y="219">Applicable to the exact</text>
+  <text class="limit" x="481" y="246">proposed charges?</text>
+
+  <rect class="card" x="38" y="282" width="405" height="159" rx="15" fill="#fff3df" stroke="#ad7730"/>
+  <text class="name" x="62" y="319">3  Whole-run estimate</text>
+  <text class="question" x="62" y="355">Within your chosen limit?</text>
+  <text class="limit" x="62" y="390">Preserve the credit reserve</text>
+  <text class="limit" x="62" y="417">chosen for this account.</text>
+
+  <rect class="card" x="457" y="282" width="405" height="159" rx="15" fill="#f0edfa" stroke="#745a9a"/>
+  <text class="name" x="481" y="319">4  Run and cleanup</text>
+  <text class="question" x="481" y="355">One active lab and owner?</text>
+  <text class="limit" x="481" y="390">Name stop, removal and</text>
+  <text class="limit" x="481" y="417">later billing checks.</text>
+
+  <rect class="card" x="38" y="454" width="824" height="72" rx="15" fill="#f8e9e6" stroke="#9b554c"/>
+  <text class="name hold" x="62" y="485">Missing evidence → HOLD</text>
+  <text class="limit" x="62" y="513">These checks do not authorize or cap spending.</text>
+</svg>

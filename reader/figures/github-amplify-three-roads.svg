@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 730" role="img" aria-labelledby="title desc">
+  <title id="title">Three roads from GitHub source to an Amplify-hosted result</title>
+  <desc id="desc">A shared source shelf leads to three distinct paths: connected Git Hosting with branch auto build, a deliberately started static ZIP upload, and preview self-managed hosting with owned AWS resources. Each path has its own trigger and stop control. A final note separates stopping releases from removing the served site.</desc>
+  <rect width="720" height="730" fill="#fbfaf6"/>
+  <g font-family="Arial,Helvetica,sans-serif" fill="#12334b">
+    <text x="34" y="48" font-size="30" font-weight="700">One source shelf. Three delivery roads.</text>
+    <rect x="34" y="72" width="652" height="64" rx="12" fill="#e7eff7" stroke="#326a96" stroke-width="2"/>
+    <text x="360" y="112" text-anchor="middle" font-size="25" font-weight="700">GitHub source ≠ served website</text>
+    <rect x="34" y="164" width="652" height="156" rx="15" fill="#e9f2f8" stroke="#3b7199" stroke-width="2"/>
+    <text x="56" y="202" font-size="25" font-weight="700">Option 1  Connected Git Hosting</text>
+    <text x="56" y="237" font-size="19">Connected branch → Amplify build → managed site</text>
+    <text x="56" y="274" font-size="19" fill="#244c68">Stop: disable that branch's auto build;</text>
+    <text x="56" y="300" font-size="19" fill="#244c68">check other triggers and active jobs.</text>
+    <rect x="34" y="349" width="652" height="156" rx="15" fill="#eaf4ee" stroke="#467b58" stroke-width="2"/>
+    <text x="56" y="387" font-size="25" font-weight="700">Option 2  Deliberate static upload</text>
+    <text x="56" y="422" font-size="19">Own build + ZIP → manual/CI upload → managed site</text>
+    <text x="56" y="459" font-size="19" fill="#285b3b">Stop: disable the uploader's trigger;</text>
+    <text x="56" y="485" font-size="19" fill="#285b3b">check its role and active deployments.</text>
+    <rect x="34" y="534" width="652" height="156" rx="15" fill="#fff1dc" stroke="#a77836" stroke-width="2"/>
+    <text x="56" y="572" font-size="25" font-weight="700">Option 3  Self-managed hosting preview</text>
+    <text x="56" y="607" font-size="19">Own deployment → owned distribution and storage</text>
+    <text x="56" y="644" font-size="19" fill="#785123">Stop: disable its pipeline or command path;</text>
+    <text x="56" y="670" font-size="19" fill="#785123">inventory its separate AWS resources.</text>
+    <text x="360" y="718" text-anchor="middle" font-size="19" font-weight="700">Stopping new releases does not remove yesterday's site.</text>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+{
+  "weekly_peak_success_per_second": [420, 480, 540, 600],
+  "planning_next_peak_success_per_second": 660,
+  "retry_overhead_percent": "10",
+  "layouts": [
+    {
+      "name": "current_two_zones",
+      "zone_attempt_capacity_per_second": {"az_a": 700, "az_b": 700},
+      "shared_data_attempt_capacity_per_second": 750
+    },
+    {
+      "name": "candidate_three_zones",
+      "zone_attempt_capacity_per_second": {"az_a": 450, "az_b": 450, "az_c": 450},
+      "shared_data_attempt_capacity_per_second": 750
+    }
+  ],
+  "proposed_launch": {
+    "requested_workers": 4,
+    "applied_quota_headroom_workers": 4,
+    "compatible_placement_workers": 2,
+    "image_role_permission_verified": false,
+    "registered_and_business_ready_workers": 0
+  }
+}

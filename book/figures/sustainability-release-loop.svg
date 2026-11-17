@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 650" role="img" aria-labelledby="title desc">
+  <title id="title">Improving a site requires separate build and customer-outcome evidence</title>
+  <desc id="desc">The process names a customer task and resource question, checks source and a small browser build, requires manual approval plus an enabled publication gate and scoped role, then observes the served version and customer task. A disabled gate holds the release. Build effort such as runner time and repeat jobs is recorded separately from correct customer task completion and recovery; job starts alone are not energy or carbon measurements.</desc>
+  <rect width="760" height="650" fill="#f7f9fb"/>
+  <g font-family="Arial, sans-serif" fill="#173447">
+    <text x="40" y="56" font-size="30" font-weight="700">Improve the site; measure the result</text>
+    <text x="40" y="87" font-size="19">Release path · the gate controls publication.</text>
+  </g>
+  <g font-family="Arial, sans-serif" stroke-width="2.5">
+    <rect x="40" y="112" width="326" height="135" rx="14" fill="#e5f0f5" stroke="#286079"/>
+    <text x="59" y="146" font-size="22" font-weight="700" fill="#173e52">1  Name the change</text>
+    <text x="59" y="178" font-size="18" fill="#24485b">Customer task and resource</text>
+    <text x="59" y="205" font-size="18" fill="#24485b">question; keep the baseline.</text>
+    <rect x="394" y="112" width="326" height="135" rx="14" fill="#e5f0f5" stroke="#286079"/>
+    <text x="413" y="146" font-size="22" font-weight="700" fill="#173e52">2  Check the source</text>
+    <text x="413" y="178" font-size="18" fill="#24485b">Typecheck and small browser</text>
+    <text x="413" y="205" font-size="18" fill="#24485b">build; count both jobs.</text>
+    <rect x="40" y="264" width="326" height="135" rx="14" fill="#fff0d9" stroke="#ae7c34"/>
+    <text x="59" y="299" font-size="22" font-weight="700" fill="#704c1e">3  Approve release</text>
+    <text x="59" y="331" font-size="18" fill="#704c1e">Manual yes + enabled switch</text>
+    <text x="59" y="358" font-size="18" fill="#704c1e">+ scoped role. Off means hold.</text>
+    <rect x="394" y="264" width="326" height="135" rx="14" fill="#e5f2e9" stroke="#397253"/>
+    <text x="413" y="299" font-size="22" font-weight="700" fill="#24583d">4  Observe result</text>
+    <text x="413" y="331" font-size="18" fill="#315c47">Served version, customer task</text>
+    <text x="413" y="358" font-size="18" fill="#315c47">and rollback route.</text>
+    <rect x="40" y="420" width="326" height="130" rx="14" fill="#edf2f8" stroke="#637c9b"/>
+    <text x="59" y="455" font-size="22" font-weight="700" fill="#344b74">Build effort</text>
+    <text x="59" y="488" font-size="18" fill="#344b74">Runner time, installs, bytes,</text>
+    <text x="59" y="516" font-size="18" fill="#344b74">failed and repeated jobs.</text>
+    <rect x="394" y="420" width="326" height="130" rx="14" fill="#edf2f8" stroke="#637c9b"/>
+    <text x="413" y="455" font-size="22" font-weight="700" fill="#344b74">Customer result</text>
+    <text x="413" y="488" font-size="18" fill="#344b74">Correct task, latency, device</text>
+    <text x="413" y="516" font-size="18" fill="#344b74">behavior and recovery.</text>
+  </g>
+  <text x="40" y="592" font-family="Arial, sans-serif" font-size="19" fill="#40596b">Compare the same outcome before changing the process.</text>
+  <text x="40" y="620" font-family="Arial, sans-serif" font-size="19" fill="#40596b">Job starts alone do not measure energy or carbon.</text>
+</svg>

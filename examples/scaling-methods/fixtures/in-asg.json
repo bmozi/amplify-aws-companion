@@ -1,0 +1,15 @@
+{
+  "os": "linux",
+  "ram_gib": 8,
+  "root_volume_gib": 40,
+  "os_and_application_gib": 20,
+  "working_space_gib": 8,
+  "ami_hibernation_support_verified": true,
+  "regional_instance_type_support_verified": true,
+  "hibernation_enabled_at_launch": true,
+  "root_is_ebs": true,
+  "root_volume_type": "gp3",
+  "root_is_encrypted": true,
+  "managed_by_auto_scaling": true,
+  "depends_on_instance_store": false
+}

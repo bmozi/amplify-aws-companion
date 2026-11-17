@@ -1,0 +1,71 @@
+{
+  "scope": "Fictional design assertions, Regions, balances and cost estimates. No AWS account readback.",
+  "cases": [
+    {
+      "id": "direct-reviewed-route",
+      "source": {"account": "booking", "region": "us-east-1"},
+      "destination": {"account": "operations", "region": "us-west-2", "region_supported": true},
+      "test_event": {"source": "shop.deploy", "operation_id": "deploy-42"},
+      "forwarding_rule": {"source_pattern": "shop.deploy", "target_region": "us-west-2", "role_can_put_events": true, "dlq_region": "us-east-1", "dlq_policy_reviewed": true},
+      "receiving_bus": {"allowed_sender_accounts": ["booking"]},
+      "receiving_rule": {"account_filter": ["booking"], "source_filter": "shop.deploy", "target_permission_reviewed": true, "dlq_region": "us-west-2", "dlq_policy_reviewed": true},
+      "recovery": {"third_bus_hop": false, "archive_source_bus": "booking-source", "replay_destination_bus": "booking-source", "operation_id_deduplication_reviewed": true, "failure_owner_named": true},
+      "cost": {"included_meters": ["source_events", "forwarded_events", "dlq", "archive", "target", "logs"], "estimated_gross_usd": 8, "run_limit_usd": 12, "gross_headroom_usd": 15, "credit_balance_usd": 60, "credit_reserve_usd": 40}
+    },
+    {
+      "id": "bus-policy-only",
+      "source": {"account": "booking", "region": "us-east-1"},
+      "destination": {"account": "operations", "region": "us-west-2", "region_supported": true},
+      "test_event": {"source": "shop.deploy", "operation_id": "deploy-43"},
+      "forwarding_rule": {"source_pattern": "shop.deploy", "target_region": "us-west-2", "role_can_put_events": false, "dlq_region": "us-east-1", "dlq_policy_reviewed": true},
+      "receiving_bus": {"allowed_sender_accounts": ["booking"]},
+      "receiving_rule": {"account_filter": ["booking"], "source_filter": "shop.deploy", "target_permission_reviewed": true, "dlq_region": "us-west-2", "dlq_policy_reviewed": true},
+      "recovery": {"third_bus_hop": false, "archive_source_bus": "booking-source", "replay_destination_bus": "booking-source", "operation_id_deduplication_reviewed": true, "failure_owner_named": true},
+      "cost": {"included_meters": ["source_events", "forwarded_events", "dlq", "archive", "target", "logs"], "estimated_gross_usd": 8, "run_limit_usd": 12, "gross_headroom_usd": 15, "credit_balance_usd": 60, "credit_reserve_usd": 40}
+    },
+    {
+      "id": "broad-receiver-rule",
+      "source": {"account": "booking", "region": "us-east-1"},
+      "destination": {"account": "operations", "region": "us-west-2", "region_supported": true},
+      "test_event": {"source": "shop.deploy", "operation_id": "deploy-44"},
+      "forwarding_rule": {"source_pattern": "shop.deploy", "target_region": "us-west-2", "role_can_put_events": true, "dlq_region": "us-east-1", "dlq_policy_reviewed": true},
+      "receiving_bus": {"allowed_sender_accounts": ["booking", "training"]},
+      "receiving_rule": {"account_filter": [], "source_filter": "shop.deploy", "target_permission_reviewed": true, "dlq_region": "us-west-2", "dlq_policy_reviewed": true},
+      "recovery": {"third_bus_hop": false, "archive_source_bus": "booking-source", "replay_destination_bus": "booking-source", "operation_id_deduplication_reviewed": true, "failure_owner_named": true},
+      "cost": {"included_meters": ["source_events", "forwarded_events", "dlq", "archive", "target", "logs"], "estimated_gross_usd": 8, "run_limit_usd": 12, "gross_headroom_usd": 15, "credit_balance_usd": 60, "credit_reserve_usd": 40}
+    },
+    {
+      "id": "third-hop-and-wrong-replay",
+      "source": {"account": "booking", "region": "us-east-1"},
+      "destination": {"account": "operations", "region": "us-west-2", "region_supported": true},
+      "test_event": {"source": "shop.deploy", "operation_id": "deploy-45"},
+      "forwarding_rule": {"source_pattern": "shop.deploy", "target_region": "us-west-2", "role_can_put_events": true, "dlq_region": "us-east-1", "dlq_policy_reviewed": true},
+      "receiving_bus": {"allowed_sender_accounts": ["booking"]},
+      "receiving_rule": {"account_filter": ["booking"], "source_filter": "shop.deploy", "target_permission_reviewed": true, "dlq_region": "us-west-2", "dlq_policy_reviewed": true},
+      "recovery": {"third_bus_hop": true, "archive_source_bus": "booking-source", "replay_destination_bus": "operations-bus", "operation_id_deduplication_reviewed": true, "failure_owner_named": true},
+      "cost": {"included_meters": ["source_events", "forwarded_events", "dlq", "archive", "target", "logs"], "estimated_gross_usd": 8, "run_limit_usd": 12, "gross_headroom_usd": 15, "credit_balance_usd": 60, "credit_reserve_usd": 40}
+    },
+    {
+      "id": "lost-failure-and-duplicate-effect",
+      "source": {"account": "booking", "region": "us-east-1"},
+      "destination": {"account": "operations", "region": "us-west-2", "region_supported": true},
+      "test_event": {"source": "shop.deploy", "operation_id": "deploy-46"},
+      "forwarding_rule": {"source_pattern": "shop.deploy", "target_region": "us-west-2", "role_can_put_events": true, "dlq_region": "us-west-2", "dlq_policy_reviewed": false},
+      "receiving_bus": {"allowed_sender_accounts": ["booking"]},
+      "receiving_rule": {"account_filter": ["booking"], "source_filter": "shop.deploy", "target_permission_reviewed": false, "dlq_region": "us-east-1", "dlq_policy_reviewed": false},
+      "recovery": {"third_bus_hop": false, "archive_source_bus": "booking-source", "replay_destination_bus": "booking-source", "operation_id_deduplication_reviewed": false, "failure_owner_named": true},
+      "cost": {"included_meters": ["source_events", "forwarded_events", "dlq", "archive", "target", "logs"], "estimated_gross_usd": 8, "run_limit_usd": 12, "gross_headroom_usd": 15, "credit_balance_usd": 60, "credit_reserve_usd": 40}
+    },
+    {
+      "id": "reserve-is-not-routing-permission",
+      "source": {"account": "booking", "region": "us-east-1"},
+      "destination": {"account": "operations", "region": "us-west-2", "region_supported": true},
+      "test_event": {"source": "shop.deploy", "operation_id": "deploy-47"},
+      "forwarding_rule": {"source_pattern": "shop.deploy", "target_region": "us-west-2", "role_can_put_events": true, "dlq_region": "us-east-1", "dlq_policy_reviewed": true},
+      "receiving_bus": {"allowed_sender_accounts": ["booking"]},
+      "receiving_rule": {"account_filter": ["booking"], "source_filter": "shop.deploy", "target_permission_reviewed": true, "dlq_region": "us-west-2", "dlq_policy_reviewed": true},
+      "recovery": {"third_bus_hop": false, "archive_source_bus": "booking-source", "replay_destination_bus": "booking-source", "operation_id_deduplication_reviewed": true, "failure_owner_named": true},
+      "cost": {"included_meters": ["source_events", "forwarded_events", "dlq", "archive", "target", "logs"], "estimated_gross_usd": 8, "run_limit_usd": 12, "gross_headroom_usd": 15, "credit_balance_usd": 45, "credit_reserve_usd": 40}
+    }
+  ]
+}

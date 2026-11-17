@@ -1,0 +1,22 @@
+{
+  "retrieved_on": "2026-10-27",
+  "source": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-03/solutions-architect-professional-03.html",
+  "exam_code": "SAP-C03",
+  "source_location": "artifacts/sap-c03-source-2026-10-27/ (ignored local retrieval)",
+  "sha256": {
+    "solutions-architect-professional-03.md": "1c885c86dde11760d6fb67fb68805740b38159c0a2e73a624c785a0e706f3582",
+    "solutions-architect-professional-03-domain1.md": "d8d96170f30f9ef56ce9211618e96a6b26004a0bc50b93027ca37b752443f6d0",
+    "solutions-architect-professional-03-domain2.md": "29b6394993ec50b8016c1e0530fac0135f52eaa3a0ec8d5c5389c701941221e0",
+    "solutions-architect-professional-03-domain3.md": "89c26aa70678aeb8ca1d34f9e4e7042666453d3fc8f14192c98e60bcc4ecdd01",
+    "solutions-architect-professional-03-domain4.md": "f8eb48cffa15fc1ce869d07a15fb8b925737ab7256ab90b51ff7a4b6cb885087",
+    "solutions-architect-professional-03-domain5.md": "a71c3a9cd4a373ce2bde31176fb9a591e864dd01ceadb933f37ba64aabc9ebd5",
+    "sap-03-in-scope-services.md": "940750709a507a8f024c99c27dd1935bb00ea760bfe23836b4c4a4587c67518c",
+    "sap-03-comparison.md": "09837681ae75bbbf658738391d1b004b8716a15188cda6e4aed99c5d641bb76f"
+  },
+  "domain_weights_percent": [25, 25, 15, 15, 20],
+  "task_counts": [5, 5, 4, 3, 4],
+  "numbered_skill_counts": [34, 24, 19, 17, 21],
+  "total_tasks": 21,
+  "total_numbered_skills": 115,
+  "coverage_claim": "none; task routes require manual skill-level review"
+}

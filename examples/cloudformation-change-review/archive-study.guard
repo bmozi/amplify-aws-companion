@@ -1,0 +1,34 @@
+# Fictional archive lesson invariants. These are specific to the two named
+# resources; they do not establish effective permissions in AWS.
+
+rule archive_public_access {
+    Resources.ArchiveBucket.Properties.PublicAccessBlockConfiguration.BlockPublicAcls == true
+    Resources.ArchiveBucket.Properties.PublicAccessBlockConfiguration.BlockPublicPolicy == true
+    Resources.ArchiveBucket.Properties.PublicAccessBlockConfiguration.IgnorePublicAcls == true
+    Resources.ArchiveBucket.Properties.PublicAccessBlockConfiguration.RestrictPublicBuckets == true
+}
+
+rule archive_data_defaults {
+    Resources.ArchiveBucket.Properties.BucketEncryption.ServerSideEncryptionConfiguration[0].ServerSideEncryptionByDefault.SSEAlgorithm == "AES256"
+    Resources.ArchiveBucket.Properties.VersioningConfiguration.Status == "Enabled"
+    Resources.ArchiveBucket.DeletionPolicy == "Retain"
+    Resources.ArchiveBucket.UpdateReplacePolicy == "Retain"
+}
+
+rule transport_policy_retained {
+    Resources.TransportPolicy.Type == "AWS::S3::BucketPolicy"
+    Resources.TransportPolicy.DeletionPolicy == "Retain"
+    Resources.TransportPolicy.UpdateReplacePolicy == "Retain"
+    Resources.TransportPolicy.Properties.Bucket.Ref == "ArchiveBucket"
+}
+
+rule transport_denies_non_tls {
+    Resources.TransportPolicy.Properties.PolicyDocument.Statement !empty
+    Resources.TransportPolicy.Properties.PolicyDocument.Statement[0].Effect == "Deny"
+    Resources.TransportPolicy.Properties.PolicyDocument.Statement[0].Principal == "*"
+    Resources.TransportPolicy.Properties.PolicyDocument.Statement[0].Action == "s3:*"
+    Resources.TransportPolicy.Properties.PolicyDocument.Statement[0].Resource[0]."Fn::GetAtt"[0] == "ArchiveBucket"
+    Resources.TransportPolicy.Properties.PolicyDocument.Statement[0].Resource[0]."Fn::GetAtt"[1] == "Arn"
+    Resources.TransportPolicy.Properties.PolicyDocument.Statement[0].Resource[1]."Fn::Sub" == "${ArchiveBucket.Arn}/*"
+    Resources.TransportPolicy.Properties.PolicyDocument.Statement[0].Condition.Bool."aws:SecureTransport" == "false"
+}

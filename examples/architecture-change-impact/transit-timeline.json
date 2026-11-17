@@ -1,0 +1,21 @@
+{
+  "clock": "Minutes after 17:00 on one fictional day",
+  "facts": [
+    {"version": 1, "confirmed_minute": 0, "state": "closed"},
+    {"version": 2, "confirmed_minute": 3, "state": "clear"},
+    {"version": 3, "confirmed_minute": 4, "state": "closed"}
+  ],
+  "consent_changes": [
+    {"recipient": "rider-a", "minute": 0, "allowed": true},
+    {"recipient": "rider-b", "minute": 0, "allowed": true},
+    {"recipient": "rider-b", "minute": 5, "allowed": false}
+  ],
+  "events": [
+    {"id": "early-v1", "kind": "send", "minute": 1, "version": 1, "recipient": "rider-a", "channel": "text", "accepted_by_channel": true},
+    {"id": "late-all-clear", "kind": "send", "minute": 5, "version": 2, "recipient": "rider-a", "channel": "text", "accepted_by_channel": false},
+    {"id": "opted-out", "kind": "send", "minute": 6, "version": 3, "recipient": "rider-b", "channel": "text", "accepted_by_channel": false},
+    {"id": "text-accepted", "kind": "send", "minute": 6, "version": 3, "recipient": "rider-a", "channel": "text", "accepted_by_channel": true},
+    {"id": "app-observed", "kind": "observation", "minute": 7, "version": 3, "recipient": "rider-a", "channel": "app"},
+    {"id": "old-stop-display", "kind": "observation", "minute": 7, "version": 1, "recipient": "diverted-stop", "channel": "public_stop"}
+  ]
+}

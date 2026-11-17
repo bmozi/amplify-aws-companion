@@ -1,0 +1,198 @@
+{
+  "currency": "USD",
+  "region": "us-east-2",
+  "checked_date": "REPLACE_WITH_PRICE_CHECK_DATE",
+  "run_review": {
+    "status": "pending",
+    "account_id": "REPLACE_WITH_CONFIRMED_ACCOUNT",
+    "architecture": "A02/A03",
+    "hold_mode": "pending",
+    "schedule_mode": "manual_only",
+    "contact_worklist_mode": "manual_review",
+    "cost_drivers": {
+      "data_transfer": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "tax": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "shared_resources": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "retries": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "repeat_runs": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "retained_storage": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "cleanup_delay": {
+        "decision": "pending",
+        "reason": ""
+      }
+    },
+    "contact_review": {
+      "operator": "pending",
+      "planned_due_checks": null,
+      "planned_worklist_reads": null,
+      "scan_and_cursor_procedure": "pending",
+      "worklist_followup_procedure": "pending",
+      "cleanup_deadline_epoch": null
+    }
+  },
+  "contingency_percent": 100,
+  "items": [
+    {
+      "meter_id": "lambda_requests",
+      "name": "Base A02/A03 Lambda requests excluding contact-worklist invocations",
+      "quantity": 500,
+      "unit": "request",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/lambda/pricing/"
+    },
+    {
+      "meter_id": "lambda_compute",
+      "name": "Base A02/A03 Lambda compute excluding contact-worklist compute",
+      "quantity": 625,
+      "unit": "GB-second",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/lambda/pricing/"
+    },
+    {
+      "meter_id": "table_writes",
+      "name": "Base A02/A03 table writes excluding contact escalation writes",
+      "quantity": 5000,
+      "unit": "write request unit",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/dynamodb/pricing/on-demand/"
+    },
+    {
+      "meter_id": "table_reads",
+      "name": "Base A02/A03 table reads excluding contact-worklist reads",
+      "quantity": 10000,
+      "unit": "read request unit",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/dynamodb/pricing/on-demand/"
+    },
+    {
+      "meter_id": "table_storage",
+      "name": "DynamoDB data retained through cleanup",
+      "quantity": 0.001,
+      "unit": "GB-month",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/dynamodb/pricing/on-demand/"
+    },
+    {
+      "meter_id": "due_gsi_writes",
+      "name": "DynamoDB due-holds GSI write work including backfill if applicable",
+      "quantity": 5000,
+      "unit": "write request unit",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/dynamodb/pricing/on-demand/"
+    },
+    {
+      "meter_id": "due_gsi_reads",
+      "name": "DynamoDB due-holds GSI query reads and retries",
+      "quantity": 1000,
+      "unit": "read request unit",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/dynamodb/pricing/on-demand/"
+    },
+    {
+      "meter_id": "due_gsi_storage",
+      "name": "DynamoDB due-holds GSI data retained through cleanup",
+      "quantity": 0.001,
+      "unit": "GB-month",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/dynamodb/pricing/on-demand/"
+    },
+    {
+      "meter_id": "sqs_standard_requests",
+      "name": "SQS send receive delete and polling",
+      "quantity": 10000,
+      "unit": "request unit",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/sqs/pricing/"
+    },
+    {
+      "meter_id": "logs_ingest",
+      "name": "Base A02/A03 log ingestion excluding contact-worklist logs",
+      "quantity": 0.01,
+      "unit": "GB ingested",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/cloudwatch/pricing/"
+    },
+    {
+      "meter_id": "logs_retention",
+      "name": "Base A02/A03 log retention excluding contact-worklist logs",
+      "quantity": 0.001,
+      "unit": "GB-month",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/cloudwatch/pricing/"
+    },
+    {
+      "meter_id": "contact_scan_reads",
+      "name": "Strongly consistent contact-worklist scans and request/contact lookups including repeats",
+      "quantity": null,
+      "unit": "read request unit",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/dynamodb/pricing/on-demand/"
+    },
+    {
+      "meter_id": "contact_escalation_writes",
+      "name": "Contact escalation transaction writes and retries",
+      "quantity": null,
+      "unit": "write request unit",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/dynamodb/pricing/on-demand/"
+    },
+    {
+      "meter_id": "contact_lambda_requests",
+      "name": "Manual contact due-check and open-worklist Lambda invocations including repeats",
+      "quantity": null,
+      "unit": "request",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/lambda/pricing/"
+    },
+    {
+      "meter_id": "contact_lambda_compute",
+      "name": "Manual contact-worklist Lambda compute",
+      "quantity": null,
+      "unit": "GB-second",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/lambda/pricing/"
+    },
+    {
+      "meter_id": "contact_logs_ingest",
+      "name": "Contact-worklist CloudWatch log ingestion",
+      "quantity": null,
+      "unit": "GB ingested",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/cloudwatch/pricing/"
+    },
+    {
+      "meter_id": "contact_logs_retention",
+      "name": "Contact-worklist CloudWatch log retention until deletion",
+      "quantity": null,
+      "unit": "GB-month",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/cloudwatch/pricing/"
+    }
+  ],
+  "limitations": [
+    "Pending template only. No current account, Free-plan credit, regional rate, operator, quantity or plan has been reviewed.",
+    "Base and contact meter rows must describe disjoint usage; do not count the same read, write, invocation or log byte twice.",
+    "Projection omits request text from contact responses but does not lower scan read capacity; price evaluated full item sizes, strong reads, pages and repeats.",
+    "A due-check invocation is one bounded page, not one complete pass. Include every cursor page and independent open-worklist reads.",
+    "A completed form cannot cap traffic or prove human contact, notification delivery, cleanup or later bill.",
+    "Keep the whole-run estimated total at or below USD 5 with at least USD 100 projected credit reserve after it; verify account-specific credit terms."
+  ]
+}

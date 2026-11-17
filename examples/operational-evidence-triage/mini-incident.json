@@ -1,0 +1,27 @@
+{
+  "incident_window": {"start": "2026-10-08T10:00:00Z", "end": "2026-10-08T10:10:00Z"},
+  "app_target": {"region": "us-east-2", "security_group_id": "sg-app"},
+  "cohorts": [
+    {"name": "prior_complete_hour", "eligible": 100, "assigned_within_30_seconds": 93},
+    {"name": "mature_incident_hour", "eligible": 100, "assigned_within_30_seconds": 81}
+  ],
+  "selected_jobs": [
+    {"job_id": "job-a", "request_id": "req-a", "state": "late_unresolved"},
+    {"job_id": "job-b", "request_id": "req-b", "state": "late_unresolved"},
+    {"job_id": "job-c", "request_id": "req-c", "state": "assigned_late"}
+  ],
+  "alb_errors": [
+    {"request_id": "req-a", "status": 503},
+    {"request_id": "req-z", "status": 502}
+  ],
+  "application_events": [
+    {"request_id": "req-a", "event": "assignment_timeout"},
+    {"request_id": "req-b", "event": "assignment_timeout"}
+  ],
+  "log_coverage": {"start": "2026-10-08T09:55:00Z", "end": "2026-10-08T10:10:00Z", "complete": false},
+  "sampled_traces": [{"request_id": "req-a", "duration_ms": 2400, "database_wait_ms": 1700}],
+  "cloudtrail_events": [{"event_id": "event-1", "time": "2026-10-08T09:58:00Z", "region": "us-east-2", "resource_id": "sg-app", "action": "AuthorizeSecurityGroupIngress"}],
+  "config_evaluations": [{"time": "2026-10-08T10:01:00Z", "region": "us-east-2", "resource_id": "sg-app", "compliance": "NON_COMPLIANT"}],
+  "inspector": {"target": "repair-function", "coverage": "Not scanning", "reason": "unsupported runtime", "findings": []},
+  "analytics_consumer_lag_seconds": 25
+}

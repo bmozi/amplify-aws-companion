@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="570" viewBox="0 0 1000 570" role="img" aria-labelledby="title desc">
+  <title id="title">A copied receipt reaches a second backend with a separate replay list</title>
+  <desc id="desc">With separate used-receipt lists, A rejects copied receipt N with 403 but B has not seen N and accepts it with 200. With one local atomic claim ledger, both reject the copy with 403 after A uses N. This loopback fixture does not close a direct route, provide a durable distributed ledger, or deduplicate a business operation.</desc>
+  <defs>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #183047; }
+      .title { font-size: 32px; font-weight: 700; }
+      .sub { font-size: 23px; }
+      .head { font-size: 28px; font-weight: 700; }
+      .body { font-size: 25px; }
+      .outcome { font-size: 29px; font-weight: 700; }
+      .note { font-size: 22px; }
+    </style>
+  </defs>
+  <rect width="1000" height="570" fill="#fff"/>
+  <text class="title" x="42" y="52">One copied receipt, two backends</text>
+  <text class="sub" x="42" y="88">A used N first. What happens when the copy reaches each worker?</text>
+
+  <rect x="42" y="118" width="438" height="301" rx="15" fill="#fff3ed" stroke="#b97058" stroke-width="2"/>
+  <text class="head" x="65" y="158">Separate lists</text>
+  <text class="body" x="65" y="199">A remembers N.</text>
+  <text class="body" x="65" y="236">B has not seen N.</text>
+  <rect x="65" y="268" width="390" height="60" rx="9" fill="#fff" stroke="#bbd0dc"/>
+  <text class="outcome" x="86" y="307">Copy to A: 403</text>
+  <rect x="65" y="341" width="390" height="60" rx="9" fill="#fff" stroke="#bbd0dc"/>
+  <text class="outcome" x="86" y="380">Copy to B: 200</text>
+
+  <rect x="520" y="118" width="438" height="301" rx="15" fill="#eaf5ee" stroke="#5d9874" stroke-width="2"/>
+  <text class="head" x="543" y="158">One local atomic claim</text>
+  <text class="body" x="543" y="199">A claims N once.</text>
+  <text class="body" x="543" y="236">Both check the same ledger.</text>
+  <rect x="543" y="268" width="390" height="60" rx="9" fill="#fff" stroke="#bbd0dc"/>
+  <text class="outcome" x="564" y="307">Copy to A: 403</text>
+  <rect x="543" y="341" width="390" height="60" rx="9" fill="#fff" stroke="#bbd0dc"/>
+  <text class="outcome" x="564" y="380">Copy to B: 403</text>
+
+  <rect x="42" y="442" width="916" height="101" rx="11" fill="#eaf0f5" stroke="#adc1d0"/>
+  <text class="note" x="62" y="476">A new signed receipt can still repeat the business action.</text>
+  <text class="note" x="62" y="508">The direct backend route remains open in this local fixture.</text>
+  <text class="note" x="62" y="535">No AWS identity or durable distributed store is tested here.</text>
+</svg>

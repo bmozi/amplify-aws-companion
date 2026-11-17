@@ -1,0 +1,42 @@
+# Professional architecture domain 3: study map
+
+Use the [AWS domain 3 guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-03/solutions-architect-professional-03-domain3.html) with these lesson and exercise links. **Partial** means the material practices part of a skill; the last column identifies evidence or practice still needed. It does not establish mastery or exam readiness. Check the current guide for your scheduled exam and verify AWS-specific claims before a real implementation.
+
+## Task 3.1 — purchase and execution choices
+
+| Skill | Lessons and practice | Scope and further evidence |
+| --- | --- | --- |
+| 3.1.1 Commitment and capacity purchase | [Cost lesson](../reader/BOOK-LOCATORS.md#book-97215f8e0e3f150d); [commitment lab](../examples/costs/pricing-commitment/README.md) | **Partial.** Unused commitment and workload variation are practiced; selected full-term offers, capacity need and current price are unverified. No purchase belongs in the personal Free-plan lab. |
+| 3.1.2 Cost-aware workload architecture | [Compute lesson](../reader/BOOK-LOCATORS.md#book-1b1379691a2f6239); [service selection](../examples/costs/service-selection/README.md) | **Partial.** Execution alternatives and full-path costs are compared; no chosen Graviton, Step Functions or Lambda workload benchmark and quote. |
+| 3.1.3 Rightsizing and scaling | [Scaling policy model](../examples/scaling-policy-model/README.md); [compute lesson](../reader/BOOK-LOCATORS.md#book-1b1379691a2f6239) | **Partial.** Demand and headroom reasoning exist; no Compute Optimizer recommendation, implemented schedule/target tracking or measured quality after resizing. |
+| 3.1.4 AI/ML service tier, batch and cache | [Inference-path lesson](../reader/BOOK-LOCATORS.md#book-c7716c08655f741e); [AI token-routing lab](../examples/costs/ai-inference-routing/README.md) | **Partial.** The lab makes cache meters and an admissible route visible; it does not compare a selected model's real on-demand, batch, tier and SageMaker prices with measured quality. |
+
+## Task 3.2 — content delivery and transfer
+
+| Skill | Lessons and practice | Scope and further evidence |
+| --- | --- | --- |
+| 3.2.1 Edge cache and origin choice | [Network lesson](../reader/BOOK-LOCATORS.md#book-1c6d9fadfee83e65); [illustrated Origin Shield worksheet](../examples/origin-shield-choice/README.md); [global web cases](../examples/global-web/README.md) | **Partial.** The fictional two-path calculation compares regional misses, assumed Shield consolidation, an incremental request meter and an uncached invoice. No measured CloudFront layer counts, selected Region/price, origin load, latency, security review or learner result exists. |
+| 3.2.2 Cross-AZ, cross-Region and private path cost | [Network cost routes](../examples/network-cost-routing/README.md); [network lesson](../reader/BOOK-LOCATORS.md#book-6948135871204c55) | **Partial.** Route-dependent meters are practiced; selected endpoint/NAT/AZ traffic and current bill remain unmeasured. |
+| 3.2.3 Cost-aware multi-Region replication | [Recovery lesson](../reader/BOOK-LOCATORS.md#book-20703bba15f79b2d); [replication choice lab](../examples/costs/replication-choice/README.md) | **Partial.** Cases compare S3 CRR, existing-object backfill, global tables and retention; no configured replication, current quote, observed lag or failover result. |
+| 3.2.4 Transit Gateway and PrivateLink economics | [Network route lab](../examples/network-cost-routing/README.md); [hybrid lesson](../reader/BOOK-LOCATORS.md#book-0b54b52a3c811230) | **Partial.** Topology and data-processing meters are introduced; no selected TGW/PrivateLink endpoint-hour and volume quote. |
+| 3.2.5 AI cross-Region inference transfer | [AI token-routing lab](../examples/costs/ai-inference-routing/README.md); [authorized retrieval](../reader/BOOK-LOCATORS.md#book-c7716c08655f741e) | **Partial.** The lab rejects a cheaper but disallowed destination and separates source pricing from processing location; no current profile inventory, policy test, quality/latency run or bill. |
+
+## Task 3.3 — allocation and monitoring
+
+| Skill | Lessons and practice | Scope and further evidence |
+| --- | --- | --- |
+| 3.3.1 Cost-allocation tags | [Cost lesson](../reader/BOOK-LOCATORS.md#book-97215f8e0e3f150d); [optimization audit](../examples/costs/optimization-audit/README.md); [tag-coverage exercise](../examples/costs/tag-coverage/README.md) | **Partial.** A fictional taxonomy, activation, valid versus nonblank coverage, reconciliation and historical backfill are practiced; no actual account activation, billing coverage or independent learner result is established. |
+| 3.3.2 Detailed billing and analysis | [Tool selection](../examples/costs/TOOL-SELECTION.md); [cost lesson](../reader/BOOK-LOCATORS.md#book-97215f8e0e3f150d) | **Partial.** Cost Explorer and CUR 2.0 roles are distinguished; no configured export and query reconciled to account totals. |
+| 3.3.3 Policy-based tag enforcement | [Governance context](../reader/BOOK-LOCATORS.md#book-71a7c1be66a5700e); [illustrated tag-governance exercise](../examples/tag-governance/README.md) | **Partial.** The design cases separate tag-policy values, required-key IaC validation, scoped SCP create/untag actions, Config detection, unsupported tag-on-create, bypass and reviewed remediation. No organization policy, deny, Config finding or bill allocation is observed. |
+| 3.3.4 Chargeback and showback | [Cost reconciliation](../examples/costs/optimization-audit/README.md); [illustrated shared-cost allocation](../examples/costs/shared-cost-allocation/README.md) | **Partial.** The fictional ledger allocates direct, network and AI pools by stated drivers, preserves unknown charges, reconciles exact cents and revises a disputed driver. No CUR export, Cost Category rule, application profile, measured driver or finance acceptance exists. |
+| 3.3.5 Budgets and anomaly response | [Cost lesson](../reader/BOOK-LOCATORS.md#book-97215f8e0e3f150d); [budget decisions](../examples/costs/reader-budget-decision/README.md) | **Partial.** Estimate, lag, credit and gross budget are well separated; no live Budgets/anomaly configuration, alert delivery or delay measurement. |
+
+## Task 3.4 — storage, database and evidence cost
+
+| Skill | Lessons and practice | Scope and further evidence |
+| --- | --- | --- |
+| 3.4.1 Lifecycle and intelligent tiering | [Storage lesson](../reader/BOOK-LOCATORS.md#book-316ad1ab1452bb2f); [storage cost lab](../examples/storage-cost/README.md) | **Partial.** Retention and restore cost are practiced; no selected S3/EFS policy with transition and restore observations. |
+| 3.4.2 EBS type and IOPS cost | [Storage lesson](../reader/BOOK-LOCATORS.md#book-316ad1ab1452bb2f); [EBS volume selection](../examples/ebs-volume-selection/README.md); [illustrated cost-shape lab](../examples/ebs-volume-economics/README.md); [zone-recovery clock](../examples/ebs-az-recovery/README.md) | **Partial.** Fictional gp2/gp3/io2 arithmetic separates capacity, extra performance and the instance ceiling. The zone clock rejects an unready snapshot and distinguishes a modeled RPO/RTO fit from a drilled result. Current Region rates, a selected instance/volume benchmark, full-life cost, customer latency and actual recovery remain unverified. |
+| 3.4.3 Database capacity and commitments | [Database economics](../examples/database-service-economics/README.md); [selection lesson](../reader/BOOK-LOCATORS.md#book-0fb36d2b3a5c21aa) | **Partial.** Workload and lifecycle costs are considered; no selected capacity-mode benchmark, reservation terms or current Aurora I/O pricing. |
+| 3.4.4 Backup retention economics | [Recovery lesson](../reader/BOOK-LOCATORS.md#book-20703bba15f79b2d); [backup lifecycle](../examples/backup-lifecycle/README.md) | **Partial.** Retention, copies and restore promise are linked; no configured policy and full restore-cost observation. |
+| 3.4.5 Observability cost | [Cost lesson](../reader/BOOK-LOCATORS.md#book-057265fe916d0368); [illustrated cost-and-signal decision](../examples/observability-cost-decision/README.md); [customer observation](../reader/BOOK-LOCATORS.md#book-f72a70eb301cb115) | **Partial.** A fictional three-plan worksheet separates ingestion, storage, scan and metric meters and rejects a cheap plan that loses a five-day incident path. No selected live log/metric/query volumes, alarm receipt, current prices or actual incident diagnosis. |

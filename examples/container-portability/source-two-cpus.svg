@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">One source archive tested through two CPU-specific Linux toolchains</title>
+  <desc id="desc">A verified source ZIP branches to local ARM64 and emulated AMD64 Linux checks. Each lane selects matching Node and Terraform binaries and writes a separate result. Passing both proves bounded source portability on one Mac, not that an application image works in ECS or that a customer request succeeds.</desc>
+  <rect width="1200" height="650" fill="#f7f9fc"/>
+  <text x="48" y="64" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#172c45">One source bag, two different CPU toolchains</text>
+  <text x="48" y="103" font-family="Arial,sans-serif" font-size="22" fill="#344861">Verify the same source bytes; choose matching binaries for each lane</text>
+  <rect x="48" y="161" width="288" height="147" rx="17" fill="#e3edfb" stroke="#3171a7" stroke-width="3"/>
+  <text x="72" y="207" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#172c45">Source ZIP</text>
+  <text x="72" y="246" font-family="Arial,sans-serif" font-size="20" fill="#344861">Manifest and file hashes</text>
+  <text x="72" y="277" font-family="Arial,sans-serif" font-size="20" fill="#344861">No AWS credentials</text>
+  <path d="M337 215 H390 V172 H447" fill="none" stroke="#344861" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M337 251 H390 V362 H447" fill="none" stroke="#344861" stroke-width="5" marker-end="url(#arrow)"/>
+  <rect x="461" y="133" width="360" height="145" rx="16" fill="#e2f3eb" stroke="#16805f" stroke-width="3"/>
+  <text x="485" y="173" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#172c45">Linux ARM64</text>
+  <text x="485" y="209" font-family="Arial,sans-serif" font-size="20" fill="#344861">ARM64 Node + Terraform</text>
+  <text x="485" y="241" font-family="Arial,sans-serif" font-size="20" fill="#344861">Native container on this Mac</text>
+  <rect x="461" y="324" width="360" height="145" rx="16" fill="#fff0dc" stroke="#b26b08" stroke-width="3"/>
+  <text x="485" y="364" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#172c45">Linux AMD64</text>
+  <text x="485" y="400" font-family="Arial,sans-serif" font-size="20" fill="#344861">x64 Node + AMD64 Terraform</text>
+  <text x="485" y="432" font-family="Arial,sans-serif" font-size="20" fill="#344861">Emulated container on this Mac</text>
+  <path d="M822 205 H878" stroke="#344861" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M822 396 H878" stroke="#344861" stroke-width="5" marker-end="url(#arrow)"/>
+  <rect x="892" y="133" width="260" height="145" rx="16" fill="#fff" stroke="#a7b8c7" stroke-width="3"/>
+  <text x="914" y="174" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#172c45">ARM report</text>
+  <text x="914" y="211" font-family="Arial,sans-serif" font-size="19" fill="#344861">Source hash + checks</text>
+  <text x="914" y="242" font-family="Arial,sans-serif" font-size="19" fill="#344861">Observed result</text>
+  <rect x="892" y="324" width="260" height="145" rx="16" fill="#fff" stroke="#a7b8c7" stroke-width="3"/>
+  <text x="914" y="365" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#172c45">AMD64 report</text>
+  <text x="914" y="402" font-family="Arial,sans-serif" font-size="19" fill="#344861">Same source hash</text>
+  <text x="914" y="433" font-family="Arial,sans-serif" font-size="19" fill="#344861">Separate observed result</text>
+  <rect x="48" y="520" width="1104" height="82" rx="14" fill="#fbe9e6" stroke="#b65b4b" stroke-width="2"/>
+  <text x="72" y="553" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#743c31">Still unanswered</text>
+  <text x="72" y="584" font-family="Arial,sans-serif" font-size="20" fill="#344861">Application image and ECS platform match · permissions · customer behavior · cost · independent host</text>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#344861"/></marker></defs>
+</svg>

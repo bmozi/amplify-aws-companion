@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 510" role="img" aria-labelledby="title desc">
+ <title id="title">Organization backup governance and recovery path</title>
+ <desc id="desc">An organization management account sends a complete effective backup policy to a workload account. A backup job creates a local recovery point, which copies to a recovery-account vault. An independent recovery team tests a restore and checks booking records before reopening service.</desc>
+ <rect width="960" height="510" fill="#f9fbff"/>
+ <g font-family="Arial,sans-serif" fill="#112e4c"><text x="32" y="48" font-size="25" font-weight="bold">ONE GREEN JOB IS NOT A RECOVERY PLAN</text><text x="32" y="77" font-size="16">Trace rule → selected resource → recovery point → copy → usable restore → correct booking.</text></g>
+ <g font-family="Arial,sans-serif" text-anchor="middle">
+  <rect x="35" y="115" width="250" height="100" rx="10" fill="#e8e3f7" stroke="#6a53a8" stroke-width="2"/><text x="160" y="150" font-size="19" fill="#30235d">Organization authority</text><text x="160" y="178" font-size="16" fill="#30235d">complete effective policy</text><text x="160" y="198" font-size="16" fill="#30235d">and delegated owner</text>
+  <rect x="355" y="115" width="245" height="100" rx="10" fill="#dcecf9" stroke="#26649d" stroke-width="2"/><text x="477" y="148" font-size="19" fill="#112e4c">Workload account</text><text x="477" y="176" font-size="16" fill="#112e4c">selected database · job</text><text x="477" y="197" font-size="16" fill="#112e4c">local recovery point</text>
+  <rect x="670" y="115" width="255" height="100" rx="10" fill="#dcecf9" stroke="#26649d" stroke-width="2"/><text x="797" y="148" font-size="19" fill="#112e4c">Recovery account</text><text x="797" y="176" font-size="16" fill="#112e4c">destination vault · key</text><text x="797" y="197" font-size="16" fill="#112e4c">copied recovery point</text>
+  <rect x="355" y="310" width="245" height="105" rx="10" fill="#fff0ce" stroke="#b07815" stroke-width="2"/><text x="477" y="346" font-size="19" fill="#503907">Recovery team</text><text x="477" y="373" font-size="16" fill="#503907">approved restore path</text><text x="477" y="394" font-size="16" fill="#503907">and safe target</text>
+  <rect x="670" y="310" width="255" height="105" rx="10" fill="#e1f1e6" stroke="#3d8054" stroke-width="2"/><text x="797" y="346" font-size="19" fill="#1e4b2a">Business proof</text><text x="797" y="373" font-size="16" fill="#1e4b2a">bookings reconciled</text><text x="797" y="394" font-size="16" fill="#1e4b2a">before reopening</text>
+ </g>
+ <g stroke="#cc7413" stroke-width="4" fill="none" stroke-linecap="round"><path d="M285 165h70M600 165h70M797 215v45H477v50M600 362h70"/><path d="M343 157l12 8-12 8M658 157l12 8-12 8M469 298l8 12 8-12M658 354l12 8-12 8"/></g>
+ <text x="34" y="470" font-family="Arial,sans-serif" font-size="16" fill="#112e4c">Each arrow has its own permission, key, resource-support and evidence question.</text>
+</svg>

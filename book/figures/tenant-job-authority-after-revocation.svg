@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 1050" role="img" aria-labelledby="title desc">
+  <title id="title">A queued job needs authority when it acts</title>
+  <desc id="desc">Alice submits two Shop A jobs while a member. After her membership is revoked, a user-delegated job is denied, while a separately accepted business workflow may write one local SQLite effect if Shop A remains active. Closing Shop A stops pending jobs in both lanes. The exercise is local and synthetic.</desc>
+  <rect width="760" height="1050" fill="#fff"/>
+  <g font-family="Arial,sans-serif" fill="#173544">
+    <text x="40" y="65" font-size="35" font-weight="bold">Whose promise does the job carry?</text>
+    <text x="40" y="106" font-size="24">Alice submits two Shop A jobs while allowed.</text>
+    <rect x="40" y="144" width="680" height="112" rx="15" fill="#e5f1f4" stroke="#285669" stroke-width="3"/>
+    <text x="66" y="186" font-size="27" font-weight="bold">1  Record each accepted job</text>
+    <text x="66" y="224" font-size="23">Keep tenant, action and server-chosen authority.</text>
+    <rect x="40" y="273" width="680" height="107" rx="15" fill="#fff1d7" stroke="#8b6018" stroke-width="3"/>
+    <text x="66" y="315" font-size="27" font-weight="bold">2  Alice loses Shop A membership</text>
+    <text x="66" y="351" font-size="23">Alice may submit no new Shop A job.</text>
+    <text x="40" y="426" font-size="26" font-weight="bold">At effect time, the two jobs diverge:</text>
+    <rect x="40" y="448" width="680" height="159" rx="15" fill="#fff0ee" stroke="#9b3f38" stroke-width="3"/>
+    <text x="66" y="491" font-size="27" font-weight="bold">User-delegated report</text>
+    <text x="66" y="530" font-size="23">Recheck membership and its revision.</text>
+    <text x="66" y="570" font-size="25" font-weight="bold" fill="#823a33">Revoked → deny before the effect.</text>
+    <rect x="40" y="625" width="680" height="165" rx="15" fill="#e7f3e8" stroke="#386548" stroke-width="3"/>
+    <text x="66" y="667" font-size="27" font-weight="bold">Accepted business repair</text>
+    <text x="66" y="705" font-size="23">Use separate Shop A authority.</text>
+    <text x="66" y="743" font-size="23">If Shop A is active → one local effect row.</text>
+    <rect x="40" y="808" width="680" height="111" rx="15" fill="#f1f3f4" stroke="#68737a" stroke-width="3"/>
+    <text x="66" y="850" font-size="27" font-weight="bold">Shop A closes</text>
+    <text x="66" y="887" font-size="23">Stop pending jobs in either lane.</text>
+    <text x="40" y="972" font-size="22" fill="#365262">An early green check cannot authorize a later effect.</text>
+    <text x="40" y="1007" font-size="21" fill="#365262">Local SQLite model; no AWS or external effect tested.</text>
+  </g>
+</svg>

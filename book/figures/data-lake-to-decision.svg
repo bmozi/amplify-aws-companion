@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 385" role="img" aria-labelledby="title desc">
+  <title id="title">A sale becomes a chart only after four separate gates</title>
+  <desc id="desc">Daily files and frequent events enter protected raw storage, pass identity and contract checks, become versioned governed data, and reach a finance chart. A separate direct-object path must be tested for bypass. Correct bars require reconciled rows, grain, freshness and access.</desc>
+  <defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#18313d}.title{font-size:25px;font-weight:700}.sub{font-size:17px}.head{font-size:19px;font-weight:700}.body{font-size:17px}.note{font-size:16px}.row{stroke-width:2;rx:9}</style></defs>
+  <rect width="700" height="385" fill="#fff"/>
+  <text x="22" y="37" class="title">From arriving sale to trusted finance chart</text>
+  <text x="22" y="62" class="sub">Each gate answers a different question.</text>
+  <rect class="row" x="20" y="77" width="660" height="56" fill="#eaf3f6" stroke="#315b70"/>
+  <text x="36" y="101" class="head">1 · Protect arrival</text>
+  <text x="36" y="123" class="body">Daily files + events; source, identity and raw lineage</text>
+  <rect class="row" x="20" y="140" width="660" height="56" fill="#fff1e2" stroke="#9a7138"/>
+  <text x="36" y="164" class="head">2 · Accept the fact</text>
+  <text x="36" y="186" class="body">Check contract, units and duplicate IDs; reject bad rows</text>
+  <rect class="row" x="20" y="203" width="660" height="56" fill="#e9f3ed" stroke="#3d7450"/>
+  <text x="36" y="227" class="head">3 · Publish governed data</text>
+  <text x="36" y="249" class="body">Reconcile IDs; version output; test table and raw-object access</text>
+  <rect class="row" x="20" y="266" width="660" height="56" fill="#f0eff8" stroke="#62598b"/>
+  <text x="36" y="290" class="head">4 · Show the result</text>
+  <text x="36" y="312" class="body">Label grain and freshness; match chart totals to source</text>
+  <text x="22" y="350" class="note">A chart is a new copy: protect query results and exports too.</text>
+  <text x="22" y="373" class="note">Conceptual route; no AWS lake or access policy tested.</text>
+</svg>

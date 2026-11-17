@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="565" viewBox="0 0 700 565" role="img" aria-labelledby="title desc">
+<title id="title">A reviewed Terraform plan can pass, stop or require a new decision</title>
+<desc id="desc">A fictional source proposal and an actual providerless Terraform plan form one candidate change. The application compares owner, narrow action, exact scope and emergency setting with a separately reviewed intent. A wildcard permission or changed owner is rejected without apply. An emergency pause that differs from the approved value is held for a human decision and updated approved record. Only a matching plan applies to disposable local terraform_data state, followed by a fresh no-op plan. This is not an AWS IAM, cloud deployment or customer-behavior test.</desc>
+<rect width="700" height="565" fill="#f7f9fc"/>
+<g font-family="Arial,sans-serif" fill="#193743">
+<text x="34" y="43" font-size="27" font-weight="700">Read the plan before changing the system</text>
+<text x="34" y="72" font-size="17">One proposed change can end in three different decisions.</text>
+
+<rect x="34" y="94" width="632" height="80" rx="13" fill="#e8f1fa" stroke="#4a789b" stroke-width="2"/>
+<circle cx="65" cy="128" r="18" fill="#3b6f98"/><text x="59" y="135" font-size="20" font-weight="700" fill="white">1</text>
+<text x="95" y="133" font-size="21" font-weight="700">Source proposal + local Terraform plan</text>
+<text x="53" y="160" font-size="17">Owner, version, scope and actual terraform_data plan JSON.</text>
+
+<path d="M350 175v18" fill="none" stroke="#4a789b" stroke-width="4"/>
+<polygon points="350,202 340,189 360,189" fill="#4a789b"/>
+
+<rect x="34" y="204" width="632" height="80" rx="13" fill="#eef1f4" stroke="#748a99" stroke-width="2"/>
+<circle cx="65" cy="238" r="18" fill="#637d8e"/><text x="59" y="245" font-size="20" font-weight="700" fill="white">2</text>
+<text x="95" y="243" font-size="21" font-weight="700">Compare with separately reviewed intent</text>
+<text x="53" y="270" font-size="17">One owner, narrow action, exact scope and pause value.</text>
+
+<text x="34" y="318" font-size="19" font-weight="700">Then choose the disposition:</text>
+<rect x="34" y="331" width="632" height="58" rx="12" fill="#faeae7" stroke="#ad6559" stroke-width="2"/>
+<text x="53" y="357" font-size="20" font-weight="700" fill="#873d31">REJECT</text>
+<text x="173" y="357" font-size="18">Wildcard action or changed owner; no apply.</text>
+<rect x="34" y="399" width="632" height="58" rx="12" fill="#fff2dd" stroke="#aa7e3e" stroke-width="2"/>
+<text x="53" y="425" font-size="20" font-weight="700" fill="#80591c">REVIEW</text>
+<text x="173" y="425" font-size="18">Pause differs; hold for a human decision.</text>
+<rect x="34" y="467" width="632" height="58" rx="12" fill="#e6f3eb" stroke="#4c8964" stroke-width="2"/>
+<text x="53" y="493" font-size="20" font-weight="700" fill="#246147">PASS</text>
+<text x="173" y="493" font-size="18">Match intent; apply locally, then check no-op.</text>
+
+<text x="34" y="548" font-size="16">Local gate only: no AWS IAM, deployment or customer result tested.</text>
+</g>
+</svg>

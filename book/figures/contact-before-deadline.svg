@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="910" viewBox="0 0 360 910" role="img" aria-labelledby="title desc">
+  <title id="title">Find contact work before the one-hour promise expires</title>
+  <desc id="desc">The same accepted request keeps its original clock. At minute forty-five an uncontacted request appears in a due-soon worklist, leaving an assumed fifteen-minute lead. Two alternative outcomes follow the inclusive one-hour deadline: a supplied contact time at minute sixty meets the fixture time rule, while a still-uncontacted request at sixty minutes plus one second is overdue. Separately, a missing or stale complete-sweep receipt makes discovery uncertain; even a completed cursor walk is not a snapshot. No list, receipt, or local contact claim proves a real person was reached.</desc>
+  <rect width="360" height="910" fill="#ffffff"/>
+  <g font-family="Arial,sans-serif" fill="#142e3c">
+    <text x="18" y="33" font-size="21" font-weight="700">Find the request before</text>
+    <text x="18" y="59" font-size="21" font-weight="700">the clock wins</text>
+    <text x="18" y="86" font-size="16" fill="#405966">One request · one-hour contact rule</text>
+
+    <rect x="18" y="106" width="324" height="100" rx="11" fill="#e8f3f5" stroke="#294c60" stroke-width="2"/>
+    <text x="34" y="136" font-size="18" font-weight="700">Minute 0 · accepted</text>
+    <text x="34" y="164" font-size="16">Save the original clock.</text>
+    <text x="34" y="188" font-size="16">A retry cannot restart it.</text>
+    <path d="M180 206v24" stroke="#294c60" stroke-width="3"/>
+    <path d="m174 224 6 8 6-8" fill="none" stroke="#294c60" stroke-width="3"/>
+
+    <rect x="18" y="235" width="324" height="112" rx="11" fill="#e4f4f1" stroke="#247d86" stroke-width="2"/>
+    <text x="34" y="265" font-size="18" font-weight="700">Minute 45 · due soon</text>
+    <text x="34" y="294" font-size="16">Fifteen minutes remain.</text>
+    <text x="34" y="320" font-size="16">A worklist is not a call.</text>
+    <path d="M180 347v24" stroke="#294c60" stroke-width="3"/>
+    <path d="m174 365 6 8 6-8" fill="none" stroke="#294c60" stroke-width="3"/>
+
+    <rect x="18" y="376" width="324" height="91" rx="11" fill="#fff2dc" stroke="#8b6220" stroke-width="2"/>
+    <text x="34" y="407" font-size="18" font-weight="700">Minute 60 · deadline</text>
+    <text x="34" y="438" font-size="16">Contacted, or still waiting?</text>
+
+    <text x="18" y="501" font-size="17" font-weight="700" fill="#20583e">If contact time is minute 60</text>
+    <rect x="18" y="514" width="324" height="76" rx="11" fill="#e9f1ed" stroke="#2b7752" stroke-width="2"/>
+    <text x="34" y="544" font-size="17" font-weight="700">Fixture time rule met</text>
+    <text x="34" y="571" font-size="16">A supplied timestamp says so.</text>
+
+    <text x="18" y="622" font-size="17" font-weight="700" fill="#8b3028">If still waiting at 60 min + 1 sec</text>
+    <rect x="18" y="635" width="324" height="76" rx="11" fill="#f9e9e5" stroke="#9b493c" stroke-width="2"/>
+    <text x="34" y="665" font-size="17" font-weight="700">Overdue work opens</text>
+    <text x="34" y="692" font-size="16">A late check cannot prevent it.</text>
+
+    <rect x="18" y="739" width="324" height="108" rx="11" fill="#f0f3f7" stroke="#607181" stroke-width="2"/>
+    <text x="34" y="769" font-size="17" font-weight="700">Separate watcher check</text>
+    <text x="34" y="796" font-size="16">Missing or stale sweep receipt?</text>
+    <text x="34" y="822" font-size="16">Discovery is uncertain.</text>
+
+    <text x="18" y="878" font-size="15" fill="#405966">A local record cannot prove a person</text>
+    <text x="18" y="899" font-size="15" fill="#405966">was actually reached.</text>
+  </g>
+</svg>

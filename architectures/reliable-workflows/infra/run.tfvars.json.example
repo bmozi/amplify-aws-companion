@@ -1,0 +1,10 @@
+{
+  "account_id": "REPLACE_WITH_CONFIRMED_ACCOUNT",
+  "region": "us-east-2",
+  "lab_name": "amplify-patterns-practice",
+  "approved_run_budget_usd": 0,
+  "estimated_run_cost_usd": 0,
+  "expires_at_epoch": 0,
+  "enable_due_tick_schedule": false,
+  "enable_contact_worklist": false
+}

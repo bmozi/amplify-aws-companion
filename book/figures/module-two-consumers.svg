@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="654" viewBox="0 0 360 654" role="img" aria-labelledby="title desc">
+<title id="title">Two Terraform consumers share a module source but keep separate state and upgrade decisions</title>
+<desc id="desc">Practice and preview each begin with the same local v1 module source and independent state histories. A v2 module requires an explicit retention-days input. Practice tests and applies its own update to v2 while preview remains on v1 with a no-op plan. These versioned paths are local teaching copies, not a registry release or AWS deployment.</desc>
+<rect width="360" height="654" fill="#f5f8fc"/>
+<g font-family="Arial,sans-serif" fill="#173a5e">
+<text x="18" y="34" font-size="20" font-weight="700">Share the recipe</text>
+<text x="18" y="59" font-size="16">Keep ownership and state separate.</text>
+<rect x="18" y="78" width="324" height="83" rx="10" fill="#e8f0fa" stroke="#5279a7" stroke-width="2"/>
+<text x="32" y="107" font-size="18" font-weight="700">Local module source · v1</text>
+<text x="32" y="136" font-size="16">One providerless Terraform recipe.</text>
+<text x="18" y="194" font-size="16" font-weight="700">↓ Each consumer chooses its path</text>
+<rect x="18" y="211" width="324" height="151" rx="10" fill="#fff" stroke="#8ca7c1" stroke-width="2"/>
+<text x="32" y="239" font-size="18" font-weight="700">Practice consumer</text>
+<text x="32" y="267" font-size="16">Practice team; its own state history</text>
+<text x="32" y="290" font-size="16">and local object ID.</text>
+<text x="32" y="319" font-size="16" font-weight="700">Moves to v2: choose 7 days,</text>
+<text x="32" y="342" font-size="16" font-weight="700">inspect its plan, then apply.</text>
+<rect x="18" y="377" width="324" height="151" rx="10" fill="#fff" stroke="#8ca7c1" stroke-width="2"/>
+<text x="32" y="405" font-size="18" font-weight="700">Preview consumer</text>
+<text x="32" y="433" font-size="16">Preview team; its own state history</text>
+<text x="32" y="456" font-size="16">and local object ID.</text>
+<text x="32" y="485" font-size="16" font-weight="700">Remains on v1: its separate plan</text>
+<text x="32" y="508" font-size="16" font-weight="700">has no changes.</text>
+<text x="18" y="570" font-size="16">Seven days is a teaching value,</text>
+<text x="18" y="593" font-size="16">not a deletion rule. Local folders</text>
+<text x="18" y="616" font-size="16">are not immutable releases or</text>
+<text x="18" y="639" font-size="16">evidence of an AWS deployment.</text>
+</g></svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="610" viewBox="0 0 720 610" role="img" aria-labelledby="title desc">
+<title id="title">Two DNS directions and a separate application path</title>
+<desc id="desc">An office client asks office DNS about a private AWS booking name. A forwarding rule sends that question through a conceptual inbound Resolver endpoint to an AWS private answer, which returns along the query path. In the other direction, an AWS worker asks VPC Resolver about an office parts name; a rule uses a conceptual outbound endpoint to reach office DNS. A returned address may be cached until its TTL ends. After name lookup, a separate application request still needs a route, TLS, and authorization. The local exercise models two query directions but no AWS endpoints or application packet.</desc>
+<defs><style>text{font-family:Arial,sans-serif;fill:#17324d}.title{font-size:26px;font-weight:bold}.head{font-size:21px;font-weight:bold}.label{font-size:19px}.small{font-size:17px}</style><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#315b6a"/></marker></defs>
+<rect width="720" height="610" fill="#fff"/>
+<text class="title" x="24" y="39">A name has a path; the request has another</text>
+<text class="label" x="24" y="69">Draw both DNS directions before testing the application.</text>
+<rect x="20" y="91" width="680" height="165" rx="12" fill="#eaf2fb" stroke="#557fa3" stroke-width="2"/>
+<text class="head" x="38" y="123">Office asks for a private AWS booking name</text>
+<rect x="38" y="143" width="184" height="56" rx="7" fill="#fff" stroke="#557fa3"/>
+<text class="label" x="52" y="177">Office DNS + rule</text>
+<rect x="268" y="143" width="192" height="56" rx="7" fill="#fff" stroke="#557fa3"/>
+<text class="label" x="285" y="177">Inbound endpoint</text>
+<rect x="508" y="143" width="174" height="56" rx="7" fill="#fff" stroke="#557fa3"/>
+<text class="label" x="525" y="177">Private answer</text>
+<path d="M225 171 H263" stroke="#315b6a" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<path d="M463 171 H503" stroke="#315b6a" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<text class="small" x="38" y="229">Example answer: booking.aws.test → 10.80.2.10</text>
+<rect x="20" y="275" width="680" height="165" rx="12" fill="#eaf6ee" stroke="#568b67" stroke-width="2"/>
+<text class="head" x="38" y="307">AWS worker asks for an office parts name</text>
+<rect x="38" y="327" width="184" height="56" rx="7" fill="#fff" stroke="#568b67"/>
+<text class="label" x="53" y="361">VPC rule</text>
+<rect x="268" y="327" width="192" height="56" rx="7" fill="#fff" stroke="#568b67"/>
+<text class="label" x="284" y="361">Outbound endpoint</text>
+<rect x="508" y="327" width="174" height="56" rx="7" fill="#fff" stroke="#568b67"/>
+<text class="label" x="525" y="361">Office DNS</text>
+<path d="M225 355 H263" stroke="#315b6a" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<path d="M463 355 H503" stroke="#315b6a" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<text class="small" x="38" y="413">Example answer: parts.office.test → 10.20.8.9</text>
+<rect x="20" y="459" width="680" height="109" rx="12" fill="#fff3e8" stroke="#b9854d" stroke-width="2"/>
+<text class="head" x="38" y="491">After DNS: a separate request must work</text>
+<text class="label" x="38" y="520">Check route and reply, TLS hostname, and application access.</text>
+<text class="small" x="38" y="546">A cached answer may be old; a correct answer is not a booking receipt.</text>
+<text class="small" x="20" y="596">Conceptual only; no AWS or hybrid packet tested.</text>
+</svg>

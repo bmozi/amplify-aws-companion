@@ -1,0 +1,10 @@
+# DOP-C02 task 5.3 skill review
+
+Status: both individually inventoried skills have **partial** teaching and assessment maps. Rechecked against the current official [Domain 5 page](https://docs.aws.amazon.com/aws-certification/latest/devops-engineer-professional-02/devops-engineer-professional-02-domain5.html) on October 19, 2026. The ordinals below are positions in AWS's skills list, not AWS-assigned IDs.
+
+| Inventory skill | Specific evidence | Remaining evidence |
+| --- | --- | --- |
+| Skill 01: analyze failed deployments (CodePipeline, CodeBuild, CodeDeploy, CloudFormation and CloudWatch Synthetics examples) | Unit 03 teaches the first failed CodeDeploy boundary and rollback limits; six deployment packets cover EC2/On-Premises, ECS, Lambda and customer-failing-after-succeeded status. Unit 28 adds pipeline/build/CloudFormation/Synthetics evidence selection and E24 adds changed-condition packets for those services. | Inspect a real selected pipeline/build/deployment/stack/canary and compare actual event/log/target/customer evidence; validate permissions, current price and recovery behavior. Independent technical and learner review remain open. |
+| Skill 02: analyze failed processes, including Auto Scaling, ECS and EKS | Unit 15 teaches capacity, placement, health and replacement boundaries; Unit 28 connects Auto Scaling activity, ECS service/deployment events and EKS workload/cluster evidence. E24 has distinct synthetic process cases and asks for one discriminating read-only check before mitigation. | Verify service/Region-specific evidence on a separately authorized environment, including launch/scheduler events, capacity limits, workload health and business outcome; test cost/cleanup and collect learner changed-case evidence. |
+
+The assessment packets are fictional and were not tested against AWS. They support source-selection and diagnostic reasoning only; no live failure, root cause, deployment, scaling action or recovery is claimed. These maps do not establish task completion or exam readiness.

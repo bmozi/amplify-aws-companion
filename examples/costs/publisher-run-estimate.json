@@ -1,0 +1,75 @@
+{
+  "schema_version": 8,
+  "review_status": "review_needed",
+  "scenario": "static_5gb_30d",
+  "account_id": "REPLACE_WITH_EXPECTED_ACCOUNT_ID",
+  "region": "us-east-2",
+  "app_id": "d000000000000",
+  "branch": "lab",
+  "app_tree_sha": "",
+  "amplify_outputs_sha256": "",
+  "reviewed_by": "",
+  "reviewed_at": null,
+  "rates_checked_at": null,
+  "planned_end": null,
+  "lifecycle_review": {
+    "review_status": "pending",
+    "owner": "",
+    "stop_new_publication": "",
+    "hosting_disposition": "undecided",
+    "backend_disposition": "undecided",
+    "resource_verification": "",
+    "retained_until": null,
+    "retained_cost_usd": "0",
+    "retained_cost_basis": "",
+    "billing_recheck_at": null
+  },
+  "existing_resources_reviewed": false,
+  "active_run_review": {
+    "review_status": "pending",
+    "checked_at": null,
+    "other_active_runs": null,
+    "basis": "Inspect the personal-account active-run ledger and unresolved work immediately before publication; a local count is not an atomic credit reservation."
+  },
+  "github_actions_reviewed": false,
+  "audience": {
+    "review_status": "pending",
+    "visits": "10000",
+    "hosting_bytes_per_visit": "500000",
+    "backend_usage_basis": "Illustrative 10,000 visits at 0.5 MB each produce 5 GB of Hosting transfer. Review actual visitors, signed-in users, action mix and backend fanout for this same audience before using any backend estimate."
+  },
+  "credit_terms": {
+    "review_status": "pending",
+    "checked_at": null,
+    "owner_receipt_sha256": "",
+    "applicability": {
+      "amplify_hosting": "unknown",
+      "cognito": "unknown",
+      "appsync": "unknown",
+      "dynamodb": "unknown",
+      "s3": "unknown",
+      "lambda": "unknown",
+      "cloudwatch": "unknown",
+      "network": "unknown"
+    }
+  },
+  "line_items": [
+    {"meter": "hosting_storage_gb_month", "quantity": "0.01", "unit_price_usd": "0.023", "basis": "Illustrative 10 MB additional storage; refresh the regional public rate."},
+    {"meter": "hosting_transfer_gb", "quantity": "5", "unit_price_usd": "0.15", "basis": "Illustrative 5 GB served; refresh the audience forecast and rate."},
+    {"meter": "amplify_build_minutes", "quantity": "0", "unit_price_usd": "0", "basis": "Manual ZIP deployment only; confirm no native build is connected."},
+    {"meter": "ssr_requests_million", "quantity": "0", "unit_price_usd": "0", "basis": "Static frontend only; confirm no SSR route."},
+    {"meter": "ssr_duration_gb_hour", "quantity": "0", "unit_price_usd": "0", "basis": "Static frontend only; confirm no SSR route."},
+    {"meter": "backend_and_logs_usd", "quantity": "1", "unit_price_usd": "0", "basis": "Pending sum of the seven backend components below; use pre-allowance estimates."},
+    {"meter": "other_aws_usd", "quantity": "1", "unit_price_usd": "0", "basis": "Review retained or additional AWS charges outside the seven listed components."}
+  ],
+  "backend_components": {
+    "cognito": {"review_status": "pending", "estimated_usd": "0", "basis": "Pending user-pool tier, active-user and trigger review."},
+    "appsync": {"review_status": "pending", "estimated_usd": "0", "basis": "Pending GraphQL operation, real-time and outbound-data review."},
+    "dynamodb": {"review_status": "pending", "estimated_usd": "0", "basis": "Pending table read/write, storage, backup and retained-resource review."},
+    "s3": {"review_status": "pending", "estimated_usd": "0", "basis": "Pending app file storage, request and transfer review."},
+    "lambda": {"review_status": "pending", "estimated_usd": "0", "basis": "Pending inspect-function requests, memory, duration and trigger review."},
+    "cloudwatch": {"review_status": "pending", "estimated_usd": "0", "basis": "Pending log ingestion, retention and existing log review."},
+    "network": {"review_status": "pending", "estimated_usd": "0", "basis": "Pending backend data-transfer and other network-meter review."}
+  },
+  "contingency_usd": "0.25"
+}

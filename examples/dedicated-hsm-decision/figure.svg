@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 690" role="img" aria-labelledby="title desc">
+  <title id="title">Three key paths and the added HSM recovery duty</title>
+  <desc id="desc">Standard KMS uses AWS-operated HSMs while the customer manages key policy. A CloudHSM-backed KMS custom store uses a customer-operated HSM cluster for supported symmetric keys and adds cluster, backup and reconnection obligations. Direct CloudHSM is a separate application integration. If the custom store is disconnected, fresh KMS cryptographic operations stop; existing data-key use depends on the application.</desc>
+  <rect width="360" height="690" fill="#f8fbfd"/>
+  <path d="M18 20H342 M18 665H342" stroke="#9cb8ca"/>
+  <text x="18" y="47" fill="#123a56" font-family="Arial,sans-serif" font-size="20" font-weight="bold">WHO OWNS THE KEY ROOM?</text>
+  <text x="18" y="71" fill="#49697c" font-family="Arial,sans-serif" font-size="12">Start with the exact custody requirement.</text>
+  <rect x="18" y="93" width="324" height="142" rx="12" fill="#e8f2fa" stroke="#5b91b7"/>
+  <text x="33" y="122" fill="#123a56" font-family="Arial,sans-serif" font-size="16" font-weight="bold">1  Standard KMS store</text>
+  <text x="33" y="150" fill="#274f6a" font-family="Arial,sans-serif" font-size="13">AWS operates HSM infrastructure.</text>
+  <text x="33" y="174" fill="#274f6a" font-family="Arial,sans-serif" font-size="13">Maya manages key policy and use.</text>
+  <path d="M33 188H327" stroke="#a7c4d8"/>
+  <text x="33" y="213" fill="#466579" font-family="Arial,sans-serif" font-size="12">Normal supported-service starting point</text>
+  <rect x="18" y="249" width="324" height="184" rx="12" fill="#fff1df" stroke="#d3964a"/>
+  <text x="33" y="278" fill="#67451d" font-family="Arial,sans-serif" font-size="16" font-weight="bold">2  CloudHSM-backed KMS</text>
+  <text x="33" y="306" fill="#77552f" font-family="Arial,sans-serif" font-size="13">Maya operates the HSM cluster.</text>
+  <text x="33" y="329" fill="#77552f" font-family="Arial,sans-serif" font-size="13">KMS uses supported symmetric keys.</text>
+  <path d="M33 344H327" stroke="#dfb785"/>
+  <text x="33" y="368" fill="#77552f" font-family="Arial,sans-serif" font-size="13">Zones + capacity + backup + restore</text>
+  <text x="33" y="392" fill="#9a493e" font-family="Arial,sans-serif" font-size="12">Disconnected → fresh KMS crypto stops</text>
+  <text x="33" y="414" fill="#6f6f6f" font-family="Arial,sans-serif" font-size="11">Existing data-key behavior needs a test.</text>
+  <rect x="18" y="447" width="324" height="113" rx="12" fill="#eaf5ef" stroke="#70a889"/>
+  <text x="33" y="476" fill="#245745" font-family="Arial,sans-serif" font-size="16" font-weight="bold">3  Direct CloudHSM use</text>
+  <text x="33" y="503" fill="#35634f" font-family="Arial,sans-serif" font-size="13">Application uses a CloudHSM client.</text>
+  <text x="33" y="527" fill="#35634f" font-family="Arial,sans-serif" font-size="13">Separate crypto + operations design.</text>
+  <text x="18" y="596" fill="#123a56" font-family="Arial,sans-serif" font-size="14" font-weight="bold">A backup is not a customer read.</text>
+  <text x="18" y="620" fill="#49697c" font-family="Arial,sans-serif" font-size="12">Prove connection, key use and restore.</text>
+  <text x="18" y="648" fill="#5f7585" font-family="Arial,sans-serif" font-size="11">Design map • no AWS cluster or auditor result</text>
+</svg>

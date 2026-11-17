@@ -1,0 +1,45 @@
+[
+  {
+    "message_id": "offer-001",
+    "recipient_id": "maya",
+    "consent": false,
+    "device_registered": true,
+    "app_open_recorded": true,
+    "events": []
+  },
+  {
+    "message_id": "order-002",
+    "recipient_id": "lee",
+    "consent": true,
+    "device_registered": true,
+    "app_open_recorded": false,
+    "events": [
+      {"message_id": "order-002", "recipient_id": "lee", "kind": "requested"},
+      {"message_id": "order-002", "recipient_id": "lee", "kind": "aws_accepted"}
+    ]
+  },
+  {
+    "message_id": "order-003",
+    "recipient_id": "sam",
+    "consent": true,
+    "device_registered": true,
+    "app_open_recorded": true,
+    "events": [
+      {"message_id": "order-003", "recipient_id": "sam", "kind": "requested"},
+      {"message_id": "order-003", "recipient_id": "sam", "kind": "aws_accepted"},
+      {"message_id": "order-003", "recipient_id": "sam", "kind": "provider_rejected"}
+    ]
+  },
+  {
+    "message_id": "order-004",
+    "recipient_id": "alex",
+    "consent": true,
+    "device_registered": true,
+    "app_open_recorded": true,
+    "events": [
+      {"message_id": "order-004", "recipient_id": "alex", "kind": "requested"},
+      {"message_id": "order-004", "recipient_id": "alex", "kind": "aws_accepted"},
+      {"message_id": "order-004", "recipient_id": "alex", "kind": "provider_accepted"}
+    ]
+  }
+]

@@ -1,0 +1,138 @@
+{
+  "schema_version": 8,
+  "review_status": "review_needed",
+  "scenario": "static_smoke_100_visit_1d",
+  "account_id": "REPLACE_WITH_EXPECTED_ACCOUNT_ID",
+  "region": "us-east-2",
+  "app_id": "d000000000000",
+  "branch": "lab",
+  "app_tree_sha": "",
+  "amplify_outputs_sha256": "",
+  "reviewed_by": "",
+  "reviewed_at": null,
+  "rates_checked_at": null,
+  "planned_end": null,
+  "lifecycle_review": {
+    "review_status": "pending",
+    "owner": "",
+    "stop_new_publication": "",
+    "hosting_disposition": "undecided",
+    "backend_disposition": "undecided",
+    "resource_verification": "",
+    "retained_until": null,
+    "retained_cost_usd": "0",
+    "retained_cost_basis": "",
+    "billing_recheck_at": null
+  },
+  "existing_resources_reviewed": false,
+  "active_run_review": {
+    "review_status": "pending",
+    "checked_at": null,
+    "other_active_runs": null,
+    "basis": "Inspect the personal-account active-run ledger and unresolved work immediately before a single one-day smoke publication; a local count is not an atomic credit reservation."
+  },
+  "github_actions_reviewed": false,
+  "audience": {
+    "review_status": "pending",
+    "visits": "100",
+    "hosting_bytes_per_visit": "1500000",
+    "backend_usage_basis": "Planning prompt for one unshared, one-day smoke visit window: 100 visits at a conservatively rounded 1,500,000 hosted bytes each model 0.15 decimal GB of Hosting transfer. The local static build was 1,344,387 raw bytes across all files on October 25; the publisher preflight now requires the exact new ZIP to fit beneath this per-visit input. Review actual transferred bytes, signed-in tasks, backend fanout, current resources, cache and compression behavior, and unexpected public traffic. The 100 visits are a forecast, not a service-enforced cap."
+  },
+  "credit_terms": {
+    "review_status": "pending",
+    "checked_at": null,
+    "owner_receipt_sha256": "",
+    "applicability": {
+      "amplify_hosting": "unknown",
+      "cognito": "unknown",
+      "appsync": "unknown",
+      "dynamodb": "unknown",
+      "s3": "unknown",
+      "lambda": "unknown",
+      "cloudwatch": "unknown",
+      "network": "unknown"
+    }
+  },
+  "line_items": [
+    {
+      "meter": "hosting_storage_gb_month",
+      "quantity": "0.01",
+      "unit_price_usd": "0.023",
+      "basis": "Conservative illustrative 10 MB additional storage charged as a full month for this one-day smoke study; refresh rate and retained-resource window."
+    },
+    {
+      "meter": "hosting_transfer_gb",
+      "quantity": "0.15",
+      "unit_price_usd": "0.15",
+      "basis": "Illustrative 100 visits times 1,500,000 hosted bytes, or 0.15 decimal GB. This exceeds the measured local 1,344,387-byte raw static file set but remains pending actual artifact, route, visitor and rate review."
+    },
+    {
+      "meter": "amplify_build_minutes",
+      "quantity": "0",
+      "unit_price_usd": "0",
+      "basis": "Manual ZIP deployment only; confirm no native build is connected."
+    },
+    {
+      "meter": "ssr_requests_million",
+      "quantity": "0",
+      "unit_price_usd": "0",
+      "basis": "Static frontend only; confirm no SSR route."
+    },
+    {
+      "meter": "ssr_duration_gb_hour",
+      "quantity": "0",
+      "unit_price_usd": "0",
+      "basis": "Static frontend only; confirm no SSR route."
+    },
+    {
+      "meter": "backend_and_logs_usd",
+      "quantity": "1",
+      "unit_price_usd": "0",
+      "basis": "Pending sum of the seven backend components below; use pre-allowance estimates."
+    },
+    {
+      "meter": "other_aws_usd",
+      "quantity": "1",
+      "unit_price_usd": "0",
+      "basis": "Review retained or additional AWS charges outside the seven listed components."
+    }
+  ],
+  "backend_components": {
+    "cognito": {
+      "review_status": "pending",
+      "estimated_usd": "0",
+      "basis": "Pending user-pool tier, active-user and trigger review."
+    },
+    "appsync": {
+      "review_status": "pending",
+      "estimated_usd": "0",
+      "basis": "Pending GraphQL operation, real-time and outbound-data review."
+    },
+    "dynamodb": {
+      "review_status": "pending",
+      "estimated_usd": "0",
+      "basis": "Pending table read/write, storage, backup and retained-resource review."
+    },
+    "s3": {
+      "review_status": "pending",
+      "estimated_usd": "0",
+      "basis": "Pending app file storage, request and transfer review."
+    },
+    "lambda": {
+      "review_status": "pending",
+      "estimated_usd": "0",
+      "basis": "Pending inspect-function requests, memory, duration and trigger review."
+    },
+    "cloudwatch": {
+      "review_status": "pending",
+      "estimated_usd": "0",
+      "basis": "Pending log ingestion, retention and existing log review."
+    },
+    "network": {
+      "review_status": "pending",
+      "estimated_usd": "0",
+      "basis": "Pending backend data-transfer and other network-meter review."
+    }
+  },
+  "contingency_usd": "0.25"
+}

@@ -1,0 +1,89 @@
+{
+  "scope": "All account names, Regions, prices and balances are fictional supplied design facts, not an AWS account readback.",
+  "cases": [
+    {
+      "id": "local-us-boundary",
+      "application_account": "shop-us",
+      "inference_account": "shop-us",
+      "approved_inference_account": "shop-us",
+      "cross_account_role_reviewed": false,
+      "source_region": "us-east-1",
+      "residency_rule": "single_region",
+      "approved_processing_regions": ["us-east-1"],
+      "candidate_processing_regions": ["us-east-1"],
+      "logging": {"mode": "content", "account": "shop-us", "region": "us-east-1", "content_retention_approved": true},
+      "metrics_and_request_id_plan": true,
+      "cost": {"included_meters": ["input_tokens", "output_tokens", "retrieval", "logs_and_storage", "retries"], "estimated_total_usd": 8, "run_limit_usd": 12, "gross_budget_headroom_usd": 15, "credit_balance_usd": 60, "credit_reserve_usd": 40}
+    },
+    {
+      "id": "eu-global-route",
+      "application_account": "shop-eu",
+      "inference_account": "shop-eu",
+      "approved_inference_account": "shop-eu",
+      "cross_account_role_reviewed": false,
+      "source_region": "eu-west-1",
+      "residency_rule": "approved_geography",
+      "approved_processing_regions": ["eu-west-1", "eu-central-1"],
+      "candidate_processing_regions": ["eu-west-1", "us-east-1"],
+      "logging": {"mode": "off", "account": "", "region": "", "content_retention_approved": false},
+      "metrics_and_request_id_plan": true,
+      "cost": {"included_meters": ["input_tokens", "output_tokens", "retrieval", "logs_and_storage", "retries"], "estimated_total_usd": 8, "run_limit_usd": 12, "gross_budget_headroom_usd": 15, "credit_balance_usd": 60, "credit_reserve_usd": 40}
+    },
+    {
+      "id": "shared-role-without-trust-review",
+      "application_account": "shop-us",
+      "inference_account": "ai-us",
+      "approved_inference_account": "ai-us",
+      "cross_account_role_reviewed": false,
+      "source_region": "us-east-1",
+      "residency_rule": "single_region",
+      "approved_processing_regions": ["us-east-1"],
+      "candidate_processing_regions": ["us-east-1"],
+      "logging": {"mode": "content", "account": "ai-us", "region": "us-east-1", "content_retention_approved": true},
+      "metrics_and_request_id_plan": true,
+      "cost": {"included_meters": ["input_tokens", "output_tokens", "retrieval", "logs_and_storage", "retries"], "estimated_total_usd": 8, "run_limit_usd": 12, "gross_budget_headroom_usd": 15, "credit_balance_usd": 60, "credit_reserve_usd": 40}
+    },
+    {
+      "id": "logs-placed-in-security-account",
+      "application_account": "shop-us",
+      "inference_account": "ai-us",
+      "approved_inference_account": "ai-us",
+      "cross_account_role_reviewed": true,
+      "source_region": "us-east-1",
+      "residency_rule": "single_region",
+      "approved_processing_regions": ["us-east-1"],
+      "candidate_processing_regions": ["us-east-1"],
+      "logging": {"mode": "content", "account": "security", "region": "us-east-1", "content_retention_approved": true},
+      "metrics_and_request_id_plan": true,
+      "cost": {"included_meters": ["input_tokens", "output_tokens", "retrieval", "logs_and_storage", "retries"], "estimated_total_usd": 8, "run_limit_usd": 12, "gross_budget_headroom_usd": 15, "credit_balance_usd": 60, "credit_reserve_usd": 40}
+    },
+    {
+      "id": "reserve-is-not-spendable",
+      "application_account": "shop-us",
+      "inference_account": "shop-us",
+      "approved_inference_account": "shop-us",
+      "cross_account_role_reviewed": false,
+      "source_region": "us-east-1",
+      "residency_rule": "single_region",
+      "approved_processing_regions": ["us-east-1"],
+      "candidate_processing_regions": ["us-east-1"],
+      "logging": {"mode": "off", "account": "", "region": "", "content_retention_approved": false},
+      "metrics_and_request_id_plan": true,
+      "cost": {"included_meters": ["input_tokens", "output_tokens", "retrieval", "logs_and_storage", "retries"], "estimated_total_usd": 8, "run_limit_usd": 12, "gross_budget_headroom_usd": 15, "credit_balance_usd": 45, "credit_reserve_usd": 40}
+    },
+    {
+      "id": "shared-eu-reviewed-paper-path",
+      "application_account": "shop-eu",
+      "inference_account": "ai-eu",
+      "approved_inference_account": "ai-eu",
+      "cross_account_role_reviewed": true,
+      "source_region": "eu-west-1",
+      "residency_rule": "approved_geography",
+      "approved_processing_regions": ["eu-west-1", "eu-central-1"],
+      "candidate_processing_regions": ["eu-west-1", "eu-central-1"],
+      "logging": {"mode": "content", "account": "ai-eu", "region": "eu-west-1", "content_retention_approved": true},
+      "metrics_and_request_id_plan": true,
+      "cost": {"included_meters": ["input_tokens", "output_tokens", "retrieval", "logs_and_storage", "retries"], "estimated_total_usd": 8, "run_limit_usd": 12, "gross_budget_headroom_usd": 15, "credit_balance_usd": 60, "credit_reserve_usd": 40}
+    }
+  ]
+}

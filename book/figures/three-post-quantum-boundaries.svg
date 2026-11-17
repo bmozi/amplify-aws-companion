@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="630" viewBox="0 0 720 630" role="img" aria-labelledby="title desc">
+  <title id="title">Three different post-quantum decisions</title>
+  <desc id="desc">Hybrid TLS protects a selected connection to KMS. An ML-KEM KMS key helps two parties establish a shared secret. An ML-DSA KMS key signs an artifact for a verifier. Evidence for one path does not prove either other path.</desc>
+  <rect width="720" height="630" fill="#f7fbfc"/>
+  <text x="36" y="53" font-family="Arial, sans-serif" font-size="31" font-weight="700" fill="#123246">One name, three different jobs</text>
+  <text x="36" y="87" font-family="Arial, sans-serif" font-size="24" fill="#344d5a">Follow the path before claiming protection.</text>
+  <rect x="30" y="118" width="660" height="139" rx="13" fill="#e7f2f8" stroke="#397293" stroke-width="3"/>
+  <text x="50" y="157" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#123246">1  Protect the trip to KMS</text>
+  <text x="50" y="194" font-family="Arial, sans-serif" font-size="25" fill="#123246">Client ↔ KMS endpoint: hybrid TLS</text>
+  <text x="50" y="228" font-family="Arial, sans-serif" font-size="23" fill="#285671">Check the negotiated connection and result.</text>
+  <rect x="30" y="275" width="660" height="139" rx="13" fill="#e8f6f2" stroke="#16715c" stroke-width="3"/>
+  <text x="50" y="314" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#075b4c">2  Establish a shared secret</text>
+  <text x="50" y="351" font-family="Arial, sans-serif" font-size="25" fill="#123246">Partner ↔ ML-KEM key: encapsulate / decapsulate</text>
+  <text x="50" y="385" font-family="Arial, sans-serif" font-size="23" fill="#075b4c">Check both parties and the protected message.</text>
+  <rect x="30" y="432" width="660" height="139" rx="13" fill="#fff1df" stroke="#ae681c" stroke-width="3"/>
+  <text x="50" y="471" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#7d4109">3  Verify a signature</text>
+  <text x="50" y="508" font-family="Arial, sans-serif" font-size="25" fill="#123246">Signer ↔ ML-DSA key ↔ verifier</text>
+  <text x="50" y="542" font-family="Arial, sans-serif" font-size="23" fill="#7d4109">Check the intended artifact and old devices.</text>
+  <text x="36" y="609" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#123246">A pass on one row leaves the other rows unproven.</text>
+</svg>

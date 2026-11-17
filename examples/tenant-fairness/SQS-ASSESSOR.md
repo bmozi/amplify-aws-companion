@@ -1,0 +1,10 @@
+# SQS fair-queue decision assessor
+
+1. The authenticated application derives a trusted tenant from current membership and rejects a conflicting body label before sending. `MessageGroupId` is grouping metadata, not proof of identity or authorization.
+2. AWS treats an ungrouped message as its own distinct tenant, so the intended shop's work is split across groups. Require consistent producer tagging and customer-level checks; an approximate quiet-group metric does not certify every customer's outcome.
+3. No. The local fixture has deterministic round robin and one worker. SQS detects disproportionate in-flight/processing share and prioritizes quieter groups; it does not publish the fixture's exact dispatch order. Measure queue dwell/age and per-tenant customer completion under a representative burst in an authorized bounded run.
+4. Standard fair queues do not make a tenant's messages ordered or exactly once. FIFO offers per-group order and deduplication behavior, but business effects still need idempotency and reconciliation after ambiguous outcomes. Select the queue type from the actual ordering and throughput requirement, then price and test it.
+5. AWS lists fair-queue requests **in addition to** standard requests when grouped messages are involved in the named actions. Add a selected-Region fair-queue meter and review request quantities, retries and polling behavior; also recheck all other cost drivers and the current account credits. The old standard-only subtotal is incomplete for that changed design.
+6. Queue dwell is only one stage. Inspect dispatch-to-completion time, worker errors/retries, database contention and delivery of the final result. A low quiet-group backlog cannot establish that Shop B saw a correct report before its deadline.
+
+The current Terraform work queue has no grouped sends and no recorded fair-queue AWS run. The local scheduler, SQS documentation and pricing page support an architecture decision exercise; they do not establish fair-queue activation, observed fairness, effective tenant authorization, billed cost or learner mastery in this account.

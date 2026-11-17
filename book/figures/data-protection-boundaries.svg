@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="896" viewBox="0 0 360 896" role="img" aria-labelledby="title desc">
+  <title id="title">One request needs several kinds of protection</title>
+  <desc id="desc">Three separate views of a conceptual request. Connection protection requires the customer client to validate the entry service's certificate and expected name; if that service starts a second connection to the application, it needs its own protection decision. Application authorization establishes the actual customer and checks the requested action and record; a valid TLS connection can still be denied. An encrypted-object read depends on object access and applicable key use through the service integration. Authorized plaintext can still appear in memory, responses, logs or exports. This is not a deployed AWS topology.</desc>
+  <rect width="360" height="896" fill="#ffffff"/>
+  <g font-family="Arial,sans-serif" fill="#173347">
+    <text x="18" y="34" font-size="21" font-weight="700">One request needs</text>
+    <text x="18" y="60" font-size="21" font-weight="700">several protections</text>
+    <text x="18" y="88" font-size="16" fill="#405966">Ask three different questions.</text>
+
+    <rect x="18" y="110" width="324" height="208" rx="11" fill="#eaf3f8" stroke="#7198ad" stroke-width="2"/>
+    <text x="34" y="141" font-size="18" font-weight="700">1 · Connection</text>
+    <text x="34" y="170" font-size="16">Who is at the other end?</text>
+    <text x="34" y="201" font-size="16">Client validates certificate</text>
+    <text x="34" y="227" font-size="16">and expected server name.</text>
+    <text x="34" y="272" font-size="16">A second entry-to-app hop</text>
+    <text x="34" y="298" font-size="16">needs its own decision.</text>
+
+    <rect x="18" y="335" width="324" height="195" rx="11" fill="#fff4e5" stroke="#bf9a5c" stroke-width="2"/>
+    <text x="34" y="366" font-size="18" font-weight="700">2 · Authorization</text>
+    <text x="34" y="395" font-size="16">May this caller read this record?</text>
+    <text x="34" y="427" font-size="16">Establish the real customer.</text>
+    <text x="34" y="453" font-size="16">Check action and ownership.</text>
+    <text x="34" y="496" font-size="16">Valid TLS can still be denied.</text>
+
+    <rect x="18" y="547" width="324" height="192" rx="11" fill="#eaf4ea" stroke="#76a081" stroke-width="2"/>
+    <text x="34" y="578" font-size="18" font-weight="700">3 · Stored data</text>
+    <text x="34" y="607" font-size="16">Can this read use the key?</text>
+    <text x="34" y="640" font-size="16">Object access and applicable</text>
+    <text x="34" y="666" font-size="16">key use must both permit it.</text>
+    <text x="34" y="708" font-size="16">A key grant is not object access.</text>
+
+    <text x="18" y="780" font-size="16">Plaintext may reach memory,</text>
+    <text x="18" y="806" font-size="16">responses, logs or exports.</text>
+    <text x="18" y="844" font-size="15" fill="#405966">Conceptual design: no deployed TLS,</text>
+    <text x="18" y="866" font-size="15" fill="#405966">key policy or customer identity.</text>
+  </g>
+</svg>

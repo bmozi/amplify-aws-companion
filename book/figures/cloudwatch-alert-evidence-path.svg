@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 1030" role="img" aria-labelledby="title desc">
+<title id="title">Follow a booking alert from event to a person</title>
+<desc id="desc">Five vertically connected gates: an event reaches a Standard log group, matches a metric filter, changes an alarm state, publishes to an SNS topic and reaches a confirmed recipient. Separate checks ask whether the source is fresh and whether the customer and operator acted. The diagram does not claim live AWS delivery.</desc>
+<defs><style>text{font-family:Arial,sans-serif;fill:#193340}.title{font-size:34px;font-weight:700}.subtitle{font-size:23px}.head{font-size:26px;font-weight:700}.body{font-size:23px}.minor{font-size:20px}.box{fill:#e8f2f5;stroke:#2c6075;stroke-width:2}.decision{fill:#fff1d9;stroke:#9a6e2d;stroke-width:2}.check{fill:#eef1f7;stroke:#52698c;stroke-width:2}</style><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M1 1 L11 6 L1 11 Z" fill="#315d71"/></marker></defs>
+<rect width="860" height="1030" fill="#fff"/>
+<text x="38" y="54" class="title">Did the alert reach a person?</text>
+<text x="38" y="91" class="subtitle">A configured alarm is only one link.</text>
+<rect x="95" y="125" width="670" height="95" rx="14" class="box"/>
+<text x="124" y="163" class="head">1. Event reaches a log group</text><text x="124" y="196" class="body">Check arrival in the Standard log class.</text>
+<path d="M430 220 V249" fill="none" stroke="#315d71" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="95" y="255" width="670" height="95" rx="14" class="box"/>
+<text x="124" y="293" class="head">2. Metric filter recognizes it</text><text x="124" y="326" class="body">Did the received 5xx event match?</text>
+<path d="M430 350 V379" fill="none" stroke="#315d71" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="95" y="385" width="670" height="95" rx="14" class="decision"/>
+<text x="124" y="423" class="head">3. Alarm changes state</text><text x="124" y="456" class="body">Missing data is not a healthy zero.</text>
+<path d="M430 480 V509" fill="none" stroke="#315d71" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="95" y="515" width="670" height="95" rx="14" class="decision"/>
+<text x="124" y="553" class="head">4. SNS topic publishes</text><text x="124" y="586" class="body">Check policy, action and delivery evidence.</text>
+<path d="M430 610 V639" fill="none" stroke="#315d71" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="95" y="645" width="670" height="95" rx="14" class="box"/>
+<text x="124" y="683" class="head">5. Confirmed recipient responds</text><text x="124" y="716" class="body">Receipt and human action are separate.</text>
+<rect x="38" y="777" width="375" height="151" rx="14" class="check"/>
+<text x="60" y="814" class="head">Check the source</text><text x="60" y="848" class="body">Is the feed fresh?</text><text x="60" y="879" class="minor">A blank chart may hide missing</text><text x="60" y="905" class="minor">events or failed collection.</text>
+<rect x="447" y="777" width="375" height="151" rx="14" class="check"/>
+<text x="469" y="814" class="head">Check the outcome</text><text x="469" y="848" class="body">Did customers recover?</text><text x="469" y="879" class="minor">Confirm operator receipt and</text><text x="469" y="905" class="minor">the booking result.</text>
+<text x="38" y="980" class="minor">These checks require real evidence from the chosen AWS path.</text>
+</svg>

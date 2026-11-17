@@ -1,0 +1,118 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Fictional private repair archive - retains the bucket and its transport policy while readers rehearse change review without deployment.",
+  "Metadata": {
+    "AWSToolsMetrics": {
+      "AWSAgentToolkit": "aws-cloudformation@3"
+    },
+    "com.aws.cloudformation.Context": {
+      "must": [
+        "Study only; never deploy this template as a lab shortcut",
+        "Retained objects need a named owner and explicit cleanup decision",
+        "Retain the transport policy with the bucket during stack deletion or replacement; verify actual policy after a live change"
+      ],
+      "ref": [
+        {
+          "at": "examples/cloudformation-change-review/README.md",
+          "has": "Fictional workload, change decisions, and limits",
+          "scope": "study"
+        }
+      ]
+    }
+  },
+  "Resources": {
+    "ArchiveBucket": {
+      "Type": "AWS::S3::Bucket",
+      "DeletionPolicy": "Retain",
+      "UpdateReplacePolicy": "Retain",
+      "Metadata": {
+        "com.aws.cloudformation.Context": {
+          "why": "Stores fictional repair records; retention keeps the old physical bucket available for an explicit migration decision rather than silently deleting it.",
+          "must": [
+            "Keep public access blocked and encryption enabled",
+            "Do not claim objects moved when a replacement bucket appears"
+          ],
+          "mutable": "review-required"
+        }
+      },
+      "Properties": {
+        "PublicAccessBlockConfiguration": {
+          "BlockPublicAcls": true,
+          "BlockPublicPolicy": true,
+          "IgnorePublicAcls": true,
+          "RestrictPublicBuckets": true
+        },
+        "BucketEncryption": {
+          "ServerSideEncryptionConfiguration": [
+            {
+              "ServerSideEncryptionByDefault": {
+                "SSEAlgorithm": "AES256"
+              }
+            }
+          ]
+        },
+        "VersioningConfiguration": {
+          "Status": "Enabled"
+        },
+        "Tags": [
+          {
+            "Key": "Lesson",
+            "Value": "change-review"
+          }
+        ]
+      }
+    },
+    "TransportPolicy": {
+      "Type": "AWS::S3::BucketPolicy",
+      "DeletionPolicy": "Retain",
+      "UpdateReplacePolicy": "Retain",
+      "Metadata": {
+        "com.aws.cloudformation.Context": {
+          "why": "Refuses non-TLS requests; retention keeps this separate policy with the old archive when the bucket is retained or replaced.",
+          "must": [
+            "Keep the non-TLS deny scoped to the archive bucket and its objects",
+            "Retain the old policy when its bucket target changes; inspect effective access and orphan cleanup separately"
+          ],
+          "mutable": "review-required"
+        }
+      },
+      "Properties": {
+        "Bucket": {
+          "Ref": "ArchiveBucket"
+        },
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "DenyInsecureTransport",
+              "Effect": "Deny",
+              "Principal": "*",
+              "Action": "s3:*",
+              "Resource": [
+                {
+                  "Fn::GetAtt": ["ArchiveBucket", "Arn"]
+                },
+                {
+                  "Fn::Sub": "${ArchiveBucket.Arn}/*"
+                }
+              ],
+              "Condition": {
+                "Bool": {
+                  "aws:SecureTransport": "false"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "Outputs": {
+    "ArchiveBucketName": {
+      "Description": "Physical bucket name after a deployed stack exists; this study creates no stack.",
+      "Value": {
+        "Ref": "ArchiveBucket"
+      }
+    }
+  }
+}

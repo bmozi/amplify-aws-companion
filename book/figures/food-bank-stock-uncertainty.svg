@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 700" role="img" aria-labelledby="title desc">
+  <title id="title">A lost stock reply leaves two ledgers with different knowledge</title>
+  <desc id="desc">The pickup ledger commits stock unknown and a stable reserve:request-a operation ID before asking the separate depot stock ledger. The depot commits one reservation under that ID, but the reply is lost, so pickup cannot claim success. After both ledgers reopen, an authoritative same-ID lookup finds reserved. If lookup is unavailable or has no decision, pickup remains unknown; a fresh reservation ID is unsafe. A real provider needs a verified durable idempotency and lookup contract plus operator reconciliation.</desc>
+  <rect width="720" height="700" fill="#fff"/>
+  <g font-family="Arial, sans-serif" fill="#19354b">
+    <text x="30" y="44" font-size="27" font-weight="bold">Silence cannot tell you where the box is</text>
+    <text x="30" y="75" font-size="18">Two ledgers; no shared transaction</text>
+
+    <rect x="28" y="99" width="664" height="139" rx="13" fill="#eaf3fb" stroke="#7b9db7" stroke-width="2"/>
+    <rect x="44" y="116" width="34" height="34" rx="17" fill="#2a617f"/>
+    <text x="61" y="140" text-anchor="middle" font-size="20" font-weight="bold" fill="#fff">1</text>
+    <text x="92" y="140" font-size="22" font-weight="bold">Pickup ledger writes first</text>
+    <text x="46" y="177" font-size="18">Request accepted · state: stock_unknown</text>
+    <text x="46" y="208" font-size="18">Save operation ID: reserve:request-a</text>
+
+    <text x="360" y="263" text-anchor="middle" font-size="18" font-weight="bold" fill="#315f79">↓ ask depot to reserve under that ID</text>
+    <rect x="28" y="281" width="664" height="148" rx="13" fill="#fff1dc" stroke="#c79b5c" stroke-width="2"/>
+    <rect x="44" y="298" width="34" height="34" rx="17" fill="#956b31"/>
+    <text x="61" y="322" text-anchor="middle" font-size="20" font-weight="bold" fill="#fff">2</text>
+    <text x="92" y="322" font-size="22" font-weight="bold">Depot stock ledger commits</text>
+    <text x="46" y="359" font-size="18">Same ID · one box reserved · decision saved</text>
+    <text x="46" y="391" font-size="18" font-weight="bold" fill="#8b3e43">Reply lost after commit; pickup is still unknown.</text>
+
+    <text x="360" y="455" text-anchor="middle" font-size="18" font-weight="bold" fill="#315f79">↓ reopen both ledgers; look up the same ID</text>
+    <rect x="28" y="474" width="664" height="170" rx="13" fill="#e9f4ec" stroke="#77a588" stroke-width="2"/>
+    <rect x="44" y="491" width="34" height="34" rx="17" fill="#447d59"/>
+    <text x="61" y="515" text-anchor="middle" font-size="20" font-weight="bold" fill="#fff">3</text>
+    <text x="92" y="515" font-size="22" font-weight="bold">Resolve from depot evidence</text>
+    <text x="46" y="552" font-size="18">Found “reserved” → pickup records reserved.</text>
+    <text x="46" y="581" font-size="18">No lookup answer or no saved decision → unknown.</text>
+    <text x="46" y="610" font-size="18" font-weight="bold">Do not invent a new reservation ID.</text>
+
+    <text x="30" y="679" font-size="16">Real provider: verify ID replay, lookup authority and an operator path.</text>
+  </g>
+</svg>

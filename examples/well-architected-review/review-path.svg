@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+  <title id="title">Six questions, one workload, one evidence-led improvement</title>
+  <desc id="desc">A repair request is examined through operations, security, reliability, performance, cost and sustainability. All six questions feed a shared evidence record that distinguishes observed, missing and proposed facts. That record leads to a provisional decision, a bounded check and a revised decision. A green homepage alone is marked narrow evidence.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#355d78"/></marker>
+  </defs>
+  <rect width="1200" height="660" fill="#f8fafc"/>
+  <g font-family="Arial, sans-serif">
+    <text x="40" y="54" font-size="30" font-weight="bold" fill="#17324c">Review the whole repair request</text>
+    <text x="40" y="85" font-size="18" fill="#35536c">Six questions look at one customer path. Each answer needs its own evidence.</text>
+    <rect x="40" y="120" width="310" height="90" rx="12" fill="#e7f0fa" stroke="#5f88aa" stroke-width="2"/>
+    <text x="58" y="153" font-size="21" font-weight="bold" fill="#17324c">Customer promise</text>
+    <text x="58" y="183" font-size="17" fill="#35536c">Private request, honest status</text>
+    <path d="M355 165 H418" stroke="#355d78" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="430" y="120" width="325" height="90" rx="12" fill="#fef0d7" stroke="#b48135" stroke-width="2"/>
+    <text x="448" y="153" font-size="21" font-weight="bold" fill="#563c1d">Observed page load: 200</text>
+    <text x="448" y="183" font-size="17" fill="#76552f">Narrow signal, not assignment proof</text>
+    <path d="M762 165 H817" stroke="#355d78" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="830" y="120" width="330" height="90" rx="12" fill="#e4f2e8" stroke="#5d9871" stroke-width="2"/>
+    <text x="848" y="153" font-size="21" font-weight="bold" fill="#234c31">Ask what else must hold</text>
+    <text x="848" y="183" font-size="17" fill="#41654b">Follow the complete request</text>
+
+    <rect x="40" y="250" width="338" height="72" rx="10" fill="#e5f1fc" stroke="#5c87aa" stroke-width="2"/>
+    <text x="58" y="280" font-size="20" font-weight="bold" fill="#17324c">Operations</text>
+    <text x="58" y="305" font-size="16" fill="#35536c">Who notices and responds?</text>
+    <rect x="431" y="250" width="338" height="72" rx="10" fill="#f5e9f0" stroke="#a57390" stroke-width="2"/>
+    <text x="449" y="280" font-size="20" font-weight="bold" fill="#573148">Security</text>
+    <text x="449" y="305" font-size="16" fill="#67445a">Can another shop write or read?</text>
+    <rect x="822" y="250" width="338" height="72" rx="10" fill="#e4f2e8" stroke="#5d9871" stroke-width="2"/>
+    <text x="840" y="280" font-size="20" font-weight="bold" fill="#234c31">Reliability</text>
+    <text x="840" y="305" font-size="16" fill="#41654b">What survives a lost reply?</text>
+    <rect x="40" y="339" width="338" height="72" rx="10" fill="#e4f2e8" stroke="#5d9871" stroke-width="2"/>
+    <text x="58" y="369" font-size="20" font-weight="bold" fill="#234c31">Performance</text>
+    <text x="58" y="394" font-size="16" fill="#41654b">Does the busiest request finish?</text>
+    <rect x="431" y="339" width="338" height="72" rx="10" fill="#fef0d7" stroke="#b48135" stroke-width="2"/>
+    <text x="449" y="369" font-size="20" font-weight="bold" fill="#563c1d">Cost</text>
+    <text x="449" y="394" font-size="16" fill="#76552f">What is the complete bill path?</text>
+    <rect x="822" y="339" width="338" height="72" rx="10" fill="#e5f1fc" stroke="#5c87aa" stroke-width="2"/>
+    <text x="840" y="369" font-size="20" font-weight="bold" fill="#17324c">Sustainability</text>
+    <text x="840" y="394" font-size="16" fill="#35536c">Which work and bytes are needed?</text>
+
+    <path d="M600 423 V446" stroke="#355d78" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="206" y="456" width="788" height="76" rx="12" fill="#e9eef5" stroke="#73879c" stroke-width="2"/>
+    <text x="226" y="485" font-size="22" font-weight="bold" fill="#17324c">Shared evidence record</text>
+    <text x="226" y="513" font-size="18" fill="#35536c">Observed fact  •  missing fact  •  proposed check  •  owner</text>
+    <path d="M600 538 V558" stroke="#355d78" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="206" y="567" width="788" height="60" rx="12" fill="#f3e8ec" stroke="#a76981" stroke-width="2"/>
+    <text x="226" y="604" font-size="20" font-weight="bold" fill="#6c2f49">Provisional decision → bounded test → revise with the result</text>
+  </g>
+</svg>

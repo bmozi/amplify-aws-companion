@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="790" viewBox="0 0 360 790" role="img" aria-labelledby="title desc">
+<title id="title">Five architect questions around one confirmed booking</title>
+<desc id="desc">A confirmed booking promise leads to five numbered decision cards: system, authority, whole cost, recovery and operations. Each card asks two questions and names an observation needed before the customer promise can be accepted. This original study diagram is not an AWS exam task map.</desc>
+<rect width="360" height="790" fill="#f8fbfd"/>
+<text x="18" y="27" fill="#183447" font-family="Arial,sans-serif" font-size="21" font-weight="700">One promise, five decisions</text>
+<text x="18" y="47" fill="#3c5c6f" font-family="Arial,sans-serif" font-size="12.5">A repair shop after a Region failure</text>
+<rect x="18" y="60" width="324" height="86" rx="12" fill="#183f59"/>
+<text x="34" y="88" fill="#fff" font-family="Arial,sans-serif" font-size="16" font-weight="700">A confirmed booking stays findable</text>
+<text x="34" y="111" fill="#fff" font-family="Arial,sans-serif" font-size="14">to the right person after failure.</text>
+<text x="34" y="132" fill="#d2ebf5" font-family="Arial,sans-serif" font-size="12.5">Time and data-loss limits still apply.</text>
+<path d="M40 146V715" stroke="#8aabbc" stroke-width="2" stroke-dasharray="4 5"/>
+
+<g>
+<rect x="18" y="154" width="324" height="103" rx="11" fill="#e8f4fa" stroke="#2d7194" stroke-width="1.7"/>
+<rect x="18" y="154" width="6" height="103" rx="3" fill="#2d7194"/>
+<circle cx="42" cy="179" r="15" fill="#2d7194"/>
+<text x="42" y="184" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="15" font-weight="700">1</text>
+<text x="65" y="184" fill="#183447" font-family="Arial,sans-serif" font-size="16" font-weight="700">System</text>
+<text x="65" y="206" fill="#183447" font-family="Arial,sans-serif" font-size="13.3">Where is the confirmed booking stored?</text>
+<text x="65" y="226" fill="#183447" font-family="Arial,sans-serif" font-size="13.3">Who owns the write and retry?</text>
+<text x="65" y="246" fill="#3c5c6f" font-family="Arial,sans-serif" font-size="12.4">Proof: chosen path + record + read</text>
+</g>
+<g>
+<rect x="18" y="264" width="324" height="103" rx="11" fill="#e9f4ed" stroke="#43846c" stroke-width="1.7"/>
+<rect x="18" y="264" width="6" height="103" rx="3" fill="#43846c"/>
+<circle cx="42" cy="289" r="15" fill="#43846c"/>
+<text x="42" y="294" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="15" font-weight="700">2</text>
+<text x="65" y="294" fill="#183447" font-family="Arial,sans-serif" font-size="16" font-weight="700">Authority</text>
+<text x="65" y="316" fill="#183447" font-family="Arial,sans-serif" font-size="13.3">Who may see or change it?</text>
+<text x="65" y="336" fill="#183447" font-family="Arial,sans-serif" font-size="13.3">Who may switch the active writer?</text>
+<text x="65" y="356" fill="#3c5c6f" font-family="Arial,sans-serif" font-size="12.4">Proof: allowed + denied paths</text>
+</g>
+<g>
+<rect x="18" y="374" width="324" height="103" rx="11" fill="#fff3dc" stroke="#aa741c" stroke-width="1.7"/>
+<rect x="18" y="374" width="6" height="103" rx="3" fill="#aa741c"/>
+<circle cx="42" cy="399" r="15" fill="#aa741c"/>
+<text x="42" y="404" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="15" font-weight="700">3</text>
+<text x="65" y="404" fill="#183447" font-family="Arial,sans-serif" font-size="16" font-weight="700">Whole cost</text>
+<text x="65" y="426" fill="#183447" font-family="Arial,sans-serif" font-size="13.3">What runs idle, copies and retries?</text>
+<text x="65" y="446" fill="#183447" font-family="Arial,sans-serif" font-size="13.3">What remains after the trial?</text>
+<text x="65" y="466" fill="#3c5c6f" font-family="Arial,sans-serif" font-size="12.4">Proof: rates + usage + bill</text>
+</g>
+<g>
+<rect x="18" y="484" width="324" height="103" rx="11" fill="#f1ecfa" stroke="#8064a7" stroke-width="1.7"/>
+<rect x="18" y="484" width="6" height="103" rx="3" fill="#8064a7"/>
+<circle cx="42" cy="509" r="15" fill="#8064a7"/>
+<text x="42" y="514" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="15" font-weight="700">4</text>
+<text x="65" y="514" fill="#183447" font-family="Arial,sans-serif" font-size="16" font-weight="700">Recovery</text>
+<text x="65" y="536" fill="#183447" font-family="Arial,sans-serif" font-size="13.3">Does standby know every confirmation?</text>
+<text x="65" y="556" fill="#183447" font-family="Arial,sans-serif" font-size="13.3">Can traffic return without lost writes?</text>
+<text x="65" y="576" fill="#3c5c6f" font-family="Arial,sans-serif" font-size="12.4">Proof: both switches + timed customer read</text>
+</g>
+<g>
+<rect x="18" y="594" width="324" height="103" rx="11" fill="#fbeceb" stroke="#a35d56" stroke-width="1.7"/>
+<rect x="18" y="594" width="6" height="103" rx="3" fill="#a35d56"/>
+<circle cx="42" cy="619" r="15" fill="#a35d56"/>
+<text x="42" y="624" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="15" font-weight="700">5</text>
+<text x="65" y="624" fill="#183447" font-family="Arial,sans-serif" font-size="16" font-weight="700">Operations</text>
+<text x="65" y="646" fill="#183447" font-family="Arial,sans-serif" font-size="13.3">Who notices a missing booking?</text>
+<text x="65" y="666" fill="#183447" font-family="Arial,sans-serif" font-size="13.3">What stops a bad automatic switch?</text>
+<text x="65" y="686" fill="#3c5c6f" font-family="Arial,sans-serif" font-size="12.4">Proof: signal + owner + negative test</text>
+</g>
+<rect x="18" y="713" width="324" height="61" rx="10" fill="#fff" stroke="#9bb8c6" stroke-width="1.6"/>
+<text x="34" y="739" fill="#183447" font-family="Arial,sans-serif" font-size="14.4" font-weight="700">A green component is a narrow clue.</text>
+<text x="34" y="759" fill="#3c5c6f" font-family="Arial,sans-serif" font-size="12.5">Check the full customer promise.</text>
+</svg>

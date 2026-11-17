@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+<title id="title">One ordered batch, one failed record</title>
+<desc id="desc">In a single message group, A completes, B fails, and C remains unprocessed. The partial batch response names B and C; the event source mapping must enable ReportBatchItemFailures.</desc>
+<rect width="1200" height="640" fill="#fffefa"/>
+<text x="54" y="65" font-family="Arial,sans-serif" font-size="34" font-weight="bold" fill="#123353">One message group: stop at the first failure</text>
+<text x="54" y="108" font-family="Arial,sans-serif" font-size="22" fill="#34516b">One illustrative batch · messages share the same ordering group</text>
+<g font-family="Arial,sans-serif">
+<rect x="55" y="155" width="300" height="180" rx="12" fill="#e8f3ec" stroke="#357554" stroke-width="3"/>
+<text x="80" y="208" font-size="38" font-weight="bold" fill="#123353">A</text><text x="80" y="252" font-size="25" fill="#1b5136">Completed</text><text x="80" y="293" font-size="20" fill="#34516b">Not in failure list</text>
+<rect x="450" y="155" width="300" height="180" rx="12" fill="#fff1e0" stroke="#aa5a18" stroke-width="3"/>
+<text x="475" y="208" font-size="38" font-weight="bold" fill="#123353">B</text><text x="475" y="252" font-size="25" fill="#8b4211">Attempted; failed</text><text x="475" y="293" font-size="20" fill="#34516b">Return B</text>
+<rect x="845" y="155" width="300" height="180" rx="12" fill="#edf1f5" stroke="#607891" stroke-width="3"/>
+<text x="870" y="208" font-size="38" font-weight="bold" fill="#123353">C</text><text x="870" y="252" font-size="25" fill="#314c67">Not attempted</text><text x="870" y="293" font-size="20" fill="#34516b">Return C</text>
+<path d="M 360 245 H 435 M 830 245 H 765" stroke="#526b82" stroke-width="5" fill="none"/>
+<polygon points="435,245 421,237 421,253" fill="#526b82"/><text x="781" y="236" font-size="21" fill="#526b82">STOP</text>
+<rect x="55" y="390" width="1090" height="150" rx="12" fill="#f3f7fa" stroke="#8ca3b8" stroke-width="2"/>
+<text x="80" y="435" font-size="25" font-weight="bold" fill="#123353">Failure identifiers to return: B and C</text>
+<text x="80" y="477" font-size="21" fill="#34516b">The event source mapping must enable ReportBatchItemFailures.</text>
+<text x="80" y="513" font-size="21" fill="#34516b">Retries may repeat effects; reconcile uncertain outcomes.</text>
+<text x="55" y="592" font-size="19" fill="#465f75">Local model · Other message groups may progress independently.</text>
+</g></svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1180" role="img" aria-labelledby="title desc">
+<title id="title">The smallest worker pool misses the customer deadline</title>
+<desc id="desc">Two aligned charts compare three fictional worker schedules for the same 90 accepted repair jobs, a four-minute deadline, and an assumed rate of 15 correct jobs per worker-minute. Four workers kept eight minutes finish 90 on time and provision 32 worker-minutes. Two workers kept four minutes finish 90 on time and provision eight worker-minutes. One worker kept six minutes finishes only 60 on time, leaving 30 late, while provisioning six worker-minutes. Durable acceptance and correct output are assumed; queue, retries, resilience, AWS cost, electricity and carbon are not measured.</desc>
+<defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#193747}.title{font-size:20px;font-weight:700}.sub{font-size:16px;fill:#395766}.head{font-size:19px;font-weight:700}.body{font-size:17px}.value{font-size:18px;font-weight:700}.small{font-size:16px}</style></defs>
+<rect width="360" height="1180" fill="#f6f8f8"/>
+<text x="16" y="31" class="title">Fewer minutes can miss the job</text>
+<text x="16" y="55" class="sub">Fictional burst · deadline: minute 4</text>
+
+<rect x="16" y="76" width="328" height="119" rx="12" fill="#fff1da" stroke="#a46b29" stroke-width="2"/>
+<text x="30" y="105" class="head">The customer promise</text>
+<text x="30" y="134" class="body">90 correct jobs on time.</text>
+<text x="30" y="162" class="body">Assume 15 correct jobs per</text>
+<text x="30" y="185" class="body">worker-minute.</text>
+
+<rect x="16" y="218" width="328" height="390" rx="12" fill="#fff" stroke="#9eabb2" stroke-width="2"/>
+<text x="30" y="247" class="head">Correct by minute four</text>
+<text x="30" y="273" class="small">Target: 90 jobs; shorter bar = late</text>
+<text x="30" y="309" class="body">4 workers × 8 minutes</text>
+<rect x="30" y="322" width="240" height="24" rx="6" fill="#70aa86"/>
+<text x="284" y="342" class="value">90</text>
+<text x="30" y="388" class="body">2 workers × 4 minutes</text>
+<rect x="30" y="401" width="240" height="24" rx="6" fill="#70aa86"/>
+<text x="284" y="421" class="value">90</text>
+<text x="30" y="467" class="body">1 worker × 6 minutes</text>
+<rect x="30" y="480" width="160" height="24" rx="6" fill="#d18b75"/>
+<text x="284" y="500" class="value">60</text>
+<text x="30" y="546" class="body">One worker leaves 30 jobs late.</text>
+<text x="30" y="575" class="small">Bars compare completed jobs,</text>
+<text x="30" y="597" class="small">not all provisioned capacity.</text>
+
+<rect x="16" y="630" width="328" height="390" rx="12" fill="#fff" stroke="#9eabb2" stroke-width="2"/>
+<text x="30" y="659" class="head">Provisioned worker-minutes</text>
+<text x="30" y="685" class="small">Resource proxy, not bill or carbon</text>
+<text x="30" y="721" class="body">4 workers × 8 minutes</text>
+<rect x="30" y="734" width="240" height="24" rx="6" fill="#789cb0"/>
+<text x="284" y="754" class="value">32</text>
+<text x="30" y="800" class="body">2 workers × 4 minutes</text>
+<rect x="30" y="813" width="60" height="24" rx="6" fill="#789cb0"/>
+<text x="284" y="833" class="value">8</text>
+<text x="30" y="879" class="body">1 worker × 6 minutes</text>
+<rect x="30" y="892" width="45" height="24" rx="6" fill="#789cb0"/>
+<text x="284" y="912" class="value">6</text>
+<text x="30" y="958" class="body">The smallest resource total</text>
+<text x="30" y="987" class="body">misses the deadline above.</text>
+
+<text x="16" y="1050" class="body">Durable acceptance and correct</text>
+<text x="16" y="1076" class="body">work are assumed. Test failure</text>
+<text x="16" y="1102" class="body">and interruption margin.</text>
+<text x="16" y="1142" class="small">Queue, retries, AWS price, energy</text>
+<text x="16" y="1165" class="small">and carbon are not measured.</text>
+</svg>

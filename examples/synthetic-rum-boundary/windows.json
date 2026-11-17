@@ -1,0 +1,38 @@
+[
+  {
+    "name": "green_probe_hurt_browsers",
+    "canary_expected": 5,
+    "canary_reported": 5,
+    "canary_success": 5,
+    "browser_visits": 200,
+    "rum_received": 40,
+    "rum_error_sessions": 12,
+    "accepted": 70,
+    "completed": 65,
+    "accepted_inventory_complete": true
+  },
+  {
+    "name": "silent_client_telemetry",
+    "canary_expected": 5,
+    "canary_reported": 5,
+    "canary_success": 5,
+    "browser_visits": 180,
+    "rum_received": 0,
+    "rum_error_sessions": 0,
+    "accepted": 60,
+    "completed": 60,
+    "accepted_inventory_complete": true
+  },
+  {
+    "name": "incomplete_probe_and_inventory",
+    "canary_expected": 5,
+    "canary_reported": 3,
+    "canary_success": 2,
+    "browser_visits": 150,
+    "rum_received": 20,
+    "rum_error_sessions": 0,
+    "accepted": 55,
+    "completed": 55,
+    "accepted_inventory_complete": false
+  }
+]

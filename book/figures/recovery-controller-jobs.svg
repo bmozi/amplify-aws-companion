@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 750" role="img" aria-labelledby="title desc">
+<title id="title">Recovery has preparation jobs and incident jobs</title>
+<desc id="desc">Five jobs in two phases. Before an incident, Resilience Hub assessment estimates whether a published application meets a resiliency policy, and a bounded FIS experiment tests a selected fault; neither proves actual booking recovery. During an incident, a human owner checks fresh writer authority, uncertain bookings, and standby capacity before approving action. Scoped Automation or ARC routing controls can execute selected steps, then the operator verifies old and new bookings and customer completion. The figure shows a fictional decision map, not deployed recovery or a measured outcome.</desc>
+<defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#193747}.title{font-size:18px;font-weight:700}.head{font-size:16px;font-weight:700}.body{font-size:14px}.note{font-size:13px}.phase{font-size:14px;font-weight:700}.box{stroke-width:1.5}</style></defs>
+<rect width="360" height="750" fill="#f6f8f8"/>
+<text x="14" y="29" class="title">Recovery has five jobs</text>
+<text x="14" y="48" class="note">Tool status is not a correct booking.</text>
+<rect x="14" y="58" width="332" height="28" rx="8" fill="#dcebf3"/>
+<text x="27" y="78" class="phase">BEFORE AN INCIDENT · PREPARE</text>
+<rect x="14" y="96" width="332" height="106" rx="10" fill="#eaf3f7" stroke="#315c70" class="box"/>
+<text x="27" y="120" class="head">1  Assess the design</text>
+<text x="27" y="142" class="body">Resilience Hub compares a</text>
+<text x="27" y="160" class="body">published app with a policy.</text>
+<text x="27" y="188" class="note">Verify real time and durable data.</text>
+<rect x="14" y="212" width="332" height="106" rx="10" fill="#e6f3eb" stroke="#37714d" class="box"/>
+<text x="27" y="236" class="head">2  Test a reviewed fault</text>
+<text x="27" y="258" class="body">FIS tests a selected fault; an</text>
+<text x="27" y="276" class="body">alarm may stop injection.</text>
+<text x="27" y="304" class="note">Stopping does not reconcile bookings.</text>
+<rect x="14" y="328" width="332" height="28" rx="8" fill="#dcebf3"/>
+<text x="27" y="348" class="phase">DURING AN INCIDENT · RECOVER</text>
+<rect x="14" y="366" width="332" height="112" rx="10" fill="#fff1da" stroke="#a46b29" class="box"/>
+<text x="27" y="390" class="head">3  Decide with fresh evidence</text>
+<text x="27" y="412" class="body">Owner checks writer authority,</text>
+<text x="27" y="430" class="body">uncertain bookings and capacity.</text>
+<text x="27" y="458" class="note">Approve, wait or stop; green is not enough.</text>
+<rect x="14" y="488" width="332" height="112" rx="10" fill="#eaf3f7" stroke="#315c70" class="box"/>
+<text x="27" y="512" class="head">4  Execute a scoped change</text>
+<text x="27" y="534" class="body">Automation runs selected steps;</text>
+<text x="27" y="552" class="body">ARC may change a traffic route.</text>
+<text x="27" y="580" class="note">Fence writer; watch caches and failures.</text>
+<rect x="14" y="610" width="332" height="112" rx="10" fill="#e6f3eb" stroke="#37714d" class="box"/>
+<text x="27" y="634" class="head">5  Verify the customer result</text>
+<text x="27" y="656" class="body">Read old and new bookings;</text>
+<text x="27" y="674" class="body">complete a new booking.</text>
+<text x="27" y="702" class="note">HTTP 200 or green runbook is not proof.</text>
+<text x="14" y="742" class="note">Fictional map; no AWS recovery measured.</text>
+</svg>

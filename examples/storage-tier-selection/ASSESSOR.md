@@ -1,0 +1,12 @@
+# Assessor notes: storage tier selection
+
+These are reasoning cues, not a single official answer key or calibrated exam score. Multiple choices can fit if the stated workload and current service behavior support them.
+
+- **Thumbnails:** S3 Standard is a natural immediate-access candidate for frequent reads. Compare S3 Intelligent-Tiering if access genuinely varies and the monitoring/automation terms fit; if popularity is stable and high, tiering may add complexity without changing the access need.
+- **Analytics output:** An infrequent-access class can be considered because data is reproducible, but immediate retrieval still matters. Standard-IA and One Zone-IA have different resilience and recovery assumptions; One Zone-IA is only plausible if recreating after an Availability Zone loss is acceptable. Compare actual retrieval, object sizes and duration charges.
+- **Quarterly research images:** Glacier Instant Retrieval is designed for infrequently accessed archive data needing millisecond access. Compare Standard-IA and other eligible classes using complete current pricing. Small objects, per-request access and retrieval frequency can change the result.
+- **Annual audit package:** Glacier Flexible Retrieval is intended for archive data that does not need real-time access; restoration is required first. Confirm that the selected retrieval option and entire business path fit half a day. If not, move to a faster candidate or hold a separately authorized fast copy.
+- **Historical logs:** Glacier Deep Archive can fit rare long-term access only when the business accepts its slower restore path and retention matches its duration terms. It is not a replacement for the separate fast recovery copy.
+- **Changed cases:** Stable hot access tends toward a frequent-access choice; loss of reproducibility invalidates the earlier “safe to lose one zone” assumption; splitting hot/cold subsets requires authorization, catalog, lifecycle and reconciliation; frequent retrieval can erase a storage-rate advantage; early deletion can leave a minimum-duration charge.
+
+Before recommending a class, inspect the object's size distribution, access request pattern, retrieval volume, required latency, Region, versioning, lifecycle, recovery design, retention approval and price. AWS class descriptions and typical restore times guide selection; they are not an observed workload guarantee. No live transition or customer bill was examined.

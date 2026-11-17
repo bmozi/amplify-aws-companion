@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" role="img" aria-labelledby="title desc">
+  <title id="title">A tenant request needs membership and current entitlement before a local usage receipt</title>
+  <desc id="desc">Four stacked cards follow a request, current tenant membership, current feature entitlement, and one local operation with a receipt. A separate trusted plan-change path updates the entitlement by revision. Old token labels and payment notifications are shown as insufficient shortcuts. Tenant closure stops new work while earlier effects need review.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0 0 L10 5.5 L0 11 Z" fill="#173d61"/></marker>
+    <marker id="plan-arrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0 0 L10 5.5 L0 11 Z" fill="#9a681f"/></marker>
+  </defs>
+  <rect width="600" height="900" fill="#fbfaf7"/>
+  <g font-family="Arial,sans-serif">
+    <text x="38" y="52" fill="#123451" font-size="31" font-weight="700">Four facts behind one paid feature</text>
+    <text x="38" y="87" fill="#3c5367" font-size="24">Shop A requests an export.</text>
+    <text x="38" y="118" fill="#3c5367" font-size="24">Shop B keeps its own access.</text>
+
+    <rect x="38" y="143" width="480" height="82" rx="16" fill="#e8f3f7" stroke="#1b6b8f" stroke-width="3"/>
+    <text x="62" y="176" fill="#123451" font-size="27" font-weight="700">1. Request</text>
+    <text x="62" y="208" fill="#173d61" font-size="24">Actor + shop + stable operation ID</text>
+
+    <path d="M300 229 V244" stroke="#173d61" stroke-width="3.5" marker-end="url(#arrow)"/>
+    <rect x="38" y="253" width="480" height="82" rx="16" fill="#eef3fa" stroke="#356da4" stroke-width="3"/>
+    <text x="62" y="286" fill="#123451" font-size="27" font-weight="700">2. Membership</text>
+    <text x="62" y="318" fill="#173d61" font-size="24">Trusted actor belongs to this shop?</text>
+
+    <path d="M300 339 V354" stroke="#173d61" stroke-width="3.5" marker-end="url(#arrow)"/>
+    <rect x="38" y="363" width="480" height="82" rx="16" fill="#fff2dc" stroke="#b67314" stroke-width="3"/>
+    <text x="62" y="396" fill="#553a15" font-size="27" font-weight="700">3. Current entitlement</text>
+    <text x="62" y="428" fill="#553a15" font-size="24">Tier, expiry, closure and feature</text>
+
+    <path d="M300 449 V464" stroke="#173d61" stroke-width="3.5" marker-end="url(#arrow)"/>
+    <rect x="38" y="473" width="480" height="82" rx="16" fill="#e6f2e9" stroke="#27744b" stroke-width="3"/>
+    <text x="62" y="506" fill="#173f2a" font-size="27" font-weight="700">4. Allowed result</text>
+    <text x="62" y="538" fill="#173f2a" font-size="24">One local operation + usage receipt</text>
+
+    <rect x="38" y="597" width="480" height="82" rx="16" fill="#f1f4f6" stroke="#778b9b" stroke-width="3"/>
+    <text x="62" y="630" fill="#19394f" font-size="26" font-weight="700">Separate trusted plan-change path</text>
+    <text x="62" y="662" fill="#304d63" font-size="23">Increasing revision; old events cannot win.</text>
+    <path d="M519 638 H558 V404 H522" fill="none" stroke="#9a681f" stroke-width="3.5" marker-end="url(#plan-arrow)"/>
+
+    <rect x="38" y="712" width="480" height="97" rx="16" fill="#fff5f0" stroke="#b45b43" stroke-width="3"/>
+    <text x="62" y="744" fill="#71371f" font-size="26" font-weight="700">Two shortcuts fail</text>
+    <text x="62" y="775" fill="#71371f" font-size="23">Old premium token ≠ current access.</text>
+    <text x="62" y="802" fill="#71371f" font-size="23">Payment event ≠ finished feature.</text>
+
+    <text x="38" y="852" fill="#123451" font-size="24" font-weight="700">Closure stops new work.</text>
+    <text x="38" y="882" fill="#3c5367" font-size="21">Earlier files and effects need separate review.</text>
+  </g>
+</svg>

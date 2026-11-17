@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" role="img" aria-labelledby="title desc">
+  <title id="title">Five migration mechanisms feed one business cutover decision</title>
+  <desc id="desc">Five separate migration jobs supply evidence: files must reach a readable target, a supported server rehost must run, database rows and changes need a final write boundary, network and DNS must carry customer traffic, and staff identity must permit and deny the right access. The business cutover gate requires tested journeys, reconciled data, one writer, a return plan and owner acceptance. Price replication, overlap, validation, endpoints, retained copies and cleanup. This is conceptual, not deployed AWS infrastructure.</desc>
+  <defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#18313d}.title{font-size:25px;font-weight:700}.sub{font-size:17px}.head{font-size:19px;font-weight:700}.body{font-size:17px}.gate{font-size:18px;font-weight:700}.note{font-size:16px}.row{stroke-width:2;rx:9}</style><marker id="flow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#315c6e"/></marker></defs>
+  <rect width="700" height="420" fill="#fff"/>
+  <text x="22" y="35" class="title">One move may need five different jobs</text>
+  <text x="22" y="58" class="sub">Test each path before one business cutover decision.</text>
+  <rect class="row" x="22" y="71" width="595" height="43" fill="#edf5f6" stroke="#315c6e"/>
+  <text x="37" y="98" class="head">Files</text><text x="193" y="98" class="body">Final changes reach a readable target</text>
+  <rect class="row" x="22" y="119" width="595" height="43" fill="#f7f1df" stroke="#856c2b"/>
+  <text x="37" y="146" class="head">Server</text><text x="193" y="146" class="body">Supported rehost, license, test launch</text>
+  <rect class="row" x="22" y="167" width="595" height="43" fill="#eaf4ed" stroke="#3d7450"/>
+  <text x="37" y="194" class="head">Database</text><text x="193" y="194" class="body">Rows + changes; final write boundary</text>
+  <rect class="row" x="22" y="215" width="595" height="43" fill="#f0eff8" stroke="#62598b"/>
+  <text x="37" y="242" class="head">Network / DNS</text><text x="193" y="242" class="body">Return path, capacity, customer traffic</text>
+  <rect class="row" x="22" y="263" width="595" height="43" fill="#f7eded" stroke="#89534a"/>
+  <text x="37" y="290" class="head">Staff identity</text><text x="193" y="290" class="body">Sign-in, denied access, recovery</text>
+  <path d="M617 92h31 M617 140h31 M617 188h31 M617 236h31 M617 284h31 M649 92v222" fill="none" stroke="#315c6e" stroke-width="2.5"/>
+  <path d="M649 307v11" fill="none" stroke="#315c6e" stroke-width="2.5" marker-end="url(#flow)"/>
+  <rect x="22" y="320" width="656" height="51" rx="10" fill="#e9eff2" stroke="#315c6e" stroke-width="2"/>
+  <text x="37" y="342" class="gate">Cutover gate: journeys + reconciled data + one writer</text>
+  <text x="37" y="363" class="body">Return plan + owner acceptance; missing path means hold.</text>
+  <text x="22" y="396" class="note">Price replication, overlap, validation, endpoints, retained copies, cleanup.</text>
+  <text x="22" y="415" class="note">Conceptual paths; no AWS migration deployed.</text>
+</svg>

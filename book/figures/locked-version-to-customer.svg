@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="638" viewBox="0 0 420 638" role="img" aria-labelledby="title desc">
+<title id="title">A locked version is only the beginning of recovery</title>
+<desc id="desc">An ordinary read can appear empty after a delete marker. Recovery selects the protected report version, obtains the needed key, checks that the contents are clean, and tests an authorized customer read. Each step is separate evidence.</desc>
+<defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#173746}.title{font-size:23px;font-weight:700}.head{font-size:21px;font-weight:700}.body{font-size:18px}.line{stroke:#216788;stroke-width:3;fill:none}.box{stroke:#216788;stroke-width:2}</style><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#216788"/></marker></defs>
+<rect width="420" height="638" fill="#fff"/>
+<text x="18" y="37" class="title">A locked version is step one</text>
+<rect x="18" y="57" width="384" height="91" rx="12" fill="#fff1e6" stroke="#b1733e" stroke-width="2"/>
+<text x="34" y="88" class="head">Ordinary read: missing</text>
+<text x="34" y="116" class="body">A delete marker can hide</text>
+<text x="34" y="138" class="body">an older protected version.</text>
+<path d="M210 149 V169" class="line" marker-end="url(#arrow)"/>
+<rect x="18" y="177" width="384" height="84" rx="12" fill="#e9f4f8" class="box"/>
+<text x="34" y="208" class="head">1  Find the exact version</text>
+<text x="34" y="236" class="body">Check its retention and identity.</text>
+<path d="M210 262 V282" class="line" marker-end="url(#arrow)"/>
+<rect x="18" y="290" width="384" height="84" rx="12" fill="#e9f4f8" class="box"/>
+<text x="34" y="321" class="head">2  Open it with the key</text>
+<text x="34" y="349" class="body">Use the recovery identity.</text>
+<path d="M210 375 V395" class="line" marker-end="url(#arrow)"/>
+<rect x="18" y="403" width="384" height="84" rx="12" fill="#e9f4f8" class="box"/>
+<text x="34" y="434" class="head">3  Check clean contents</text>
+<text x="34" y="462" class="body">Reconcile later deletions.</text>
+<path d="M210 488 V508" class="line" marker-end="url(#arrow)"/>
+<rect x="18" y="516" width="384" height="104" rx="12" fill="#fff4d8" stroke="#ae842a" stroke-width="2"/>
+<text x="34" y="547" class="head">4  Test the customer path</text>
+<text x="34" y="575" class="body">Verify an authorized read.</text>
+<text x="34" y="600" class="body">A retained copy alone is not proof.</text>
+</svg>

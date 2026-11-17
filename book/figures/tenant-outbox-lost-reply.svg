@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1000" role="img" aria-labelledby="title desc">
+<title id="title">A lost provider reply leaves the local effect unresolved</title>
+<desc id="desc">Shop A saves a pending outbox row with a stable effect key. A separate fictional provider records one effect but its reply is lost. The shop must match a provider receipt by tenant and key before marking the local row confirmed; a missing receipt stays unresolved. Closure before the worker check stops pending work, while closure after that check can leave an effect in flight. Closing access cannot unsend a provider effect.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#294c60"/></marker></defs>
+<rect width="360" height="1000" fill="#fff"/>
+<g font-family="Arial,sans-serif" fill="#142e3c">
+<text x="18" y="39" font-size="25" font-weight="bold">A lost reply</text>
+<text x="18" y="68" font-size="21">does not mean a failed action</text>
+<rect x="18" y="94" width="324" height="132" rx="12" fill="#e8f3f5" stroke="#294c60" stroke-width="2"/>
+<text x="34" y="126" font-size="20" font-weight="bold">1 · Shop A accepts work</text>
+<text x="34" y="158" font-size="18">Save a pending outbox row</text>
+<text x="34" y="184" font-size="18">and a stable effect key.</text>
+<text x="34" y="210" font-size="18">No provider result is known.</text>
+<path d="M180 229V249" stroke="#294c60" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="18" y="258" width="324" height="158" rx="12" fill="#fff2dc" stroke="#8b6220" stroke-width="2"/>
+<text x="34" y="290" font-size="20" font-weight="bold">2 · Provider acts</text>
+<text x="34" y="322" font-size="18">One effect is stored under</text>
+<text x="34" y="348" font-size="18">that key. Its reply is lost.</text>
+<text x="34" y="380" font-size="18">The local row still says</text>
+<text x="34" y="406" font-size="18">pending. That is not unsent.</text>
+<path d="M180 419V439" stroke="#294c60" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="18" y="448" width="324" height="158" rx="12" fill="#e9f1ed" stroke="#294c60" stroke-width="2"/>
+<text x="34" y="480" font-size="20" font-weight="bold">3 · Reconcile the effect</text>
+<text x="34" y="512" font-size="18">Look up the receipt.</text>
+<text x="34" y="538" font-size="18">Match tenant and key.</text>
+<text x="34" y="570" font-size="18">No receipt? Keep the</text>
+<text x="34" y="596" font-size="18">local result unresolved.</text>
+<text x="18" y="654" font-size="21" font-weight="bold">Closure has two clocks</text>
+<rect x="18" y="674" width="324" height="122" rx="12" fill="#f0f3f7" stroke="#607181" stroke-width="2"/>
+<text x="34" y="706" font-size="20" font-weight="bold">Before the worker check</text>
+<text x="34" y="738" font-size="18">Closing Shop A stops</text>
+<text x="34" y="764" font-size="18">its pending work.</text>
+<rect x="18" y="816" width="324" height="158" rx="12" fill="#f9e9e5" stroke="#9b493c" stroke-width="2"/>
+<text x="34" y="848" font-size="20" font-weight="bold">After the check</text>
+<text x="34" y="880" font-size="18">A provider effect may still</text>
+<text x="34" y="906" font-size="18">commit or already exist.</text>
+<text x="34" y="938" font-size="18">Closed access cannot</text>
+<text x="34" y="964" font-size="18">unsend that effect.</text>
+</g>
+</svg>

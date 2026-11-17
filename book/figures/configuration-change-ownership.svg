@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1070" role="img" aria-labelledby="title desc">
+  <title id="title">Repair configuration through the owner of desired state</title>
+  <desc id="desc">A time-bound AWS Config finding first requires a fresh read of the exact account, Region and resource. Then identify the reviewed owner of the intended value. Three alternative paths follow: change Terraform source and inspect its plan; update the launch template and stage an Auto Scaling fleet refresh; or version a Systems Manager State Manager association for a supported, reachable managed node. Every path still needs the exact target and effective permissions, bounded approval and execution, then an independent read of configuration and customer outcome. Automation can perform a bounded action but does not become the desired-state owner merely because it runs.</desc>
+  <defs><style>
+    .bg{fill:#f6f9fa}.title{font:700 30px Arial,sans-serif;fill:#173748}.sub{font:20px Arial,sans-serif;fill:#365363}.head{font:700 24px Arial,sans-serif;fill:#173748}.body{font:21px Arial,sans-serif;fill:#173748}.note{font:19px Arial,sans-serif;fill:#365363}.blue{fill:#e8f3f8;stroke:#305b76;stroke-width:2}.gold{fill:#fff3dd;stroke:#9a6428;stroke-width:2}.green{fill:#e8f5ed;stroke:#27704a;stroke-width:2}.line{stroke:#305b76;stroke-width:3}
+  </style></defs>
+  <rect width="800" height="1070" class="bg"/>
+  <text x="42" y="60" class="title">Repair through the owner of the setting.</text>
+  <text x="42" y="91" class="sub">A Config finding is evidence, not authority to change it.</text>
+  <rect x="42" y="126" width="716" height="110" rx="14" class="blue"/>
+  <text x="64" y="167" class="head">First, confirm a fresh observation.</text>
+  <text x="64" y="204" class="body">Check account, Region, resource, rule, and time.</text>
+  <rect x="42" y="253" width="716" height="91" rx="14" class="gold"/>
+  <text x="64" y="293" class="head">Who owns the intended value?</text>
+  <text x="64" y="326" class="note">Choose one of these alternative routes.</text>
+  <rect x="42" y="361" width="716" height="109" rx="14" class="green"/>
+  <text x="64" y="402" class="head">Terraform owns it</text>
+  <text x="64" y="439" class="body">Edit reviewed source; inspect plan before apply.</text>
+  <rect x="42" y="486" width="716" height="109" rx="14" class="green"/>
+  <text x="64" y="527" class="head">Auto Scaling fleet owns it</text>
+  <text x="64" y="564" class="body">Update launch template; stage replacement.</text>
+  <rect x="42" y="611" width="716" height="109" rx="14" class="green"/>
+  <text x="64" y="652" class="head">State Manager owns a node setting</text>
+  <text x="64" y="689" class="body">Version its association; check node reachability.</text>
+  <rect x="42" y="749" width="716" height="232" rx="14" class="blue"/>
+  <text x="64" y="790" class="head">Every route still needs the same fence</text>
+  <text x="64" y="831" class="body">Exact target and effective permissions.</text>
+  <text x="64" y="866" class="body">Approval, bounded work, and conflict stop.</text>
+  <text x="64" y="901" class="body">Fresh read of the setting and customer result.</text>
+  <text x="64" y="948" class="note">An Automation runbook may act; it is not the owner.</text>
+  <text x="42" y="1039" class="note">Teaching map only; no repair is installed or authorized here.</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="440" viewBox="0 0 1080 440" role="img" aria-labelledby="title desc">
+  <title id="title">A workflow name and a reusable workflow path answer different trust questions</title>
+  <desc id="desc">A direct job with a copied name has no approved called-workflow path. Two different same-branch callers can invoke the same approved reusable workflow, so the called job must independently check the artifact, cost and destination before it uses its scoped AWS role.</desc>
+  <rect width="1080" height="440" fill="#f8fbfc"/>
+  <g font-family="Arial, sans-serif" fill="#132f43">
+    <text x="32" y="44" font-size="26" font-weight="700">Who issued the job's AWS badge?</text>
+    <text x="32" y="75" font-size="17">The called workflow path narrows role trust. Release checks still belong in the called job.</text>
+    <rect x="30" y="108" width="295" height="115" rx="13" fill="#e7eef4" stroke="#597286" stroke-width="2"/>
+    <text x="50" y="143" font-size="20" font-weight="700">Direct job, copied name</text>
+    <text x="50" y="174" font-size="17">Same label; no approved</text>
+    <text x="50" y="199" font-size="17">called-workflow path.</text>
+    <rect x="30" y="265" width="295" height="120" rx="13" fill="#e4f3f4" stroke="#167a83" stroke-width="2"/>
+    <text x="50" y="299" font-size="20" font-weight="700">Two callers on main</text>
+    <text x="50" y="329" font-size="17">Both can call the same</text>
+    <text x="50" y="354" font-size="17">reusable publisher file.</text>
+    <rect x="397" y="182" width="300" height="144" rx="13" fill="#fff1da" stroke="#ab6825" stroke-width="2"/>
+    <text x="417" y="216" font-size="20" font-weight="700">Called reusable job</text>
+    <text x="417" y="245" font-size="17">Check ZIP, destination,</text>
+    <text x="417" y="269" font-size="17">source and cost before</text>
+    <text x="417" y="293" font-size="17">asking for AWS credentials.</text>
+    <rect x="770" y="182" width="275" height="144" rx="13" fill="#e7ecfa" stroke="#385b9a" stroke-width="2"/>
+    <text x="790" y="216" font-size="20" font-weight="700">IAM trust and policy</text>
+    <text x="790" y="245" font-size="17">Exact subject, audience,</text>
+    <text x="790" y="269" font-size="17">called path; narrow app</text>
+    <text x="790" y="293" font-size="17">and branch permissions.</text>
+  </g>
+  <g fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M326 324 H368 Q381 324 381 311 V275 H397" stroke="#167a83"/>
+    <path d="M384 264 L398 275 L384 286" stroke="#167a83"/>
+    <path d="M698 254 H769" stroke="#385b9a"/>
+    <path d="M756 243 L770 254 L756 265" stroke="#385b9a"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="16" font-weight="700">
+    <text x="338" y="139" fill="#9f3e35">No called path claim:</text>
+    <text x="338" y="163" fill="#9f3e35">IAM path check fails</text>
+    <text x="712" y="238" fill="#385b9a">CLAIMS</text>
+  </g>
+</svg>

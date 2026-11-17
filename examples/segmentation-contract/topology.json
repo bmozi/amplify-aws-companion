@@ -1,0 +1,56 @@
+{
+  "routes": [
+    ["browser", "alb", "public-entry"],
+    ["alb", "app", "local"],
+    ["app", "db", "local"],
+    ["worker", "db", "local"],
+    ["worker", "s3", "gateway-endpoint"],
+    ["worker", "supplier", "nat"]
+  ],
+  "egress": [
+    ["alb", "app", 8080],
+    ["app", "db", 5432],
+    ["worker", "s3", 443],
+    ["worker", "supplier", 443]
+  ],
+  "ingress": [
+    ["browser", "alb", 443],
+    ["alb", "app", 8080],
+    ["app", "db", 5432]
+  ],
+  "nacl_forward": [
+    ["alb", "app", 8080],
+    ["app", "db", 5432],
+    ["worker", "db", 5432],
+    ["worker", "s3", 443],
+    ["worker", "supplier", 443]
+  ],
+  "nacl_reply": [
+    ["app", "alb"],
+    ["db", "app"],
+    ["db", "worker"],
+    ["s3", "worker"],
+    ["supplier", "worker"]
+  ],
+  "endpoint_policy": [
+    ["worker", "s3"]
+  ],
+  "identity_permission": [
+    ["worker", "s3"]
+  ],
+  "bucket_permission": [
+    ["worker", "s3"]
+  ],
+  "required": [
+    ["browser", "alb", 443],
+    ["alb", "app", 8080],
+    ["app", "db", 5432],
+    ["worker", "s3", 443],
+    ["worker", "supplier", 443]
+  ],
+  "forbidden": [
+    ["worker", "db", 5432],
+    ["browser", "db", 5432],
+    ["browser", "app", 8080]
+  ]
+}

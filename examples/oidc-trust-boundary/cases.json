@@ -1,0 +1,92 @@
+[
+  {
+    "name": "publisher_manual_yes",
+    "aud": "sts.amazonaws.com",
+    "sub": "repo:paper-owner@101/cloud-lab@202:ref:refs/heads/main",
+    "workflow_ref": "paper-owner/cloud-lab/.github/workflows/publish.yml@refs/heads/main",
+    "publish_flag": true,
+    "workflow": "Publish the Amplify lab frontend",
+    "job_workflow_ref": "paper-owner/cloud-lab/.github/workflows/reusable-amplify-publish.yml@refs/heads/main"
+  },
+  {
+    "name": "separate_probe_flag_off",
+    "aud": "sts.amazonaws.com",
+    "sub": "repo:paper-owner@101/cloud-lab@202:ref:refs/heads/main",
+    "workflow_ref": "paper-owner/cloud-lab/.github/workflows/probe.yml@refs/heads/main",
+    "publish_flag": false,
+    "workflow": "Probe the Amplify reader identity without deploying",
+    "job_workflow_ref": ""
+  },
+  {
+    "name": "new_workflow_flag_off",
+    "aud": "sts.amazonaws.com",
+    "sub": "repo:paper-owner@101/cloud-lab@202:ref:refs/heads/main",
+    "workflow_ref": "paper-owner/cloud-lab/.github/workflows/other.yml@refs/heads/main",
+    "publish_flag": false,
+    "workflow": "Another repository workflow",
+    "job_workflow_ref": ""
+  },
+  {
+    "name": "copied_workflow_name_other_file",
+    "aud": "sts.amazonaws.com",
+    "sub": "repo:paper-owner@101/cloud-lab@202:ref:refs/heads/main",
+    "workflow": "Publish the Amplify lab frontend",
+    "workflow_ref": "paper-owner/cloud-lab/.github/workflows/other.yml@refs/heads/main",
+    "publish_flag": false,
+    "job_workflow_ref": ""
+  },
+  {
+    "name": "copied_probe_name_other_file",
+    "aud": "sts.amazonaws.com",
+    "sub": "repo:paper-owner@101/cloud-lab@202:ref:refs/heads/main",
+    "workflow": "Probe the Amplify reader identity without deploying",
+    "workflow_ref": "paper-owner/cloud-lab/.github/workflows/other.yml@refs/heads/main",
+    "publish_flag": true,
+    "job_workflow_ref": ""
+  },
+  {
+    "name": "same_workflow_other_branch",
+    "aud": "sts.amazonaws.com",
+    "sub": "repo:paper-owner@101/cloud-lab@202:ref:refs/heads/feature",
+    "workflow_ref": "paper-owner/cloud-lab/.github/workflows/publish.yml@refs/heads/feature",
+    "publish_flag": true,
+    "workflow": "Publish the Amplify lab frontend",
+    "job_workflow_ref": "paper-owner/cloud-lab/.github/workflows/reusable-amplify-publish.yml@refs/heads/feature"
+  },
+  {
+    "name": "same_subject_wrong_audience",
+    "aud": "not-aws-sts",
+    "sub": "repo:paper-owner@101/cloud-lab@202:ref:refs/heads/main",
+    "workflow_ref": "paper-owner/cloud-lab/.github/workflows/publish.yml@refs/heads/main",
+    "publish_flag": true,
+    "workflow": "Publish the Amplify lab frontend",
+    "job_workflow_ref": "paper-owner/cloud-lab/.github/workflows/reusable-amplify-publish.yml@refs/heads/main"
+  },
+  {
+    "name": "reused_names_different_ids",
+    "aud": "sts.amazonaws.com",
+    "sub": "repo:paper-owner@999/cloud-lab@888:ref:refs/heads/main",
+    "workflow_ref": "paper-owner/cloud-lab/.github/workflows/publish.yml@refs/heads/main",
+    "publish_flag": true,
+    "workflow": "Publish the Amplify lab frontend",
+    "job_workflow_ref": "paper-owner/cloud-lab/.github/workflows/reusable-amplify-publish.yml@refs/heads/main"
+  },
+  {
+    "name": "environment_subject",
+    "aud": "sts.amazonaws.com",
+    "sub": "repo:paper-owner@101/cloud-lab@202:environment:production",
+    "workflow_ref": "paper-owner/cloud-lab/.github/workflows/publish.yml@refs/heads/main",
+    "publish_flag": true,
+    "workflow": "Publish the Amplify lab frontend",
+    "job_workflow_ref": "paper-owner/cloud-lab/.github/workflows/reusable-amplify-publish.yml@refs/heads/main"
+  },
+  {
+    "name": "different_caller_same_reusable",
+    "aud": "sts.amazonaws.com",
+    "sub": "repo:paper-owner@101/cloud-lab@202:ref:refs/heads/main",
+    "workflow_ref": "paper-owner/cloud-lab/.github/workflows/another.yml@refs/heads/main",
+    "publish_flag": false,
+    "workflow": "Publish the Amplify lab frontend",
+    "job_workflow_ref": "paper-owner/cloud-lab/.github/workflows/reusable-amplify-publish.yml@refs/heads/main"
+  }
+]

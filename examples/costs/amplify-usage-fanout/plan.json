@@ -1,0 +1,21 @@
+{
+  "status": "fictional teaching assumptions, not a cloud forecast",
+  "visits": "100",
+  "distinct_signed_in_users": "25",
+  "hosting_bytes_per_visit": "500000",
+  "lists_per_visit": "2",
+  "saves_per_visit": "0.25",
+  "uploads_per_visit": "0.05",
+  "file_downloads_per_visit": "0.05",
+  "inspections_per_visit": "0.1",
+  "lambda_memory_gb": "0.25",
+  "lambda_duration_seconds_per_inspection": "0.25",
+  "log_storage_gb_months_per_new_gb": "1",
+  "realtime_connection_minutes_per_visit": "5",
+  "assumed_realtime_updates_per_save": "1",
+  "assumed_dynamodb_read_units_per_list": "1",
+  "assumed_dynamodb_write_units_per_save": "1",
+  "bytes_per_upload": "1000000",
+  "log_bytes_per_inspection": "2048",
+  "api_response_bytes_per_operation": "4096"
+}

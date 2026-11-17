@@ -1,0 +1,14 @@
+# Configuration release: assessor notes
+
+Use after the learner's first attempt. These are editorial assessment criteria, not a record of independent assessment or live execution.
+
+1. Hold B. The qualifying quote must return 900 cents under the stated promise. A probe must check eligibility and the returned amount, not only status or schema acceptance. Include a nonqualifying case so a constant 900-cent response cannot pass every requirement.
+2. Preserve the issued price, eligibility, quote identity and expiry needed to honor the agreement; enforce acceptance at the server. Record configuration revision for diagnosis without treating it as customer authorization. Inspect actual consumers and adoption evidence; deployment completion and cache refresh are different observations.
+3. Disabled alarm actions undermine the intended AppConfig automatic rollback route. Lack of qualifying requests separately leaves the business probe untested. Hold expansion, restore and verify the intended monitoring behavior, and obtain meaningful qualifying observations. Do not treat a quiet alarm as proof of correct prices. A test of alarm wiring is distinct from evidence that the metric detects this business defect.
+4. Introduce a representation that all required versions can read, define conversion explicitly (one percentage point equals 100 basis points), test consistent values, migrate consumers and retained recovery artifacts, then remove the obsolete field only when no required consumer needs it. Reverting to percent-only settings can break new-only readers. A compatible code/configuration pair is the recovery unit.
+5. Inspect queued, in-flight and completed work. Establish whether consumers reevaluate the flag and how to stop or drain the intended jobs without losing unrelated work. Verify subsequent sends and queue dispositions. Already delivered emails cannot be retracted through configuration; business correction is separate. Avoid promising exactly twenty delivered messages from a stale counter.
+6. The server authorization boundary failed. Test the premium operation with an entitled identity and an ordinary identity through the API. A visibility flag is not an entitlement check; faster refresh cannot repair missing authorization.
+
+For the transfer case, require a scope for the limit: per request, worker, tenant or whole account; identify concurrency and already accepted work. Explain enforcement and accounting lag, define the stop condition and reserve, and name unknown costs. Reject claims that a flag or budget notification alone guarantees a hard monetary ceiling.
+
+Accept different supported designs when their assumptions and consequences are explicit. Require a concrete missing observation for uncertainty. Do not average a wrong price or unauthorized operation into an acceptable score because other responses succeeded. No passing learner result has been recorded for these cases.

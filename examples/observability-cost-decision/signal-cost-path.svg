@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Keep the small critical signal path while reducing verbose diagnostic cost</title>
+  <desc id="desc">A customer booking and failed read enter a small Standard log group. Its metric filter leads to an alarm and an operator receipt. Verbose diagnostics enter a separate Infrequent Access group and a bounded query. A five-day incident review needs seven-day critical retention and the receipt, failure, error and heartbeat records. Costs include ingestion, storage, scanned query data and metrics.</desc>
+  <rect width="1200" height="680" fill="#f8fbfc"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#14384a">
+    <text x="55" y="65" font-size="38" font-weight="700">Spend less on signals, keep the answer</text>
+    <text x="55" y="106" font-size="25">A cheaper log plan must still explain a failed booking.</text>
+  </g>
+  <g stroke="#2a5b73" stroke-width="3" fill="none">
+    <path d="M260 300 H330"/>
+    <path d="M580 270 H655"/>
+    <path d="M840 270 H900"/>
+    <path d="M260 460 H330"/>
+    <path d="M580 460 H655"/>
+  </g>
+  <g fill="#2a5b73">
+    <path d="M330 300 l-15 -9 v18z"/><path d="M655 270 l-15 -9 v18z"/><path d="M900 270 l-15 -9 v18z"/>
+    <path d="M330 460 l-15 -9 v18z"/><path d="M655 460 l-15 -9 v18z"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="55" y="200" width="205" height="305" rx="20" fill="#e6f1f5" stroke="#2a5b73" stroke-width="3"/>
+    <text x="80" y="245" font-size="26" font-weight="700" fill="#14384a">Booking</text>
+    <text x="80" y="283" font-size="23" fill="#14384a">Accepted receipt</text>
+    <text x="80" y="319" font-size="23" fill="#14384a">Failed read</text>
+    <text x="80" y="355" font-size="23" fill="#14384a">Worker error</text>
+    <text x="80" y="391" font-size="23" fill="#14384a">Heartbeat</text>
+    <text x="80" y="462" font-size="21" fill="#31586b">One incident ID</text>
+
+    <rect x="330" y="184" width="250" height="210" rx="20" fill="#e5f4ed" stroke="#337859" stroke-width="3"/>
+    <text x="355" y="227" font-size="27" font-weight="700" fill="#184c36">Critical lane</text>
+    <text x="355" y="264" font-size="22" fill="#184c36">Standard log group</text>
+    <text x="355" y="300" font-size="22" fill="#184c36">7-day retention</text>
+    <text x="355" y="336" font-size="22" fill="#184c36">Complete event set</text>
+
+    <rect x="655" y="205" width="185" height="135" rx="20" fill="#fff1d9" stroke="#aa741e" stroke-width="3"/>
+    <text x="680" y="254" font-size="25" font-weight="700" fill="#67480e">Metric filter</text>
+    <text x="680" y="295" font-size="22" fill="#67480e">Alarm state</text>
+
+    <rect x="900" y="205" width="245" height="135" rx="20" fill="#e5f4ed" stroke="#337859" stroke-width="3"/>
+    <text x="925" y="254" font-size="25" font-weight="700" fill="#184c36">Operator</text>
+    <text x="925" y="295" font-size="22" fill="#184c36">Receipt recorded?</text>
+
+    <rect x="330" y="417" width="250" height="120" rx="20" fill="#e8edf7" stroke="#556b9c" stroke-width="3"/>
+    <text x="355" y="461" font-size="25" font-weight="700" fill="#253c70">Verbose lane</text>
+    <text x="355" y="499" font-size="21" fill="#253c70">New IA log group</text>
+
+    <rect x="655" y="417" width="220" height="120" rx="20" fill="#e8edf7" stroke="#556b9c" stroke-width="3"/>
+    <text x="680" y="461" font-size="25" font-weight="700" fill="#253c70">Query</text>
+    <text x="680" y="499" font-size="21" fill="#253c70">Small scan window</text>
+
+    <rect x="55" y="574" width="1090" height="70" rx="18" fill="#fff4e6" stroke="#aa741e" stroke-width="2"/>
+    <text x="80" y="618" font-size="23" font-weight="700" fill="#67480e">Count ingestion + storage + query scan + metrics. Then test the incident path.</text>
+  </g>
+</svg>

@@ -1,0 +1,101 @@
+{
+  "shop-restore": {
+    "change": "Restore one repair shop without rolling back another shop's accepted work.",
+    "start": "restore_scope",
+    "foundation_review": {
+      "authority": ["access", "write_fence"],
+      "entry_path": ["customer_route"],
+      "work": ["workflow", "outside_effect"],
+      "data": ["records", "photos", "other_shop"],
+      "delivery": ["customer_route", "runbook"],
+      "recovery": ["runbook", "outside_effect"],
+      "whole_cost": ["cost"]
+    },
+    "nodes": {
+      "restore_scope": {"question": "What does one shop's recoverable state include?", "rejecting_observation": "The restored request points to missing or wrong-version data.", "leads_to": ["records", "photos", "workflow", "other_shop", "customer_route"]},
+      "records": {"question": "Can selected records be reconstructed without replacing the shared table?", "rejecting_observation": "A current record from the other shop disappears or an older revision wins.", "leads_to": ["write_fence", "cost"]},
+      "photos": {"question": "Do object versions and grants match the restored records?", "rejecting_observation": "The selected owner cannot open a referenced photo or a neighbor can.", "leads_to": ["access"]},
+      "workflow": {"question": "Which assignments and pending jobs have already escaped the database?", "rejecting_observation": "A technician is assigned twice after replay.", "leads_to": ["outside_effect"]},
+      "other_shop": {"question": "What proves unaffected shops retained their current work?", "rejecting_observation": "Shop B's post-backup request is missing after Shop A's restore.", "leads_to": ["write_fence"]},
+      "customer_route": {"question": "How does only this shop's customer request reach the selected restored state?", "rejecting_observation": "Shop A still reaches the damaged version or Shop B is routed to the restore candidate.", "leads_to": ["runbook"]},
+      "write_fence": {"question": "Who may write during selection and reconciliation?", "rejecting_observation": "A concurrent write is silently overwritten.", "leads_to": ["runbook"]},
+      "access": {"question": "Who may inspect temporary restore copies?", "rejecting_observation": "A restore operator or application role can read an unrelated shop.", "leads_to": ["runbook"]},
+      "outside_effect": {"question": "How will a scheduler's accepted but unanswered action be reconciled?", "rejecting_observation": "A retry creates a second technician assignment.", "leads_to": ["runbook"]},
+      "cost": {"question": "What copies, overlap time and verification work enter the full cost?", "rejecting_observation": "The estimate omits retained restore storage or the temporary environment.", "leads_to": ["runbook"]},
+      "runbook": {"question": "Who approves the return and which customer result ends the drill?", "rejecting_observation": "A healthy database is reported while a confirmed request remains unavailable.", "leads_to": []}
+    }
+  },
+  "school-two-reviewers": {
+    "change": "A document now needs two distinct human approvals after a clean scan.",
+    "start": "approval_rule",
+    "foundation_review": {
+      "authority": ["identity"],
+      "entry_path": ["file_release", "direct_link"],
+      "work": ["review_state", "retry"],
+      "data": ["approval_rule", "audit"],
+      "delivery": ["file_release", "direct_link"],
+      "recovery": ["retry", "direct_link"],
+      "whole_cost": ["cost"]
+    },
+    "nodes": {
+      "approval_rule": {"question": "What counts as two distinct current approvers for the exact version?", "rejecting_observation": "One person approves twice or an approval for older bytes releases new bytes.", "leads_to": ["review_state", "identity", "file_release"]},
+      "review_state": {"question": "How are pending, rejected and revoked decisions represented?", "rejecting_observation": "A second approval arrives after rejection and publishes the file.", "leads_to": ["audit", "retry"]},
+      "identity": {"question": "Who assigns each reviewer and what separation is required?", "rejecting_observation": "An unassigned reviewer or uploader supplies a counted approval.", "leads_to": ["audit"]},
+      "file_release": {"question": "Which application, object and old-link paths can return the bytes?", "rejecting_observation": "An earlier direct link opens the document before both approvals.", "leads_to": ["direct_link", "cost"]},
+      "audit": {"question": "Can the operator explain who approved which version and when?", "rejecting_observation": "The release has no attributable two-person decision trail.", "leads_to": []},
+      "retry": {"question": "Can duplicate events or lost replies count an approval twice?", "rejecting_observation": "One approval event replay satisfies the quorum.", "leads_to": ["audit"]},
+      "direct_link": {"question": "How are existing URLs, caches and already downloaded copies handled?", "rejecting_observation": "The normal route denies while a previously issued URL still serves bytes.", "leads_to": []},
+      "cost": {"question": "What storage, scanning, review and retained-copy work changes?", "rejecting_observation": "The estimate prices only the upload request.", "leads_to": []}
+    }
+  },
+  "transit-alert": {
+    "change": "A bus operator must alert opted-in riders affected by a route closure within five minutes, without issuing a stale all-clear.",
+    "start": "closure_fact",
+    "foundation_review": {
+      "authority": ["operator_authority", "consent"],
+      "entry_path": ["closure_fact", "affected_routes"],
+      "work": ["fanout", "retry"],
+      "data": ["status_version", "consent"],
+      "delivery": ["channels", "rider_result"],
+      "recovery": ["stale_update", "delivery_evidence"],
+      "whole_cost": ["cost"]
+    },
+    "nodes": {
+      "closure_fact": {"question": "Who confirms the closure, route, start time and five-minute clock?", "rejecting_observation": "The clock starts from a later batch run or the alert names the wrong route.", "leads_to": ["operator_authority", "affected_routes", "status_version", "fanout"]},
+      "operator_authority": {"question": "Which operator may declare or clear this exact disruption?", "rejecting_observation": "An unrelated depot can send a route-wide all-clear.", "leads_to": ["status_version"]},
+      "affected_routes": {"question": "Which stops and journeys are actually affected at this time?", "rejecting_observation": "A neighboring route is alerted while a diverted stop is missed.", "leads_to": ["consent", "rider_result"]},
+      "consent": {"question": "Which riders opted into each channel, and what may be retained?", "rejecting_observation": "A rider who opted out receives a message or a private contact list leaks to another route team.", "leads_to": ["channels", "cost"]},
+      "status_version": {"question": "What is the authoritative current closure version and its effective time?", "rejecting_observation": "An older all-clear replaces a newer closure.", "leads_to": ["stale_update", "fanout"]},
+      "stale_update": {"question": "How are late or duplicate status events refused or reconciled?", "rejecting_observation": "A delayed clear event is announced after the route closes again.", "leads_to": ["retry"]},
+      "fanout": {"question": "How are affected riders selected and work divided without losing a recipient?", "rejecting_observation": "A retry sends two contradictory messages or a large fanout misses the five-minute deadline.", "leads_to": ["channels", "retry", "cost"]},
+      "channels": {"question": "What is the app, email, text and public-stop fallback when a channel fails?", "rejecting_observation": "The app shows the alert while riders without the app receive no usable notice.", "leads_to": ["delivery_evidence", "rider_result"]},
+      "retry": {"question": "What happens after an ambiguous send result and which attempt identity is reused?", "rejecting_observation": "A timeout is treated as certain failure and a new attempt sends a duplicate or late message.", "leads_to": ["delivery_evidence"]},
+      "delivery_evidence": {"question": "Which receipt means accepted by a channel, and what proves a rider saw the current notice?", "rejecting_observation": "A provider acceptance receipt is reported as five-minute rider reach.", "leads_to": ["rider_result"]},
+      "rider_result": {"question": "How will the operator observe timely, accessible information for affected journeys?", "rejecting_observation": "Aggregate send success is green while one diverted stop or accessibility path is still wrong.", "leads_to": []},
+      "cost": {"question": "What peak messages, retries, channel rates, logs and retained contact data enter the estimate?", "rejecting_observation": "The price uses the normal daily average instead of closure-time fanout and retries.", "leads_to": []}
+    }
+  },
+  "tenant-burst": {
+    "change": "One SaaS tenant sends 100 times its usual work while others retain their deadlines.",
+    "start": "arrival_pattern",
+    "foundation_review": {
+      "authority": ["admission", "queue"],
+      "entry_path": ["arrival_pattern", "admission"],
+      "work": ["workers", "queue"],
+      "data": ["database"],
+      "delivery": ["change_rollout"],
+      "recovery": ["queue", "observability"],
+      "whole_cost": ["cost"]
+    },
+    "nodes": {
+      "arrival_pattern": {"question": "What is the new peak rate and accepted-work deadline per tenant?", "rejecting_observation": "An average hides a burst that exceeds the deadline.", "leads_to": ["admission", "workers", "database", "change_rollout"]},
+      "admission": {"question": "Which tenant may submit work and what is returned when capacity is unavailable?", "rejecting_observation": "The service acknowledges work it cannot recover or finish on time.", "leads_to": ["queue", "observability"]},
+      "workers": {"question": "Can one tenant occupy every worker or retry slot?", "rejecting_observation": "Another tenant waits past its deadline despite spare entitlement.", "leads_to": ["queue", "cost"]},
+      "database": {"question": "Is the shared data path the bottleneck after worker scheduling changes?", "rejecting_observation": "Fair worker starts still wait on saturated shared connections.", "leads_to": ["observability", "cost"]},
+      "change_rollout": {"question": "How will a new fairness rule enter service without stranding accepted jobs?", "rejecting_observation": "Old workers stop while their acknowledged tenant jobs have no recoverable owner.", "leads_to": ["queue", "observability"]},
+      "queue": {"question": "Who sets trusted tenant identity, ordering, visibility and retry limits?", "rejecting_observation": "A sender chooses a neighbor's group or a poison message blocks progress.", "leads_to": ["observability"]},
+      "observability": {"question": "Can accepted-to-complete time and failure be seen per tenant?", "rejecting_observation": "An aggregate green metric hides one tenant's missed deadline.", "leads_to": []},
+      "cost": {"question": "What new request, queue, worker, database and log usage must be priced?", "rejecting_observation": "The estimate assumes the old average after the burst change.", "leads_to": []}
+    }
+  }
+}

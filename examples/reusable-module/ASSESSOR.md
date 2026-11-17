@@ -1,0 +1,11 @@
+# Assessor notes for A17 reusable module
+
+Read after writing your own answer. The observations describe disposable local Terraform state, not AWS resource behavior.
+
+1. Keep the v1 source available and unchanged for preview, with a named maintainer and an immutable revision if this becomes a real shared module. The folder name `v1` alone does not pin bytes. A change to shared source requires each consumer's plan and acceptance review, even if one consumer already moved to v2.
+2. Different lineage and object ID demonstrate separate local histories. Copying practice state into preview would substitute another environment's ownership record; a plan might then update, destroy, replace or falsely treat a resource as already managed. Establish the intended backend/key, account and exact cloud IDs before any recovery or migration. Do not copy state to “make a plan green.”
+3. This teaching `terraform_data` update preserves its ID because of that resource's behavior. An AWS provider may mark a changed property for replacement, and a new name could create a new object while old data remains or is deleted. Inspect the actual saved plan, provider behavior, data migration, downtime, retention and rollback before apply.
+4. The v2 input validation proves only that a whole number from 1 through 30 was supplied. It does not configure lifecycle, revoke access or delete current/noncurrent versions. A real promise needs approved policy, exact object/version inventory, authorization-path deadline, lifecycle behavior, backup/restore exception, cost estimate, removal observation and later billing reconciliation.
+5. A local owner string is not an authenticated principal or permissions boundary. If role separation disappears, the plan's no-op on a synthetic record cannot prove safe execution authority. Review caller identity, state access, module source permissions, service permissions and a harmless positive/negative request in the selected environment.
+
+The lab checks two independent local state lineages and IDs, missing and invalid v2 inputs, an update plan that preserves the practice object ID, and preview's unchanged state/no-op plan. It does not test concurrent writers, a remote backend, published modules, provider upgrades or actual AWS service effects.

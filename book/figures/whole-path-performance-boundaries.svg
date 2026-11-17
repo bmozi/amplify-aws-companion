@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 698" role="img" aria-labelledby="title desc">
+  <title id="title">Trace one booking request before choosing a performance change</title>
+  <desc id="desc">Three bars use the same zero-to-900-millisecond scale and mark the 600-millisecond target. A fictional correlated request takes 110 calculation, 260 file wait, 420 database wait and 90 other milliseconds, totaling 880. Halving only file wait yields 750, still late. Cutting only database wait by 300 yields 580, within the modeled target. These are arithmetic hypotheses, not measured AWS speedups. Preserve booking correctness and test actual service behavior, cost and rollback before a change.</desc>
+  <rect width="360" height="698" fill="#fff"/>
+  <g font-family="Arial,Helvetica,sans-serif" fill="#193747">
+    <text x="16" y="36" font-size="23" font-weight="bold">Where is the time going?</text>
+    <text x="16" y="65" font-size="17">One booking · target 600 ms</text>
+    <rect x="16" y="82" width="328" height="69" rx="8" fill="#eaf3f7"/>
+    <rect x="28" y="96" width="15" height="15" fill="#79a8b8"/><text x="49" y="110" font-size="16">Calculation</text>
+    <rect x="174" y="96" width="15" height="15" fill="#e3b46d"/><text x="195" y="110" font-size="16">File wait</text>
+    <rect x="28" y="123" width="15" height="15" fill="#9386bd"/><text x="49" y="137" font-size="16">Database wait</text>
+    <rect x="174" y="123" width="15" height="15" fill="#a4bb9b"/><text x="195" y="137" font-size="16">Other</text>
+
+    <rect x="16" y="169" width="328" height="144" rx="10" fill="#f7f9fa" stroke="#8299a4"/>
+    <text x="28" y="196" font-size="21" font-weight="bold">Baseline · 880 ms</text>
+    <text x="28" y="222" font-size="17">110 calc + 260 file</text>
+    <text x="28" y="244" font-size="17">+ 420 database + 90 other</text>
+    <rect x="28" y="262" width="37" height="21" fill="#79a8b8"/>
+    <rect x="65" y="262" width="87" height="21" fill="#e3b46d"/>
+    <rect x="152" y="262" width="140" height="21" fill="#9386bd"/>
+    <rect x="292" y="262" width="30" height="21" fill="#a4bb9b"/>
+    <line x1="228" y1="255" x2="228" y2="291" stroke="#a4493d" stroke-width="3" stroke-dasharray="5 4"/>
+    <text x="28" y="301" font-size="18" font-weight="bold">Late by 280 ms</text>
+
+    <rect x="16" y="330" width="328" height="144" rx="10" fill="#f7f9fa" stroke="#8299a4"/>
+    <text x="28" y="357" font-size="21" font-weight="bold">A · Halve file wait</text>
+    <text x="28" y="383" font-size="17">110 calc + 130 file</text>
+    <text x="28" y="405" font-size="17">+ 420 database + 90 other</text>
+    <rect x="28" y="423" width="37" height="21" fill="#79a8b8"/>
+    <rect x="65" y="423" width="43" height="21" fill="#e3b46d"/>
+    <rect x="108" y="423" width="140" height="21" fill="#9386bd"/>
+    <rect x="248" y="423" width="30" height="21" fill="#a4bb9b"/>
+    <line x1="228" y1="416" x2="228" y2="452" stroke="#a4493d" stroke-width="3" stroke-dasharray="5 4"/>
+    <text x="28" y="462" font-size="18" font-weight="bold">750 ms · still late</text>
+
+    <rect x="16" y="491" width="328" height="144" rx="10" fill="#f7f9fa" stroke="#8299a4"/>
+    <text x="28" y="518" font-size="21" font-weight="bold">B · Cut database wait</text>
+    <text x="28" y="544" font-size="17">110 calc + 260 file</text>
+    <text x="28" y="566" font-size="17">+ 120 database + 90 other</text>
+    <rect x="28" y="584" width="37" height="21" fill="#79a8b8"/>
+    <rect x="65" y="584" width="87" height="21" fill="#e3b46d"/>
+    <rect x="152" y="584" width="40" height="21" fill="#9386bd"/>
+    <rect x="192" y="584" width="30" height="21" fill="#a4bb9b"/>
+    <line x1="228" y1="577" x2="228" y2="613" stroke="#a4493d" stroke-width="3" stroke-dasharray="5 4"/>
+    <text x="28" y="623" font-size="18" font-weight="bold">580 ms · modeled fit</text>
+
+    <text x="16" y="663" font-size="16" fill="#a4493d">Red mark: 600 ms on every bar.</text>
+    <text x="16" y="687" font-size="16">Arithmetic first; verify real behavior.</text>
+  </g>
+</svg>

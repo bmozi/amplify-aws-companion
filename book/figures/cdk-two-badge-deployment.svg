@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 700" role="img" aria-labelledby="title desc">
+  <title id="title">Two permission questions govern a CDK backend deployment</title>
+  <desc id="desc">First ask whether the temporary operator may start CDK. Then inspect the deployment role that submits the stack and passes the execution role. CloudFormation uses the execution role to change backend resources. A later stack operator may cause CloudFormation to reuse that role. A narrow starter does not prove a narrow builder.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#35566a"/>
+    </marker>
+    <style>
+      text { font-family: Arial, sans-serif; fill: #183047; }
+      .title { font-size: 31px; font-weight: 700; }
+      .head { font-size: 27px; font-weight: 700; }
+      .body { font-size: 23px; }
+      .note { font-size: 22px; }
+      .card { stroke-width: 2.5; }
+      .flow { fill: none; stroke: #35566a; stroke-width: 3; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="620" height="700" fill="#fff"/>
+  <text x="26" y="49" class="title">Who starts? Who builds?</text>
+
+  <rect class="card" x="26" y="76" width="568" height="102" rx="13" fill="#e7f3f7" stroke="#35708d"/>
+  <text x="46" y="112" class="head">1  Temporary operator</text>
+  <text x="46" y="149" class="body">May this session assume the CDK roles?</text>
+  <path class="flow" d="M310 178V199"/>
+
+  <rect class="card" x="26" y="207" width="568" height="104" rx="13" fill="#eef0f8" stroke="#6779a3"/>
+  <text x="46" y="244" class="head">2  CDK deployment role</text>
+  <text x="46" y="279" class="body">Submits stack; passes execution role.</text>
+  <path class="flow" d="M310 311V332"/>
+
+  <rect class="card" x="26" y="340" width="568" height="104" rx="13" fill="#fff0e9" stroke="#a15b42"/>
+  <text x="46" y="377" class="head">3  Execution role</text>
+  <text x="46" y="412" class="body">CloudFormation uses its permissions.</text>
+  <path class="flow" d="M310 444V465"/>
+
+  <rect class="card" x="26" y="473" width="568" height="104" rx="13" fill="#eaf4ed" stroke="#588d67"/>
+  <text x="46" y="510" class="head">4  Backend changes</text>
+  <text x="46" y="545" class="body">Observe Auth, Data, Storage, Function.</text>
+
+  <rect class="card" x="26" y="595" width="568" height="76" rx="13" fill="#fff3d9" stroke="#aa8330"/>
+  <text x="46" y="626" class="head">Review later stack operators</text>
+  <text x="46" y="655" class="note">Who may update or delete this stack?</text>
+</svg>

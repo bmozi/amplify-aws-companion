@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
+<title id="title">One repair promise, three alternative application platforms</title>
+<desc id="desc">A customer submits and reads one authorized repair through an ingress boundary. Three separate alternative middle paths are EC2 Auto Scaling, ECS Fargate, and EKS Auto Mode. Each depends on the same protected relational data and must pass customer correctness, denial, replacement, outage, and recovery checks. Common and platform-specific costs are compared for one bounded run. The diagram is a design exercise, not a deployed AWS architecture.</desc>
+<rect width="1400" height="780" fill="#f7fafb"/>
+<text x="60" y="65" fill="#142f3e" font-family="Arial,sans-serif" font-size="32" font-weight="700">Keep the customer's promise fixed</text>
+<text x="60" y="102" fill="#3c5c6a" font-family="Arial,sans-serif" font-size="19">Change the operating platform, then check what work and cost move with it.</text>
+
+<rect x="60" y="145" width="275" height="110" rx="16" fill="#d9eff4" stroke="#367b8f" stroke-width="2"/>
+<text x="82" y="181" fill="#153e50" font-family="Arial,sans-serif" font-size="22" font-weight="700">Customer promise</text>
+<text x="82" y="211" fill="#153e50" font-family="Arial,sans-serif" font-size="17">Submit and read own repair</text>
+<text x="82" y="236" fill="#153e50" font-family="Arial,sans-serif" font-size="17">Deny another customer</text>
+
+<path d="M335 200 H392" stroke="#56737e" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+<rect x="400" y="145" width="230" height="110" rx="16" fill="#e8eef4" stroke="#59758b" stroke-width="2"/>
+<text x="422" y="182" fill="#173a4c" font-family="Arial,sans-serif" font-size="22" font-weight="700">Entry boundary</text>
+<text x="422" y="212" fill="#173a4c" font-family="Arial,sans-serif" font-size="17">Identity, routing, TLS</text>
+<text x="422" y="237" fill="#173a4c" font-family="Arial,sans-serif" font-size="17">and health policy</text>
+
+<path d="M515 255 V285 H1142 M515 285 H252" stroke="#56737e" stroke-width="4" fill="none"/>
+<path d="M252 285 V302" stroke="#56737e" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+<path d="M698 285 V302" stroke="#56737e" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+<path d="M1142 285 V302" stroke="#56737e" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+<text x="706" y="210" fill="#536a74" font-family="Arial,sans-serif" font-size="18">Choose one middle path</text>
+
+<rect x="60" y="310" width="385" height="165" rx="18" fill="#fff0d7" stroke="#b57a25" stroke-width="3"/>
+<text x="84" y="350" fill="#563912" font-family="Arial,sans-serif" font-size="23" font-weight="700">A06 · EC2 Auto Scaling</text>
+<text x="84" y="384" fill="#563912" font-family="Arial,sans-serif" font-size="18">Existing VM process may change less.</text>
+<text x="84" y="413" fill="#563912" font-family="Arial,sans-serif" font-size="18">Team owns host image, patching,</text>
+<text x="84" y="440" fill="#563912" font-family="Arial,sans-serif" font-size="18">capacity and replacement proof.</text>
+
+<rect x="505" y="310" width="385" height="165" rx="18" fill="#def1e6" stroke="#3c8660" stroke-width="3"/>
+<text x="529" y="350" fill="#1b4b36" font-family="Arial,sans-serif" font-size="23" font-weight="700">A08 · ECS Fargate</text>
+<text x="529" y="384" fill="#1b4b36" font-family="Arial,sans-serif" font-size="18">Container must first work correctly.</text>
+<text x="529" y="413" fill="#1b4b36" font-family="Arial,sans-serif" font-size="18">AWS manages host fleet; team owns</text>
+<text x="529" y="440" fill="#1b4b36" font-family="Arial,sans-serif" font-size="18">task, release and customer result.</text>
+
+<rect x="950" y="310" width="385" height="165" rx="18" fill="#e9e5f7" stroke="#7362a6" stroke-width="3"/>
+<text x="974" y="350" fill="#40346c" font-family="Arial,sans-serif" font-size="23" font-weight="700">A23 · EKS Auto Mode</text>
+<text x="974" y="384" fill="#40346c" font-family="Arial,sans-serif" font-size="18">Needs a concrete Kubernetes reason.</text>
+<text x="974" y="413" fill="#40346c" font-family="Arial,sans-serif" font-size="18">AWS manages more infrastructure;</text>
+<text x="974" y="440" fill="#40346c" font-family="Arial,sans-serif" font-size="18">team still owns app and cluster choices.</text>
+
+<path d="M252 475 V530 H695" stroke="#897863" stroke-width="3" fill="none"/>
+<path d="M698 475 V530" stroke="#5c8c70" stroke-width="3" fill="none"/>
+<path d="M1142 475 V530 H700" stroke="#807397" stroke-width="3" fill="none"/>
+<path d="M698 530 V552" stroke="#56737e" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+<rect x="448" y="560" width="500" height="95" rx="16" fill="#e4edf1" stroke="#486e7d" stroke-width="2"/>
+<text x="475" y="598" fill="#173b4b" font-family="Arial,sans-serif" font-size="22" font-weight="700">Same protected relational data</text>
+<text x="475" y="630" fill="#173b4b" font-family="Arial,sans-serif" font-size="17">Connection limit · compatible schema · restore</text>
+
+<rect x="60" y="690" width="1275" height="62" rx="13" fill="#ffffff" stroke="#b6c9d0" stroke-width="2"/>
+<text x="83" y="719" fill="#263f4b" font-family="Arial,sans-serif" font-size="18" font-weight="700">Same evidence:</text>
+<text x="222" y="719" fill="#263f4b" font-family="Arial,sans-serif" font-size="18">authorized result · denial · worker loss · store outage · useful recovery</text>
+<text x="83" y="742" fill="#506873" font-family="Arial,sans-serif" font-size="16">Price the shared path, each platform's meters, temporary overlap and cleanup for one bounded run.</text>
+
+<defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M1 1 L10 6 L1 11 Z" fill="#56737e"/></marker></defs>
+</svg>

@@ -1,0 +1,18 @@
+# A20 answer review: assessor reasoning
+
+Use this after an unaided attempt at [the eight case cards](ANSWER-REVIEW.md). These are editorial answer keys for fictional examples, not observed learner results or a measured model evaluation. A learner can phrase a safe answer differently if the same access, source, meaning and action boundaries are preserved.
+
+| Case | Decision and reason | Smallest useful next observation |
+| --- | --- | --- |
+| 1 | `revise` or `abstain`. The source supplies a 30-day duration and says to keep the receipt; it does **not** say whether losing it voids coverage or whether “all repairs” qualify. Do not turn the reminder into an invented denial rule or an invented exception. | Current policy governing proof of purchase, plus the particular repair's eligibility facts. |
+| 2 | `revise`. The cited shop A policy says 30, not 365. Bob's shop B private contract is not authorized evidence for Alice and describes a different scope. | Current authorized shop A policy and the repair's relevant contract. |
+| 3 | `abstain`. Eve's current grant set is empty. A cached excerpt from Alice is not a new grant. The local `release` function rechecks authorization and rejects it. | A trusted current grant for Eve, followed by a fresh authorized retrieval. |
+| 4 | `abstain` pending retrieval, then possibly `revise`. The v1 candidate is stale; the local `release` function rejects a changed version/digest. Version 2's 45-day sentence still needs the customer's applicable date and policy scope. | Fresh authorized retrieval of v2 and the business fact selecting the governing policy. |
+| 5 | `abstain` or a qualified explanation of both sources. “Every” is unsupported because the bulletin has a date condition and precedence between sources is not established by search rank. | Repair acceptance date and an approved rule establishing which source governs. |
+| 6 | `revise` for any benign policy answer, but **block release** of Bob's code and investigate the leak. The note is data, not a grant or command. The local fixture has no model, so it cannot demonstrate a prompt-injection success or defense. | Trace whether unauthorized text entered retrieval, context, output or logs; verify the caller's actual grants and the source of the code. |
+| 7 | `revise`. The cited passage explicitly excludes commercial equipment. A sound answer states that this household policy does not establish commercial coverage and seeks the applicable commercial contract if the caller may access it. | Repair type and an authorized current commercial policy or contract. |
+| 8 | `block_action`. Permission to request a credit is not approval for this exact 1200-unit effect. A model statement cannot create approval. | Verified caller, allowed tool, job and customer scope, amount currency/units and range, current approval tied to exact parameters/revision/expiry, stable operation ID and observed effect or rejection. |
+
+The four dimensions should be graded separately: access, current source, supported meaning and action authority. Award no “correct” mark for a fluent answer that fails one of its required boundaries. Record a learner's actual rationale and changed-case revision before claiming the exercise teaches transfer; these notes have not been calibrated with independent learners.
+
+The local program proves only its deterministic, sequential SQLite retrieval and release checks for the supplied fixture. It does not evaluate arbitrary natural-language entailment, authenticate a user, invoke a model, enforce AWS service permissions, issue a credit, or establish production-grade revocation timing. Case 8's separate action boundary can be practiced in the [agent-tool lab](../agent-tool-boundary/README.md).

@@ -1,0 +1,17 @@
+# SAP-C02 task 3.5 cost-optimization review
+
+Internal editorial review, October 19, 2026, against the transitional [official task 3.5 guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-02/solutions-architect-professional-02-domain3.html#solutions-architect-professional-02-domain3-task5). Four knowledge and five skill points have **partial** teaching and authored changed-case evidence. This does not establish a real bill, effective alert, measured saving, certification readiness or future SAP-C03 coverage.
+
+| Point | Authored teaching and assessment evidence | Still needed |
+| --- | --- | --- |
+| Knowledge 1: cost-conscious architecture | Unit 04 and professional cost cases compare idle removal, rightsize, scaling, Spot and needed recovery capacity. | Selected peak/recovery measurements, current prices and unchanged customer result. |
+| Knowledge 2: price models | Unit and professional cases separate On-Demand flexibility, Savings Plans commitments, RI matching and capacity. | Representative eligible use, term and full-bill price comparison before purchase. |
+| Knowledge 3: network/transfer cost | Whole-path photo case and new synthetic internet-out increase require origin/destination/direction and actual meter. | Real route, usage type and regional/service rate. |
+| Knowledge 4: management/reporting | New audit joins full pre-credit rows to tags, shared/unallocated costs and account credits; budget design includes delay and recipient. | Actual data scope, approved allocation and verified alert delivery. |
+| Skill 1: analyze under/overuse | Day-28 worker peak disqualifies a naive 14-day resize; database tail-latency breach requires bottleneck diagnosis. | Selected full-cycle metrics and customer tests. |
+| Skill 2: identify unused | Unattached old volume is a candidate; owner-retained snapshot is not disposable from an idle metric. | Exact inventory, owner, restore and retention evidence. |
+| Skill 3: billing alarms | Fictional $101 baseline and $110 pre-credit threshold illustrate a scoped investigation trigger; local script shows net/usage difference. | Real budget cost type, delivery and operator response; it is not a hard cap. |
+| Skill 4: granular CUR investigation | Local normalized CSV reconciles all rows; unit explains CUR 2.0 resource-level and tag-map options without claiming fixture schema parity. | Actual export/query, charge type, access, storage and reconciliation. |
+| Skill 5: tags | Repair subtotal remains stable while unallocated rows rise; activation change card tests coverage limitations. | Actual tag activation/backfill and finance-approved shared allocation. |
+
+The [optimization packet](../../examples/costs/optimization-audit/README.md), [separate assessor](../../examples/costs/optimization-audit/ASSESSOR.md), [local audit](../../examples/costs/optimization-audit/lab.py) and [figure](../../book/figures/cost-evidence-join.svg) are teaching artifacts. AWS's [CUR 2.0 table guidance](https://docs.aws.amazon.com/cur/latest/userguide/table-dictionary-cur2.html), [Compute Optimizer preferences](https://docs.aws.amazon.com/compute-optimizer/latest/ug/rightsizing-preferences.html) and [Budgets behavior](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html) were checked for this review. No AWS account was contacted, paid feature enabled or credit used.

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1050" role="img" aria-labelledby="title desc">
+<title id="title">One approved supplier export needs both S3 and KMS permission</title>
+<desc id="desc">The owner binds an approved minimal export to its recipient, exact S3 version and digest. A temporary supplier workload role must pass an S3 gate involving supplier IAM and owner bucket policy, and a separate KMS gate involving supplier IAM and owner key policy. Applicable denies and endpoint rules can still block the request. Only then can the supplier application receive bytes. Its own user authorization and copy retention remain separate. Revoking future reads cannot recall an earlier copy. Design only; no live test.</desc>
+<defs><style>text{font-family:Arial,sans-serif;fill:#173340}.title{font-size:31px;font-weight:700}.head{font-size:25px;font-weight:700}.body{font-size:22px}.note{font-size:20px}.line{stroke:#315b6a;stroke-width:3;fill:none;marker-end:url(#arrow)}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#315b6a"/></marker></defs>
+<rect width="800" height="1050" fill="#fff"/>
+<text class="title" x="34" y="52">One export; two permission gates</text>
+<text class="body" x="34" y="89">A supplier needs parts and quantities, not customer data.</text>
+<rect x="32" y="120" width="736" height="134" rx="14" fill="#edf5f6" stroke="#315b6a" stroke-width="2"/>
+<text class="head" x="55" y="160">Owner approves the exact file</text>
+<text class="body" x="55" y="198">Minimal fields + recipient + version + digest.</text>
+<text class="note" x="55" y="233">A version ID alone is not content approval.</text>
+<path class="line" d="M400 254 V283"/>
+<rect x="32" y="289" width="736" height="105" rx="14" fill="#f8f7f3" stroke="#92651f" stroke-width="2"/>
+<text class="head" x="55" y="329">Supplier uses a temporary workload role</text>
+<text class="body" x="55" y="368">No shared long-lived key or employee sign-in.</text>
+<path class="line" d="M400 394 V423"/>
+<rect x="32" y="429" width="736" height="181" rx="14" fill="#fff2dd" stroke="#92651f" stroke-width="2"/>
+<text class="head" x="55" y="469">Gate 1 · Can it read this S3 version?</text>
+<text class="body" x="55" y="508">Supplier IAM + owner bucket policy.</text>
+<text class="body" x="55" y="545">Check GetObjectVersion and version condition.</text>
+<text class="note" x="55" y="583">An unversioned grant can defeat the limit.</text>
+<path class="line" d="M400 610 V639"/>
+<rect x="32" y="645" width="736" height="145" rx="14" fill="#fff2dd" stroke="#92651f" stroke-width="2"/>
+<text class="head" x="55" y="685">Gate 2 · Can S3 use the KMS key?</text>
+<text class="body" x="55" y="724">Supplier IAM + owner key policy.</text>
+<text class="note" x="55" y="761">Check the actual SSE-KMS service path.</text>
+<path class="line" d="M400 790 V819"/>
+<rect x="32" y="825" width="736" height="117" rx="14" fill="#e9f3ec" stroke="#39704b" stroke-width="2"/>
+<text class="head" x="55" y="866">Approved bytes reach the supplier app</text>
+<text class="body" x="55" y="906">Its users and copy retention need own controls.</text>
+<text class="note" x="34" y="979">Deny/endpoint rules may still block a read. A past copy</text>
+<text class="note" x="34" y="1012">cannot be recalled. Design only; no AWS test here.</text>
+</svg>

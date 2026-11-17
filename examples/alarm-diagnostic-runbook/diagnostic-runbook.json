@@ -1,0 +1,38 @@
+{
+  "description": "Read the current state of one named metric alarm; no resource-changing steps",
+  "schemaVersion": "0.3",
+  "assumeRole": "{{ AutomationAssumeRole }}",
+  "parameters": {
+    "AlarmName": {
+      "type": "String",
+      "description": "Exact metric alarm name selected by the approved EventBridge target"
+    },
+    "AutomationAssumeRole": {
+      "type": "String",
+      "description": "Reviewed read-only Automation role ARN"
+    }
+  },
+  "mainSteps": [
+    {
+      "name": "readCurrentAlarm",
+      "action": "aws:executeAwsApi",
+      "inputs": {
+        "Service": "cloudwatch",
+        "Api": "DescribeAlarms",
+        "AlarmNames": ["{{ AlarmName }}"]
+      },
+      "outputs": [
+        {
+          "Name": "MetricState",
+          "Selector": "$.MetricAlarms[0].StateValue",
+          "Type": "String"
+        },
+        {
+          "Name": "MetricUpdatedAt",
+          "Selector": "$.MetricAlarms[0].StateUpdatedTimestamp",
+          "Type": "String"
+        }
+      ]
+    }
+  ]
+}

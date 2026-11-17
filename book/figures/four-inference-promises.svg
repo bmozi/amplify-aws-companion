@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="450" viewBox="0 0 720 450" role="img" aria-labelledby="title desc">
+  <title id="title">Four ways to ask a model for a prediction</title>
+  <desc id="desc">A shop request with an immediate answer can use a measured real-time endpoint or, if a cold start is acceptable, on-demand serverless inference. A queued long job can use asynchronous inference and later retrieve its result. A complete offline dataset can use a batch transform job. Each route has a different time and cost promise.</desc>
+  <rect width="720" height="450" fill="#f7fbfc"/>
+  <text x="30" y="43" font-family="Arial, sans-serif" font-size="29" font-weight="700" fill="#123246">Choose by the time of the answer</text>
+  <text x="30" y="72" font-family="Arial, sans-serif" font-size="18" fill="#344d5a">The same model can need a different serving plan.</text>
+  <rect x="27" y="94" width="666" height="72" rx="10" fill="#e6f1f7" stroke="#397293" stroke-width="2"/>
+  <text x="44" y="124" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#153c55">Real-time endpoint</text>
+  <text x="44" y="151" font-family="Arial, sans-serif" font-size="17" fill="#284d61">Answer during the request; measure latency and idle capacity.</text>
+  <rect x="27" y="176" width="666" height="72" rx="10" fill="#e4f4ee" stroke="#28775e" stroke-width="2"/>
+  <text x="44" y="206" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#0e5a47">On-demand serverless</text>
+  <text x="44" y="233" font-family="Arial, sans-serif" font-size="17" fill="#225c50">Intermittent requests; test the cold-start wait.</text>
+  <rect x="27" y="258" width="666" height="72" rx="10" fill="#fff0df" stroke="#b06b19" stroke-width="2"/>
+  <text x="44" y="288" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#824608">Asynchronous endpoint</text>
+  <text x="44" y="315" font-family="Arial, sans-serif" font-size="17" fill="#755022">Accept a job now; retrieve its prediction later.</text>
+  <rect x="27" y="340" width="666" height="72" rx="10" fill="#eeeaf5" stroke="#77619c" stroke-width="2"/>
+  <text x="44" y="370" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#4f3974">Batch transform</text>
+  <text x="44" y="397" font-family="Arial, sans-serif" font-size="17" fill="#56466b">Process an offline dataset; no persistent endpoint.</text>
+  <text x="32" y="436" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#123246">A prediction still needs authorization, quality checks and an owner.</text>
+</svg>

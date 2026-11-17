@@ -1,0 +1,16 @@
+# Data-perimeter assessor: paper expectations only
+
+Read after attempting the [eight cases](README.md). These conclusions describe the supplied design facts, **not** actual AWS authorization. A live test would need selected policies and principals, origin reachability, exact object/version and key, policy context, audit coverage and owner-approved recovery.
+
+| Case | Expected reasoning and falsifying observation |
+| --- | --- |
+| 1 | **Paper expectation: candidate path.** Two Verified Access policies, application approval, separate worker role, S3 path and KMS grant are all asserted. Verify actual session context, app approval enforcement, endpoint ID, effective permissions, correct object/version and a forbidden neighbor before claiming access. |
+| 2 | **Paper expectation: refused at Verified Access group policy.** When both group and endpoint policies exist, both must allow. Check the actual group decision and session context; do not treat authentication as permission. |
+| 3 | **Bypass risk.** Verified Access cannot judge a browser request that reaches the origin by another route. Test load-balancer/origin reachability from an untrusted route; application approval may still reject this particular export, but that does not close the entry bypass. |
+| 4 | **Paper expectation: application denial.** Exact export approval belongs in the application decision. A broad worker role raises an additional defect: a compromised or mistaken worker may fetch adjacent objects without that app check. Test adjacent-object denial under the worker principal too. |
+| 5 | **Bypass risk.** The endpoint policy applies to requests using that endpoint. A direct S3 route does not pass through it. Check route and bucket-policy conditions before calling it a data perimeter; identity and resource grants may still independently reject the direct request. |
+| 6 | **Paper expectation: bucket denial for the selected action/resource if the condition matches.** The missing or different endpoint context triggers the designed explicit deny. A successful request through the approved endpoint still needs IAM, bucket and KMS permission. Test both paths with the same principal and selected action. |
+| 7 | **Hold the policy change.** The wrong ID can deny the intended worker and console path. Confirm the current endpoint ID, action/resource scope, dependent service paths, emergency recovery authority and an owner-approved rollback before applying. A break-glass exception is a designed, separately reviewed path, not an assumed escape. |
+| 8 | **Paper expectation: decryption boundary remains closed.** Inspect key policy and caller permission for the real S3-integrated KMS operation; do not widen S3 to treat a key failure. An observed access denial alone does not identify which policy failed. |
+
+The central transfer insight is **path completeness**: every legitimate path needs each applicable gate, while every bypass path needs an independently effective stop. A single green policy check, network diagram or AI answer cannot establish the combined result. An actual architecture review must also account for service integrations, console access, audit event selection, cost and recoverability.

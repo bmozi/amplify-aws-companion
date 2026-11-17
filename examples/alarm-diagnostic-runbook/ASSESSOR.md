@@ -1,0 +1,13 @@
+# Assessor notes — alarm diagnostic path
+
+These are editorial answer checks for the fictional packet, not learner scores or AWS execution evidence.
+
+1. `OK` does not match the pattern's `ALARM` state. A new `OK` event may be useful for closure, but it should have a separately designed route. Do not run a repair because an alarm recovered.
+2. The outer `region` field is included in this exact rule and blocks the event. The event's resource ARN should also be reconciled; its location does not silently override the selected rule scope. Multi-account or multi-Region routing needs its own permissions and design.
+3. Confirm the same bus, enabled rule, target attachment, metric dimensions and observation window. Allow for propagation and metric latency. A local predicate match does not prove AWS matched or attempted delivery.
+4. No. A target DLQ retains a failed-delivery event for investigation. The operator identifies the permission/resource/target failure, checks the message attributes and any prior side effect, then decides whether and how to replay. Blind replay can duplicate a consequence.
+5. Match rule ARN/target ID, event ID or retained event, exact Automation document and version, required parameters, invocation and execution roles, account, Region and execution history. A successful EventBridge target attempt does not prove a successful runbook step.
+6. The booking outcome and its mature deadline determine customer recovery. The read-only runbook might legitimately observe a recovered alarm after the original event; it cannot claim to have repaired anything. Codex can draft a timeline, competing hypotheses and read-only checks, but a human must inspect the evidence and authorize a bounded change.
+7. The counts describe activity in a reporting window, not a per-event chain. Reconcile today's event or retained payload to the exact target and Automation execution, including document/version and parameters. Until those receipts agree, report the aggregate activity and `CORRELATION_UNPROVEN`; yesterday's successful execution cannot close today's incident. Even matching execution receipts need the correct booking cohort and mature time window before a customer-outcome claim.
+
+The source [runbook](diagnostic-runbook.json) is an intentionally read-only custom Automation example. The JSON parse and local classifier tests do not validate an SSM document against the AWS service. No IAM role, target, DLQ, runbook or alarm was created. A future live check must separately prove event match, invocation, Automation execution, current alarm state, customer outcome, permissions, cost and teardown.

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="500" viewBox="0 0 700 500" role="img" aria-labelledby="title desc">
+  <title id="title">Three observations during a shared-store outage</title>
+  <desc id="desc">In a controlled local two-worker repair fixture, the HTTP process answers 200 while shallow store readiness and Alice's authorized repair read both return 503. Two workers still depend on one shared store. After the fixture store returns, the same authorized repair read returns 200 with the original issue. These are local test responses, not AWS failover or measured recovery time.</desc>
+  <rect width="700" height="500" fill="#ffffff"/>
+  <text x="28" y="39" fill="#142e3c" font-family="Arial,sans-serif" font-size="24" font-weight="700">Two workers still need the shared store</text>
+  <text x="28" y="65" fill="#405966" font-family="Arial,sans-serif" font-size="15">Controlled local outage: new fixture-store connections fail.</text>
+
+  <rect x="28" y="83" width="644" height="82" rx="11" fill="#e9f1ed" stroke="#294c60" stroke-width="2"/>
+  <text x="46" y="112" fill="#142e3c" font-family="Arial,sans-serif" font-size="18" font-weight="700">1  Process liveness</text>
+  <text x="46" y="138" fill="#405966" font-family="Arial,sans-serif" font-size="16">The HTTP process can answer; the repair may still fail.</text>
+  <text x="638" y="130" text-anchor="end" fill="#206143" font-family="Arial,sans-serif" font-size="27" font-weight="700">200</text>
+
+  <rect x="28" y="177" width="644" height="82" rx="11" fill="#fff2dc" stroke="#9b641b" stroke-width="2"/>
+  <text x="46" y="206" fill="#49320f" font-family="Arial,sans-serif" font-size="18" font-weight="700">2  Shallow store readiness</text>
+  <text x="46" y="232" fill="#735219" font-family="Arial,sans-serif" font-size="16">The simple store probe cannot run.</text>
+  <text x="638" y="224" text-anchor="end" fill="#9b493c" font-family="Arial,sans-serif" font-size="27" font-weight="700">503</text>
+
+  <rect x="28" y="271" width="644" height="82" rx="11" fill="#f9e9e5" stroke="#9b493c" stroke-width="2"/>
+  <text x="46" y="300" fill="#4f2b26" font-family="Arial,sans-serif" font-size="18" font-weight="700">3  Alice's authorized repair read</text>
+  <text x="46" y="326" fill="#735219" font-family="Arial,sans-serif" font-size="16">Her actual task fails despite two app workers.</text>
+  <text x="638" y="318" text-anchor="end" fill="#9b493c" font-family="Arial,sans-serif" font-size="27" font-weight="700">503</text>
+
+  <rect x="28" y="372" width="644" height="76" rx="11" fill="#edf5f6" stroke="#294c60" stroke-width="2"/>
+  <text x="46" y="402" fill="#142e3c" font-family="Arial,sans-serif" font-size="18" font-weight="700">After the local fixture store returns</text>
+  <text x="46" y="428" fill="#304d60" font-family="Arial,sans-serif" font-size="16">Alice rereads the same accepted repair and original issue.</text>
+  <text x="638" y="419" text-anchor="end" fill="#206143" font-family="Arial,sans-serif" font-size="27" font-weight="700">200</text>
+  <text x="28" y="479" fill="#405966" font-family="Arial,sans-serif" font-size="14">A green liveness check is not a customer result. Local fixture only; AWS recovery is unmeasured.</text>
+</svg>

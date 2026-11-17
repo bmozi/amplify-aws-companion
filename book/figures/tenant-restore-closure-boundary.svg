@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360px" height="530px" viewBox="0 0 360 530" role="img" aria-labelledby="title desc">
+  <title id="title">A restored snapshot must obey a later tenant closure</title>
+  <desc id="desc">An old Shop A and Shop B data snapshot is restored after Shop A closes and Shop B changes a note. The restored store again contains Shop A's note and pending job and loses Shop B's newer edit. A separately preserved closure decision blocks Shop A reads and jobs while Shop B remains authorized but sees stale data. Reconciliation removes Shop A's resurrected active rows. Restoring the old closure record too would reopen the unsafe path.</desc>
+  <style>
+    .h{font:700 20px Arial,sans-serif;fill:#17384b}.sub{font:14px Arial,sans-serif;fill:#47606d}
+    .t{font:700 16px Arial,sans-serif;fill:#17384b}.b{font:14px Arial,sans-serif;fill:#233c4b}
+    .arrow{font:700 22px Arial,sans-serif;fill:#246486}.small{font:13px Arial,sans-serif;fill:#3b5666}
+  </style>
+  <rect width="360" height="530" fill="#f8fbfc"/>
+  <text x="16" y="31" class="h">Old data can return</text>
+  <text x="16" y="54" class="sub">A backup is older than a closure decision.</text>
+
+  <rect x="14" y="73" width="332" height="83" rx="10" fill="#e8f2f7" stroke="#7c9eaf"/>
+  <text x="27" y="98" class="t">1  Restore old app snapshot</text>
+  <text x="27" y="122" class="b">Shop A note and job return in raw data.</text>
+  <text x="27" y="143" class="b">B's old note returns; newer edit is lost.</text>
+  <text x="172" y="179" class="arrow">↓</text>
+
+  <rect x="14" y="193" width="332" height="94" rx="10" fill="#fff0e4" stroke="#c0845b"/>
+  <text x="27" y="218" class="t">2  Check newer closure authority</text>
+  <text x="27" y="242" class="b">Shop A: CLOSED → deny reads and jobs.</text>
+  <text x="27" y="265" class="b">Shop B: ACTIVE → stale data.</text>
+  <text x="172" y="309" class="arrow">↓</text>
+
+  <rect x="14" y="324" width="332" height="83" rx="10" fill="#eaf5ec" stroke="#78a58a"/>
+  <text x="27" y="349" class="t">3  Reconcile the restored store</text>
+  <text x="27" y="373" class="b">Remove A's active rows; cancel its job.</text>
+  <text x="27" y="394" class="b">Keep B's records and work.</text>
+
+  <rect x="14" y="425" width="332" height="67" rx="10" fill="#f8e8ec" stroke="#b6788a"/>
+  <text x="27" y="450" class="t">Unsafe: restore old authority too</text>
+  <text x="27" y="475" class="b">A's old ACTIVE status would reopen access.</text>
+  <text x="16" y="518" class="small">Two local files; no distributed race or AWS restore test.</text>
+</svg>

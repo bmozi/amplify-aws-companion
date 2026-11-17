@@ -1,0 +1,27 @@
+{
+  "scope": "Fictional reader-pilot case; not AWS telemetry or a real customer incident",
+  "clock": "integer seconds on one synthetic clock",
+  "snapshot_rule": "A snapshot at second t is taken after processing all completions stamped t or earlier. A job still unfinished then has missed a promise due at t.",
+  "assignment_promise_seconds": 50,
+  "first_snapshot_at": 100,
+  "changed_snapshot_at": 105,
+  "boundary_snapshot_at": 110,
+  "followup_snapshot_at": 160,
+  "jobs": [
+    {"id": "p1", "accepted": 0, "completed_at_first_snapshot": 20, "completed_at_followup": 20},
+    {"id": "p2", "accepted": 10, "completed_at_first_snapshot": 70, "completed_at_followup": 70},
+    {"id": "p3", "accepted": 20, "completed_at_first_snapshot": null, "completed_at_followup": 103},
+    {"id": "p4", "accepted": 40, "completed_at_first_snapshot": null, "completed_at_followup": 130},
+    {"id": "p5", "accepted": 60, "completed_at_first_snapshot": null, "completed_at_followup": 140},
+    {"id": "p6", "accepted": 70, "completed_at_first_snapshot": 95, "completed_at_followup": 95}
+  ],
+  "observations_available_at_first_snapshot": [
+    {"at": 30, "source": "release record", "fact": "frontend button label changed; worker revision unchanged"},
+    {"at": 35, "source": "worker attempt", "job": "p3", "fact": "supplier returned 503"},
+    {"at": 45, "source": "separate synthetic supplier probe", "fact": "supplier returned 503"},
+    {"at": 55, "source": "worker attempt", "job": "p4", "fact": "supplier returned 503"},
+    {"at": 100, "source": "website probe", "fact": "homepage returned 200; no assignment was attempted"}
+  ],
+  "proposed_action_not_taken": "increase worker concurrency tenfold",
+  "changed_fact": "p3 completes at second 103; all other completion times stay as listed"
+}

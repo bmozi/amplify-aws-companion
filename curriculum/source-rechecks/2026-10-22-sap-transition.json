@@ -1,0 +1,39 @@
+{
+  "retrieved_utc": "2026-10-22T14:42:53Z",
+  "method": "Public HTTPS GET with Python urllib; SHA-256 is for the response body returned in this read-only check. The pages themselves were not archived. Editorial facts were also inspected on the official rendered pages.",
+  "observations": {
+    "sap_c02_last_day": "2026-11-16",
+    "sap_c03_registration_opens": "2026-10-27",
+    "sap_c03_delivery_begins": "2026-11-17",
+    "linked_guide_exam_code": "SAP-C02",
+    "sap_c03_detailed_task_baseline": "not available from the linked guide at this check",
+    "coverage_consequence": "Keep SAP-C02 inventory historical and the five announced SAP-C03 domains provisional; do not calculate SAP-C03 task coverage from the announcement."
+  },
+  "sources": [
+    {
+      "role": "current certification page",
+      "url": "https://aws.amazon.com/certification/certified-solutions-architect-professional/",
+      "http_status": 200,
+      "response_bytes": 381193,
+      "response_sha256": "13a77b3e219f2eeecec837dc9c38c02cdd10031da9bea8028be3d6c93564e906"
+    },
+    {
+      "role": "September transition announcement",
+      "url": "https://aws.amazon.com/blogs/training-and-certification/september-2026-new-offerings/",
+      "http_status": 200,
+      "response_bytes": 1415205,
+      "response_sha256": "21191ef1cda5946dfb3eb4456d9f6a9038eeba5cff04c8b933520701bf7fe8d8"
+    },
+    {
+      "role": "currently linked detailed guide",
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-02/solutions-architect-professional-02.html",
+      "http_status": 200,
+      "response_bytes": 24129,
+      "response_sha256": "eddb7d1d3d98da25ae6dbffc4bcfa350140034de38c089ed9d6e4084d281edf0"
+    }
+  ],
+  "limits": [
+    "A public page and announcement are not an appointment inventory; candidates must check the booking system for actual availability.",
+    "The linked SAP-C02 guide and announced SAP-C03 themes do not establish SAP-C03 objective-level coverage or exam readiness."
+  ]
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 640" role="img" aria-labelledby="title desc">
+  <title id="title">Two requests and two bypass routes in an export perimeter</title>
+  <desc id="desc">An employee reaches an export app through Verified Access and an application approval check. The app worker uses a separate role and an S3 gateway endpoint to reach a bucket and KMS key. Red dotted routes show direct origin and direct S3 bypasses that require independent controls.</desc>
+  <defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9Z" fill="#1675a9"/></marker><marker id="risk" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9Z" fill="#b5403f"/></marker></defs>
+  <rect width="980" height="640" rx="24" fill="#fbfcfa"/><path d="M30 55H950M30 318H950" stroke="#d8e5ed" stroke-width="2"/>
+  <text x="34" y="42" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#0f3655">THE BROWSER REQUEST</text>
+  <text x="34" y="304" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#0f3655">THE WORKER REQUEST</text>
+  <g font-family="Arial,sans-serif" text-anchor="middle" fill="#123a58">
+    <rect x="34" y="92" width="170" height="96" rx="14" fill="#e8f2f8" stroke="#2175a3" stroke-width="2"/><text x="119" y="131" font-size="21" font-weight="700">Employee</text><text x="119" y="158" font-size="17">browser</text>
+    <rect x="278" y="92" width="205" height="96" rx="14" fill="#e8f2f8" stroke="#2175a3" stroke-width="2"/><text x="380" y="125" font-size="21" font-weight="700">Verified Access</text><text x="380" y="153" font-size="16">group + endpoint</text>
+    <rect x="558" y="92" width="194" height="96" rx="14" fill="#e8f2f8" stroke="#2175a3" stroke-width="2"/><text x="655" y="126" font-size="21" font-weight="700">Export app</text><text x="655" y="154" font-size="16">exact approval</text>
+    <rect x="45" y="350" width="175" height="98" rx="14" fill="#edf4e7" stroke="#56813e" stroke-width="2"/><text x="132" y="389" font-size="20" font-weight="700">Worker role</text><text x="132" y="416" font-size="16">IAM permission</text>
+    <rect x="297" y="350" width="200" height="98" rx="14" fill="#edf4e7" stroke="#56813e" stroke-width="2"/><text x="397" y="385" font-size="19" font-weight="700">S3 gateway</text><text x="397" y="414" font-size="17">endpoint policy</text>
+    <rect x="565" y="350" width="180" height="98" rx="14" fill="#edf4e7" stroke="#56813e" stroke-width="2"/><text x="655" y="383" font-size="19" font-weight="700">S3 bucket</text><text x="655" y="413" font-size="16">SourceVpce deny</text>
+    <rect x="806" y="350" width="142" height="98" rx="14" fill="#edf4e7" stroke="#56813e" stroke-width="2"/><text x="877" y="383" font-size="19" font-weight="700">KMS key</text><text x="877" y="413" font-size="16">decrypt grant</text>
+  </g>
+  <g fill="none" stroke="#1675a9" stroke-width="4" marker-end="url(#arrow)"><path d="M207 140H267"/><path d="M486 140H547"/><path d="M655 190V250H132V339"/><path d="M223 399H285"/><path d="M500 399H553"/><path d="M748 399H795"/></g>
+  <g fill="none" stroke="#b5403f" stroke-width="4" stroke-dasharray="9 7" marker-end="url(#risk)"><path d="M118 190V240H535V171"/><path d="M133 452V526H654V452"/></g>
+  <g font-family="Arial,sans-serif" fill="#9d3433" font-size="17" font-weight="700"><text x="247" y="231">Direct origin bypass?</text><text x="305" y="557">Direct S3 route outside endpoint?</text></g>
+  <text x="34" y="604" font-family="Arial,sans-serif" font-size="16" fill="#35536c">Blue/green boxes are separate gates. Red dotted routes require their own tested stop.</text>
+</svg>

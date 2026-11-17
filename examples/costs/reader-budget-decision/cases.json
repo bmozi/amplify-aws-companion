@@ -1,0 +1,26 @@
+[
+  {
+    "name": "credits pass, gross budget fails",
+    "run_estimate_usd": "3",
+    "chosen_run_limit_usd": "4",
+    "credit_balance_usd": "85",
+    "chosen_credit_reserve_usd": "75",
+    "gross_monthly_used_usd": "46",
+    "gross_monthly_budget_usd": "50",
+    "chosen_budget_margin_usd": "2",
+    "credit_applicability_checked": true,
+    "usage_snapshot_current": true
+  },
+  {
+    "name": "all three arithmetic gates pass",
+    "run_estimate_usd": "3",
+    "chosen_run_limit_usd": "4",
+    "credit_balance_usd": "80",
+    "chosen_credit_reserve_usd": "75",
+    "gross_monthly_used_usd": "40",
+    "gross_monthly_budget_usd": "50",
+    "chosen_budget_margin_usd": "2",
+    "credit_applicability_checked": true,
+    "usage_snapshot_current": true
+  }
+]

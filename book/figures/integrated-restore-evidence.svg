@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="697" viewBox="0 0 360 697" role="img" aria-labelledby="title desc">
+  <title id="title">Three recovery clocks for one confirmed booking</title>
+  <desc id="desc">Independent confirmation records booking B111, the correct photo digest and sent dispatch D111. A clean database point at 10:10 references object version v1; a later database point has a wrong amount. The current object is a delete marker, but the retained v1 bytes can be checked. A gate accepts the clean database, correct version and no duplicate dispatch only when independent evidence matches.</desc>
+  <rect width="360" height="697" fill="#f5f8fa"/>
+  <g font-family="Arial,Helvetica,sans-serif" fill="#17384a">
+    <text x="16" y="30" font-size="21" font-weight="700">One booking, three</text>
+    <text x="16" y="54" font-size="21" font-weight="700">recovery clocks</text>
+    <text x="16" y="77" font-size="14" fill="#466578">A green restore job is not the finish line.</text>
+    <rect x="12" y="94" width="336" height="133" rx="12" fill="#e4f0f8" stroke="#5489a7" stroke-width="2"/>
+    <text x="26" y="121" font-size="17" font-weight="700">1  Independent confirmation</text>
+    <text x="27" y="151" font-size="15">B111 · 4,400 cents</text>
+    <text x="27" y="178" font-size="15">Photo digest matches</text>
+    <text x="27" y="205" font-size="15">Dispatch D111 already sent</text>
+    <rect x="12" y="238" width="336" height="133" rx="12" fill="#fff0d4" stroke="#b88936" stroke-width="2"/>
+    <text x="26" y="265" font-size="17" font-weight="700">2  Database point</text>
+    <text x="27" y="295" font-size="15">10:10 clean record → photo v1</text>
+    <text x="27" y="322" font-size="15">10:11 point is newer</text>
+    <text x="27" y="349" font-size="15">but has the wrong amount</text>
+    <rect x="12" y="382" width="336" height="133" rx="12" fill="#fbe9e6" stroke="#b85d54" stroke-width="2"/>
+    <text x="26" y="409" font-size="17" font-weight="700">3  Object versions</text>
+    <text x="27" y="439" font-size="15">v1 has the correct bytes</text>
+    <text x="27" y="466" font-size="15">v2 has the wrong bytes</text>
+    <text x="27" y="493" font-size="15">v3 is a delete marker</text>
+    <rect x="12" y="528" width="336" height="102" rx="12" fill="#e3f2e8" stroke="#619c75" stroke-width="2"/>
+    <text x="26" y="557" font-size="17" font-weight="700">Reopen only if records agree</text>
+    <text x="27" y="584" font-size="15">10:10 database + exact v1 bytes</text>
+    <text x="27" y="609" font-size="15">+ no duplicate D111 dispatch.</text>
+    <text x="16" y="658" font-size="13" fill="#466578">Hold if evidence is missing.</text>
+    <text x="16" y="678" font-size="13" fill="#466578">Fictional case; no AWS restore measured.</text>
+  </g>
+</svg>

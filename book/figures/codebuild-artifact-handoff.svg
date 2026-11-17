@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900" role="img" aria-labelledby="title desc">
+  <title id="title">CodeBuild produces a checked artifact handoff</title>
+  <desc id="desc">A selected source revision and buildspec enter a configured CodeBuild project. Ordered build phases run checks and create fresh output. The declared artifact file list and destination select what a later pipeline or S3 consumer receives. A failed check stops handoff. Cache, secrets, network access, role permissions and supporting cost are separate project concerns explained in the lesson; build success alone does not prove deployment or customer behavior.</desc>
+  <defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M1 1 L11 6 L1 11 Z" fill="#31566b"/></marker></defs>
+  <rect width="720" height="900" fill="#fff"/>
+  <g font-family="Arial,sans-serif" fill="#173243">
+    <text x="42" y="47" font-size="28" font-weight="700">A build passes a specific parcel forward</text>
+    <text x="42" y="78" font-size="18" fill="#49606a">Check the input, the worker, the output and the handoff.</text>
+    <g stroke-width="2.2">
+      <rect x="42" y="103" width="636" height="112" rx="14" fill="#eef4f8" stroke="#527487"/>
+      <rect x="42" y="238" width="636" height="112" rx="14" fill="#e9f2fb" stroke="#3c7194"/>
+      <rect x="42" y="373" width="636" height="112" rx="14" fill="#e9f2fb" stroke="#3c7194"/>
+      <rect x="42" y="508" width="636" height="112" rx="14" fill="#e9f5ed" stroke="#43816a"/>
+      <rect x="42" y="643" width="636" height="112" rx="14" fill="#e9f5ed" stroke="#43816a"/>
+    </g>
+    <g font-size="21" font-weight="700">
+      <text x="64" y="143">1  Select the source revision</text>
+      <text x="64" y="278">2  Configure the CodeBuild project</text>
+      <text x="64" y="413">3  Run phases and check fresh output</text>
+      <text x="64" y="548">4  Select artifact files and destination</text>
+      <text x="64" y="683">5  Check what the next stage received</text>
+    </g>
+    <g font-size="18">
+      <text x="64" y="177">Record code, lockfile and buildspec.yml together.</text>
+      <text x="64" y="312">Choose image, runtime, role, logs and timeout.</text>
+      <text x="64" y="447">Install, pre-build and build; fail if checks fail.</text>
+      <text x="64" y="582">The file list and output setting define the parcel.</text>
+      <text x="64" y="717">Compare artifact identity before deployment.</text>
+    </g>
+    <g stroke="#31566b" stroke-width="3.2" marker-end="url(#arrow)">
+      <path d="M360 216 V233"/><path d="M360 351 V368"/>
+      <path d="M360 486 V503"/><path d="M360 621 V638"/>
+    </g>
+    <rect x="42" y="786" width="636" height="85" rx="11" fill="#fff2da" stroke="#ab7b2b" stroke-width="2"/>
+    <text x="62" y="815" font-size="17" font-weight="700">Failed check: stop the handoff and keep its evidence.</text>
+    <text x="62" y="842" font-size="17">Cache is a speed aid, not the released artifact.</text>
+    <text x="62" y="864" font-size="15">A passing build does not prove deployment or customer behavior.</text>
+  </g>
+</svg>

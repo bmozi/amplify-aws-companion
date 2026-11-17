@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" role="img" aria-labelledby="title desc">
+<title id="title">From one van reading to an accountable fleet report</title>
+<desc id="desc">Four numbered stages carry a van reading through a unique device credential and narrow publish topic, an IoT rule with a separate IAM stream-write role, a retained stream whose receipt is not business acceptance, and independent alert and analysis consumers. Rule-forwarding failures and consumer-rejected readings require separate owned repair inboxes. This is conceptual design, not tested AWS permission or service behavior.</desc>
+<defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#153346}.title{font-size:25px;font-weight:700}.head{font-size:20px;font-weight:700}.body{font-size:17px}.small{font-size:16px}.box{stroke-width:2}.arrow{fill:none;stroke:#285669;stroke-width:2.5;marker-end:url(#tip)}</style><marker id="tip" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9z" fill="#285669"/></marker></defs>
+<rect width="700" height="500" fill="#fff"/>
+<text class="title" x="24" y="38">One van reading crosses four promises</text>
+<text class="small" x="24" y="64">A delivery receipt is not yet an accepted maintenance fact.</text>
+<rect class="box" x="24" y="80" width="652" height="70" rx="9" fill="#e6f3f5" stroke="#285669"/>
+<text class="head" x="42" y="108">1 · Connect and publish</text>
+<text class="body" x="42" y="135">Unique credential + narrow topic; the body device ID is still a claim.</text>
+<path class="arrow" d="M350 151 V160"/>
+<rect class="box" x="24" y="165" width="652" height="70" rx="9" fill="#fff2d9" stroke="#8b6018"/>
+<text class="head" x="42" y="193">2 · Forward by IoT rule</text>
+<text class="body" x="42" y="220">Separate IAM write role; rule errors need a forwarding inbox.</text>
+<path class="arrow" d="M350 236 V245"/>
+<rect class="box" x="24" y="250" width="652" height="70" rx="9" fill="#e6f3f5" stroke="#285669"/>
+<text class="head" x="42" y="278">3 · Retain in a stream</text>
+<text class="body" x="42" y="305">Partition key + replay window; receipt ≠ business acceptance.</text>
+<path class="arrow" d="M182 321 V330"/><path class="arrow" d="M518 321 V330"/>
+<rect class="box" x="24" y="335" width="317" height="84" rx="9" fill="#e7f3e8" stroke="#386548"/>
+<text class="head" x="42" y="363">4a · Alert consumer</text>
+<text class="body" x="42" y="392">Own progress + validation</text>
+<rect class="box" x="359" y="335" width="317" height="84" rx="9" fill="#e7f3e8" stroke="#386548"/>
+<text class="head" x="377" y="363">4b · Analysis consumer</text>
+<text class="body" x="377" y="392">Own progress + revisions</text>
+<rect class="box" x="24" y="433" width="652" height="55" rx="9" fill="#fff0ee" stroke="#a3453d"/>
+<text class="body" x="42" y="456">A rejected reading needs a separate business-repair inbox.</text>
+<text class="small" x="42" y="479">Conceptual path: no AWS resource or effective permission tested.</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1060" viewBox="0 0 800 1060" role="img" aria-labelledby="title desc">
+<title id="title">Three capacity dials on one booking path</title>
+<desc id="desc">Sixty requests per second reach a safe cache. It serves 24 public reads and sends 36 requests to two ready app workers with a 40-request capacity. The database receives 30 reads and six writes per second. Its read capacity of 28 is the limiting stage. Cache safety, worker readiness, and database read/write limits are distinct controls.</desc>
+<defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M1 1 L11 6 L1 11 Z" fill="#45687a"/></marker></defs>
+<rect width="800" height="1060" fill="#f7fafb"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#17344b">
+<text x="35" y="55" font-size="32" font-weight="700">Find the limiting stage</text>
+<text x="35" y="91" font-size="22">Fictional steady booking traffic, per second</text>
+<rect x="35" y="125" width="730" height="130" rx="16" fill="#fff" stroke="#a9c1ce" stroke-width="2"/>
+<text x="58" y="172" font-size="29" font-weight="700">Customers: 60 requests</text>
+<text x="58" y="216" font-size="23">54 reads + 6 writes enter the path.</text>
+<path d="M400 259 V289" stroke="#45687a" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="35" y="300" width="730" height="130" rx="16" fill="#e5f4f0" stroke="#4d9b86" stroke-width="2"/>
+<text x="58" y="347" font-size="29" font-weight="700">Safe cache: 24 reads answered</text>
+<text x="58" y="391" font-size="23">30 reads + 6 writes continue.</text>
+<path d="M400 434 V464" stroke="#45687a" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="35" y="475" width="730" height="130" rx="16" fill="#e6f0f9" stroke="#5489b7" stroke-width="2"/>
+<text x="58" y="522" font-size="29" font-weight="700">Ready workers: 36 of 40 capacity</text>
+<text x="58" y="566" font-size="23">App workers have room for this snapshot.</text>
+<path d="M400 609 V639" stroke="#45687a" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="35" y="650" width="730" height="165" rx="16" fill="#fbe9e7" stroke="#bb594f" stroke-width="2"/>
+<text x="58" y="697" font-size="29" font-weight="700">Database reads: 30 of 28</text>
+<text x="58" y="741" font-size="23">This read limit is exceeded first.</text>
+<text x="58" y="777" font-size="23">Writes: 6 of 8 still fit.</text>
+<rect x="35" y="842" width="730" height="144" rx="16" fill="#fff2d9" stroke="#bf8b32" stroke-width="2"/>
+<text x="58" y="888" font-size="26" font-weight="700">Decision: do not just add a worker</text>
+<text x="58" y="926" font-size="21">Check safe cache hits or database read room.</text>
+<text x="58" y="958" font-size="21">Measure correctness, latency and complete cost.</text>
+<text x="35" y="1034" font-size="18">Illustrative arithmetic, not an AWS benchmark.</text>
+</g></svg>

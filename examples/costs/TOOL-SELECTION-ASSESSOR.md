@@ -1,0 +1,12 @@
+# Cost-tool exercise: provisional reasoning
+
+These criteria support a fictional assessment, not independently calibrated scoring. Accept justified alternatives that preserve the evidence boundaries.
+
+1. **Estimate before deployment.** Pricing Calculator and a dated service/region worksheet can model the proposal, using supported workload inputs. Last month's different workload is context, not proof of future cost. Include every known architecture component and intended lifetime; distinguish usage charges, credit eligibility and payable amounts. A complete estimate remains conditional, not a runtime limit.
+2. **Investigate the scope.** Inspect refresh time, usage period, metric and inclusions. Compare an appropriately broader service/account view, including untagged costs, with the inventory and run record. Verify cost-allocation activation and relevant historical coverage. Zero in a narrow or stale view does not prove no usage. Do not infer the exact cause before checking it.
+3. **Separate three observations.** Budget configuration is not delivery evidence. Lack of an alert is not proof of a low bill, and neither observation proves that work stopped. Verify the intended recipient path and reported billing data separately; follow the already authorized bounded-run stop and cleanup procedure based on workload controls and ownership. A budget action has a particular scope and must be tested; do not call it universal teardown.
+4. **Granularity is not completeness.** CUR 2.0 can support detailed recurring analysis, but both export and downstream filters can exclude charges. Reconcile the same interval, cost measure, record types and scope against the broader reference before labeling the result. Document missing-data handling, shared allocation and adjustments. Scope readers and protect the destination; estimate retained storage, queries and optional visualization. No export feature is enabled by this design answer.
+
+For the contractor transfer, require approved application-level data exposure, restricted readers, suitable retention and a test of both intended and unrelated access. Label the delivered report with its limited scope. Do not solve confidentiality by silently claiming a filtered amount is the whole bill.
+
+Readers should be able to choose evidence and name its limits, then revise the choice when facts change. Record unaided and AI-assisted reasoning separately. This exercise produces no AWS API output, real export, billing reconciliation or notification test.

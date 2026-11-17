@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 850" role="img" aria-labelledby="title desc">
+<title id="title">Security coverage is a scoped operating promise</title>
+<desc id="desc">A design-only coverage map for production, development and security accounts across two candidate Regions. Organization structure, posture and configuration, managed nodes, threat signals and investigation are separate jobs. A coverage claim must name the exact account, Region, resource, latest evidence, exception, owner and cost. This figure configures or verifies no AWS account and creates no Organization.</desc>
+<defs><style>text{font-family:Arial,sans-serif;fill:#173440}.title{font-size:31px;font-weight:700}.sub{font-size:20px}.head{font-size:25px;font-weight:700}.body{font-size:21px}.small{font-size:19px}.key{font-size:20px;font-weight:700}</style></defs>
+<rect width="900" height="850" fill="#fff"/>
+<text x="30" y="49" class="title">Security coverage needs a precise address</text>
+<text x="30" y="81" class="sub">Organization-scale example · design only</text>
+<rect x="30" y="109" width="840" height="173" rx="13" fill="#e9f2f8" stroke="#6a91a8" stroke-width="2"/>
+<text x="51" y="150" class="head">1  Name the account and Region</text>
+<rect x="51" y="170" width="250" height="88" rx="8" fill="#fff" stroke="#93aab4"/>
+<rect x="325" y="170" width="250" height="88" rx="8" fill="#fff" stroke="#93aab4"/>
+<rect x="599" y="170" width="250" height="88" rx="8" fill="#fff" stroke="#93aab4"/>
+<text x="65" y="201" class="key">Production</text><text x="65" y="232" class="small">Region A · Region B</text>
+<text x="339" y="201" class="key">Development</text><text x="339" y="232" class="small">Region A · Region B</text>
+<text x="613" y="201" class="key">Security</text><text x="613" y="232" class="small">Region A · Region B</text>
+<rect x="30" y="301" width="840" height="260" rx="13" fill="#edf5f1" stroke="#779b86" stroke-width="2"/>
+<text x="51" y="342" class="head">2  Keep the control jobs distinct</text>
+<text x="51" y="384" class="body">Organizations / Control Tower: account foundation</text>
+<text x="51" y="421" class="body">Security Hub CSPM / Config: selected posture checks</text>
+<text x="51" y="458" class="body">Systems Manager: supported managed-node actions</text>
+<text x="51" y="495" class="body">GuardDuty / Detective: signals and investigation</text>
+<text x="51" y="538" class="small">Assigning one tool does not configure or prove the others.</text>
+<rect x="30" y="580" width="840" height="160" rx="13" fill="#fff0d7" stroke="#a87938" stroke-width="2"/>
+<text x="51" y="621" class="head">3  Demand evidence for each covered cell</text>
+<text x="51" y="663" class="body">Exact resource · latest observation · exception · owner</text>
+<text x="51" y="700" class="body">Customer consequence · next action · ongoing cost</text>
+<rect x="30" y="758" width="840" height="63" rx="10" fill="#f2f4f6" stroke="#82939d"/>
+<text x="51" y="796" class="key">A green row cannot prove full protection or recovery.</text>
+</svg>

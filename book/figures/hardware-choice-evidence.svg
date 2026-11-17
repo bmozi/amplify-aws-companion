@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 916" role="img" aria-labelledby="title desc">
+<title id="title">Choose hardware after testing the customer promise</title>
+<desc id="desc">A compact comparison of the existing managed Lambda, SQS and DynamoDB path with hypothetical always-on EC2 and accelerator alternatives. All three must be judged against the same correct, timely customer outcome, recovery path, full cost and exact-resource cleanup. Only the managed path exists in this lab, and no energy or carbon result has been measured.</desc>
+<defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#173341}.title{font-size:21px;font-weight:700}.sub{font-size:16px}.head{font-size:19px;font-weight:700}.body{font-size:17px}.foot{font-size:16px}</style></defs>
+<rect width="360" height="916" fill="#fff"/>
+<text x="16" y="31" class="title">Pick machinery for the work</text>
+<text x="16" y="55" class="sub">Fictional repair demand</text>
+<rect x="16" y="75" width="328" height="112" rx="12" fill="#fff2df" stroke="#a27435" stroke-width="2"/>
+<text x="30" y="104" class="head">Customer promise</text>
+<text x="30" y="133" class="body">Durable requests. Correct</text>
+<text x="30" y="159" class="body">repairs on time. One last seat.</text>
+
+<rect x="16" y="208" width="328" height="140" rx="12" fill="#eaf4ed" stroke="#4b7b5e" stroke-width="2"/>
+<text x="30" y="237" class="head">Current: managed path</text>
+<text x="30" y="266" class="body">Lambda · SQS · DynamoDB</text>
+<text x="30" y="292" class="body">AWS runs service machinery.</text>
+<text x="30" y="318" class="body">Count retries, logs, storage.</text>
+
+<rect x="16" y="369" width="328" height="140" rx="12" fill="#eaf1f6" stroke="#557c90" stroke-width="2"/>
+<text x="30" y="398" class="head">Hypothetical: EC2 worker</text>
+<text x="30" y="427" class="body">Always on. Team owns scale,</text>
+<text x="30" y="453" class="body">patches and recovery.</text>
+<text x="30" y="479" class="body">Price idle time.</text>
+
+<rect x="16" y="530" width="328" height="140" rx="12" fill="#f4eff4" stroke="#8b6e8c" stroke-width="2"/>
+<text x="30" y="559" class="head">Hypothetical: accelerator</text>
+<text x="30" y="588" class="body">Only for a new image task.</text>
+<text x="30" y="614" class="body">Prove quality and benefit.</text>
+<text x="30" y="640" class="body">Price idle and data paths.</text>
+
+<rect x="16" y="691" width="328" height="167" rx="12" fill="#f1f4f6" stroke="#718895" stroke-width="2"/>
+<text x="30" y="720" class="head">One fair decision gate</text>
+<text x="30" y="749" class="body">Same customer outcome and</text>
+<text x="30" y="775" class="body">failure case for all three.</text>
+<text x="30" y="810" class="body">Check full regional cost,</text>
+<text x="30" y="836" class="body">permissions, recovery, cleanup.</text>
+<text x="16" y="888" class="foot">Only the managed path exists here.</text>
+<text x="16" y="910" class="foot">No energy or carbon result measured.</text>
+</svg>

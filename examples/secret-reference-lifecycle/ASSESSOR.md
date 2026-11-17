@@ -1,0 +1,9 @@
+# Assessor: follow the value to each consumer
+
+1. **After rotation:** the fictional store and supplier hold `v2`; the injected property and runtime cache still hold `v1`. Both fail under this exercise's immediate old-value rejection. A successful secret-store update alone cannot prove the consumers have refreshed.
+2. **After runtime refresh:** that worker reads `v2` and works. The template-managed property remains `v1`; a runtime refresh is not a CloudFormation resource update.
+3. **After resource update:** the versionless reference retrieves `v2` in the model. The pinned `v1` reference remains stale. AWS documents that CloudFormation resolves the reference when the containing resource is created or updated, but this local trace does not prove a particular resource update occurred, the application process loaded the new property, or the supplier accepted a real request.
+4. **Store outage:** the choice to use a short cache or fail closed depends on the business promise, exposure window, revocation rule and availability need. An unlimited stale cache can keep using a rejected or compromised value. A forced refresh during outage can stop service. Name the owner, maximum age, failure signal and recovery action.
+5. **Failed resource update:** in the fictional failed-update case, the injected property stays at `v1`; a later successful versionless update changes it to `v2`, while the separate runtime cache remains stale. Real failure and rollback behavior depends on the resource. Do not declare the rotation complete or quietly restore `v1` without checking whether the supplier accepts it and who may authorize rollback. Inspect stack events, resource state, injected value exposure, worker restart/cache state and a representative customer operation. Reconcile the store, supplier and both consumers before closing the incident.
+
+This answer key reasons over fictional version labels; it does not test Secrets Manager, CloudFormation, IAM or a supplier.

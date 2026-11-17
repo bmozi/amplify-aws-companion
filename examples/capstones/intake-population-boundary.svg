@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="470" viewBox="0 0 1080 470" role="img" aria-labelledby="title desc">
+<title id="title">An accepted request missing from an outcome report</title>
+<desc id="desc">A separate intake register names seven accepted requests including r7. The operations export names six and omits r7. A join identifies the missing identity. At second 120 r7 is past its deadline, but its outcome is unknown, so the overall on-time rate is held pending reconciliation.</desc>
+<defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#12334b}.head{font-size:26px;font-weight:bold}.body{font-size:22px}.small{font-size:19px}.line{stroke:#356b8a;stroke-width:3;fill:none}.box{stroke:#356b8a;stroke-width:2}</style><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#356b8a"/></marker></defs>
+<rect width="1080" height="470" fill="#fcfaf4"/>
+<text x="38" y="52" class="head">Before a rate, check who was accepted</text>
+<rect x="38" y="92" width="300" height="210" rx="16" fill="#e6f2f5" class="box"/>
+<text x="60" y="132" class="head">Intake register</text>
+<text x="60" y="172" class="body">r1–r6 plus r7</text>
+<text x="60" y="208" class="body">7 accepted</text>
+<text x="60" y="244" class="small">r7 accepted at second 50</text>
+<rect x="390" y="92" width="300" height="210" rx="16" fill="#eef0f7" class="box"/>
+<text x="412" y="132" class="head">Operations export</text>
+<text x="412" y="172" class="body">r1–r6 only</text>
+<text x="412" y="208" class="body">6 outcome rows</text>
+<text x="412" y="244" class="small">No row for r7</text>
+<path d="M340 195 H386" class="line" marker-end="url(#arrow)"/>
+<rect x="742" y="92" width="300" height="210" rx="16" fill="#fff0df" stroke="#b17039" stroke-width="2"/>
+<text x="764" y="132" class="head">Join by exact ID</text>
+<text x="764" y="172" class="body">r7 is missing</text>
+<text x="764" y="208" class="small">Due at second 110</text>
+<text x="764" y="244" class="small">Outcome still unknown</text>
+<path d="M692 195 H738" class="line" marker-end="url(#arrow)"/>
+<rect x="38" y="337" width="1004" height="93" rx="15" fill="#12334b"/>
+<text x="60" y="374" class="body" fill="#ffffff" style="fill:#ffffff">Known: 2 on time, 3 missed, 1 due outcome unknown among 6 mature.</text>
+<text x="60" y="408" class="body" fill="#ffffff" style="fill:#ffffff">Hold the overall rate. Find r7; do not call it completed or failed.</text>
+</svg>

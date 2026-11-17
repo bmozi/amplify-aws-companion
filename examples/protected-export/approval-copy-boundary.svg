@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="580" viewBox="0 0 700 580" role="img" aria-labelledby="title desc">
+  <title id="title">An exact approval and a supplier copy are separate durable decisions</title>
+  <desc id="desc">The fictional owner ledger binds exact key, version, digest and recipient. A lost approval reply is recovered after reopening. A separate supplier shelf retains the exact-byte copy after its own lost reply. Withdrawing later owner reads does not erase the supplier copy or bytes already in flight. The two local SQLite files are not AWS authorization or a cross-account transaction.</desc>
+  <defs>
+    <style>.bg{fill:#fffdf8}.ink{fill:#183246;font-family:Arial,sans-serif}.muted{fill:#425b6c;font-family:Arial,sans-serif}.owner{fill:#edf5f8;stroke:#769eb2;stroke-width:2}.supplier{fill:#fff3dc;stroke:#b58e4b;stroke-width:2}.limit{fill:#e9eef2;stroke:#9cb2bf;stroke-width:2}.arrow{stroke:#426c83;stroke-width:3;fill:none;marker-end:url(#tip)}</style>
+    <marker id="tip" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1 L9 5 L1 9 Z" fill="#426c83"/></marker>
+  </defs>
+  <rect class="bg" width="700" height="580"/>
+  <text x="35" y="45" class="ink" font-size="25" font-weight="700">One approval, two places bytes can live</text>
+  <text x="35" y="73" class="muted" font-size="16">Fictional A15 · two local SQLite files · no AWS identity</text>
+
+  <rect x="35" y="96" width="630" height="130" rx="15" class="owner"/>
+  <circle cx="65" cy="127" r="19" fill="#3a738f"/><text x="58" y="135" fill="#fff" font-family="Arial,sans-serif" font-size="21" font-weight="700">1</text>
+  <text x="96" y="133" class="ink" font-size="21" font-weight="700">Owner ledger: approve one exact file</text>
+  <text x="56" y="164" class="ink" font-size="16">Bind key, version, digest and recipient.</text>
+  <text x="56" y="190" class="muted" font-size="16">Lost reply → reopen → recover the same decision.</text>
+  <path d="M350 231 V258" class="arrow"/>
+  <text x="374" y="251" class="muted" font-size="15">deliver checked bytes</text>
+
+  <rect x="35" y="271" width="630" height="117" rx="15" class="supplier"/>
+  <circle cx="65" cy="302" r="19" fill="#936c2f"/><text x="58" y="310" fill="#fff" font-family="Arial,sans-serif" font-size="21" font-weight="700">2</text>
+  <text x="96" y="308" class="ink" font-size="21" font-weight="700">Supplier shelf: store a separate copy</text>
+  <text x="56" y="339" class="ink" font-size="16">Keep the exact bytes and verify their digest.</text>
+  <text x="56" y="365" class="muted" font-size="16">Lost reply → reopen this shelf; check its own receipt.</text>
+
+  <rect x="35" y="402" width="630" height="101" rx="15" class="limit"/>
+  <text x="56" y="434" class="ink" font-size="20" font-weight="700">Withdrawal stops future owner reads</text>
+  <text x="56" y="461" class="ink" font-size="16">It cannot recall bytes already in flight or on the shelf.</text>
+  <text x="56" y="484" class="muted" font-size="15">Recipient cleanup needs separate evidence.</text>
+
+  <text x="35" y="533" class="ink" font-size="16" font-weight="700">Two records are not one cross-account transaction.</text>
+  <text x="35" y="558" class="muted" font-size="15">Local persistence only; S3 version, IAM and KMS gates untested.</text>
+</svg>

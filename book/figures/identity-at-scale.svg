@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 680" role="img" aria-labelledby="title desc">
+<title id="title">Four access paths with different owners and proofs</title>
+<desc id="desc">A vertical comparison of workforce access through a directory and IAM Identity Center to an account role, a CI OIDC token through role trust to a scoped deployment role, an AWS workload through its service-appropriate role to selected service actions, and the exceptional external partner that requires a stored static secret and verified rotation. Trust, grants and applicable policy ceilings have different jobs. The workforce organization path is design-only for the personal-account lab; the diagram is not a policy evaluation or deployed resource inventory.</desc>
+<defs><style>text{font-family:Arial,sans-serif;fill:#142e3c}.title{font-size:18px;font-weight:700}.head{font-size:16px;font-weight:700}.body{font-size:14px}.note{font-size:13px}.box{stroke-width:1.5}</style></defs>
+<rect width="360" height="680" fill="#fff"/>
+<text x="14" y="29" class="title">Who needs access?</text>
+<text x="14" y="48" class="note">Choose the path; prove scope and result.</text>
+<rect x="14" y="58" width="332" height="112" rx="10" fill="#e8f3f5" stroke="#2f668f" class="box"/>
+<text x="27" y="82" class="head">People — workforce sign-in</text>
+<text x="27" y="104" class="body">Directory + MFA → job assignment</text>
+<text x="27" y="122" class="body">→ Identity Center permission set</text>
+<text x="27" y="140" class="body">→ account role.</text>
+<text x="27" y="158" class="note">Organization path: design-only here.</text>
+<rect x="14" y="180" width="332" height="112" rx="10" fill="#e9f5ef" stroke="#367b68" class="box"/>
+<text x="27" y="204" class="head">Build automation — CI job</text>
+<text x="27" y="226" class="body">GitHub OIDC token → role trust</text>
+<text x="27" y="244" class="body">checks repository and branch →</text>
+<text x="27" y="262" class="body">short-lived deployment role.</text>
+<text x="27" y="280" class="note">Prove an allow and unrelated denial.</text>
+<rect x="14" y="302" width="332" height="130" rx="10" fill="#f0edf7" stroke="#725b9e" class="box"/>
+<text x="27" y="326" class="head">Application — AWS runtime</text>
+<text x="27" y="348" class="body">EC2 profile, ECS task role or</text>
+<text x="27" y="366" class="body">Lambda execution role → temporary</text>
+<text x="27" y="384" class="body">credentials → selected service action.</text>
+<text x="27" y="418" class="note">The deployer's role is separate.</text>
+<rect x="14" y="442" width="332" height="112" rx="10" fill="#fff4e4" stroke="#ad7119" class="box"/>
+<text x="27" y="466" class="head">Partner — static secret exception</text>
+<text x="27" y="488" class="body">Approved store → rotate partner</text>
+<text x="27" y="506" class="body">and stored value → refresh caller.</text>
+<text x="27" y="524" class="body">Prove the old value is rejected.</text>
+<text x="27" y="542" class="note">Track owner, recovery and cost.</text>
+<rect x="14" y="564" width="332" height="102" rx="10" fill="#f0f3f7" stroke="#607181" class="box"/>
+<text x="27" y="588" class="head">Three authority questions</text>
+<text x="27" y="610" class="body">Trust: who may assume?</text>
+<text x="27" y="628" class="body">Policies: what may be granted?</text>
+<text x="27" y="646" class="note">Boundaries/SCPs: what is capped?</text>
+</svg>

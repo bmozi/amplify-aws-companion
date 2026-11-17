@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+ <title id="title">Two monitoring lanes meet at a customer decision</title>
+ <desc id="desc">The upper lane follows a booking request through entry, a container task or pod, a database and confirmation. The lower lane collects orchestrator and resource signals. The upper customer result and lower infrastructure signals both reach the operator, who must not treat running containers as successful bookings.</desc>
+ <rect width="960" height="500" fill="#f9fbff"/>
+ <g font-family="Arial,sans-serif" fill="#112e4c"><text x="30" y="48" font-size="25" font-weight="bold">TWO LANES, ONE CUSTOMER PROMISE</text><text x="30" y="78" font-size="16">A task can be running while every booking fails.</text></g>
+ <g font-family="Arial,sans-serif" font-size="17" text-anchor="middle">
+  <rect x="30" y="145" width="140" height="66" rx="9" fill="#dcecf9" stroke="#26649d" stroke-width="2"/><text x="100" y="173" fill="#112e4c">Customer or</text><text x="100" y="195" fill="#112e4c">safe probe</text>
+  <rect x="210" y="145" width="132" height="66" rx="9" fill="#dcecf9" stroke="#26649d" stroke-width="2"/><text x="276" y="184" fill="#112e4c">Entry point</text>
+  <rect x="382" y="145" width="140" height="66" rx="9" fill="#dcecf9" stroke="#26649d" stroke-width="2"/><text x="452" y="173" fill="#112e4c">ECS task or</text><text x="452" y="195" fill="#112e4c">EKS pod</text>
+  <rect x="562" y="145" width="125" height="66" rx="9" fill="#fff0ce" stroke="#b07815" stroke-width="2"/><text x="624" y="183" fill="#503907">Database</text>
+  <rect x="727" y="145" width="205" height="66" rx="9" fill="#e1f1e6" stroke="#3d8054" stroke-width="2"/><text x="829" y="173" fill="#1e4b2a">Confirmation?</text><text x="829" y="195" fill="#1e4b2a">success / timeout</text>
+  <rect x="270" y="320" width="290" height="88" rx="9" fill="#e8e3f7" stroke="#6a53a8" stroke-width="2"/><text x="415" y="349" fill="#30235d">Container Insights</text><text x="415" y="373" fill="#30235d">tasks · CPU · memory · restarts</text><text x="415" y="396" fill="#30235d">logs need a delivery path</text>
+  <rect x="680" y="320" width="252" height="88" rx="9" fill="#fff0ce" stroke="#b07815" stroke-width="2"/><text x="806" y="349" fill="#503907">Operator decision</text><text x="806" y="373" fill="#503907">customer failure pages</text><text x="806" y="396" fill="#503907">infrastructure explains</text>
+ </g>
+ <g stroke="#cc7413" stroke-width="4" fill="none" stroke-linecap="round"><path d="M170 178h40M342 178h40M522 178h40M687 178h40M452 211v109M829 211v109M560 364h120"/><path d="M198 170l12 8-12 8M370 170l12 8-12 8M550 170l12 8-12 8M715 170l12 8-12 8M444 308l8 12 8-12M821 308l8 12 8-12M668 356l12 8-12 8"/></g>
+ <text x="32" y="465" font-family="Arial,sans-serif" font-size="16" fill="#112e4c">Missing telemetry needs its own alarm. A stale green panel is not evidence of success.</text>
+</svg>

@@ -1,0 +1,58 @@
+{
+  "retrieved_at_utc": "2026-10-27T18:51:27+00:00",
+  "scope": "Live official HTML source-count confirmation; not a teaching or exam-readiness result",
+  "domain_pages": [
+    {
+      "domain": 1,
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-03/solutions-architect-professional-03-domain1.html",
+      "http_status": 200,
+      "html_sha256": "75dfc385c8649d36d7ee7df3ff7c2824d847bac83d7bf0e3eeeecd179e7927c6",
+      "last_modified": "Tue, 27 Oct 2026 15:12:54 GMT",
+      "etag": "\"CeR2FYZma2fylOSjQ5n6cAgX2fY=\"",
+      "task_count": 5,
+      "numbered_skill_count": 34
+    },
+    {
+      "domain": 2,
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-03/solutions-architect-professional-03-domain2.html",
+      "http_status": 200,
+      "html_sha256": "8152e0888c48fa8a90c4ac2acb6c6a34bcc5e214beb0988594a46aeac7e63c84",
+      "last_modified": "Tue, 27 Oct 2026 15:12:57 GMT",
+      "etag": "\"RvQhJuqk4jAuTRbzbbFjPH50OaM=\"",
+      "task_count": 5,
+      "numbered_skill_count": 24
+    },
+    {
+      "domain": 3,
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-03/solutions-architect-professional-03-domain3.html",
+      "http_status": 200,
+      "html_sha256": "78a79a814228e3626f2f5f4314da332c6a4ab23cbeb7b6e390531a0f5cb07821",
+      "last_modified": "Tue, 27 Oct 2026 15:12:58 GMT",
+      "etag": "\"iIc4iIzLRsZAfVSrEup2dGjihHg=\"",
+      "task_count": 4,
+      "numbered_skill_count": 19
+    },
+    {
+      "domain": 4,
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-03/solutions-architect-professional-03-domain4.html",
+      "http_status": 200,
+      "html_sha256": "be77bf19e848aebb1f5d17a8630ba7a8cb99712fcf6e7ccbe4fab1d1c0d84997",
+      "last_modified": "Tue, 27 Oct 2026 15:13:02 GMT",
+      "etag": "\"Gw35trSY/YbNxJ4d4DCz0Hj+zro=\"",
+      "task_count": 3,
+      "numbered_skill_count": 17
+    },
+    {
+      "domain": 5,
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-03/solutions-architect-professional-03-domain5.html",
+      "http_status": 200,
+      "html_sha256": "9288babc3a8cbb4fa196ca78a71f9420c8284fd60db783e7197f1b9f1c7cd2b0",
+      "last_modified": "Tue, 27 Oct 2026 15:13:00 GMT",
+      "etag": "\"/dB47PoaoP9z1TrCe+XbDVPvkjY=\"",
+      "task_count": 4,
+      "numbered_skill_count": 21
+    }
+  ],
+  "total_tasks": 21,
+  "total_numbered_skills": 115
+}

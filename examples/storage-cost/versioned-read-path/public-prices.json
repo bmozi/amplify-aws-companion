@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "scope": "selected public Ohio on-demand meters; pre-credit gross example only",
+  "checked_at_utc": "2026-10-21T02:27:12.759523+00:00",
+  "sources": {
+    "s3": {
+      "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonS3/current/us-east-2/index.json",
+      "sha256": "52b93329ad3e132d8195b27b027907322a7a142fafef301d55073605826452da",
+      "publication_date": "2026-10-15T17:35:40Z",
+      "version": "20261015173540"
+    },
+    "transfer": {
+      "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSDataTransfer/current/us-east-2/index.json",
+      "sha256": "a387647c6c72accee1940d8ca7815e74341160bfcaf3bbbba97664cde8dbd343",
+      "publication_date": "2026-09-16T13:22:08Z",
+      "version": "20260916132208"
+    }
+  },
+  "rates": {
+    "standard_storage": {
+      "source": "s3",
+      "sku": "YPGKVRB2EKTVDJDT",
+      "usage_type": "USE2-TimedStorage-ByteHrs",
+      "unit": "GB-Mo",
+      "begin_range": "0",
+      "end_range": "51200",
+      "usd_per_unit": "0.0230000000"
+    },
+    "standard_put": {
+      "source": "s3",
+      "sku": "GJKK9PMSTKPNGZS9",
+      "usage_type": "USE2-Requests-Tier1",
+      "unit": "Requests",
+      "begin_range": "0",
+      "end_range": "Inf",
+      "usd_per_unit": "0.0000050000"
+    },
+    "standard_get": {
+      "source": "s3",
+      "sku": "DJEKB32FV4HNZJZY",
+      "usage_type": "USE2-Requests-Tier2",
+      "unit": "Requests",
+      "begin_range": "0",
+      "end_range": "Inf",
+      "usd_per_unit": "0.0000004000"
+    },
+    "internet_out": {
+      "source": "transfer",
+      "sku": "36H7S3NU9B7S3UT5",
+      "usage_type": "USE2-DataTransfer-Out-Bytes",
+      "unit": "GB",
+      "begin_range": "0",
+      "end_range": "10240",
+      "usd_per_unit": "0.0900000000"
+    }
+  }
+}

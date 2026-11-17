@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CreateAndStartDeploymentForOneBranch",
+      "Effect": "Allow",
+      "Action": ["amplify:CreateDeployment", "amplify:StartDeployment"],
+      "Resource": "arn:aws:amplify:us-east-2:111111111111:apps/d000000000000/branches/lab"
+    },
+    {
+      "Sid": "ReadJobsForOneBranch",
+      "Effect": "Allow",
+      "Action": "amplify:GetJob",
+      "Resource": "arn:aws:amplify:us-east-2:111111111111:apps/d000000000000/branches/lab/jobs/*"
+    },
+    {
+      "Sid": "ReadCurrentFreePlanForPublicationGate",
+      "Effect": "Allow",
+      "Action": "freetier:GetAccountPlanState",
+      "Resource": "*"
+    },
+    {
+      "Sid": "ReadOneMonthlyCostBudgetForPublicationGate",
+      "Effect": "Allow",
+      "Action": "budgets:ViewBudget",
+      "Resource": "arn:aws:budgets::111111111111:budget/AWS-Learning-Monthly-Cost"
+    }
+  ]
+}

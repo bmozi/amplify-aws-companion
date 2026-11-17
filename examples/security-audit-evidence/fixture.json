@@ -1,0 +1,185 @@
+{
+  "window_minutes": 30,
+  "coverage": [
+    {
+      "source": "cloudtrail",
+      "account": "111111111111",
+      "region": "us-east-2",
+      "state": "complete",
+      "resource": "arn:example:s3:::booking-export"
+    },
+    {
+      "source": "config",
+      "account": "111111111111",
+      "region": "us-east-2",
+      "state": "partial",
+      "resource": "arn:example:s3:::booking-export"
+    },
+    {
+      "source": "synthetic-detector",
+      "account": "111111111111",
+      "region": "us-east-2",
+      "state": "complete",
+      "resource": "arn:example:s3:::booking-export"
+    },
+    {
+      "source": "cloudtrail",
+      "account": "222222222222",
+      "region": "us-west-2",
+      "state": "complete",
+      "resource": "arn:example:s3:::booking-export"
+    },
+    {
+      "source": "cloudtrail",
+      "account": "111111111111",
+      "region": "us-east-2",
+      "resource": "arn:example:s3:::booking-dev-export",
+      "state": "complete"
+    },
+    {
+      "source": "cloudtrail",
+      "account": "111111111111",
+      "region": "us-west-1",
+      "resource": "arn:example:s3:::booking-export-west",
+      "state": "complete"
+    }
+  ],
+  "records": [
+    {
+      "id": "F-101",
+      "kind": "finding",
+      "source": "synthetic-detector",
+      "account": "111111111111",
+      "region": "us-east-2",
+      "resource": "arn:example:s3:::booking-export",
+      "time": "2026-10-01T12:10:00Z",
+      "expected_sources": [
+        "cloudtrail",
+        "config"
+      ],
+      "severity": "high",
+      "category": "public-storage",
+      "environment": "production",
+      "observed_at": "2026-10-01T12:12:00Z"
+    },
+    {
+      "id": "E-101",
+      "kind": "evidence",
+      "source": "cloudtrail",
+      "account": "111111111111",
+      "region": "us-east-2",
+      "resource": "arn:example:s3:::booking-export",
+      "time": "2026-10-01T12:01:00Z",
+      "detail": "Fictional policy-change event",
+      "observed_at": "2026-10-01T12:04:00Z"
+    },
+    {
+      "id": "E-102",
+      "kind": "evidence",
+      "source": "config",
+      "account": "111111111111",
+      "region": "us-east-2",
+      "resource": "arn:example:s3:::booking-export",
+      "time": "2026-10-01T12:06:00Z",
+      "detail": "Fictional recorded configuration",
+      "observed_at": "2026-10-01T12:20:00Z"
+    },
+    {
+      "id": "E-103",
+      "kind": "evidence",
+      "source": "cloudtrail",
+      "account": "222222222222",
+      "region": "us-west-2",
+      "resource": "arn:example:s3:::booking-export",
+      "time": "2026-10-01T12:08:00Z",
+      "detail": "Same bucket name, different account and Region",
+      "observed_at": "2026-10-01T12:11:00Z"
+    },
+    {
+      "id": "E-104",
+      "kind": "evidence",
+      "source": "cloudtrail",
+      "account": "111111111111",
+      "region": "us-east-2",
+      "resource": "arn:example:s3:::booking-export",
+      "time": "2026-10-01T11:20:00Z",
+      "detail": "Outside the selected time window",
+      "observed_at": "2026-10-01T12:12:00Z"
+    },
+    {
+      "id": "F-102",
+      "kind": "finding",
+      "source": "synthetic-detector",
+      "account": "111111111111",
+      "region": "us-east-2",
+      "resource": "arn:example:s3:::booking-export",
+      "time": "2026-10-01T12:14:00Z",
+      "expected_sources": [
+        "cloudtrail"
+      ],
+      "severity": "high",
+      "category": "unusual-api-activity",
+      "environment": "production",
+      "observed_at": "2026-10-01T12:15:00Z"
+    },
+    {
+      "id": "F-103",
+      "kind": "finding",
+      "source": "synthetic-detector",
+      "account": "111111111111",
+      "region": "us-east-2",
+      "resource": "arn:example:s3:::booking-export",
+      "time": "2026-10-01T12:16:00Z",
+      "expected_sources": [
+        "cloudtrail"
+      ],
+      "severity": "medium",
+      "category": "public-storage",
+      "environment": "production",
+      "observed_at": "2026-10-01T12:18:00Z"
+    },
+    {
+      "id": "F-104",
+      "kind": "finding",
+      "source": "synthetic-detector",
+      "account": "111111111111",
+      "region": "us-east-2",
+      "resource": "arn:example:s3:::booking-dev-export",
+      "time": "2026-10-01T12:17:00Z",
+      "expected_sources": [
+        "cloudtrail"
+      ],
+      "severity": "high",
+      "category": "public-storage",
+      "environment": "development",
+      "observed_at": "2026-10-01T12:19:00Z"
+    },
+    {
+      "id": "F-105",
+      "kind": "finding",
+      "source": "synthetic-detector",
+      "account": "111111111111",
+      "region": "us-west-1",
+      "resource": "arn:example:s3:::booking-export-west",
+      "time": "2026-10-01T12:18:00Z",
+      "expected_sources": [
+        "cloudtrail"
+      ],
+      "severity": "high",
+      "category": "public-storage",
+      "environment": "production",
+      "observed_at": "2026-10-01T12:20:00Z"
+    }
+  ],
+  "alert_rule": {
+    "id": "R-01",
+    "minimum_severity": "high",
+    "category": "public-storage",
+    "environment": "production",
+    "account": "111111111111",
+    "region": "us-east-2",
+    "owner": "fictional-security-on-call",
+    "next_read_only_check": "Inspect the exact bucket policy and access evidence for the finding interval.",
+    "delivery_failure_route": "Record the failed delivery and page the designated backup owner."
+  }
+}

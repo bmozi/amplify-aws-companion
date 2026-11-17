@@ -1,0 +1,9 @@
+# Assessor reasoning: worker replacement
+
+This is an authored answer guide, not a learner result or AWS observation.
+
+1. If no commit occurred, the same-ID retry creates one booking. If the commit occurred but the reply vanished, it returns the existing booking. The timeout alone does not reveal which history happened. Stable identity lets both histories converge under the fixture's database rule.
+2. A different PID proves process replacement, not shared authoritative state. The operator must compare the actual database identity/path and the original booking ID, then independently inspect the row. A stale or different store could give a healthy response while losing the accepted booking. The current receipt's `committed_before_worker_stop`, `retry_booking` and final row count come from one local file selected by the harness; a cloud design needs explicit store identity and replication/cutover evidence.
+3. The outside calendar effect is not in SQLite. The local row cannot establish whether the calendar accepted, duplicated or rejected the operation. Retain a stable provider operation ID, inspect the provider's authoritative result under the right identity, and reconcile before retrying an effect that may already have happened.
+4. No. New requests show current response ability. They do not erase two earlier bookings or correct capacity and confirmations. Identify both effects, determine the intended booking with an authorized operator, repair according to a recorded procedure and verify the customer-facing result.
+5. The safe fixture's unique index and `BEGIN IMMEDIATE` transaction serialize this local lookup/insert decision. The third local test races two worker processes and observes one row with identical booking IDs. A selected AWS design still needs effective authorization, service-specific conditional-write behavior, retry lifetime, costs and failure testing. The local race cannot establish those claims.

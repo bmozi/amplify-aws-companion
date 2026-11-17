@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1040" viewBox="0 0 900 1040" role="img" aria-labelledby="title desc">
+<title id="title">A replay claim survives replacement but does not prove the business result</title>
+<desc id="desc">The local SQLite claim for nonce N persists across same-machine backend replacement, so a copied receipt gets 403. A separate failure after recording the claim returns 503; retry gives 403 while the business outcome is unknown. This model does not call a payment provider or prove AWS durability.</desc>
+<defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#183047}.title{font-size:34px;font-weight:700}.head{font-size:30px;font-weight:700}.body{font-size:27px}.note{font-size:23px}.status{font-size:30px;font-weight:700}</style></defs>
+<rect width="900" height="1040" fill="#fff"/>
+<text class="title" x="42" y="57">One used receipt. Two questions.</text>
+<text class="note" x="42" y="98">Cloud-free lab · one same-machine SQLite file</text>
+<rect x="42" y="129" width="816" height="355" rx="18" fill="#edf7f2" stroke="#83af98" stroke-width="3"/>
+<text class="head" x="70" y="181">1  Does the claim survive replacement?</text>
+<text class="body" x="70" y="235">Backend A claims nonce N → first reply 200</text>
+<text class="body" x="70" y="288">New backend B reads N as used.</text>
+<text class="body" x="70" y="341">Same local claim file persists.</text>
+<text class="body" x="70" y="394">Copied receipt at B</text><text class="status" x="742" y="394">403</text>
+<text class="note" x="70" y="450">A new signed request still returns 200.</text>
+<rect x="42" y="513" width="816" height="340" rx="18" fill="#fff2e9" stroke="#d79a79" stroke-width="3"/>
+<text class="head" x="70" y="565">2  Did the business result happen?</text>
+<text class="body" x="70" y="619">Record claim N, then inject failure.</text>
+<text class="body" x="70" y="672">First reply</text><text class="status" x="742" y="672">503</text>
+<text class="body" x="70" y="725">Retry same receipt at B</text><text class="status" x="742" y="725">403</text>
+<text class="body" x="70" y="778">Business outcome?</text><text class="status" x="672" y="778">Unknown</text>
+<text class="note" x="70" y="823">The toy does not call a payment provider.</text>
+<rect x="42" y="881" width="816" height="126" rx="13" fill="#eaf0f5" stroke="#b6c8d5" stroke-width="2"/>
+<text class="note" x="66" y="924">A claim tracks one token; an operation needs a stable ID,</text>
+<text class="note" x="66" y="954">result record and reconciliation. This local file does not</text>
+<text class="note" x="66" y="984">prove cross-host durability, AWS policy or real payment.</text>
+</svg>

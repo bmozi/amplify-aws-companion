@@ -1,0 +1,7 @@
+/src/
+/public/
+/index.html
+/vite.config.ts
+/amplify_outputs.json
+/node_modules/
+/dist/

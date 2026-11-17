@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 320" role="img" aria-labelledby="title desc">
+  <title id="title">Build and publication trust boundaries</title>
+  <desc id="desc">A full Amplify development tree is installed in a typecheck job without AWS credentials. A separate minimal publisher tree builds browser files. A scoped publisher role is behind a manual off switch. The development advisories are unresolved even though the browser build has a separate audited lock.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#31465b"/></marker></defs>
+  <rect width="960" height="320" fill="#f8fafc"/>
+  <text x="28" y="38" font-family="Arial,sans-serif" font-size="22" font-weight="bold" fill="#17324d">Three questions: can input reach it, can it shape the file, can it publish?</text>
+  <rect x="28" y="78" width="252" height="154" rx="12" fill="#eaf2fb" stroke="#366b9a" stroke-width="2"/>
+  <text x="46" y="111" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#17324d">Full development tree</text>
+  <text x="46" y="142" font-family="Arial,sans-serif" font-size="15" fill="#17324d">Job runs TypeScript check</text>
+  <text x="46" y="169" font-family="Arial,sans-serif" font-size="15" fill="#9a3412">44 audit-affected entries</text>
+  <text x="46" y="196" font-family="Arial,sans-serif" font-size="15" fill="#17324d">No AWS publisher role</text>
+  <rect x="353" y="78" width="252" height="154" rx="12" fill="#e9f6ee" stroke="#377b53" stroke-width="2"/>
+  <text x="371" y="111" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#17324d">Browser build tree</text>
+  <text x="371" y="142" font-family="Arial,sans-serif" font-size="15" fill="#17324d">Separate lock and audit</text>
+  <text x="371" y="169" font-family="Arial,sans-serif" font-size="15" fill="#17324d">Produces site ZIP + digest</text>
+  <text x="371" y="196" font-family="Arial,sans-serif" font-size="15" fill="#17324d">Still trusts source/build code</text>
+  <rect x="678" y="78" width="252" height="154" rx="12" fill="#fff3e8" stroke="#a66323" stroke-width="2"/>
+  <text x="696" y="111" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#17324d">Scoped publisher</text>
+  <text x="696" y="142" font-family="Arial,sans-serif" font-size="15" fill="#17324d">Separate AWS role</text>
+  <text x="696" y="169" font-family="Arial,sans-serif" font-size="15" fill="#17324d">Checks ZIP digest</text>
+  <text x="696" y="196" font-family="Arial,sans-serif" font-size="15" font-weight="bold" fill="#9a3412">Manual switch is OFF</text>
+  <path d="M286 154 H344" stroke="#31465b" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="292" y="180" font-family="Arial,sans-serif" font-size="12" fill="#52667b">pass only</text>
+  <path d="M611 154 H669" stroke="#31465b" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="616" y="180" font-family="Arial,sans-serif" font-size="12" fill="#52667b">site ZIP</text>
+  <text x="29" y="272" font-family="Arial,sans-serif" font-size="15" fill="#17324d">A clean browser audit does not repair the full tree. A matching digest does not approve the builder.</text>
+  <text x="29" y="297" font-family="Arial,sans-serif" font-size="13" fill="#52667b">Dated local study; no live AWS publication or exploit claim.</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 550" role="img" aria-labelledby="title desc">
+<title id="title">From reviewed standard to observed cloud change</title>
+<desc id="desc">A team defines a reusable standard, reviews it, selects an IaC delivery method, deploys in a small approved wave, and checks both infrastructure state and customer outcomes. CloudFormation modules, CDK constructs, and Service Catalog products are reuse options. StackSets can distribute CloudFormation stacks across selected accounts and Regions. AppConfig, Systems Manager State Manager, and AWS Config serve different configuration jobs. Stop and recover if evidence is missing. Design-only for this personal-account lesson.</desc>
+<defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#173341}.title{font-size:18px;font-weight:700}.head{font-size:16px;font-weight:700}.body{font-size:14px}.note{font-size:13px}.box{stroke-width:1.5}</style></defs>
+<rect width="360" height="550" fill="#fff"/>
+<text x="14" y="29" class="title">From standard to observed change</text>
+<text x="14" y="49" class="note">Design only; approve one small wave first.</text>
+<rect x="14" y="62" width="332" height="61" rx="10" fill="#eaf3f7" stroke="#315c70" class="box"/>
+<text x="27" y="87" class="head">1  Define and review</text>
+<text x="27" y="110" class="body">Check inputs, permissions and cost.</text>
+<path d="M180 124 V135" stroke="#315c70" stroke-width="2"/>
+<rect x="14" y="135" width="332" height="61" rx="10" fill="#eaf3f7" stroke="#315c70" class="box"/>
+<text x="27" y="160" class="head">2  Choose the delivery job</text>
+<text x="27" y="183" class="body">Name the owner and rollout method.</text>
+<path d="M180 197 V208" stroke="#315c70" stroke-width="2"/>
+<rect x="14" y="208" width="332" height="61" rx="10" fill="#eaf3f7" stroke="#315c70" class="box"/>
+<text x="27" y="233" class="head">3  Deploy a small wave</text>
+<text x="27" y="256" class="body">Approved accounts and Regions first.</text>
+<path d="M180 270 V281" stroke="#315c70" stroke-width="2"/>
+<rect x="14" y="281" width="332" height="70" rx="10" fill="#eaf3f7" stroke="#315c70" class="box"/>
+<text x="27" y="306" class="head">4  Verify two results</text>
+<text x="27" y="329" class="body">Infrastructure state and customer use.</text>
+<rect x="14" y="363" width="332" height="111" rx="10" fill="#f6f0df" stroke="#90742e" class="box"/>
+<text x="27" y="387" class="head">Choose each tool by its job</text>
+<text x="27" y="409" class="note">Reuse: modules, constructs, Service Catalog.</text>
+<text x="27" y="429" class="note">Delivery: StackSets; app: AppConfig.</text>
+<text x="27" y="449" class="note">Nodes: State Manager; state: AWS Config.</text>
+<rect x="14" y="486" width="332" height="52" rx="10" fill="#f9eeee" stroke="#ae5353" class="box"/>
+<text x="27" y="509" class="head">Stop if evidence is missing</text>
+<text x="27" y="529" class="note">Inspect drift, access, cost and rollback.</text>
+</svg>

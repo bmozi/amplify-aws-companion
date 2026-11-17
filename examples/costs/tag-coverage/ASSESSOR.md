@@ -1,0 +1,7 @@
+# Assessor: tag coverage and historical evidence
+
+Keep this separate until the first attempt is saved. The ledger totals $120. Nonblank values total $105: 87.5% of all costs. Valid direct values total $85: 70.833...% (about 70.8%). Shared is $10, blank is $15 and invalid is $10; $85 + $10 + $15 + $10 = $120. The dashboard's $105 omits $15, counts the typo and includes a shared cost without assigning it to a workload.
+
+An effective answer distinguishes activating a cost-allocation key from applying a historical resource tag. AWS documents backfilling current activation status for a supported historical period, subject to conditions; historically assigned tag values are needed for those values to appear. The older test resource's earlier line was used before its tag was applied, so the supplied facts do not support recovering a `Workload` value for that line by backfill. Support is stipulated untaggable in the exercise. The typo remains a historical value unless evidence establishes a different historically assigned value or a separate, explicitly documented financial allocation is applied. A current correction does not by itself prove the historical line carried the new tag. Reconcile again after any supported backfill or allocation; do not double-count it.
+
+Look for a named owner, reviewed taxonomy, separate shared-cost driver, invalid/blank investigation, same-scope pre-credit denominator, follow-up and account-total reconciliation. The arithmetic is not evidence of any AWS account configuration or independent learner performance.

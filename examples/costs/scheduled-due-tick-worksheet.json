@@ -1,0 +1,183 @@
+{
+  "currency": "USD",
+  "region": "us-east-2",
+  "checked_date": "REPLACE_WITH_PRICE_CHECK_DATE",
+  "run_review": {
+    "status": "pending",
+    "account_id": "REPLACE_WITH_CONFIRMED_ACCOUNT",
+    "architecture": "A02/A03",
+    "hold_mode": "query_due",
+    "schedule_mode": "scheduled_due_tick",
+    "cost_drivers": {
+      "data_transfer": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "tax": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "shared_resources": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "retries": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "repeat_runs": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "retained_storage": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "cleanup_delay": {
+        "decision": "pending",
+        "reason": ""
+      }
+    },
+    "schedule_review": {
+      "operator": "pending",
+      "inspection_interval_minutes": 0,
+      "delivery_failure_procedure": "pending",
+      "execution_failure_procedure": "pending",
+      "backlog_reconciliation_procedure": "pending",
+      "cleanup_deadline_epoch": 0
+    }
+  },
+  "contingency_percent": 100,
+  "items": [
+    {
+      "meter_id": "lambda_requests",
+      "name": "Lambda requests including retries",
+      "quantity": 500,
+      "unit": "request",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/lambda/pricing/"
+    },
+    {
+      "meter_id": "lambda_compute",
+      "name": "Lambda compute at 128 MiB and ten-second maximum for 500 invocations",
+      "quantity": 625,
+      "unit": "GB-second",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/lambda/pricing/"
+    },
+    {
+      "meter_id": "table_writes",
+      "name": "DynamoDB writes including transactional preparation and retries",
+      "quantity": 5000,
+      "unit": "write request unit",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/dynamodb/pricing/on-demand/"
+    },
+    {
+      "meter_id": "table_reads",
+      "name": "DynamoDB reads including scans, conditions and retries",
+      "quantity": 10000,
+      "unit": "read request unit",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/dynamodb/pricing/on-demand/"
+    },
+    {
+      "meter_id": "table_storage",
+      "name": "DynamoDB data retained through cleanup",
+      "quantity": 0.001,
+      "unit": "GB-month",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/dynamodb/pricing/on-demand/"
+    },
+    {
+      "meter_id": "due_gsi_writes",
+      "name": "DynamoDB due-holds GSI write work including backfill if applicable",
+      "quantity": 5000,
+      "unit": "write request unit",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/dynamodb/pricing/on-demand/"
+    },
+    {
+      "meter_id": "due_gsi_reads",
+      "name": "DynamoDB due-holds GSI query reads and retries",
+      "quantity": 1000,
+      "unit": "read request unit",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/dynamodb/pricing/on-demand/"
+    },
+    {
+      "meter_id": "due_gsi_storage",
+      "name": "DynamoDB due-holds GSI data retained through cleanup",
+      "quantity": 0.001,
+      "unit": "GB-month",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/dynamodb/pricing/on-demand/"
+    },
+    {
+      "meter_id": "sqs_standard_requests",
+      "name": "SQS send receive delete and polling",
+      "quantity": 10000,
+      "unit": "request unit",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/sqs/pricing/"
+    },
+    {
+      "meter_id": "logs_ingest",
+      "name": "CloudWatch log ingestion",
+      "quantity": 0.01,
+      "unit": "GB ingested",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/cloudwatch/pricing/"
+    },
+    {
+      "meter_id": "logs_retention",
+      "name": "CloudWatch log retention until deletion",
+      "quantity": 0.001,
+      "unit": "GB-month",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/cloudwatch/pricing/"
+    },
+    {
+      "meter_id": "eventbridge_scheduler_invocations",
+      "name": "EventBridge Scheduler deliveries and retries",
+      "quantity": 121,
+      "unit": "request",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/eventbridge/pricing/"
+    },
+    {
+      "meter_id": "tick_delivery_sqs_requests",
+      "name": "Scheduler delivery failure queue sends receives and deletes",
+      "quantity": 2,
+      "unit": "request unit",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/sqs/pricing/"
+    },
+    {
+      "meter_id": "tick_execution_sqs_requests",
+      "name": "Lambda execution failure queue sends receives and deletes",
+      "quantity": 2,
+      "unit": "request unit",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/sqs/pricing/"
+    },
+    {
+      "meter_id": "tick_alarm_months",
+      "name": "Four CloudWatch alarms through a two-hour run and cleanup buffer",
+      "quantity": 0.03,
+      "unit": "alarm-month",
+      "usd_per_unit": null,
+      "source_url": "https://aws.amazon.com/cloudwatch/pricing/"
+    }
+  ],
+  "limitations": [
+    "Illustrative usage quantities, not measured usage or hard quotas.",
+    "The GSI lines are separate from base-table estimates; check selected billing-mode units and backfill behavior before a live run.",
+    "Fill regional prices with matching units; divide per-million prices before entering per-request rates.",
+    "No Free Tier or credits assumed. Add applicable data transfer, taxes, existing resources, budget-action charges and any other billable items.",
+    "AI provider usage is separate; set and monitor its own budget.",
+    "Repeated test runs and retained resources can exceed these assumed quantities.",
+    "Standard SQS message retention is not a separate GB-month charge in this worksheet; price queue API requests, applicable transfer, and any chosen KMS key instead.",
+    "Opt-in schedule quantities are illustrative and do not bound delivery or Lambda retries, index lag, alarms, failure inspection or cleanup; review selected usage and rates before live work."
+  ]
+}

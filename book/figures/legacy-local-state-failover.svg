@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 490" role="img" aria-labelledby="title desc">
+  <title id="title">A healthy second application copy can still lose local session and upload state</title>
+  <desc id="desc">A customer request passes through a route selector. Before failure it goes to copy A, which owns a session and uploaded file. After A stops, the route goes to healthy copy B, but B has neither state item. A copied file repairs only the file path; the old session still fails.</desc>
+  <defs>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M 28 0 H 0 V 28" fill="none" stroke="#dce7eb" stroke-width="1"/></pattern>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto"><path d="M1 1 L11 6 L1 11 Z" fill="#216b91"/></marker>
+    <marker id="gold-arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto"><path d="M1 1 L11 6 L1 11 Z" fill="#b16b16"/></marker>
+  </defs>
+  <rect width="960" height="490" fill="#f8faf7"/>
+  <rect width="960" height="490" fill="url(#grid)" opacity="0.75"/>
+  <text x="34" y="47" fill="#102e46" font-family="Arial, sans-serif" font-weight="700" font-size="26">Two copies, one missing customer promise</text>
+  <text x="34" y="77" fill="#355368" font-family="Arial, sans-serif" font-size="18">A route can recover before the customer's state does.</text>
+  <rect x="32" y="174" width="181" height="122" rx="15" fill="#ffffff" stroke="#216b91" stroke-width="3"/>
+  <text x="55" y="214" fill="#102e46" font-family="Arial, sans-serif" font-weight="700" font-size="22">Customer</text>
+  <text x="55" y="244" fill="#355368" font-family="Arial, sans-serif" font-size="18">uses session S</text>
+  <text x="55" y="269" fill="#355368" font-family="Arial, sans-serif" font-size="18">expects file F</text>
+  <rect x="297" y="174" width="218" height="122" rx="15" fill="#e9f5f7" stroke="#216b91" stroke-width="3"/>
+  <text x="320" y="214" fill="#102e46" font-family="Arial, sans-serif" font-weight="700" font-size="22">Route selector</text>
+  <text x="320" y="245" fill="#355368" font-family="Arial, sans-serif" font-size="18">A before failure</text>
+  <text x="320" y="270" fill="#355368" font-family="Arial, sans-serif" font-size="18">B after failure</text>
+  <path d="M 214 235 H 284" fill="none" stroke="#216b91" stroke-width="4" marker-end="url(#arrow)"/>
+  <rect x="609" y="108" width="318" height="130" rx="15" fill="#ffffff" stroke="#216b91" stroke-width="3"/>
+  <text x="633" y="146" fill="#102e46" font-family="Arial, sans-serif" font-weight="700" font-size="22">Copy A: stops</text>
+  <text x="633" y="177" fill="#355368" font-family="Arial, sans-serif" font-size="18">Session S lives in memory</text>
+  <text x="633" y="204" fill="#355368" font-family="Arial, sans-serif" font-size="18">Upload F lives on A's disk</text>
+  <path d="M 515 203 C 552 203 552 172 595 172" fill="none" stroke="#216b91" stroke-width="4" stroke-dasharray="9 7" marker-end="url(#arrow)"/>
+  <text x="529" y="148" fill="#216b91" font-family="Arial, sans-serif" font-size="17">before</text>
+  <rect x="609" y="263" width="318" height="130" rx="15" fill="#fff7e9" stroke="#b16b16" stroke-width="3"/>
+  <text x="633" y="301" fill="#102e46" font-family="Arial, sans-serif" font-weight="700" font-size="22">Copy B: healthy</text>
+  <text x="633" y="332" fill="#664b24" font-family="Arial, sans-serif" font-size="18">Health request: 200</text>
+  <text x="633" y="359" fill="#664b24" font-family="Arial, sans-serif" font-size="18">Session S and upload F: absent</text>
+  <path d="M 515 269 C 551 269 552 328 595 328" fill="none" stroke="#b16b16" stroke-width="4" marker-end="url(#gold-arrow)"/>
+  <text x="528" y="305" fill="#956014" font-family="Arial, sans-serif" font-size="17">after</text>
+  <rect x="32" y="423" width="895" height="48" rx="10" fill="#102e46"/>
+  <text x="52" y="454" fill="#ffffff" font-family="Arial, sans-serif" font-size="19">Copying F to B restores the file; it does not restore S. Test both customer paths.</text>
+</svg>

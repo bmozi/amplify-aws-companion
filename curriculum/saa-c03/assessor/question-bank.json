@@ -1,0 +1,699 @@
+{
+  "version": "2026-11-17-v3",
+  "status": "original uncalibrated diagnostic; D05/D06 revised for plausible distractors; no independent item review or learner results",
+  "questions": [
+    {
+      "id": "SAA-D01",
+      "task": "1.1",
+      "stem": "A company uses an existing workforce identity provider. Engineers need temporary access to separate development and production AWS accounts without distributing long-lived individual AWS keys. Which design best matches that requirement?",
+      "options": {
+        "A": "Create one shared IAM user in the production account and rotate its access key monthly.",
+        "B": "Federate workforce access and assign account-specific roles or permission sets with scoped sessions.",
+        "C": "Use an application Cognito user pool as the only authorization control for all AWS administration.",
+        "D": "Synchronize employees into IAM users in each account and issue an individual access key for the CLI."
+      },
+      "correct": [
+        "B"
+      ],
+      "rationales": {
+        "A": "A shared key loses individual attribution and does not meet the temporary-credential requirement.",
+        "B": "Federation with scoped account access meets the stated workforce and temporary-access needs; permissions and session controls still require configuration.",
+        "C": "Application sign-in alone does not grant or govern administrative access to the target AWS accounts.",
+        "D": "Individual keys improve attribution over a shared user but still violate the stated requirement to avoid distributing long-lived keys."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html",
+        "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html"
+      ]
+    },
+    {
+      "id": "SAA-D02",
+      "task": "1.1",
+      "stem": "An engineer role in an Organizations member account has an identity-policy allow for an action. An applicable SCP explicitly denies that same action. No exemption applies. What should the engineer expect?",
+      "options": {
+        "A": "The action succeeds if a permissions boundary also allows it.",
+        "B": "The identity-policy allow overrides the SCP.",
+        "C": "The action is denied; adding another identity-policy allow will not remove the applicable explicit deny.",
+        "D": "The action succeeds after attaching AdministratorAccess to the same role."
+      },
+      "correct": [
+        "C"
+      ],
+      "rationales": {
+        "A": "A boundary does not override an applicable SCP explicit deny.",
+        "B": "An applicable explicit deny is not overridden by an identity allow.",
+        "C": "The stated explicit deny controls this case. A legitimate policy change requires the responsible administrator, not an extra allow.",
+        "D": "A broader identity policy still cannot override the stipulated applicable explicit deny."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html",
+        "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html"
+      ]
+    },
+    {
+      "id": "SAA-D03",
+      "task": "1.2",
+      "stem": "A public HTTPS application runs on private EC2 instances behind an ALB. Only the ALB should initiate application connections to the instances. Which change most directly implements that network boundary?",
+      "options": {
+        "A": "Allow the application port from the ALB security group in the instance security group, retaining required ALB listener and target configuration.",
+        "B": "Allow the application port from the entire VPC CIDR in the instance security group.",
+        "C": "Allow the application port from every private subnet CIDR in the instance security group.",
+        "D": "Allow outbound traffic to the ALB security group but add no corresponding instance inbound rule."
+      },
+      "correct": [
+        "A"
+      ],
+      "rationales": {
+        "A": "The security-group reference restricts the network source for the specified port; application authorization remains separate.",
+        "B": "A VPC-wide source permits more sources than the required ALB-only boundary.",
+        "C": "Subnet ranges include other possible callers and do not express the specific ALB security-group boundary.",
+        "D": "An outbound rule does not authorize the ALB to initiate the required inbound connection."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-update-security-groups.html",
+        "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"
+      ]
+    },
+    {
+      "id": "SAA-D04",
+      "task": "1.2",
+      "stem": "A team must both filter common malicious HTTP request patterns at its supported public web entry and retrieve database credentials without embedding them in source. Choose TWO complementary controls.",
+      "options": {
+        "A": "AWS WAF rules at the supported entry point.",
+        "B": "Allow inbound TCP 443 in a security group as the HTTP payload inspection control.",
+        "C": "Use DNS health checks as the HTTP payload inspection control.",
+        "D": "AWS Secrets Manager with scoped retrieval permissions and a defined rotation path.",
+        "E": "Commit a plaintext credential file to a private repository and load it during deployment."
+      },
+      "correct": [
+        "A",
+        "D"
+      ],
+      "rationales": {
+        "A": "WAF addresses selected HTTP request patterns; rule tuning and application security are still needed.",
+        "B": "A security group filters network traffic by its supported attributes; opening HTTPS does not inspect malicious HTTP payload patterns.",
+        "C": "DNS health checks observe endpoint health; they do not filter each application request body.",
+        "D": "Secrets Manager addresses secret storage and controlled retrieval; rotation must be integrated with consumers.",
+        "E": "Repository privacy does not satisfy the requirement to keep credentials out of source."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-update-security-groups.html",
+        "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html",
+        "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html"
+      ]
+    },
+    {
+      "id": "SAA-D05",
+      "task": "1.3",
+      "stem": "An application role can read one S3 object, but its GetObject request fails because authorization to decrypt the customer-managed KMS key is absent. The object is encrypted with that key. The application needs access only to this approved object. Which action most directly addresses the documented missing permission?",
+      "options": {
+        "A": "Change the bucket default encryption to SSE-S3, then retry reading the existing object without changing that object or its encryption.",
+        "B": "Grant the application role kms:Encrypt on the existing key, retaining the approved S3 object-access scope.",
+        "C": "Replace the read with a presigned URL generated by another role that has S3 read permission but also lacks the required KMS decrypt authority.",
+        "D": "Review the key policy and caller authorization, allow the required kms:Decrypt path on the intended key, and test the scoped read plus an unrelated-resource denial."
+      },
+      "correct": [
+        "D"
+      ],
+      "rationales": {
+        "A": "Default bucket encryption controls new writes; changing it does not re-encrypt this existing object or supply its missing decrypt permission.",
+        "B": "Permission to encrypt does not supply permission to decrypt the existing ciphertext.",
+        "C": "A presigned request uses the signing principal's authorization; the stipulated signer also lacks the decrypt authority needed for this object.",
+        "D": "The stated missing gate is KMS decrypt authorization. Review the applicable key and identity permissions, retain the approved scope and verify the actual allowed and denied paths."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html",
+        "https://docs.aws.amazon.com/AmazonS3/latest/userguide/default-bucket-encryption.html",
+        "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html"
+      ]
+    },
+    {
+      "id": "SAA-D06",
+      "task": "1.3",
+      "stem": "A database deletion is discovered 48 hours after it occurs. An asynchronous replica has already applied the deletion. The business requires recovery of state immediately before it and evidence that the recovered records serve the correct customers. Choose TWO requirements that directly address this failure.",
+      "options": {
+        "A": "Reduce replication lag so the replica follows future source writes more closely.",
+        "B": "Retain usable historical backups or point-in-time recovery covering the deletion and detection window, including the required keys and restore access.",
+        "C": "Rehearse restoring the selected history separately, reconcile affected business records, and verify an authorized customer read before cutover.",
+        "D": "Improve automatic promotion of the current replica while retaining no additional history.",
+        "E": "Keep only the newest daily snapshot, replacing the previous snapshot each day during the 48-hour detection interval."
+      },
+      "correct": [
+        "B",
+        "C"
+      ],
+      "rationales": {
+        "A": "Lower lag can improve freshness and some failover outcomes, but the replica has already copied this deletion. It does not supply the required earlier state.",
+        "B": "Recovering the specified earlier state requires usable history covering the detection window, including authority and key dependencies.",
+        "C": "A separate restore, reconciliation and customer check test recoverability and correct use before changing the serving destination.",
+        "D": "Faster promotion addresses availability of the current copy, not restoration of the historical records that are already deleted from that copy.",
+        "E": "Replacing the only daily snapshot during the detection interval can remove the needed pre-deletion history; a recent snapshot is not necessarily the required one."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIT.html",
+        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html"
+      ]
+    },
+    {
+      "id": "SAA-D07",
+      "task": "2.1",
+      "stem": "An order API must accept bursts while workers process at their own sustainable rate. Messages can be delivered more than once. Which design best fits?",
+      "options": {
+        "A": "Have the API synchronously call every worker and retry the whole chain whenever one call times out.",
+        "B": "Place pending jobs only in each API instance memory and acknowledge them before a worker receives them.",
+        "C": "Use a durable queue and stable operation identity, with worker effects protected against duplicate execution.",
+        "D": "Choose a queue with deduplication and omit application-side duplicate-effect protection."
+      },
+      "correct": [
+        "C"
+      ],
+      "rationales": {
+        "A": "This couples acceptance to worker availability and repeats potentially completed effects without a durable identity contract.",
+        "B": "Process-local memory is not durable buffering and can lose acknowledged work when an instance is replaced.",
+        "C": "The queue separates rates, while idempotent effect handling addresses duplicate delivery; acceptance and dispatch must still be made reliable.",
+        "D": "Broker deduplication does not establish exactly-once external effects across every consumer crash and retry boundary."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html",
+        "https://docs.aws.amazon.com/sns/latest/dg/sns-sqs-as-subscriber.html"
+      ]
+    },
+    {
+      "id": "SAA-D08",
+      "task": "2.1",
+      "stem": "Every accepted business event must reach billing and analytics independently. Either consumer may be unavailable for hours. Choose TWO design elements that fit a fanout approach.",
+      "options": {
+        "A": "A fanout publisher, such as SNS, with a separate durable queue for each consumer.",
+        "B": "A single queue with billing and analytics competing for each message, assuming both receive every event.",
+        "C": "A synchronous call chain that discards the event if analytics is down.",
+        "D": "Only a larger web server, with no event retention.",
+        "E": "Consumer-specific retry and dead-letter handling, plus a way to reconcile missing business outcomes."
+      },
+      "correct": [
+        "A",
+        "E"
+      ],
+      "rationales": {
+        "A": "Separate subscriptions and queues allow independent consumption and retained backlog; configure permissions and retention for the case.",
+        "B": "Competing consumers divide messages; they do not implement the required copy for each consumer.",
+        "C": "The requirement explicitly tolerates consumer outages, so discarding events violates it.",
+        "D": "More web capacity does not supply fanout or durable event retention.",
+        "E": "Independent failure handling and reconciliation address failures beyond mere publication."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html",
+        "https://docs.aws.amazon.com/sns/latest/dg/sns-sqs-as-subscriber.html"
+      ]
+    },
+    {
+      "id": "SAA-D09",
+      "task": "2.2",
+      "stem": "A relational application requires automatic database failover after an Availability Zone failure. It uses a traditional RDS Multi-AZ DB instance deployment with one standby. Which statement is correct?",
+      "options": {
+        "A": "The standby can always be used as a read replica for reports.",
+        "B": "The standby supports failover but does not serve read traffic; evaluate read scaling separately.",
+        "C": "The standby is necessarily in a second AWS Region.",
+        "D": "The deployment eliminates the need to handle broken client connections during failover."
+      },
+      "correct": [
+        "B"
+      ],
+      "rationales": {
+        "A": "This confuses the single-standby DB instance topology with other readable replica or cluster arrangements.",
+        "B": "This is the documented boundary for the topology explicitly named in the question.",
+        "C": "Multi-AZ and multi-Region describe different failure scopes.",
+        "D": "Clients still need appropriate reconnection and uncertain-operation handling."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html"
+      ]
+    },
+    {
+      "id": "SAA-D10",
+      "task": "2.2",
+      "stem": "A fictional recovery rehearsal shows: backup-and-restore needs 75 minutes and loses at most 20 minutes of records; warm standby needs 12 minutes and loses at most 3 minutes. Both figures include customer acceptance checks. The requirement is recovery within 20 minutes and loss of no more than 5 minutes. Which candidate meets the supplied evidence?",
+      "options": {
+        "A": "Backup-and-restore because it is usually cheaper.",
+        "B": "Both, because both have a backup.",
+        "C": "Neither, because only active-active systems can meet any RTO.",
+        "D": "Warm standby, subject to confirming the rehearsal represents the required workload and failure."
+      },
+      "correct": [
+        "D"
+      ],
+      "rationales": {
+        "A": "The supplied times violate both limits regardless of price.",
+        "B": "Possessing a backup does not meet the stated time and loss bounds.",
+        "C": "The supplied warm-standby result meets both limits; active-active is not a universal requirement.",
+        "D": "Twelve is within twenty and three is within five; representativeness remains a real-world qualification."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html"
+      ]
+    },
+    {
+      "id": "SAA-D11",
+      "task": "3.1",
+      "stem": "Several Linux application instances in multiple AZs must concurrently access a shared NFS file namespace. Which candidate should be evaluated first?",
+      "options": {
+        "A": "Create a separate EBS volume for each instance and give the directories the same mount path.",
+        "B": "Use EBS Multi-Attach to attach one volume directly to instances in different AZs.",
+        "C": "A regional Amazon EFS file system with appropriate mount targets, permissions and performance configuration.",
+        "D": "An S3 bucket treated as a drop-in POSIX/NFS filesystem without application changes."
+      },
+      "correct": [
+        "C"
+      ],
+      "rationales": {
+        "A": "Matching path names on separate volumes do not create a shared namespace.",
+        "B": "EBS Multi-Attach is constrained to eligible instances in the same AZ and is not the required cross-AZ managed NFS service.",
+        "C": "EFS matches the interface and regional shared-access need; throughput, access and client behavior must still be checked.",
+        "D": "Object APIs and filesystem semantics are not interchangeable without a compatible access layer and workload assessment."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html",
+        "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html",
+        "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"
+      ]
+    },
+    {
+      "id": "SAA-D12",
+      "task": "3.1",
+      "stem": "A photo archive uses whole-object reads through an HTTP API. It has no filesystem-locking requirement and must survive loss of one AZ. Which starting design fits best?",
+      "options": {
+        "A": "An appropriate multi-AZ S3 storage class, selected against access frequency and retrieval requirements.",
+        "B": "Only an EC2 instance-store directory, with no other copy.",
+        "C": "A single-AZ storage class solely because all S3 classes have identical failure boundaries.",
+        "D": "A database proxy as the sole photo storage service."
+      },
+      "correct": [
+        "A"
+      ],
+      "rationales": {
+        "A": "The object interface and failure requirement guide the class choice; retrieval and lifecycle still matter.",
+        "B": "One ephemeral local copy does not meet the stated persistence and failure requirement.",
+        "C": "Single-AZ and multi-AZ classes have materially different location-loss boundaries.",
+        "D": "A connection proxy is not an object storage system."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html",
+        "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html"
+      ]
+    },
+    {
+      "id": "SAA-D13",
+      "task": "3.2",
+      "stem": "Stateless workers drain a queue. Incoming jobs are CPU-heavy, and a database is already near its safe write limit. Which approach best supports useful scaling?",
+      "options": {
+        "A": "Scale worker count without limit whenever CPU is nonzero.",
+        "B": "Scale using backlog and processing capacity, with a concurrency bound that respects the downstream database.",
+        "C": "Choose the largest instance and assume the queue cannot grow.",
+        "D": "Add only more database client connections and assume throughput increases linearly."
+      },
+      "correct": [
+        "B"
+      ],
+      "rationales": {
+        "A": "Unbounded consumers can overload the existing downstream limit.",
+        "B": "Backlog and service rate describe the demand; concurrency limits preserve the constrained downstream path.",
+        "C": "An instance size alone does not establish end-to-end sustainable capacity.",
+        "D": "Connections consume resources and do not guarantee more database work can complete."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html",
+        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html"
+      ]
+    },
+    {
+      "id": "SAA-D14",
+      "task": "3.2",
+      "stem": "A containerized batch task runs for two hours without checkpoints. The team wants managed container execution and cannot split the task into short invocations. Which candidate fits that runtime requirement?",
+      "options": {
+        "A": "One standard Lambda event-function invocation with its timeout set to two hours.",
+        "B": "A CloudFront cache policy as the compute runtime.",
+        "C": "An IAM role without any execution service.",
+        "D": "A suitable ECS task on Fargate, after checking task resources, networking, storage and failure behavior."
+      },
+      "correct": [
+        "D"
+      ],
+      "rationales": {
+        "A": "The standard event-function timeout is at most 900 seconds. Managed Instances has a different documented limit for selected invocation modes; neither fact permits the proposed two-hour standard invocation.",
+        "B": "A cache policy does not execute a two-hour container job.",
+        "C": "An identity does not supply compute.",
+        "D": "A managed container task is a suitable candidate for the given execution shape; failure and cost remain design inputs."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html",
+        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html"
+      ]
+    },
+    {
+      "id": "SAA-D15",
+      "task": "3.3",
+      "stem": "A dashboard can tolerate up to one minute of data lag. Checkout must confirm against authoritative current inventory. Which design best separates these needs?",
+      "options": {
+        "A": "Use an eligible read replica for dashboards with lag controls, and keep checkout decisions on the authoritative write path.",
+        "B": "Route checkout decisions to any replica and assume asynchronous replication is instantaneous.",
+        "C": "Use the dashboard cache as the only authority for the last item.",
+        "D": "Add replicas and assume they multiply the primary writer commit capacity."
+      },
+      "correct": [
+        "A"
+      ],
+      "rationales": {
+        "A": "The paths have different freshness and correctness promises; replica suitability depends on observed lag and routing.",
+        "B": "Asynchronous replication does not guarantee an immediately current decision.",
+        "C": "A stale cached display cannot enforce the last-item invariant.",
+        "D": "Read replicas can offload eligible reads but do not automatically multiply writer capacity."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html",
+        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html"
+      ]
+    },
+    {
+      "id": "SAA-D16",
+      "task": "3.3",
+      "stem": "A workload repeatedly opens many short-lived database connections. The team proposes RDS Proxy. Choose TWO accurate expectations.",
+      "options": {
+        "A": "The proxy will automatically make every inefficient query fast.",
+        "B": "The proxy eliminates the need to determine whether a timed-out write committed.",
+        "C": "A compatible proxy can pool and manage connections, subject to application session behavior.",
+        "D": "A proxy does not replace query tuning, database capacity planning or correct retry semantics.",
+        "E": "The proxy is a historical backup that restores deleted rows."
+      },
+      "correct": [
+        "C",
+        "D"
+      ],
+      "rationales": {
+        "A": "Connection management does not guarantee query-plan improvement.",
+        "B": "An uncertain write remains an application correctness concern.",
+        "C": "Pooling is the relevant benefit; compatibility and session pinning must be evaluated.",
+        "D": "These are distinct responsibilities that remain after adding a proxy.",
+        "E": "A connection proxy is not a backup archive."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html",
+        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html"
+      ]
+    },
+    {
+      "id": "SAA-D17",
+      "task": "3.4",
+      "stem": "A web platform routes HTTPS requests to different target groups according to URL path. Which load balancer is the direct starting choice?",
+      "options": {
+        "A": "A Classic Load Balancer with a listener for each URL path.",
+        "B": "An Application Load Balancer with the required listener rules and target health configuration.",
+        "C": "A Network Load Balancer with no application-layer routing component, assuming it interprets HTTP paths.",
+        "D": "A Network Load Balancer with a different target group for each destination port."
+      },
+      "correct": [
+        "B"
+      ],
+      "rationales": {
+        "A": "Listener ports do not implement the requested application path-based target-group rules.",
+        "B": "ALB supports application-layer routing matching this requirement.",
+        "C": "Transport-layer balancing alone does not implement the required HTTP path decision.",
+        "D": "Port-based separation is not selection by HTTP URL path."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html",
+        "https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html"
+      ]
+    },
+    {
+      "id": "SAA-D18",
+      "task": "3.4",
+      "stem": "Remote employees need authenticated VPN access from their laptops to private application networks. A separate branch office needs a network-to-network tunnel. Choose TWO appropriate service roles.",
+      "options": {
+        "A": "Client VPN is the direct starting candidate for individual remote client connections.",
+        "B": "Site-to-Site VPN is a starting candidate for the branch network tunnel.",
+        "C": "Use a Transit Gateway attachment alone as the authenticated laptop VPN endpoint.",
+        "D": "Use VPC peering alone to connect the branch office router directly to private subnets.",
+        "E": "Use Site-to-Site VPN as the direct managed endpoint for each employee laptop VPN client."
+      },
+      "correct": [
+        "A",
+        "B"
+      ],
+      "rationales": {
+        "A": "Client VPN addresses remote client access; routes, authorization and authentication must be configured.",
+        "B": "Site-to-Site VPN connects networks; redundancy and routing must meet the branch requirement.",
+        "C": "A routing hub alone does not create the requested remote-client VPN termination and authentication.",
+        "D": "VPC peering connects VPCs; it is not the office-to-AWS VPN tunnel.",
+        "E": "The stated laptop client use fits Client VPN; Site-to-Site VPN connects networks through a customer gateway."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html",
+        "https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html",
+        "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html"
+      ]
+    },
+    {
+      "id": "SAA-D19",
+      "task": "3.5",
+      "stem": "A team receives CSV objects in S3 and repeatedly queries a few columns over a date range. Which proposed change enables column projection and date partition pruning to avoid reading unrelated data?",
+      "options": {
+        "A": "Compress each CSV file with gzip while preserving the current object layout and table definition.",
+        "B": "Increase dashboard refresh frequency while keeping the same CSV table.",
+        "C": "Transform to a suitable columnar format such as Parquet, partition for the query pattern, and maintain matching table metadata.",
+        "D": "Increase query concurrency while retaining the existing data format and table layout."
+      },
+      "correct": [
+        "C"
+      ],
+      "rationales": {
+        "A": "Compression may reduce bytes but does not supply columnar projection or date partition pruning.",
+        "B": "More frequent scans do not remove unnecessary columns or date ranges from each query.",
+        "C": "Columnar storage and useful partitioning can reduce scan work; correctness and actual query behavior must be verified.",
+        "D": "Concurrency changes scheduling, not which columns and partitions each query needs to read."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/athena/latest/ug/columnar-storage.html",
+        "https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html",
+        "https://docs.aws.amazon.com/athena/latest/ug/performance-tuning-data-optimization-techniques.html"
+      ]
+    },
+    {
+      "id": "SAA-D20",
+      "task": "3.5",
+      "stem": "An existing producer/consumer system depends on Kafka protocols and tooling. The team wants AWS-managed Kafka infrastructure while retaining that ecosystem. Which service is the closest candidate?",
+      "options": {
+        "A": "Amazon Kinesis Data Streams, retaining existing Kafka clients without a protocol adapter or rewrite.",
+        "B": "Amazon MQ for RabbitMQ, retaining the same Kafka producer and consumer protocols.",
+        "C": "Amazon SQS FIFO, retaining the same Kafka broker endpoints and clients.",
+        "D": "Amazon Managed Streaming for Apache Kafka (Amazon MSK), with a selected supported mode and version."
+      },
+      "correct": [
+        "D"
+      ],
+      "rationales": {
+        "A": "Kinesis has its own APIs; retaining Kafka clients unchanged is not the supplied compatibility path.",
+        "B": "RabbitMQ protocols and behavior are not interchangeable with the required Kafka broker interface.",
+        "C": "SQS queue APIs do not expose the required Kafka broker protocol.",
+        "D": "MSK is the managed Kafka candidate; capacity, security, compatibility and cost still need design."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/athena/latest/ug/columnar-storage.html",
+        "https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html"
+      ]
+    },
+    {
+      "id": "SAA-D21",
+      "task": "4.1",
+      "stem": "A regulated archive is rarely read, but its contract requires immediate retrieval of any object. A proposal selects a class requiring a restore wait because storage is cheaper. What is the best response?",
+      "options": {
+        "A": "Accept the proposal because storage price is the only cost dimension.",
+        "B": "Reject the mismatch and compare classes that meet immediate access, including retrieval and retention charges.",
+        "C": "Keep the delayed class and silently change the customer contract.",
+        "D": "Assume every Glacier-branded class has the same retrieval behavior."
+      },
+      "correct": [
+        "B"
+      ],
+      "rationales": {
+        "A": "The mandatory access requirement must be met before comparing prices.",
+        "B": "First establish feasible classes; then compare complete cost for the actual access pattern.",
+        "C": "A design cannot silently discard the supplied requirement.",
+        "D": "The exact class matters; branding alone is not a retrieval guarantee."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html"
+      ]
+    },
+    {
+      "id": "SAA-D22",
+      "task": "4.1",
+      "stem": "A storage estimate includes only GB-month charges. The workload retains many small objects, performs frequent reads and periodically restores archived data. Choose TWO corrections.",
+      "options": {
+        "A": "Include applicable request, retrieval, transition, minimum-duration and object-size charging rules.",
+        "B": "Assume moving an object always immediately removes all minimum-duration charges.",
+        "C": "Remove retained versions from the estimate even though the policy keeps them.",
+        "D": "Assume encryption and data movement can never create additional charges.",
+        "E": "Account for retained versions, backup copies and relevant transfer destinations under the actual lifecycle."
+      },
+      "correct": [
+        "A",
+        "E"
+      ],
+      "rationales": {
+        "A": "These meters can materially change the cost of small and frequently accessed objects.",
+        "B": "Early movement or deletion does not universally erase minimum-duration charges.",
+        "C": "Retained bytes remain part of the workload.",
+        "D": "Actual encryption and transfer paths must be evaluated rather than universally omitted.",
+        "E": "The storage policy and copy topology determine more than the current-object byte count."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html"
+      ]
+    },
+    {
+      "id": "SAA-D23",
+      "task": "4.2",
+      "stem": "A batch workload can restart safely from frequent checkpoints and has a flexible completion window. The team wants to reduce compute cost. Which purchasing option deserves evaluation for the interruptible portion?",
+      "options": {
+        "A": "Spot capacity with interruption handling and a fallback plan for the deadline.",
+        "B": "Commit to a constant amount of compute use equal to the largest unverified batch peak.",
+        "C": "Use only On-Demand capacity and omit checkpoint recovery because interruptions cannot occur.",
+        "D": "Choose Spot capacity and remove checkpoints to reduce storage use."
+      },
+      "correct": [
+        "A"
+      ],
+      "rationales": {
+        "A": "The stated restart and deadline flexibility make interruptible capacity a candidate; availability and fallback remain relevant.",
+        "B": "A commitment to an unverified peak can leave paid capacity unused and is not justified by flexible interruptible work alone.",
+        "C": "On-Demand can be a useful fallback but does not eliminate failures or the need for recovery.",
+        "D": "The cost opportunity depends on tolerating interruptions; removing the stated recovery mechanism weakens that suitability."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html",
+        "https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html"
+      ]
+    },
+    {
+      "id": "SAA-D24",
+      "task": "4.2",
+      "stem": "A steady baseline of eligible compute use is well measured, while peaks are uncertain. What is the most defensible commitment decision?",
+      "options": {
+        "A": "Purchase for the largest conceivable peak because commitments remove forecast risk.",
+        "B": "Assume a Savings Plan automatically reserves all needed instance capacity.",
+        "C": "Compare an appropriate commitment for the supported baseline and flexible capacity for uncertain demand, using full-term utilization assumptions.",
+        "D": "Ignore architecture changes because every commitment transfers to every service without restriction."
+      },
+      "correct": [
+        "C"
+      ],
+      "rationales": {
+        "A": "Unused committed spend remains a risk.",
+        "B": "Billing discounts and capacity reservations are different mechanisms.",
+        "C": "The evidence supports the baseline more strongly than the unknown peak; eligibility, term and break-even still need checking.",
+        "D": "Commitment scope and flexibility depend on the specific purchasing instrument."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html",
+        "https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html"
+      ]
+    },
+    {
+      "id": "SAA-D25",
+      "task": "4.3",
+      "stem": "A PostgreSQL application relies on extensions and stored procedures. Someone proposes MySQL solely because a listed instance price is lower. Which comparison is necessary first?",
+      "options": {
+        "A": "Compare hourly instance prices and assume the existing PostgreSQL extensions will run unchanged.",
+        "B": "Run a row-count comparison after copying tables and accept the new engine if the totals match.",
+        "C": "Compare only storage and backup charges because managed databases eliminate migration work.",
+        "D": "Evaluate exact compatibility, conversion effort, business-result parity, operating cost and rollback alongside eligible PostgreSQL alternatives."
+      },
+      "correct": [
+        "D"
+      ],
+      "rationales": {
+        "A": "A lower rate does not establish that required engine-specific behavior can migrate unchanged.",
+        "B": "Matching counts do not test stored procedures, extensions or business-result parity.",
+        "C": "Managed operation does not eliminate conversion, compatibility, testing or cutover work.",
+        "D": "The cheaper engine could create a larger conversion and correctness burden; compare feasible total-cost options."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/decision-guides/latest/decision-guides/databases-on-aws-how-to-choose.html"
+      ]
+    },
+    {
+      "id": "SAA-D26",
+      "task": "4.3",
+      "stem": "A database cost estimate covers the primary instance but omits backup retention, replicas and a connection proxy. Choose TWO appropriate review actions.",
+      "options": {
+        "A": "Assume managed services include every optional component free.",
+        "B": "Include the selected replicas, proxy, storage, backup and relevant data-transfer meters.",
+        "C": "Reconcile provisioned or request-based capacity with a representative workload, including peaks and access patterns.",
+        "D": "Remove recovery copies solely to make the estimate smaller even though recovery requirements are unchanged.",
+        "E": "Use the lowest monthly average CPU as proof that peak capacity is sufficient."
+      },
+      "correct": [
+        "B",
+        "C"
+      ],
+      "rationales": {
+        "A": "Each selected service and feature has its own relevant pricing scope.",
+        "B": "The complete topology must be represented in the estimate.",
+        "C": "Capacity and billing depend on how the actual workload uses the selected database.",
+        "D": "Cost optimization must retain the required recovery promise.",
+        "E": "An average can hide the peak and other constrained resources."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/decision-guides/latest/decision-guides/databases-on-aws-how-to-choose.html"
+      ]
+    },
+    {
+      "id": "SAA-D27",
+      "task": "4.4",
+      "stem": "Private EC2 instances in one VPC read large amounts of S3 data in the same Region through a NAT gateway. The requirement allows a gateway endpoint and the applicable route and access policies can be configured. Which change should be evaluated to avoid NAT processing on that S3 path?",
+      "options": {
+        "A": "Place the NAT gateway in the same AZ as the instances and keep S3 traffic routed through it.",
+        "B": "Add an S3 interface endpoint and compare only the NAT gateway hourly charge.",
+        "C": "Use an S3 gateway endpoint associated with the relevant route tables and verify effective access.",
+        "D": "Add an endpoint policy without creating the endpoint or changing the route tables."
+      },
+      "correct": [
+        "C"
+      ],
+      "rationales": {
+        "A": "This may address cross-AZ traffic but retains NAT processing for the S3 path.",
+        "B": "An interface endpoint has its own pricing; this comparison omits relevant endpoint and traffic meters when a gateway endpoint is permitted.",
+        "C": "The gateway endpoint provides the supported S3 route without NAT; service charges and access policy still apply.",
+        "D": "An access policy alone does not create the gateway endpoint path or redirect the traffic."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html",
+        "https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-basics.html"
+      ]
+    },
+    {
+      "id": "SAA-D28",
+      "task": "4.4",
+      "stem": "A team proposes one shared zonal NAT gateway placed in AZ A to reduce fixed charges. Applications in multiple AZs require continued outbound service access after loss of any one AZ. What must the comparison include?",
+      "options": {
+        "A": "Only the NAT hourly price.",
+        "B": "The change in AZ dependencies and recovery behavior, plus cross-AZ transfer and processing costs for the actual topology.",
+        "C": "Only the number of route tables.",
+        "D": "An assumption that a gateway in one AZ is unaffected by every failure of that AZ."
+      },
+      "correct": [
+        "B"
+      ],
+      "rationales": {
+        "A": "Fixed price is only one term and does not establish availability.",
+        "B": "The shared design may introduce a common failure dependency and different transfer costs; compare it against the actual service promise.",
+        "C": "Route-table count does not measure the end-to-end cost or failure behavior.",
+        "D": "The design must account for the resource placement and failure scope rather than assume it away."
+      },
+      "technical_references": [
+        "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html",
+        "https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-basics.html"
+      ]
+    }
+  ],
+  "review_note": "Internal item critique replaced unrelated distractors in 13 items with concrete misconceptions and clarified the standard Lambda execution mode in D14. No learner attempt or independent calibration."
+}

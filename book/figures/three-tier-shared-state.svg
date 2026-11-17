@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 710" role="img" aria-labelledby="title desc">
+  <title id="title">Two workers depend on one shared repair record</title>
+  <desc id="desc">A customer's request reaches a public entry and is sent to worker A or worker B. Both workers check the owner and use the same authoritative relational store. A record kept only in A's memory cannot be read by B. An extra worker cannot create a database work slot, and a healthy worker alone does not prove a customer can retrieve a repair. This conceptual path is not a measured AWS load balancer or RDS deployment.</desc>
+  <defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#173341}.title{font-size:30px;font-weight:700}.head{font-size:26px;font-weight:700}.body{font-size:24px}.note{font-size:21px}.box{stroke-width:2.5}.line{stroke:#52788a;stroke-width:4;fill:none}</style></defs>
+  <rect width="620" height="710" fill="#fff"/>
+  <text x="25" y="43" class="title">Two workers, one repair record</text>
+  <text x="25" y="72" class="note">The next visit may reach a different worker.</text>
+
+  <rect x="25" y="89" width="570" height="90" rx="14" fill="#eaf2f6" stroke="#557c90" class="box"/>
+  <text x="45" y="125" class="head">Customer → public entry</text>
+  <text x="45" y="158" class="body">Entry selects A or B.</text>
+
+  <path d="M310 179 V203 H157 V219 M310 203 H463 V219" class="line"/>
+  <path d="M157 222 l-8 -13 h16 z M463 222 l-8 -13 h16 z" fill="#52788a"/>
+  <rect x="25" y="226" width="265" height="94" rx="14" fill="#eaf4ed" stroke="#4b7b5e" class="box"/>
+  <text x="45" y="261" class="head">Worker A</text>
+  <text x="45" y="286" class="note">Own memory</text>
+  <text x="45" y="310" class="note">Checks owner</text>
+  <rect x="330" y="226" width="265" height="94" rx="14" fill="#eaf4ed" stroke="#4b7b5e" class="box"/>
+  <text x="350" y="261" class="head">Worker B</text>
+  <text x="350" y="286" class="note">Own memory</text>
+  <text x="350" y="310" class="note">Checks owner</text>
+
+  <path d="M157 320 V369 H310 M463 320 V369 H310 M310 369 V390" class="line"/>
+  <path d="M310 393 l-8 -13 h16 z" fill="#52788a"/>
+  <rect x="25" y="397" width="570" height="109" rx="14" fill="#fff2df" stroke="#a27435" class="box"/>
+  <text x="45" y="433" class="head">One shared relational store</text>
+  <text x="45" y="466" class="body">Repair + owner record live here.</text>
+  <text x="45" y="493" class="note">Connections and work slots are finite.</text>
+
+  <rect x="25" y="523" width="570" height="93" rx="14" fill="#f8eae6" stroke="#a35c4d" class="box"/>
+  <text x="45" y="559" class="head">Test the customer's path</text>
+  <text x="45" y="592" class="body">Cross-worker read + busy store.</text>
+
+  <text x="25" y="661" class="note">Green workers alone prove neither result.</text>
+  <text x="25" y="691" class="note">Conceptual; no AWS ALB or RDS test.</text>
+</svg>

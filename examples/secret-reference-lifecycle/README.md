@@ -1,0 +1,20 @@
+# When a stored secret changes, which consumer changes?
+
+Maya's supplier accepts a fictional credential called `v1`. Her team stores its version label in a secret service. One worker receives the credential through a CloudFormation-managed property; another reads the store at runtime and caches what it read. Both work on Monday. On Tuesday, the team rotates the store and the supplier together to `v2`. Which worker still has `v1`?
+
+Read the [timeline picture](secret-timeline.svg), write down your prediction, then run the version-label model from the repository root:
+
+```sh
+python3 examples/secret-reference-lifecycle/lifecycle.py
+python3 -m unittest discover -s examples/secret-reference-lifecycle -p 'test_*.py'
+```
+
+The model uses only `v1` and `v2` labels. It never stores a credential, contacts AWS or creates a resource. At `rotate`, the store and fictional supplier agree on `v2`, but the previously injected property and the runtime cache still hold `v1`. `refresh_runtime` fixes only the runtime reader. `update_resource` makes the **versionless** reference retrieve the current value for its changed resource. A reference pinned to `v1` remains old even after that update. A real rotation might overlap old and new values or fail halfway; this exercise deliberately makes the supplier stop accepting `v1` so a stale consumer is visible.
+
+AWS says CloudFormation retrieves a Secrets Manager dynamic reference when it creates a resource or updates the resource containing that reference; changing only the secret does not automatically refresh the property. It also recommends versionless references for rotation workflows and warns that it does not track which secret version was used in earlier deployments. The resolved value may appear in the downstream service, so a dynamic reference is not permission to put a secret in a public property. [AWS CloudFormation dynamic-reference guidance](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references-secretsmanager.html).
+
+Now change one fact: the runtime worker cannot reach the store during refresh. Find `failed-refresh-keep-cache` in the output: this fictional policy retains `v1`, which the supplier no longer accepts, until a successful refresh. Other policies may stop immediately or permit a bounded cache; the model does not choose one for a real system. State whether it should keep using `v1`, stop, or use an approved short cache, and name the customer consequence. Next, suppose the CloudFormation-managed property is an environment variable in a long-running worker. Even after an allowed resource update, what application restart or refresh behavior must be verified? Do not infer that the template tool controls every process cache. Finally, sketch a recovery path if the supplier already rejects `v1` but the CloudFormation update fails. In `failed-update-then-retry`, this fictional failure leaves the old injected value in place; a later successful versionless update changes that value, but does not refresh the runtime cache. A real resource may have different failure and rollback behavior, which must be checked separately. Compare your answer with the [assessor](ASSESSOR.md) only after writing it.
+
+Ask Codex to trace the store, supplier, template-managed property and runtime cache as four separate states. Require it to cite the AWS rule for when CloudFormation resolves a reference, identify which value could reach a downstream service, and propose an allowed and denied request plus a rollback check. Do not paste real secrets or unredacted account details into a prompt.
+
+**Cost and execution boundary.** A selected live design must price the secret, retrieval calls, rotation path, logs and dependent resource for the chosen Region and account, then bound the whole run and cleanup. This exercise makes no AWS call. Organization-dependent rollout remains design-only. A passing local timeline is evidence about this invented state machine, not Secrets Manager rotation, CloudFormation update behavior, effective permissions or a customer outcome in AWS.

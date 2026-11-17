@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 620" role="img" aria-labelledby="title desc">
+  <title id="title">A real-time status is a live hint backed by an authoritative ledger</title>
+  <desc id="desc">A trusted repair worker records an ordered status in the ledger. A fan-out path checks current access before delivery to Alice. Bob and a revoked connection are denied. A reconnect reads missed status from the ledger by sequence rather than assuming the socket retained it.</desc>
+  <rect width="1080" height="620" fill="#f8fbfd"/>
+  <text x="42" y="54" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="#122d43">A live status is a hint; the ledger is the record</text>
+  <text x="42" y="85" font-family="Arial,sans-serif" font-size="17" fill="#526c7d">For repair 17, prove who may receive each update and how a reconnect catches up.</text>
+  <rect x="42" y="140" width="190" height="84" rx="12" fill="#e6eff6" stroke="#2d6684" stroke-width="2"/>
+  <text x="137" y="176" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#16364c">Trusted worker</text>
+  <text x="137" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#31546b">records status</text>
+  <path d="M233 182H280" stroke="#c2811b" stroke-width="4" fill="none" marker-end="url(#gold)"/>
+  <rect x="294" y="140" width="220" height="84" rx="12" fill="#fff1d6" stroke="#b27414" stroke-width="2"/>
+  <text x="404" y="175" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#55390b">Status ledger</text>
+  <text x="404" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#745222">seq 1, 2, … by job</text>
+  <path d="M515 182H560" stroke="#c2811b" stroke-width="4" fill="none" marker-end="url(#gold)"/>
+  <rect x="574" y="140" width="220" height="84" rx="12" fill="#e5f3f7" stroke="#27718a" stroke-width="2"/>
+  <text x="684" y="175" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#164153">Live fan-out</text>
+  <text x="684" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#315d6a">current grant check</text>
+  <path d="M795 182H843" stroke="#21778b" stroke-width="4" fill="none" marker-end="url(#blue)"/>
+  <rect x="858" y="140" width="180" height="84" rx="12" fill="#e4f4ea" stroke="#3a8961" stroke-width="2"/>
+  <text x="948" y="175" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#24553c">Alice</text>
+  <text x="948" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#3c6850">current job grant</text>
+  <rect x="574" y="292" width="220" height="98" rx="12" fill="#fae7e4" stroke="#b65f53" stroke-width="2"/>
+  <text x="684" y="327" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#6d302b">Bob / revoked Alice</text>
+  <text x="684" y="355" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#7b4640">no future delivery</text>
+  <path d="M684 225V283" stroke="#b65f53" stroke-width="3" stroke-dasharray="7 6" fill="none" marker-end="url(#red)"/>
+  <rect x="42" y="458" width="996" height="116" rx="13" fill="#fff" stroke="#9aadb9" stroke-width="2"/>
+  <text x="66" y="494" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#122d43">After a disconnect</text>
+  <text x="66" y="527" font-family="Arial,sans-serif" font-size="17" fill="#2b536b">Recheck the current grant, read seq &gt; last seen from the ledger, reject a future cursor, and deduplicate event IDs.</text>
+  <text x="66" y="553" font-family="Arial,sans-serif" font-size="16" fill="#9a5914">A WebSocket connection alone promises neither durable replay nor current authorization.</text>
+  <defs>
+    <marker id="gold" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#c2811b"/></marker>
+    <marker id="blue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#21778b"/></marker>
+    <marker id="red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#b65f53"/></marker>
+  </defs>
+</svg>

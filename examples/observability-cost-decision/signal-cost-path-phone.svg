@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="960" viewBox="0 0 360 960" role="img" aria-labelledby="title desc">
+  <title id="title">Phone reading path for the observability cost decision</title>
+  <desc id="desc">A booking's accepted receipt, failed read, worker error and heartbeat are copied to a critical Standard log group with seven-day retention. A metric filter leads to an alarm and an operator receipt. A separate Infrequent Access group holds verbose diagnostics for narrower queries. Count ingestion, storage, scanned queries and metrics, then test the customer incident path.</desc>
+  <rect width="360" height="960" fill="#f8fbfc"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#14384a">
+    <text x="20" y="43" font-size="26" font-weight="700">Keep the answer</text>
+    <text x="20" y="73" font-size="18">while reducing signal cost</text>
+  </g>
+  <g stroke="#2a5b73" stroke-width="3" fill="none">
+    <path d="M180 213 V238"/><path d="M180 370 V394"/><path d="M180 640 V664"/>
+  </g>
+  <g fill="#2a5b73">
+    <path d="M180 238 l-8 -14 h16z"/><path d="M180 394 l-8 -14 h16z"/>
+    <path d="M180 664 l-8 -14 h16z"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="20" y="100" width="320" height="113" rx="15" fill="#e6f1f5" stroke="#2a5b73" stroke-width="2"/>
+    <text x="40" y="133" font-size="21" font-weight="700" fill="#14384a">Booking incident</text>
+    <text x="40" y="161" font-size="18" fill="#14384a">Receipt · failed read · error</text>
+    <text x="40" y="188" font-size="18" fill="#14384a">Heartbeat and incident ID</text>
+
+    <rect x="20" y="238" width="320" height="132" rx="15" fill="#e5f4ed" stroke="#337859" stroke-width="2"/>
+    <text x="40" y="272" font-size="21" font-weight="700" fill="#184c36">Critical lane: Standard</text>
+    <text x="40" y="303" font-size="18" fill="#184c36">Complete diagnostic copies</text>
+    <text x="40" y="332" font-size="18" fill="#184c36">Seven-day retention</text>
+
+    <rect x="20" y="394" width="320" height="112" rx="15" fill="#fff1d9" stroke="#aa741e" stroke-width="2"/>
+    <text x="40" y="429" font-size="21" font-weight="700" fill="#67480e">Metric filter → alarm</text>
+    <text x="40" y="461" font-size="18" fill="#67480e">Did an operator receive it?</text>
+
+    <rect x="20" y="530" width="320" height="110" rx="15" fill="#e8edf7" stroke="#556b9c" stroke-width="2"/>
+    <text x="40" y="566" font-size="21" font-weight="700" fill="#253c70">Verbose lane: new IA group</text>
+    <text x="40" y="600" font-size="18" fill="#253c70">Query a small scan window</text>
+
+    <rect x="20" y="664" width="320" height="143" rx="15" fill="#fff4e6" stroke="#aa741e" stroke-width="2"/>
+    <text x="40" y="699" font-size="21" font-weight="700" fill="#67480e">Count every meter</text>
+    <text x="40" y="732" font-size="18" fill="#67480e">Ingestion · storage</text>
+    <text x="40" y="762" font-size="18" fill="#67480e">Query scan · metrics</text>
+
+    <rect x="20" y="832" width="320" height="98" rx="15" fill="#f7e7e2" stroke="#a45c4c" stroke-width="2"/>
+    <text x="40" y="868" font-size="21" font-weight="700" fill="#6c342b">Then test the incident</text>
+    <text x="40" y="899" font-size="18" fill="#6c342b">A lower bill is not proof.</text>
+  </g>
+</svg>

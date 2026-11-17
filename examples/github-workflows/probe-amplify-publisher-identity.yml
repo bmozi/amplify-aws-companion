@@ -1,0 +1,116 @@
+name: Probe the Amplify reader identity without deploying
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_probe:
+        description: "Choose yes for role assumption, account reads, and read-only Amplify scope checks."
+        required: true
+        type: choice
+        options: ["no", "yes"]
+        default: "no"
+
+permissions: {}
+
+jobs:
+  probe:
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      inputs.confirm_probe == 'yes' &&
+      vars.AMPLIFY_PROBE_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions:
+      id-token: write
+    steps:
+      - name: Assume the dedicated read-only probe role with GitHub OIDC
+        uses: aws-actions/configure-aws-credentials@61815dcd50bd041e203e49132bacad1fd04d2708 # v5.1.1
+        with:
+          role-to-assume: arn:aws:iam::${{ vars.AWS_LAB_EXPECTED_ACCOUNT_ID }}:role/AmplifyLabGitHubProbeReader
+          aws-region: us-east-2
+          role-session-name: github-probe-${{ github.run_id }}
+          role-duration-seconds: 900
+          mask-aws-account-id: true
+
+      - name: Verify caller and capture two read-only account responses
+        shell: bash
+        env:
+          EXPECTED_ACCOUNT_ID: ${{ vars.AWS_LAB_EXPECTED_ACCOUNT_ID }}
+          BUDGET_NAME: ${{ vars.AWS_LAB_BUDGET_NAME }}
+        run: |
+          set -euo pipefail
+          caller="$(aws sts get-caller-identity --output json)"
+          actual_account="$(jq -r '.Account' <<< "$caller")"
+          actual_arn="$(jq -r '.Arn' <<< "$caller")"
+          expected_arn="arn:aws:sts::${EXPECTED_ACCOUNT_ID}:assumed-role/AmplifyLabGitHubProbeReader/github-probe-${GITHUB_RUN_ID}"
+          if [[ "$actual_account" != "$EXPECTED_ACCOUNT_ID" || "$actual_arn" != "$expected_arn" ]]; then
+            echo 'The AWS caller differs from the exact reviewed probe role or account.' >&2
+            exit 1
+          fi
+          aws freetier get-account-plan-state --region us-east-1 --output json > "$RUNNER_TEMP/plan.json"
+          aws budgets describe-budget --account-id "$EXPECTED_ACCOUNT_ID" \
+            --budget-name "$BUDGET_NAME" --region us-east-1 --output json > "$RUNNER_TEMP/budget.json"
+          jq -e --arg account "$EXPECTED_ACCOUNT_ID" --arg budget "$BUDGET_NAME" \
+            '.accountId == $account and .accountPlanRemainingCredits.unit == "USD" and
+             (.accountPlanRemainingCredits.amount | type == "string" or type == "number")' \
+            "$RUNNER_TEMP/plan.json" > /dev/null
+          jq -e --arg budget "$BUDGET_NAME" \
+            '.Budget.BudgetName == $budget and .Budget.CalculatedSpend.ActualSpend.Unit == "USD" and
+             .Budget.BudgetLimit.Unit == "USD"' "$RUNNER_TEMP/budget.json" > /dev/null
+          jq -n --slurpfile plan "$RUNNER_TEMP/plan.json" \
+            --slurpfile budget "$RUNNER_TEMP/budget.json" \
+            '{checked_at_utc: (now | todateiso8601),
+              plan_type: $plan[0].accountPlanType,
+              plan_status: $plan[0].accountPlanStatus,
+              plan_expiration: $plan[0].accountPlanExpirationDate,
+              credits_remaining_usd: $plan[0].accountPlanRemainingCredits.amount,
+              budget_name: $budget[0].Budget.BudgetName,
+              budget_limit_usd: $budget[0].Budget.BudgetLimit.Amount,
+              budget_actual_usd: $budget[0].Budget.CalculatedSpend.ActualSpend.Amount,
+              budget_configuration_last_updated: $budget[0].Budget.LastUpdatedTime,
+              actual_spend_refresh_time: "not exposed by DescribeBudget",
+              budget_includes_credit: $budget[0].Budget.CostTypes.IncludeCredit}' \
+            > "$RUNNER_TEMP/probe-readback.json"
+          echo 'The exact read-only probe role was assumed; Free-plan and named-budget reads succeeded.'
+
+      - name: Check the Amplify read boundary without publishing
+        shell: bash
+        env:
+          APP_ID: ${{ vars.AWS_LAB_AMPLIFY_APP_ID }}
+        run: |
+          set -euo pipefail
+          # GetJob is a read action. Job 0 is only a probe address; no job is
+          # created. The allowed branch should reach lookup, while a different
+          # branch of the same app should be rejected by IAM first.
+          error_file="$RUNNER_TEMP/amplify-get-job-error.txt"
+          if aws amplify get-job --region us-east-2 --app-id "$APP_ID" \
+              --branch-name lab --job-id 0 > /dev/null 2> "$error_file"; then
+            echo 'The selected branch job was readable.'
+          elif [[ "$(< "$error_file")" == *NotFoundException* ]]; then
+            echo 'The selected branch reached job lookup; probe job 0 was absent.'
+          else
+            echo 'The selected-branch read did not reach the expected result.' >&2
+            cat "$error_file" >&2
+            exit 1
+          fi
+
+          if aws amplify get-job --region us-east-2 --app-id "$APP_ID" \
+              --branch-name outside-reviewed-branch --job-id 0 \
+              > /dev/null 2> "$error_file"; then
+            echo 'An unrelated branch job read unexpectedly succeeded.' >&2
+            exit 1
+          elif [[ "$(< "$error_file")" == *AccessDenied* ]]; then
+            echo 'The unrelated branch job read was denied under the assumed session.'
+          else
+            echo 'The unrelated-branch request did not return an authorization denial.' >&2
+            cat "$error_file" >&2
+            exit 1
+          fi
+
+      - name: Save the private one-day readback
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: probe-readback
+          path: ${{ runner.temp }}/probe-readback.json
+          if-no-files-found: error
+          retention-days: 1

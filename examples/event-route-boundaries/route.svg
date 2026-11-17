@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 622" role="img" aria-labelledby="title desc">
+  <title id="title">One event route has two separate failure pockets</title>
+  <desc id="desc">A booking-account source bus and rule forward a selected event using a reviewed role to an operations-account bus in another Region. A source-Region dead-letter queue records forwarding failures. A receiving rule filters account and source, then sends to an operator target; a destination-Region dead-letter queue records its target failures. An archive can replay only to its own source bus and the operator must guard duplicate effects.</desc>
+  <rect width="360" height="622" fill="#fff"/>
+  <g font-family="Arial,Helvetica,sans-serif" fill="#163544">
+    <text x="16" y="33" font-size="22" font-weight="bold">Follow the event, then the failure</text>
+    <text x="16" y="58" font-size="16">One accepted event is not an alert.</text>
+    <rect x="16" y="77" width="328" height="104" rx="10" fill="#eaf3f7" stroke="#315c70" stroke-width="2"/>
+    <text x="28" y="105" font-size="19" font-weight="bold">Booking account · Region A</text>
+    <text x="28" y="131" font-size="16">Source bus + selected rule + role</text>
+    <text x="28" y="154" font-size="16">Forwarding failure → local DLQ</text>
+    <path d="M180 184v32" stroke="#315c70" stroke-width="3"/>
+    <path d="M173 208l7 8 7-8" fill="none" stroke="#315c70" stroke-width="3"/>
+    <rect x="16" y="220" width="328" height="86" rx="10" fill="#fff2dc" stroke="#8b6220" stroke-width="2"/>
+    <text x="28" y="248" font-size="19" font-weight="bold">Bus boundary</text>
+    <text x="28" y="274" font-size="16">Destination policy admits sender.</text>
+    <text x="28" y="295" font-size="16">Check supported Region + cost.</text>
+    <path d="M180 309v32" stroke="#315c70" stroke-width="3"/>
+    <path d="M173 333l7 8 7-8" fill="none" stroke="#315c70" stroke-width="3"/>
+    <rect x="16" y="345" width="328" height="108" rx="10" fill="#edf3ec" stroke="#446c53" stroke-width="2"/>
+    <text x="28" y="373" font-size="19" font-weight="bold">Operations account · Region B</text>
+    <text x="28" y="399" font-size="16">Receiver rule filters account.</text>
+    <text x="28" y="422" font-size="16">Target failure → local DLQ</text>
+    <text x="28" y="445" font-size="16">Confirm the person gets the alert.</text>
+    <path d="M180 456v32" stroke="#315c70" stroke-width="3"/>
+    <path d="M173 480l7 8 7-8" fill="none" stroke="#315c70" stroke-width="3"/>
+    <rect x="16" y="492" width="328" height="112" rx="10" fill="#f2eff6" stroke="#6b5b82" stroke-width="2"/>
+    <text x="28" y="520" font-size="19" font-weight="bold">Recovery is a new decision</text>
+    <text x="28" y="546" font-size="16">Fix cause; inspect DLQ evidence.</text>
+    <text x="28" y="569" font-size="16">Archive replays to its source bus.</text>
+    <text x="28" y="592" font-size="16">Deduplicate the business effect.</text>
+  </g>
+</svg>

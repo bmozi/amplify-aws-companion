@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 570" role="img" aria-labelledby="title desc">
+  <title id="title">A route closure becomes a rider alert only after four distinct decisions</title>
+  <desc id="desc">A winding path goes from confirmed closure, to affected opted-in riders, to current-version channel sends, to observed rider information. A footer warns that channel acceptance is not proof that a rider saw the notice.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#26465a"/>
+    </marker>
+  </defs>
+  <rect width="920" height="570" fill="#ffffff"/>
+  <text x="40" y="50" fill="#173348" font-family="Arial, sans-serif" font-size="30" font-weight="700">A five-minute alert needs more than a send job</text>
+  <text x="40" y="82" fill="#3b5565" font-family="Arial, sans-serif" font-size="19">A fictional route closure changes authority, audience, state, delivery and proof.</text>
+
+  <rect x="40" y="118" width="392" height="156" rx="18" fill="#e8f2f6" stroke="#2c586d" stroke-width="3"/>
+  <text x="64" y="158" fill="#173348" font-family="Arial, sans-serif" font-size="25" font-weight="700">1  Confirm the closure</text>
+  <text x="64" y="195" fill="#244557" font-family="Arial, sans-serif" font-size="21">Authorized operator and route</text>
+  <text x="64" y="229" fill="#244557" font-family="Arial, sans-serif" font-size="21">Start the five-minute clock</text>
+
+  <rect x="488" y="118" width="392" height="156" rx="18" fill="#eaf3eb" stroke="#47725a" stroke-width="3"/>
+  <text x="512" y="158" fill="#264634" font-family="Arial, sans-serif" font-size="25" font-weight="700">2  Choose affected riders</text>
+  <text x="512" y="195" fill="#355744" font-family="Arial, sans-serif" font-size="21">Stops, journeys and opt-in</text>
+  <text x="512" y="229" fill="#355744" font-family="Arial, sans-serif" font-size="21">Include a non-app route</text>
+
+  <path d="M438 195 H480" fill="none" stroke="#26465a" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M684 281 V316" fill="none" stroke="#26465a" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <rect x="488" y="328" width="392" height="156" rx="18" fill="#f7efdd" stroke="#947438" stroke-width="3"/>
+  <text x="512" y="368" fill="#604717" font-family="Arial, sans-serif" font-size="25" font-weight="700">3  Send current notice</text>
+  <text x="512" y="405" fill="#705727" font-family="Arial, sans-serif" font-size="21">Version guard and retry ID</text>
+  <text x="512" y="439" fill="#705727" font-family="Arial, sans-serif" font-size="21">Count peak channels and cost</text>
+
+  <rect x="40" y="328" width="392" height="156" rx="18" fill="#eaf0f8" stroke="#537091" stroke-width="3"/>
+  <text x="64" y="368" fill="#233c5c" font-family="Arial, sans-serif" font-size="25" font-weight="700">4  Observe rider result</text>
+  <text x="64" y="405" fill="#344f70" font-family="Arial, sans-serif" font-size="21">Check each affected journey</text>
+  <text x="64" y="439" fill="#344f70" font-family="Arial, sans-serif" font-size="21">Keep uncertain reach honest</text>
+
+  <path d="M482 405 H440" fill="none" stroke="#26465a" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="40" y="537" fill="#173348" font-family="Arial, sans-serif" font-size="21" font-weight="700">Channel acceptance is not proof that a rider saw the alert.</text>
+</svg>

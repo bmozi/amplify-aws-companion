@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1030" role="img" aria-labelledby="title desc">
+  <title id="title">Choose availability from the customer promise</title>
+  <desc id="desc">Six questions build an availability design in order: what customer journey and recovery promise matter, what size failure must be tolerated, which data copy may accept writes, how customers reconnect, whether surviving capacity and dependencies are ready, and what customer result proves recovery. A second Region adds cost and dependencies rather than automatic availability.</desc>
+  <defs><style>
+    .bg{fill:#f5f8fa}.title{font:700 30px Arial,sans-serif;fill:#173748}.sub{font:20px Arial,sans-serif;fill:#365363}.head{font:700 24px Arial,sans-serif;fill:#173748}.body{font:21px Arial,sans-serif;fill:#173748}.note{font:19px Arial,sans-serif;fill:#365363}.blue{fill:#e8f3f8;stroke:#305b76;stroke-width:2}.gold{fill:#fff3dd;stroke:#9a6428;stroke-width:2}.green{fill:#e8f5ed;stroke:#27704a;stroke-width:2}.line{stroke:#305b76;stroke-width:3}
+  </style></defs>
+  <rect width="800" height="1030" class="bg"/>
+  <text x="42" y="60" class="title">Start with the promise, then design survival.</text>
+  <text x="42" y="91" class="sub">A healthy server alone cannot prove a booking survived.</text>
+  <rect x="42" y="124" width="716" height="110" rx="14" class="blue"/>
+  <text x="64" y="165" class="head">1  Customer promise</text>
+  <text x="64" y="202" class="body">Which booking must work, and by when?</text>
+  <path d="M400 234 V250" class="line"/>
+  <rect x="42" y="250" width="716" height="110" rx="14" class="blue"/>
+  <text x="64" y="291" class="head">2  Failure boundary</text>
+  <text x="64" y="328" class="body">Machine, AZ, Region, or shared dependency?</text>
+  <path d="M400 360 V376" class="line"/>
+  <rect x="42" y="376" width="716" height="110" rx="14" class="gold"/>
+  <text x="64" y="417" class="head">3  Data and writer authority</text>
+  <text x="64" y="454" class="body">How current is the copy; who may write?</text>
+  <path d="M400 486 V502" class="line"/>
+  <rect x="42" y="502" width="716" height="110" rx="14" class="gold"/>
+  <text x="64" y="543" class="head">4  Traffic and reconnection</text>
+  <text x="64" y="580" class="body">How do new and pinned clients reach it?</text>
+  <path d="M400 612 V628" class="line"/>
+  <rect x="42" y="628" width="716" height="110" rx="14" class="blue"/>
+  <text x="64" y="669" class="head">5  Surviving capacity</text>
+  <text x="64" y="706" class="body">Can the remaining path handle useful work?</text>
+  <path d="M400 738 V754" class="line"/>
+  <rect x="42" y="754" width="716" height="110" rx="14" class="green"/>
+  <text x="64" y="795" class="head">6  Customer acceptance</text>
+  <text x="64" y="832" class="body">Did the correct booking save and read back?</text>
+  <rect x="42" y="895" width="716" height="92" rx="14" class="gold"/>
+  <text x="64" y="934" class="head">A second Region is another responsibility.</text>
+  <text x="64" y="966" class="note">Copies, keys, routes, capacity, tests, and cost still need owners.</text>
+</svg>

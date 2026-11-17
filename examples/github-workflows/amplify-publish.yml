@@ -1,0 +1,72 @@
+name: Publish the Amplify lab frontend
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_publish:
+        description: "Choose yes only when this reviewed frontend should be published."
+        required: true
+        type: choice
+        options: ["no", "yes"]
+        default: "no"
+      cost_scenario:
+        description: "Choose the reviewed 100-visit/one-day smoke scenario only if its whole-run estimate still applies."
+        required: true
+        type: choice
+        options: ["review_needed", "static_smoke_100_visit_1d"]
+        default: "review_needed"
+
+permissions: {}
+
+concurrency:
+  group: amplify-lab-frontend-publish
+  cancel-in-progress: false
+
+jobs:
+  typecheck:
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      vars.AMPLIFY_PUBLISH_ENABLED == 'true' &&
+      inputs.confirm_publish == 'yes' &&
+      inputs.cost_scenario == 'static_smoke_100_visit_1d'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out the reviewed source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install the backend type toolchain without lifecycle scripts or account outputs
+        working-directory: app
+        run: npm ci --ignore-scripts
+
+      - name: Typecheck source with a non-account browser configuration
+        working-directory: app
+        run: |
+          printf '{}\n' > amplify_outputs.json
+          ./node_modules/.bin/tsc --noEmit
+
+  publish:
+    needs: typecheck
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      vars.AMPLIFY_PUBLISH_ENABLED == 'true' &&
+      inputs.confirm_publish == 'yes' &&
+      inputs.cost_scenario == 'static_smoke_100_visit_1d'
+    uses: ./.github/workflows/reusable-amplify-publish.yml
+    permissions:
+      contents: read
+      id-token: write
+    with:
+      confirm_publish: ${{ inputs.confirm_publish }}
+      cost_scenario: ${{ inputs.cost_scenario }}
+      source_commit: ${{ github.sha }}
+    secrets:
+      AMPLIFY_OUTPUTS_JSON: ${{ secrets.AMPLIFY_OUTPUTS_JSON }}

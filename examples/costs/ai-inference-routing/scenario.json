@@ -1,0 +1,28 @@
+{
+  "fictional": true,
+  "source_region": "us-east-2",
+  "allowed_processing_regions": ["us-east-1", "us-east-2"],
+  "usage_tokens": {
+    "standard_input": "800000",
+    "cache_read_input": "180000",
+    "cache_write_input": "20000",
+    "output": "200000"
+  },
+  "candidates": [
+    {
+      "name": "single-region",
+      "destination_regions": ["us-east-2"],
+      "fictional_usd_per_million_tokens": {"standard_input": "2.00", "cache_read_input": "0.50", "cache_write_input": "2.50", "output": "8.00"}
+    },
+    {
+      "name": "geographic-profile",
+      "destination_regions": ["us-east-1", "us-east-2"],
+      "fictional_usd_per_million_tokens": {"standard_input": "2.00", "cache_read_input": "0.50", "cache_write_input": "2.50", "output": "8.00"}
+    },
+    {
+      "name": "global-profile",
+      "destination_regions": ["us-east-1", "us-east-2", "eu-west-1"],
+      "fictional_usd_per_million_tokens": {"standard_input": "1.80", "cache_read_input": "0.45", "cache_write_input": "2.25", "output": "7.20"}
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "case": "Fictional five-day-old booking incident; all quantities and rates are invented",
+  "incident_age_days": 5,
+  "required_records": ["accepted_receipt", "customer_read_failure", "worker_error", "source_heartbeat"],
+  "rates_usd_per_unit": {
+    "standard_ingest_gb": "0.60",
+    "infrequent_ingest_gb": "0.30",
+    "stored_gb_month": "0.03",
+    "query_scanned_gb": "0.005",
+    "custom_metric_month": "0.10"
+  },
+  "plans": {
+    "baseline": {
+      "standard_ingest_gb": "12",
+      "infrequent_ingest_gb": "0",
+      "stored_gb_month": "8",
+      "query_scanned_gb": "30",
+      "custom_metric_months": "3",
+      "critical_log_class": "STANDARD",
+      "critical_retention_days": 30,
+      "metric_filter_source_class": "STANDARD",
+      "captured_records": ["accepted_receipt", "customer_read_failure", "worker_error", "source_heartbeat"],
+      "operator_receipt_recorded": true
+    },
+    "cheap_but_blind": {
+      "standard_ingest_gb": "0",
+      "infrequent_ingest_gb": "12",
+      "stored_gb_month": "2",
+      "query_scanned_gb": "5",
+      "custom_metric_months": "0",
+      "critical_log_class": "INFREQUENT_ACCESS",
+      "critical_retention_days": 3,
+      "metric_filter_source_class": "INFREQUENT_ACCESS",
+      "captured_records": ["accepted_receipt", "worker_error"],
+      "operator_receipt_recorded": false
+    },
+    "bounded": {
+      "standard_ingest_gb": "2",
+      "infrequent_ingest_gb": "10",
+      "stored_gb_month": "4",
+      "query_scanned_gb": "6",
+      "custom_metric_months": "3",
+      "critical_log_class": "STANDARD",
+      "critical_retention_days": 7,
+      "metric_filter_source_class": "STANDARD",
+      "captured_records": ["accepted_receipt", "customer_read_failure", "worker_error", "source_heartbeat"],
+      "operator_receipt_recorded": true
+    }
+  }
+}

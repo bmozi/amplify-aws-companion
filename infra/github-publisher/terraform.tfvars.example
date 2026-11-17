@@ -1,0 +1,12 @@
+# Copy to terraform.tfvars only in a private local working copy.
+# Do not commit account-specific IDs or generated state/plan files to a public repo.
+account_id           = "REPLACE_WITH_12_DIGIT_AWS_ACCOUNT_ID"
+amplify_app_id       = "REPLACE_WITH_EXACT_AMPLIFY_APP_ID"
+amplify_branch       = "lab"
+budget_name          = "REPLACE_WITH_EXISTING_MONTHLY_COST_BUDGET_NAME"
+github_owner         = "bmozi"
+github_owner_id      = "REPLACE_WITH_GITHUB_OWNER_ID"
+github_repository    = "aws-capabilities-lab"
+github_repository_id = "REPLACE_WITH_GITHUB_REPOSITORY_ID"
+github_branch        = "main"
+github_oidc_provider_arn = "" # Set a verified existing provider ARN, or leave empty only when none exists.

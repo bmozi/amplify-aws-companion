@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 462" role="img" aria-labelledby="title desc">
+<title id="title">Follow one request through four evidence boundaries</title><desc id="desc">Read down the same customer attempt: resolver and DNS answer, edge cache or web filter, origin route and target, then application permission and stored result. Each receipt answers a narrower question. A missing or unmatched observation remains unknown; it does not prove an earlier stage succeeded. This is an investigation guide, not a deployed AWS route.</desc>
+<defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#18313d}.title{font-size:18px;font-weight:700}.head{font-size:16px;font-weight:700}.body{font-size:13px}</style></defs><rect width="360" height="462" fill="#fff"/>
+<text x="16" y="26" class="title">Follow the same customer request</text><text x="16" y="48" class="body">Match time, destination and safe request ID.</text>
+<rect x="16" y="62" width="328" height="78" rx="8" fill="#edf5f6" stroke="#315c6e"/><text x="28" y="86" class="head">1 · Customer and DNS</text><text x="28" y="108" class="body">Which address did this customer use?</text><text x="28" y="128" class="body">A resolver cache may hide a DNS query.</text>
+<path d="M180 140v12m-5-5 5 5 5-5" fill="none" stroke="#315c6e" stroke-width="2"/>
+<rect x="16" y="153" width="328" height="78" rx="8" fill="#edf5f6" stroke="#315c6e"/><text x="28" y="177" class="head">2 · Edge cache and web filter</text><text x="28" y="199" class="body">Was content cached, forwarded or blocked?</text><text x="28" y="219" class="body">A cache hit need not reach the origin.</text>
+<path d="M180 231v12m-5-5 5 5 5-5" fill="none" stroke="#315c6e" stroke-width="2"/>
+<rect x="16" y="244" width="328" height="78" rx="8" fill="#edf5f6" stroke="#315c6e"/><text x="28" y="268" class="head">3 · Origin route and target</text><text x="28" y="290" class="body">Did the flow reach the selected target?</text><text x="28" y="310" class="body">Flow ACCEPT does not prove success.</text>
+<path d="M180 322v12m-5-5 5 5 5-5" fill="none" stroke="#315c6e" stroke-width="2"/>
+<rect x="16" y="335" width="328" height="78" rx="8" fill="#edf5f6" stroke="#315c6e"/><text x="28" y="359" class="head">4 · Application and record</text><text x="28" y="381" class="body">Was the action allowed and result stored?</text><text x="28" y="401" class="body">HTTP success alone is not the outcome.</text>
+<text x="16" y="440" class="body">A missing receipt remains unknown.</text>
+</svg>

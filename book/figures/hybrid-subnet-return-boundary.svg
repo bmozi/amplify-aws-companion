@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 575" role="img" aria-labelledby="title desc">
+<title id="title">The subnet route and the permission are separate checks</title>
+<desc id="desc">In a local teaching model, the worker subnet in VPC B uses its associated B-peer table to send an HTTPS request through direct peering pcx-ab. The API subnet in VPC A uses its associated A-peer table for the reply. The main tables lack those routes. Security groups allow tracked return traffic, subnet network ACLs need request and reply rules, and the API separately authorizes the worker. This is not an AWS packet trace.</desc>
+<rect width="360" height="575" fill="#fff"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#17324d">
+<text x="16" y="29" font-size="18" font-weight="700">Use each subnet's route table</text>
+<text x="16" y="52" font-size="14">A route in another table cannot help.</text>
+<rect x="16" y="69" width="328" height="132" rx="9" fill="#eaf2fb" stroke="#366b9a" stroke-width="1.5"/>
+<text x="28" y="94" font-size="16" font-weight="700">VPC B · worker subnet</text>
+<text x="28" y="120" font-size="15">Worker: 10.90.1.10</text>
+<text x="28" y="145" font-size="15">Active table: B-peer</text>
+<text x="28" y="170" font-size="15">To 10.80.0.0/16 → pcx-ab</text>
+<text x="28" y="190" font-size="13">B-main has no peer route.</text>
+<rect x="16" y="214" width="328" height="68" rx="9" fill="#edf2f6" stroke="#839cad" stroke-width="1.5"/>
+<text x="28" y="239" font-size="16" font-weight="700">Direct peer · pcx-ab</text>
+<text x="28" y="265" font-size="15">HTTPS request ↓     reply ↑</text>
+<rect x="16" y="295" width="328" height="132" rx="9" fill="#e9f6ee" stroke="#377b53" stroke-width="1.5"/>
+<text x="28" y="320" font-size="16" font-weight="700">VPC A · API subnet</text>
+<text x="28" y="346" font-size="15">API: 10.80.2.10</text>
+<text x="28" y="371" font-size="15">Active table: A-peer</text>
+<text x="28" y="396" font-size="15">To 10.90.0.0/16 → pcx-ab</text>
+<text x="28" y="416" font-size="13">A-main has no reply route.</text>
+<rect x="16" y="440" width="328" height="107" rx="9" fill="#fff3e8" stroke="#a66323" stroke-width="1.5"/>
+<text x="28" y="465" font-size="16" font-weight="700">Routes are only the first gate</text>
+<text x="28" y="488" font-size="14">Security group: tracked reply.</text>
+<text x="28" y="511" font-size="14">Subnet ACL: both directions.</text>
+<text x="28" y="534" font-size="14">API: authorize the worker.</text>
+<text x="16" y="566" font-size="12">Local model; no AWS packet or permission test.</text>
+</g>
+</svg>

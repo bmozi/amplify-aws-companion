@@ -1,0 +1,33 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "KeepAccountPolicyRecovery",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::111122223333:root"
+      },
+      "Action": [
+        "kms:GetKeyPolicy",
+        "kms:PutKeyPolicy",
+        "kms:DescribeKey"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ReaderMayDecryptOnlyThroughS3ForThisObject",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::111122223333:role/ExampleExportReader"
+      },
+      "Action": "kms:Decrypt",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "kms:ViaService": "s3.us-east-2.amazonaws.com",
+          "kms:EncryptionContext:aws:s3:arn": "arn:aws:s3:::amplify-aws-example-private/exports/weekly.json"
+        }
+      }
+    }
+  ]
+}

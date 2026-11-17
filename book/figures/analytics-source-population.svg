@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 390" role="img" aria-labelledby="title desc">
+  <title id="title">A green file check can miss a sale</title>
+  <desc id="desc">A fictional checkout register lists three sales totaling 330 cents. A candidate report lists only two sales totaling 280 cents. Its file hashes and self-declared ID list match, but comparison with the separate register finds the missing late sale. A corrected candidate lists all three sales and matches the supplied register. The register is a teaching fixture, not authenticated producer evidence.</desc>
+  <defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#17313e}.heading{font-size:23px;font-weight:700}.body{font-size:18px}.small{font-size:16px}.strong{font-size:20px;font-weight:700}.card{stroke-width:2;rx:12}</style></defs>
+  <rect width="720" height="390" fill="#fff"/>
+  <text x="24" y="35" class="heading">A green file check can miss a sale</text>
+  <rect class="card" x="24" y="56" width="672" height="67" fill="#e8f2f7" stroke="#3b6d85"/>
+  <text x="42" y="83" class="strong">Separate fictional checkout register</text>
+  <text x="42" y="108" class="body">a 100¢  +  b 180¢  +  late 50¢  =  3 receipts, 330¢</text>
+  <rect class="card" x="24" y="148" width="314" height="143" fill="#eaf3ec" stroke="#4d7756"/>
+  <text x="42" y="177" class="strong">Candidate report</text>
+  <text x="42" y="207" class="body">a 100¢  +  b 180¢  =  280¢</text>
+  <text x="42" y="236" class="body">Manifest lists a and b.</text>
+  <text x="42" y="264" class="small">Hashes and declared IDs match.</text>
+  <path d="M338 217 H377" stroke="#17313e" stroke-width="3" fill="none"/>
+  <path d="M377 217 l-11 -7 v14 z" fill="#17313e"/>
+  <rect class="card" x="382" y="148" width="314" height="143" fill="#fff0eb" stroke="#a75244"/>
+  <text x="400" y="177" class="strong">Compare with register</text>
+  <text x="400" y="207" class="body">Missing: late 50¢</text>
+  <text x="400" y="236" class="body">Closing total: 330¢</text>
+  <text x="400" y="265" class="strong">HOLD the report</text>
+  <rect class="card" x="24" y="314" width="672" height="58" fill="#f5f1df" stroke="#8b762d"/>
+  <text x="42" y="340" class="body">Corrected candidate: a + b + late = 330¢; matches the supplied register.</text>
+  <text x="42" y="362" class="small">A real source still needs its own trust and completeness evidence.</text>
+</svg>

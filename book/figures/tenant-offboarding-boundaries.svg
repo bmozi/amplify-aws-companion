@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1070" role="img" aria-labelledby="title desc">
+  <title id="title">A tenant closure has separate local and external claims</title>
+  <desc id="desc">An assigned operator starts Shop A closure. A local SQLite transaction closes Shop A, cancels pending jobs, removes its active notes and records counts for an authorized retry. Later reads are denied before warm-cache lookup, while Shop B's same-ID record remains. Completed external effects and copies in backups, files, indexes and logs need separate review. The local receipt does not prove distributed erasure or reversal of completed effects.</desc>
+  <defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#173341}.title{font-size:27px;font-weight:700}.head{font-size:24px;font-weight:700}.body{font-size:21px}.note{font-size:19px}.arrow{stroke:#52788a;stroke-width:4;fill:none}.box{stroke-width:2}</style></defs>
+  <rect width="800" height="1070" fill="#fff"/>
+  <text x="40" y="49" class="title">Closing one shop makes several claims</text>
+  <text x="40" y="83" class="note">Synthetic identity and one local SQLite store</text>
+  <rect x="40" y="112" width="720" height="105" rx="14" fill="#fff2df" stroke="#a27435" class="box"/>
+  <text x="66" y="153" class="head">First, verify the assigned operator</text>
+  <text x="66" y="190" class="body">A different operator cannot close Shop A.</text>
+  <path d="M400 218 V246" class="arrow"/><path d="M400 249 l-9 -14 h18 z" fill="#52788a"/>
+  <rect x="40" y="251" width="720" height="198" rx="14" fill="#eaf2f6" stroke="#557c90" class="box"/>
+  <text x="66" y="292" class="head">One bounded local transaction</text>
+  <text x="66" y="330" class="body">Set Shop A CLOSED; cancel pending jobs.</text>
+  <text x="66" y="368" class="body">Remove its active notes; record counts.</text>
+  <text x="66" y="406" class="body">Authorized retry returns the same receipt.</text>
+  <path d="M400 450 V478" class="arrow"/><path d="M400 481 l-9 -14 h18 z" fill="#52788a"/>
+  <rect x="40" y="483" width="720" height="143" rx="14" fill="#eaf4ed" stroke="#4b7b5e" class="box"/>
+  <text x="66" y="524" class="head">Access stopped in the tested local path</text>
+  <text x="66" y="562" class="body">Deny new Shop A reads before warm cache.</text>
+  <text x="66" y="599" class="body">Shop B's same-ID note still works.</text>
+  <path d="M400 627 V655" class="arrow"/><path d="M400 658 l-9 -14 h18 z" fill="#52788a"/>
+  <rect x="40" y="660" width="720" height="170" rx="14" fill="#f4eff4" stroke="#8b6e8c" class="box"/>
+  <text x="66" y="701" class="head">Other claims need separate evidence</text>
+  <text x="66" y="739" class="body">Review completed effects and in-flight work.</text>
+  <text x="66" y="777" class="body">Inventory backups, files, indexes and logs.</text>
+  <text x="66" y="812" class="note">Apply each copy's access and retention rule.</text>
+  <rect x="40" y="860" width="720" height="148" rx="14" fill="#f9ece9" stroke="#ac665c" class="box"/>
+  <text x="66" y="900" class="head">What the receipt cannot say</text>
+  <text x="66" y="938" class="body">It cannot erase every copy or undo an email.</text>
+  <text x="66" y="974" class="note">No AWS identity or distributed lifecycle was tested.</text>
+</svg>

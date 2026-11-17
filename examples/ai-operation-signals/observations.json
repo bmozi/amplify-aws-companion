@@ -1,0 +1,19 @@
+{
+  "fictional": true,
+  "expected_reviewed_per_window": 4,
+  "windows": {
+    "baseline": [
+      {"id": "b1", "latency_ms": 700, "input_tokens": 500, "output_tokens": 90, "review": "supported", "source_version": "policy-v1"},
+      {"id": "b2", "latency_ms": 740, "input_tokens": 480, "output_tokens": 88, "review": "supported", "source_version": "policy-v1"},
+      {"id": "b3", "latency_ms": 680, "input_tokens": 510, "output_tokens": 100, "review": "supported", "source_version": "policy-v1"},
+      {"id": "b4", "latency_ms": 720, "input_tokens": 495, "output_tokens": 95, "review": "supported", "source_version": "policy-v1"}
+    ],
+    "current": [
+      {"id": "c1", "latency_ms": 710, "input_tokens": 510, "output_tokens": 91, "review": "supported", "source_version": "policy-v2"},
+      {"id": "c2", "latency_ms": 700, "input_tokens": 525, "output_tokens": 90, "review": "unsupported", "source_version": "policy-v2"},
+      {"id": "c3", "latency_ms": 700, "input_tokens": 515, "output_tokens": 93, "review": "unsupported", "source_version": "policy-v2"},
+      {"id": "c4", "latency_ms": 705, "input_tokens": 505, "output_tokens": 89, "review": "supported", "source_version": "policy-v2"},
+      {"id": "c5", "latency_ms": 695, "input_tokens": 520, "output_tokens": 92, "review": "unreviewed", "source_version": "policy-v2"}
+    ]
+  }
+}

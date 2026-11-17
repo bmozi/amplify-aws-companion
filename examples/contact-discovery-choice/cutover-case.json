@@ -1,0 +1,10 @@
+{
+  "windows": [
+    {"status": "CREATING", "scan_complete": true, "base_due": ["R1", "R3"], "index_visible": ["R3"]},
+    {"status": "ACTIVE", "scan_complete": true, "base_due": ["R1", "R3"], "index_visible": ["R2", "R3"]},
+    {"status": "ACTIVE", "scan_complete": true, "base_due": ["R1", "R3"], "index_visible": ["R1", "R3"]}
+  ],
+  "key_violations": [],
+  "cost_reviewed": true,
+  "operator_assigned": true
+}

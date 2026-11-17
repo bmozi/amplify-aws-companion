@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+<title id="title">A presigned request has more than one time limit</title>
+<desc id="desc">A fictional URL is issued at 10:00 with an expiration of 11:00. The signing role credentials expire at 10:20, so a new request at 10:30 cannot use that URL. Permissions and other controls can deny access even earlier.</desc>
+<rect width="1200" height="600" fill="#fffefa"/>
+<g font-family="Arial,sans-serif" fill="#123353">
+<text x="60" y="65" font-size="34" font-weight="bold">A borrowed key has two clocks</text>
+<text x="60" y="106" font-size="21" fill="#415d73">Fictional S3 download request signed with temporary role credentials</text>
+<line x1="155" y1="220" x2="1060" y2="220" stroke="#7b91a4" stroke-width="5"/>
+<line x1="155" y1="220" x2="1060" y2="220" stroke="#2874a5" stroke-width="12"/>
+<line x1="155" y1="300" x2="457" y2="300" stroke="#bd7a1d" stroke-width="12"/>
+<line x1="155" y1="180" x2="155" y2="330" stroke="#123353" stroke-width="3"/>
+<line x1="457" y1="180" x2="457" y2="330" stroke="#123353" stroke-width="3"/>
+<line x1="608" y1="180" x2="608" y2="330" stroke="#a23e37" stroke-width="3" stroke-dasharray="7 5"/>
+<line x1="1060" y1="180" x2="1060" y2="330" stroke="#123353" stroke-width="3"/>
+<text x="155" y="170" text-anchor="middle" font-size="22" font-weight="bold">10:00</text>
+<text x="457" y="170" text-anchor="middle" font-size="22" font-weight="bold">10:20</text>
+<text x="608" y="170" text-anchor="middle" font-size="22" font-weight="bold" fill="#a23e37">10:30</text>
+<text x="1060" y="170" text-anchor="middle" font-size="22" font-weight="bold">11:00</text>
+<text x="155" y="375" text-anchor="middle" font-size="19">URL issued</text>
+<text x="457" y="375" text-anchor="middle" font-size="19">Role session expires</text>
+<text x="608" y="410" text-anchor="middle" font-size="19" fill="#a23e37">New request fails</text>
+<text x="1060" y="375" text-anchor="middle" font-size="19">URL expiry</text>
+<line x1="70" y1="455" x2="120" y2="455" stroke="#2874a5" stroke-width="9"/><text x="135" y="463" font-size="21">Requested URL lifetime</text>
+<line x1="500" y1="455" x2="550" y2="455" stroke="#bd7a1d" stroke-width="9"/><text x="565" y="463" font-size="21">Signing-session lifetime</text>
+<text x="60" y="530" font-size="21" fill="#415d73">Other permissions and policy conditions may deny access earlier.</text>
+</g></svg>

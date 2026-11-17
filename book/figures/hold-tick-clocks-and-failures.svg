@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1160" role="img" aria-labelledby="title desc">
+  <title id="title">Three clocks and two failure paths in a proposed hold-release schedule</title>
+  <desc id="desc">The ten-minute business deadline, proposed one-minute Scheduler tick, and two-hour lab stop are different clocks. The schedule is a design exercise pending account and cost review. Scheduler delivery failure goes to a delivery dead-letter queue; an accepted asynchronous Lambda request can fail during code execution and needs a separate on-failure destination. A tick examines at most fifteen visible index entries, so later passes and customer-state checks remain necessary.</desc>
+  <defs><style>
+    .bg{fill:#f7fafb}.title{font:700 30px Arial,sans-serif;fill:#173748}.sub{font:20px Arial,sans-serif;fill:#365363}.head{font:700 24px Arial,sans-serif;fill:#173748}.body{font:21px Arial,sans-serif;fill:#173748}.small{font:19px Arial,sans-serif;fill:#365363}.blue{fill:#e9f2f8;stroke:#2b566c;stroke-width:2}.gold{fill:#fff1db;stroke:#9a6428;stroke-width:2}.green{fill:#e5f4ea;stroke:#27704a;stroke-width:2}.red{fill:#fbe9e7;stroke:#a54737;stroke-width:2}.line{stroke:#2b566c;stroke-width:3;fill:none}
+  </style></defs>
+  <rect width="800" height="1160" class="bg"/>
+  <text x="45" y="62" class="title">Three clocks. Two failure routes.</text>
+  <text x="45" y="94" class="sub">Design-only schedule; enable after account and cost review.</text>
+  <text x="45" y="148" class="head">Keep the clocks separate</text>
+  <rect x="45" y="169" width="710" height="104" rx="13" class="blue"/>
+  <text x="66" y="206" class="head">Business deadline  ·  minute 10</text>
+  <text x="66" y="240" class="body">The hold becomes ineligible; release may happen later.</text>
+  <rect x="45" y="289" width="710" height="122" rx="13" class="gold"/>
+  <text x="66" y="327" class="head">Proposed Scheduler tick  ·  every minute</text>
+  <text x="66" y="361" class="body">One pass sees at most 15 visible index entries.</text>
+  <text x="66" y="391" class="small">A quiet pass does not prove every due hold was found.</text>
+  <rect x="45" y="427" width="710" height="105" rx="13" class="green"/>
+  <text x="66" y="465" class="head">Lab stop  ·  at most two hours</text>
+  <text x="66" y="499" class="body">The handler stops new work; resources stay deployed.</text>
+  <text x="45" y="592" class="head">Follow the request and its failure route</text>
+  <rect x="45" y="614" width="710" height="104" rx="13" class="blue"/>
+  <text x="66" y="653" class="head">1  Scheduler attempts delivery</text>
+  <text x="66" y="688" class="body">A successful delivery is not successful code.</text>
+  <rect x="45" y="742" width="710" height="103" rx="13" class="red"/>
+  <text x="66" y="782" class="head">Route A  ·  delivery fails → Scheduler DLQ</text>
+  <text x="66" y="815" class="body">The target request was not accepted.</text>
+  <rect x="45" y="861" width="710" height="104" rx="13" class="blue"/>
+  <text x="66" y="901" class="head">Route B  ·  Lambda accepts and runs the tick</text>
+  <text x="66" y="934" class="body">Read the base hold; release it conditionally.</text>
+  <rect x="45" y="988" width="710" height="103" rx="13" class="red"/>
+  <text x="66" y="1028" class="head">If code fails → Lambda on-failure destination</text>
+  <text x="66" y="1061" class="body">Earlier pages may have committed; reconcile first.</text>
+  <text x="45" y="1130" class="small">Even after success, check backlog and actual customer seat state.</text>
+</svg>

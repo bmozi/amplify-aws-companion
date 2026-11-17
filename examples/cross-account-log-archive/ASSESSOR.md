@@ -1,0 +1,7 @@
+# Assessor: cross-account log archive
+
+The learner should trace a specific safe event from producer to Standard-class log group, subscription, scoped destination, Firehose, S3 object and investigator. A subscription filter or green dashboard alone does not prove the event arrived. The normal fixture has one duplicate because subscriptions are at least once; the audit should de-duplicate for coverage while reporting the duplicate. The defect fixture misses `evt-204` and fails.
+
+For the changed condition, expect an alarm on forwarding errors or missing canary/test events that reaches an operator outside the compromised workload account. The learner should examine the sending identity, destination policy and delivery role, repair only the broken permission, and show an unauthorized source remains denied. AccessDenied is not simply a transient throttling retry. Retained source logs may allow a controlled backfill, but the answer must name the time window and duplicate rule. If the source is inaccessible or its retention expired, missing events remain missing.
+
+The retrieval proof needs a real S3 object in the selected format, decoded fields, source account/Region/log group, stable event ID, event time, access record and a content comparison to a trusted source. Source and archive retention should be explicit, approved and costed. Do not claim a local JSONL join proves AWS delivery, full forensic chain of custody or learner mastery.

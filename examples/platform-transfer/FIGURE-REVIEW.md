@@ -1,0 +1,3 @@
+# Platform transfer diagram review
+
+October 20, 2026. Codex rendered [`platform-transfer.svg`](platform-transfer.svg), SHA-256 `93dfd1dc2bb85befbd2873586f1ddc684d0e91faa3685c689767e9e589ce97db`, to a 1400 × 780 PNG with `rsvg-convert`; PNG SHA-256 `3046d528d9c7b8522142617f01ed382169edb7a2b9c961c5199de1a590719f72`. Direct inspection at original resolution found the three alternatives, shared data path, arrows, labels and evidence strip readable without observed overlap or cropping. Each option now has its own incoming arrow; the initial draft did not. This is an internal standalone figure review, not embedded Word/print/Kindle or independent learner review.

@@ -1,0 +1,11 @@
+# Assessor: SUS 01 Region shortlist
+
+Read the [case](A02-A03-SUS01.md#changed-condition-exercise-the-lower-number-fails-the-customer) after writing your first answer. This is authored reasoning, not a legal ruling, a live Region selection or a learner result.
+
+`region-beta` fails the stated customer-residency rule and must be rejected for private records even though its toy sustainability score is lower. `region-gamma` has an incomplete whole-run estimate, so the missing transfer/replication lines are **pending**, not free. `region-alpha` reaches only a **paper shortlist** under supplied fictional fields. The lab's status does not certify AWS availability, price, account credits, permission or customer latency. Its USD 5 and USD 100 defaults are fictional case limits; a reader must choose limits for their own account and workload. Changing a limit changes the paper decision, not the cost or the evidence.
+
+Putting the public frontend in beta while data stays in alpha is a new split design. The browser may call the Ohio API directly, or the frontend may introduce a server/edge hop; those are different routes with different identity, caching, latency, transfer and failure behavior. Draw the actual selected route before pricing it. Last-seat authority remains at the conditional write; an extra hop must not create stale confirmation. A regional outage may leave a public shell visible while private sign-in or repair status fails. None of that is resolved by a map pin or a lower grid indicator.
+
+Approving beta for a **public guide** does not automatically authorize private customer records, login tokens, logs, backups or the seat transaction there. The owner must classify data and copies, test service/feature support and get the appropriate business/legal decision. Carbon numbers with different accounting methods, workload definitions, boundaries or periods are not comparable in this exercise. Even compatible toy numbers only order supplied values; they do not prove the environmental impact of an actual moved workload.
+
+A strong answer preserves the original customer promise, rejects the hard failure, leaves unknown prices pending, inventories new network and data copies, and names the live evidence needed before changing the Region. It does not deploy, claim carbon reduction or infer an organization policy from this design exercise.

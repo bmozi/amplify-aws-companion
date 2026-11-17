@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1060" role="img" aria-labelledby="title desc">
+<title id="title">Seven questions before choosing AWS services</title>
+<desc id="desc">Seven numbered cards connect a repair-shop promise to evidence. Who can act: test allowed and denied actions. Where does traffic go: trace and confirm the destination. What runs the work: check the saved result after a lost reply. Where does data live: read and restore an owned record. How do changes ship: identify the tested release and reversal. How do we detect and recover: find missed work and rehearse repair. What does the whole path cost: count use, idle resources and cleanup. Changed business facts require revisiting the answers. These are design prompts, not a deployed AWS architecture.</desc>
+<defs><style>text{font-family:Arial,sans-serif;fill:#173440}.title{font-size:37px;font-weight:700}.sub{font-size:29px}.number{font-size:31px;font-weight:700;fill:#fff;text-anchor:middle}.head{font-size:35px;font-weight:700}.body{font-size:30px}</style></defs>
+<rect width="800" height="1060" fill="#fff"/>
+<text x="25" y="48" class="title">Seven questions before AWS services</text>
+<text x="25" y="87" class="sub">Start with Maya&#39;s repair-shop promise.</text>
+<g><rect x="25" y="110" width="750" height="116" rx="15" fill="#edf5f6" stroke="#6e929e" stroke-width="2"/>
+<circle cx="69" cy="168" r="29" fill="#165876"/>
+<text x="69" y="179" class="number">1</text>
+<text x="116" y="158" class="head">Who can act?</text>
+<text x="116" y="200" class="body">Test allowed and denied actions.</text></g>
+<g><rect x="25" y="236" width="750" height="116" rx="15" fill="#f4f8f8" stroke="#6e929e" stroke-width="2"/>
+<circle cx="69" cy="294" r="29" fill="#165876"/>
+<text x="69" y="305" class="number">2</text>
+<text x="116" y="284" class="head">Where does traffic go?</text>
+<text x="116" y="326" class="body">Trace and confirm its destination.</text></g>
+<g><rect x="25" y="362" width="750" height="116" rx="15" fill="#edf5f6" stroke="#6e929e" stroke-width="2"/>
+<circle cx="69" cy="420" r="29" fill="#165876"/>
+<text x="69" y="431" class="number">3</text>
+<text x="116" y="410" class="head">What runs the work?</text>
+<text x="116" y="452" class="body">Check the result after a lost reply.</text></g>
+<g><rect x="25" y="488" width="750" height="116" rx="15" fill="#f4f8f8" stroke="#6e929e" stroke-width="2"/>
+<circle cx="69" cy="546" r="29" fill="#165876"/>
+<text x="69" y="557" class="number">4</text>
+<text x="116" y="536" class="head">Where does data live?</text>
+<text x="116" y="578" class="body">Read and restore the owned record.</text></g>
+<g><rect x="25" y="614" width="750" height="116" rx="15" fill="#edf5f6" stroke="#6e929e" stroke-width="2"/>
+<circle cx="69" cy="672" r="29" fill="#165876"/>
+<text x="69" y="683" class="number">5</text>
+<text x="116" y="662" class="head">How do changes ship?</text>
+<text x="116" y="704" class="body">Name the tested release and reversal.</text></g>
+<g><rect x="25" y="740" width="750" height="116" rx="15" fill="#f4f8f8" stroke="#6e929e" stroke-width="2"/>
+<circle cx="69" cy="798" r="29" fill="#165876"/>
+<text x="69" y="809" class="number">6</text>
+<text x="116" y="788" class="head">How do we detect and recover?</text>
+<text x="116" y="830" class="body">Find missed work; rehearse repair.</text></g>
+<g><rect x="25" y="866" width="750" height="116" rx="15" fill="#fff0d7" stroke="#a87938" stroke-width="2"/>
+<circle cx="69" cy="924" r="29" fill="#a25e19"/>
+<text x="69" y="935" class="number">7</text>
+<text x="116" y="914" class="head">What does the whole path cost?</text>
+<text x="116" y="956" class="body">Count use, idle time and cleanup.</text></g>
+<text x="25" y="1031" class="sub">Change the promise; revisit the answers.</text>
+</svg>

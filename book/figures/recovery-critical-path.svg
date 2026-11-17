@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1060" viewBox="0 0 800 1060" role="img" aria-labelledby="title desc">
+  <title id="title">Three recovery branches meet before customer reopening</title>
+  <desc id="desc">After a four-minute decision, three independent recovery branches begin. The data path checks key access in minutes 4 to 6, restores through minute 14, and reconciles bookings through minute 20. Workers and capacity finish at minute 18; the old writer is fenced at minute 7. All three must be ready before the customer test in minutes 20 to 23 and route confirmation through minute 25. The fictional target is 20 minutes, so warming workers alone cannot meet it.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#254b69"/></marker>
+    <style>
+      .bg{fill:#fcfbf6}.ink{fill:#102d45}.muted{fill:#405d70}.box{fill:#eaf4fa;stroke:#1b5d89;stroke-width:2}.data{fill:#fff0d4;stroke:#ab6b0e;stroke-width:2}.gate{fill:#e8f2e6;stroke:#3c7653;stroke-width:2}.band{fill:#f4f8fa;stroke:#b1c8d4;stroke-width:2}.line{fill:none;stroke:#254b69;stroke-width:3;marker-end:url(#arrow)}.title{font:700 32px Arial,sans-serif}.head{font:700 25px Arial,sans-serif}.body{font:22px Arial,sans-serif}.small{font:20px Arial,sans-serif}
+    </style>
+  </defs>
+  <rect class="bg" width="800" height="1060"/>
+  <text x="32" y="47" class="title ink">The slowest necessary branch</text>
+  <text x="32" y="85" class="title ink">sets the reopening clock</text>
+  <text x="32" y="119" class="small muted">Fictional minutes · 20-minute target · no AWS timing measured</text>
+  <rect x="255" y="146" width="290" height="74" rx="12" class="box"/>
+  <text x="276" y="179" class="head ink">Decide</text>
+  <text x="276" y="207" class="body ink">minute 0–4</text>
+  <path d="M400 220 V257" class="line"/>
+  <text x="32" y="282" class="head ink">Then work in parallel</text>
+  <rect x="24" y="301" width="752" height="175" rx="14" class="band"/>
+  <text x="43" y="335" class="head ink">Data path · ready at minute 20</text>
+  <rect x="43" y="356" width="210" height="88" rx="10" class="data"/>
+  <text x="57" y="390" class="head ink">Key access</text><text x="57" y="422" class="body ink">minute 4–6</text>
+  <rect x="295" y="356" width="190" height="88" rx="10" class="data"/>
+  <text x="310" y="390" class="head ink">Restore</text><text x="310" y="422" class="body ink">minute 6–14</text>
+  <rect x="527" y="356" width="229" height="88" rx="10" class="data"/>
+  <text x="541" y="390" class="head ink">Reconcile</text><text x="541" y="422" class="body ink">minute 14–20</text>
+  <path d="M253 400 H289" class="line"/><path d="M485 400 H521" class="line"/>
+  <rect x="24" y="492" width="752" height="143" rx="14" class="band"/>
+  <text x="43" y="526" class="head ink">Worker path · ready at minute 18</text>
+  <rect x="43" y="546" width="302" height="69" rx="10" class="box"/>
+  <text x="58" y="575" class="head ink">Prepare workers</text>
+  <text x="58" y="603" class="body ink">minute 4–16</text>
+  <rect x="455" y="546" width="301" height="69" rx="10" class="box"/>
+  <text x="470" y="575" class="head ink">Prove capacity</text>
+  <text x="470" y="603" class="body ink">minute 16–18</text>
+  <path d="M345 580 H449" class="line"/>
+  <rect x="24" y="651" width="752" height="111" rx="14" class="band"/>
+  <text x="43" y="685" class="head ink">Write-authority path · ready at minute 7</text>
+  <rect x="43" y="699" width="713" height="48" rx="10" class="box"/>
+  <text x="58" y="731" class="body ink">Fence the old writer · minute 4–7</text>
+  <rect x="99" y="798" width="602" height="60" rx="12" class="gate"/>
+  <text x="119" y="835" class="head ink">All three ready at minute 20</text>
+  <path d="M400 858 V876" class="line"/>
+  <rect x="99" y="884" width="602" height="65" rx="12" class="gate"/>
+  <text x="119" y="912" class="head ink">Check the customer path</text>
+  <text x="119" y="938" class="body ink">minute 20–23</text>
+  <path d="M400 949 V965" class="line"/>
+  <rect x="99" y="973" width="602" height="63" rx="12" class="data"/>
+  <text x="119" y="1001" class="head ink">Route and confirm</text>
+  <text x="119" y="1026" class="body ink">minute 23–25 · misses target by 5</text>
+</svg>

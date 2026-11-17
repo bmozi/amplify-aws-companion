@@ -1,0 +1,37 @@
+# Follow a failed booking from log event to operator
+
+This is a **classic CloudWatch** configuration lesson for one fictional repair-booking service. It supplies Terraform source and an EC2 CloudWatch agent configuration example. The default `enable_resources = false` creates no lab resources. Nothing in this folder has been applied to AWS. Read [the signal-path lesson](../../reader/BOOK-LOCATORS.md#book-d418ac7999cb8497) before inspecting the files.
+
+From this directory, run `terraform fmt -check`, `terraform init -backend=false`, then `terraform validate`. Initialization downloads the pinned-compatible HashiCorp AWS provider into the ignored local `.terraform/` directory. Validation checks HCL/provider schema, not AWS acceptance, log delivery, alarm evaluation, permission, price or notification. `python3 -m json.tool agent-config.ec2.json` checks the agent sample's JSON syntax, not its deployment or permissions. There is no `plan` or `apply` in this local exercise.
+
+The pieces have different jobs:
+
+| File or resource | Plain-language job | What still needs proof |
+| --- | --- | --- |
+| `agent-config.ec2.json` | Select one memory measure and one booking log file on an EC2 host | Actual install, instance role, file path, agent status, network and first received records |
+| Standard log group | Hold bounded booking events for an example seven days | Owner-approved retention, safe fields, encryption/key and actual ingestion |
+| JSON metric filter | Count newly received `statusCode >= 500` events | Positive/negative pattern tests in AWS, source completeness and duplicate behavior |
+| Metric alarm | Turn the count into an explicit `OK`/`ALARM`/`INSUFFICIENT_DATA` decision | Metric arrival, evaluation windows, missing-data behavior and state history |
+| SNS topic and optional subscription | Give the alarm a notification destination | Topic policy, confirmed subscription, delivery receipt and human acknowledgment |
+| Dashboard | Show the count and alarm state to an operator | Actual widget rendering, sharing permissions, freshness and customer outcome |
+
+The filter's default zero applies to received nonmatching log events; silence from the log source can still leave a missing metric. With `treat_missing_data = "missing"`, an entirely empty evaluation range leads to `INSUFFICIENT_DATA`, but one missing period does not necessarily do so. This alarm uses the default sliding window: CloudWatch can look farther back for real points and can evaluate a recent breach while other points are missing. A source-freshness signal therefore needs its own monitoring and response; do not treat the 5xx alarm state as proof of log delivery. The example alarm uses one of two one-minute periods at or above one event to make transitions easy to study. That is an invented teaching threshold, not a production paging policy. A metric filter counts log events; it does not deduplicate a business booking or prove that every failed request logged correctly. [CloudWatch metric-filter behavior](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/MonitoringLogData.html), [missing-data evaluation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarms-and-missing-data.html), [alarm actions](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Alarms.html).
+
+**Think through a gap.** A healthy metric point arrived just before the log stream stopped. Does the next missing minute prove the alarm has already entered `INSUFFICIENT_DATA`? No: inspect its evaluation history and the actual data points. If the full evaluation range eventually contains no points, the configured `missing` treatment moves this metric alarm to `INSUFFICIENT_DATA`; that transition still does not identify why collection stopped or notify a person unless an appropriate action is configured and delivered. Contrast a later-arriving breach and ask what evidence would distinguish an application error from a broken log pipeline.
+
+The topic policy limits CloudWatch publication to this alarm ARN and the expected account. The optional email subscription is absent by default. Even with a confirmed subscription, creating an alarm action does not prove delivery to an operator. Record the SNS confirmation and a harmless authorized end-to-end test separately; verify alarm history, topic delivery and human receipt. Changing an existing alarm by name can replace its previous actions, so choose a unique disposable prefix and inspect exact ownership before any run. [AWS notification guidance](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Notify_Users_Alarm_Changes.html).
+
+The agent sample assumes a Linux EC2 host, a JSONL file at the stated path, an instance role with needed publication permissions and the default `name_prefix`. If you change the prefix, update the agent's log-group name too. ECS and EKS collection require platform-specific deployment, identity and log routing; copying this host file into a cluster is not implementation. An EC2 instance, container cluster or AI workload is **not** part of this example. [CloudWatch agent guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html).
+
+## Change the facts before choosing the next action
+
+Write a short decision for each case, then compare the [assessor](ASSESSOR.md). Name the observed signal, missing evidence, safe next check, cost driver and cleanup/operating owner.
+
+1. The agent's memory metric is fresh, but the booking log stream has stopped. The 5xx chart is blank. What does this say about failures, and what independent source check would distinguish no errors from no logs?
+2. A test event with `statusCode: 503` appears in the expected Standard log group. A `200` event and an event with a string `"503"` also arrive. Which exact pattern and data-type behavior must be verified in AWS before relying on the filter? What may a duplicate log delivery do?
+3. The alarm enters `ALARM`, but the SNS topic has no confirmed subscription. What has happened, and what has not? A teammate wants to set the alarm state manually as proof; explain the narrower evidence that test would produce.
+4. An operator copies the dashboard to a second account and adds a metric widget pointing at another Region. Compare same-account cross-Region display with a cross-account monitoring account. Which sharing/IAM/OAM setup and permissions remain? Keep the multi-account design on paper for this exercise.
+5. A production team wants to use the same EC2 agent JSON on ECS Fargate and EKS. Identify the host assumptions that fail, and list the collection/identity/rollout checks needed for each platform before claiming skill 1.1.2 implemented.
+6. The dashboard shows one server error while customers report ten failed assignments. Propose a customer-outcome measure and reconciliation route; decide whether to change the alarm threshold, logging coverage, or both. Include metric identities, log retention and query costs.
+
+For any separately authorized live run, first verify the scoped non-root role, account/Region/plan and current price/eligibility. Record a full estimate against spending and reserve limits chosen for the account, use only approved synthetic events, time-box the resources, destroy the exact Terraform stack and reconcile subsequent billing. Keep Organization and monitoring-account designs on paper for this exercise. A successful local validation is not a spending approval or a cloud test.

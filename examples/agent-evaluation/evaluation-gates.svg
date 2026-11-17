@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 250" role="img" aria-labelledby="title desc">
+  <title id="title">Three separate checks for an assistant response</title>
+  <desc id="desc">Fictional permitted evidence enters a proposed response. A mechanical checker inspects structure and citations. A human compares claims with source meaning. Any proposed action requires a separate application authority gate.</desc>
+  <rect width="1000" height="250" rx="20" fill="#f5f8fb"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <rect x="25" y="65" width="205" height="105" rx="13" fill="#dce9f3" stroke="#41627a" stroke-width="2"/>
+    <text x="127" y="105" font-size="20" font-weight="bold" fill="#18354b">Permitted evidence</text>
+    <text x="127" y="134" font-size="15" fill="#294c65">current source + scope</text>
+    <rect x="290" y="65" width="185" height="105" rx="13" fill="#fff3d9" stroke="#9b6e18" stroke-width="2"/>
+    <text x="382" y="105" font-size="20" font-weight="bold" fill="#5a4214">Proposed answer</text>
+    <text x="382" y="134" font-size="15" fill="#674b18">untrusted claims</text>
+    <rect x="535" y="65" width="185" height="105" rx="13" fill="#e1e9fc" stroke="#4a63a2" stroke-width="2"/>
+    <text x="627" y="105" font-size="20" font-weight="bold" fill="#263d78">Machine check</text>
+    <text x="627" y="134" font-size="15" fill="#304c88">IDs, cites, tool list</text>
+    <rect x="780" y="65" width="195" height="105" rx="13" fill="#e1f1e9" stroke="#39715b" stroke-width="2"/>
+    <text x="877" y="105" font-size="20" font-weight="bold" fill="#24563f">Human review</text>
+    <text x="877" y="134" font-size="15" fill="#2f654d">claim-by-claim meaning</text>
+    <text x="502" y="220" font-size="17" font-weight="bold" fill="#6a3751">Action proposals stop here; a separate application gate decides authority.</text>
+  </g>
+  <g stroke="#506377" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M235 117h40m-10-9 10 9-10 9"/>
+    <path d="M480 117h40m-10-9 10 9-10 9"/>
+    <path d="M725 117h40m-10-9 10 9-10 9"/>
+  </g>
+</svg>

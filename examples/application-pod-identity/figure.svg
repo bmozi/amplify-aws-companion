@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 680" role="img" aria-labelledby="title desc">
+  <title id="title">Three identity paths for Maya's repair photos</title>
+  <desc id="desc">A customer token goes to the repair API, which checks repair ownership before a worker role writes an object. A direct browser route optionally exchanges sign-in for scoped temporary credentials. An EKS pod uses its namespace and service account association to receive a workload role. S3 authorization remains a separate check.</desc>
+  <rect width="360" height="680" fill="#f8fbfd"/>
+  <path d="M20 20H340 M20 660H340" stroke="#93b2c6"/>
+  <text x="20" y="48" fill="#123a56" font-family="Arial,sans-serif" font-size="19" font-weight="bold">WHO GETS THE CREDENTIAL?</text>
+  <text x="20" y="70" fill="#466579" font-family="Arial,sans-serif" font-size="12">One app, three different authority paths.</text>
+  <rect x="20" y="92" width="320" height="158" rx="12" fill="#e7f2fa" stroke="#5c90b5"/>
+  <text x="34" y="119" fill="#123a56" font-family="Arial,sans-serif" font-size="16" font-weight="bold">1  Customer → API</text>
+  <text x="34" y="145" fill="#274e68" font-family="Arial,sans-serif" font-size="13">User-pool token identifies the caller.</text>
+  <text x="34" y="168" fill="#274e68" font-family="Arial,sans-serif" font-size="13">API checks repair ownership.</text>
+  <path d="M34 184H326" stroke="#8aaec5"/>
+  <text x="34" y="207" fill="#274e68" font-family="Arial,sans-serif" font-size="13">Worker role → scoped S3 request</text>
+  <text x="34" y="229" fill="#9a493e" font-family="Arial,sans-serif" font-size="12">Leo's valid login ≠ Maya's repair</text>
+  <rect x="20" y="264" width="320" height="154" rx="12" fill="#eaf6f1" stroke="#6da98e"/>
+  <text x="34" y="291" fill="#1e5548" font-family="Arial,sans-serif" font-size="16" font-weight="bold">2  Optional direct client</text>
+  <text x="34" y="317" fill="#315e52" font-family="Arial,sans-serif" font-size="13">User pool → identity pool →</text>
+  <text x="34" y="337" fill="#315e52" font-family="Arial,sans-serif" font-size="13">temporary client AWS credentials</text>
+  <path d="M34 352H326" stroke="#9bc6b5"/>
+  <text x="34" y="374" fill="#315e52" font-family="Arial,sans-serif" font-size="13">Client role + object scope reviewed</text>
+  <text x="34" y="397" fill="#9a493e" font-family="Arial,sans-serif" font-size="12">Sign-in alone grants no S3 object</text>
+  <rect x="20" y="432" width="320" height="190" rx="12" fill="#fff3e6" stroke="#d49b58"/>
+  <text x="34" y="459" fill="#694721" font-family="Arial,sans-serif" font-size="16" font-weight="bold">3  EKS worker pod</text>
+  <text x="34" y="485" fill="#745633" font-family="Arial,sans-serif" font-size="13">Cluster + namespace + service account</text>
+  <text x="34" y="507" fill="#745633" font-family="Arial,sans-serif" font-size="13">→ Pod Identity association → role</text>
+  <path d="M34 522H326" stroke="#e0b884"/>
+  <text x="34" y="546" fill="#745633" font-family="Arial,sans-serif" font-size="13">Role grant + S3 controls still decide.</text>
+  <text x="34" y="569" fill="#9a493e" font-family="Arial,sans-serif" font-size="12">Check for node/static credential fallback.</text>
+  <text x="34" y="597" fill="#6d6d6d" font-family="Arial,sans-serif" font-size="11">IRSA uses a different OIDC trust path.</text>
+  <text x="20" y="645" fill="#526b7c" font-family="Arial,sans-serif" font-size="11">Design map • no live AWS result</text>
+</svg>

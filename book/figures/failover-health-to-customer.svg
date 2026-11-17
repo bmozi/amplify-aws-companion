@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="922" viewBox="0 0 360 922" role="img" aria-labelledby="title desc">
+  <title id="title">A health result is not a recovered booking</title>
+  <desc id="desc">Four separate decisions in a conceptual booking recovery. For a Route 53 failover pair with health checks on both records, an unhealthy primary and healthy standby can return the standby for a new lookup; if both are unhealthy, Route 53 can return the primary. A regional Application Load Balancer normally chooses healthy registered targets, but if a target group contains only unhealthy registered targets, requests can still reach them all. A cached DNS answer can keep a client on the former primary. Customer reopening separately requires useful capacity, old and new booking evidence, one correct writer, the client path and denial for an unrelated tenant. The 55-versus-80-bookings example is fictional; no DNS, ALB, database or failover was deployed or tested here.</desc>
+  <rect width="360" height="922" fill="#ffffff"/>
+  <g font-family="Arial,sans-serif" fill="#173347">
+    <text x="18" y="34" font-size="21" font-weight="700">A health result is not</text>
+    <text x="18" y="60" font-size="21" font-weight="700">a recovered booking</text>
+    <text x="18" y="88" font-size="16" fill="#405966">Check each layer before reopening.</text>
+
+    <rect x="18" y="108" width="324" height="168" rx="11" fill="#eaf3f8" stroke="#7198ad" stroke-width="2"/>
+    <text x="34" y="139" font-size="18" font-weight="700">1 · Route 53 failover pair</text>
+    <text x="34" y="169" font-size="16">Health checked on both records:</text>
+    <text x="34" y="198" font-size="16">Primary bad, standby good?</text>
+    <text x="34" y="224" font-size="16">New lookup gets standby.</text>
+    <text x="34" y="256" font-size="16">Both bad? Primary can return.</text>
+
+    <rect x="18" y="294" width="324" height="151" rx="11" fill="#fff4e5" stroke="#bf9a5c" stroke-width="2"/>
+    <text x="34" y="325" font-size="18" font-weight="700">2 · Regional ALB targets</text>
+    <text x="34" y="355" font-size="16">Healthy targets normally serve.</text>
+    <text x="34" y="389" font-size="16">All registered targets unhealthy?</text>
+    <text x="34" y="420" font-size="16">Requests can still reach them.</text>
+
+    <rect x="18" y="463" width="324" height="111" rx="11" fill="#fbecea" stroke="#bb7770" stroke-width="2"/>
+    <text x="34" y="494" font-size="18" font-weight="700">3 · Cached client path</text>
+    <text x="34" y="524" font-size="16">An old DNS answer can still point</text>
+    <text x="34" y="550" font-size="16">to the former primary.</text>
+
+    <rect x="18" y="592" width="324" height="236" rx="11" fill="#eaf4ea" stroke="#76a081" stroke-width="2"/>
+    <text x="34" y="623" font-size="18" font-weight="700">4 · Customer recovery gate</text>
+    <text x="34" y="654" font-size="16">Fictional capacity: 55 bookings/min.</text>
+    <text x="34" y="681" font-size="16">80 arrive; shortfall is 25.</text>
+    <text x="34" y="718" font-size="16">Prove an old and a new booking,</text>
+    <text x="34" y="744" font-size="16">the correct writer and client path.</text>
+    <text x="34" y="784" font-size="16">Deny an unrelated tenant.</text>
+
+    <text x="18" y="863" font-size="15" fill="#405966">A route or green check is not proof</text>
+    <text x="18" y="886" font-size="15" fill="#405966">of a completed customer booking.</text>
+    <text x="18" y="911" font-size="13" fill="#405966">Conceptual case; no live failover test.</text>
+  </g>
+</svg>

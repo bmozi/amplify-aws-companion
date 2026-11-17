@@ -1,0 +1,17 @@
+{
+  "version": "0",
+  "id": "fictional-event-01",
+  "source": "aws.cloudwatch",
+  "detail-type": "CloudWatch Alarm State Change",
+  "account": "111122223333",
+  "region": "us-east-2",
+  "time": "2026-10-19T10:02:00Z",
+  "resources": [
+    "arn:aws:cloudwatch:us-east-2:111122223333:alarm:amplify-aws-local-booking-server-errors"
+  ],
+  "detail": {
+    "alarmName": "amplify-aws-local-booking-server-errors",
+    "previousState": {"value": "OK"},
+    "state": {"value": "ALARM"}
+  }
+}

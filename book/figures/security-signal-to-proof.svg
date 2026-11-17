@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="688" viewBox="0 0 360 688" role="img" aria-labelledby="title desc">
+<title id="title">A security warning becomes a bounded repair only after scope and proof</title>
+<desc id="desc">Four review steps: treat a finding or drill as a question, locate the exact account, Region, resource, time and authority, make an owner-approved bounded change, then observe allowed and denied requests plus recovery and report coverage. Compare the sources before acting: a green row may omit a resource, and a red finding may name an old image. Hold when scope or customer effect is unknown. This fictional review does not test an AWS security control.</desc>
+<defs><style>text{font-family:Arial,sans-serif;fill:#193646}.title{font-size:19px;font-weight:700}.sub{font-size:13px;fill:#31586a}.head{font-size:16px;font-weight:700}.body{font-size:14px}.note{font-size:13px;fill:#31586a}.num{fill:#fff}</style></defs>
+<rect width="360" height="688" fill="#fff"/>
+<text class="title" x="16" y="30">A warning is a question</text>
+<text class="sub" x="16" y="51">Read all four steps before calling a path safe.</text>
+<path d="M35 76V534" fill="none" stroke="#7795a5" stroke-width="2" stroke-dasharray="4 5"/>
+<rect x="16" y="69" width="328" height="108" rx="11" fill="#fbecea" stroke="#b86961" stroke-width="1.5"/>
+<circle cx="36" cy="93" r="13" fill="#a85650"/><text class="num" x="36" y="98" text-anchor="middle" font-size="15" font-weight="700">1</text>
+<text class="head" x="57" y="99">Name the signal</text>
+<text class="body" x="30" y="126">A finding or drill asks a question.</text>
+<text class="body" x="30" y="151">It is not proof of customer harm.</text>
+<rect x="16" y="185" width="328" height="108" rx="11" fill="#e9f2f8" stroke="#5b8da8" stroke-width="1.5"/>
+<circle cx="36" cy="209" r="13" fill="#4c7892"/><text class="num" x="36" y="214" text-anchor="middle" font-size="15" font-weight="700">2</text>
+<text class="head" x="57" y="215">Locate the real scope</text>
+<text class="body" x="30" y="242">Account, Region, resource, time.</text>
+<text class="body" x="30" y="267">Reader, policy, and data owner.</text>
+<rect x="16" y="301" width="328" height="108" rx="11" fill="#fff2dc" stroke="#b98b44" stroke-width="1.5"/>
+<circle cx="36" cy="325" r="13" fill="#9b7134"/><text class="num" x="36" y="330" text-anchor="middle" font-size="15" font-weight="700">3</text>
+<text class="head" x="57" y="331">Make one bounded change</text>
+<text class="body" x="30" y="358">Name the owner, diff, and stop rule.</text>
+<text class="body" x="30" y="383">Keep approved work usable.</text>
+<rect x="16" y="417" width="328" height="108" rx="11" fill="#e9f4ec" stroke="#659d75" stroke-width="1.5"/>
+<circle cx="36" cy="441" r="13" fill="#4d8060"/><text class="num" x="36" y="446" text-anchor="middle" font-size="15" font-weight="700">4</text>
+<text class="head" x="57" y="447">Prove the result</text>
+<text class="body" x="30" y="474">Observe allowed and denied requests.</text>
+<text class="body" x="30" y="499">Check recovery and report coverage.</text>
+<rect x="16" y="537" width="328" height="76" rx="10" fill="#eef3f6" stroke="#acc2cc" stroke-width="1.5"/>
+<text class="head" x="30" y="563">Compare sources before acting</text>
+<text class="note" x="30" y="585">Green may omit a resource;</text>
+<text class="note" x="30" y="602">red may name an old image.</text>
+<rect x="16" y="621" width="328" height="56" rx="10" fill="#fff4e3" stroke="#c29a61" stroke-width="1.5"/>
+<text class="body" x="30" y="644">Hold if scope, owner, access,</text>
+<text class="body" x="30" y="665">or customer effect is unknown.</text>
+</svg>

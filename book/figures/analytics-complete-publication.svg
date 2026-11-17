@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="980" viewBox="0 0 420 980" role="img" aria-labelledby="title desc">
+<title id="title">A report reader must select one complete revision</title>
+<desc id="desc">The unsafe local example overwrites files under mutable latest. The old approved parts total 300 cents; after only one replacement, a reader can see 280 cents, neither the old 300 nor the complete new 330. The safer local protocol keeps revision v1 selected, stages immutable v2 parts and a verified manifest, then changes one local selection pointer. Readers pin v1 or v2 for a read, and old parts remain while old readers use them. A collection of S3 objects, a Glue catalog, and Athena readers are not automatically one transaction; cloud selection and concurrent writers require separate design.</desc>
+<rect width="420" height="980" fill="#f6f8f8"/>
+<g font-family="Arial,sans-serif" fill="#193747">
+<text x="18" y="37" font-size="22" font-weight="700">Publish one complete</text>
+<text x="18" y="65" font-size="22" font-weight="700">report revision</text>
+<text x="18" y="93" font-size="16">Mixed files can give a wrong answer.</text>
+<rect x="16" y="111" width="388" height="43" rx="8" fill="#f5dddd"/>
+<text x="28" y="139" font-size="17" font-weight="700">UNSAFE · MUTABLE “LATEST”</text>
+<rect x="16" y="168" width="388" height="146" rx="10" fill="#faeeee" stroke="#9e5248" stroke-width="2"/>
+<text x="29" y="198" font-size="19" font-weight="700">Approved old: 300¢</text>
+<text x="29" y="227" font-size="17">100¢ + 200¢</text>
+<text x="29" y="263" font-size="19" font-weight="700">Mixed files: 280¢</text>
+<text x="29" y="291" font-size="16">100¢ + 180¢; late 50¢ absent.</text>
+<rect x="16" y="334" width="388" height="43" rx="8" fill="#dcebf3"/>
+<text x="28" y="362" font-size="17" font-weight="700">SAFER · VERIFY, THEN SELECT</text>
+<rect x="16" y="392" width="388" height="124" rx="10" fill="#eaf3f7" stroke="#315c70" stroke-width="2"/>
+<text x="29" y="423" font-size="19" font-weight="700">1 · Keep complete v1 selected</text>
+<text x="29" y="453" font-size="17">Old reader pins v1 and gets 300¢.</text>
+<text x="29" y="483" font-size="16">Keep old parts until readers finish.</text>
+<rect x="16" y="530" width="388" height="137" rx="10" fill="#eaf3f7" stroke="#315c70" stroke-width="2"/>
+<text x="29" y="561" font-size="19" font-weight="700">2 · Stage immutable v2</text>
+<text x="29" y="591" font-size="17">100¢ + 180¢ + 50¢.</text>
+<text x="29" y="619" font-size="17">Write manifest and hashes last.</text>
+<text x="29" y="647" font-size="16">Failed stage leaves v1 selected.</text>
+<rect x="16" y="681" width="388" height="124" rx="10" fill="#e6f3eb" stroke="#37714d" stroke-width="2"/>
+<text x="29" y="712" font-size="19" font-weight="700">3 · Verify, then switch once</text>
+<text x="29" y="742" font-size="17">New reader pins v2: 330¢.</text>
+<text x="29" y="771" font-size="16">Lost reply? Reread selection.</text>
+<rect x="16" y="820" width="388" height="91" rx="10" fill="#fff" stroke="#9eabb2" stroke-width="2"/>
+<text x="29" y="850" font-size="19" font-weight="700">Cloud boundary</text>
+<text x="29" y="878" font-size="16">S3, Glue and Athena are not one</text>
+<text x="29" y="899" font-size="16">transaction. Control concurrent writers.</text>
+<text x="18" y="946" font-size="15">Source completeness is a separate claim.</text>
+</g>
+</svg>

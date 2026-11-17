@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="584" viewBox="0 0 700 584" role="img" aria-labelledby="title desc">
+  <title id="title">Security audit evidence paths</title>
+  <desc id="desc">CloudTrail, Config, VPC Flow Logs and drift detection capture different evidence. GuardDuty, Inspector and IAM Access Analyzer produce scoped findings. An operator checks account, Region, resource and time before joining the records and routing an alert. Correlation supports an investigation but does not prove cause.</desc>
+  <rect width="700" height="584" fill="#f8fafc"/>
+  <text x="24" y="35" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#142e3c">Different services answer different questions</text>
+  <text x="24" y="58" font-family="Arial,sans-serif" font-size="15" fill="#405966">Collect only what you need. Keep each source's scope and time.</text>
+
+  <rect x="24" y="75" width="652" height="179" rx="12" fill="#e8f4fb" stroke="#24769d" stroke-width="2"/>
+  <text x="42" y="102" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#075985">Records: what happened or changed?</text>
+  <g font-family="Arial,sans-serif" font-size="16" fill="#18313d">
+    <text x="42" y="132" font-weight="700">CloudTrail</text><text x="222" y="132">Recorded API activity</text>
+    <text x="42" y="161" font-weight="700">AWS Config</text><text x="222" y="161">Recorded resource state</text>
+    <text x="42" y="190" font-weight="700">VPC Flow Logs</text><text x="222" y="190">IP traffic metadata</text>
+    <text x="42" y="219" font-weight="700">Drift detection</text><text x="222" y="219">Supported template differences</text>
+  </g>
+
+  <rect x="24" y="267" width="652" height="151" rx="12" fill="#fff2d9" stroke="#ae732a" stroke-width="2"/>
+  <text x="42" y="294" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#704713">Findings: what looks risky?</text>
+  <g font-family="Arial,sans-serif" font-size="16" fill="#3c321f">
+    <text x="42" y="324" font-weight="700">GuardDuty</text><text x="222" y="324">Threat-pattern findings</text>
+    <text x="42" y="353" font-weight="700">Inspector</text><text x="222" y="353">Supported vulnerability findings</text>
+    <text x="42" y="382" font-weight="700">Access Analyzer</text><text x="222" y="382">Policy access findings</text>
+  </g>
+
+  <rect x="24" y="430" width="652" height="63" rx="11" fill="#e6f4e9" stroke="#2b7752" stroke-width="2"/>
+  <text x="42" y="455" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#20583e">Operator joins exact account, Region, resource and time</text>
+  <text x="42" y="479" font-family="Arial,sans-serif" font-size="15" fill="#315f4c">Check coverage, freshness and ownership before connecting records.</text>
+
+  <rect x="24" y="505" width="652" height="43" rx="10" fill="#eee9f8" stroke="#7254a5" stroke-width="2"/>
+  <text x="42" y="532" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#453271">Alert a named owner; name the next read-only check.</text>
+  <text x="24" y="564" font-family="Arial,sans-serif" font-size="14" fill="#8b2740">Correlated evidence supports a hypothesis; it does not prove cause.</text>
+</svg>

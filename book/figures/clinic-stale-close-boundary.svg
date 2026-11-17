@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360px" height="557px" viewBox="0 0 420 650" role="img" aria-labelledby="title desc">
+  <title id="title">An older offline close cannot erase a newer hazard</title>
+  <desc id="desc">A clinic device holds an old revision-one view while the server accepts a new hazard as revision two. The old device sends a close request with expected revision one. One local SQLite authority returns stale review and leaves the order open. A person must inspect the new report before proposing a new close; this fixture does not prove repair or cloud synchronization.</desc>
+  <style>
+    .heading{font:700 23px Arial,sans-serif;fill:#15354a}.sub{font:15px Arial,sans-serif;fill:#3d5564}
+    .box-title{font:700 18px Arial,sans-serif;fill:#14384b}.body{font:16px Arial,sans-serif;fill:#233d4d}
+    .note{font:14px Arial,sans-serif;fill:#415b69}.arrow{font:700 24px Arial,sans-serif;fill:#1e6c92}
+  </style>
+  <rect width="420" height="650" fill="#f8fbfc"/>
+  <text x="20" y="38" class="heading">A stale close must stop</text>
+  <text x="20" y="63" class="sub">Two reports can describe one machine at different times.</text>
+
+  <rect x="18" y="87" width="384" height="99" rx="12" fill="#e8f2f7" stroke="#6991a5"/>
+  <text x="34" y="116" class="box-title">1  Device has an old view</text>
+  <text x="34" y="143" class="body">Pump 7 is open at revision 1.</text>
+  <text x="34" y="168" class="body">An offline close waits to sync.</text>
+  <text x="198" y="213" class="arrow">↓</text>
+
+  <rect x="18" y="228" width="384" height="99" rx="12" fill="#eaf5ec" stroke="#6fa382"/>
+  <text x="34" y="257" class="box-title">2  Server accepts new hazard</text>
+  <text x="34" y="284" class="body">A new report becomes revision 2.</text>
+  <text x="34" y="309" class="body">The machine remains open.</text>
+  <text x="198" y="354" class="arrow">↓</text>
+
+  <rect x="18" y="369" width="384" height="110" rx="12" fill="#fff0e4" stroke="#c17d54"/>
+  <text x="34" y="398" class="box-title">3  Old close reaches authority</text>
+  <text x="34" y="425" class="body">It expects revision 1, but sees 2.</text>
+  <text x="34" y="451" class="body">Return STALE_REVIEW; keep open.</text>
+  <text x="198" y="507" class="arrow">↓</text>
+
+  <rect x="18" y="521" width="384" height="78" rx="12" fill="#e9edf8" stroke="#758aaf"/>
+  <text x="34" y="550" class="box-title">4  Investigate before any close</text>
+  <text x="34" y="577" class="body">A new decision needs fresh evidence.</text>
+  <text x="20" y="627" class="note">Local SQLite rule; no AWS sync or verified repair.</text>
+</svg>

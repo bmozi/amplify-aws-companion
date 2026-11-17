@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 600" role="img" aria-labelledby="title desc">
+  <title id="title">Three local checks decide whether a container candidate receives traffic</title>
+  <desc id="desc">In a local Docker teaching lab, a bad-readiness configuration answers the liveness endpoint with 200 but readiness with 503, so v1 stays selected and the invoice gate is not run. A second candidate passes both health endpoints but returns a 1000-cent invoice instead of the known 900-cent result, so v1 stays selected. A v2 candidate passes liveness, readiness, the known invoice and release-identity check; the local router sends new requests to v2 before draining v1. One fixture invoice does not prove every invoice correct, and no ECS behavior was tested.</desc>
+  <rect width="360" height="600" fill="#fff"/>
+  <g font-family="Arial,sans-serif" fill="#142e3c">
+    <text x="18" y="36" font-size="24" font-weight="bold">Alive is not correct</text>
+    <text x="18" y="64" font-size="18" fill="#405966">Local Docker release · three gates</text>
+
+    <rect x="16" y="84" width="328" height="137" rx="12" fill="#f9e9e5" stroke="#9b493c" stroke-width="2"/>
+    <text x="30" y="115" font-size="23" font-weight="bold">1 · Bad readiness</text>
+    <text x="30" y="146" font-size="21">/live 200 · /ready 503</text>
+    <text x="30" y="177" font-size="22" font-weight="bold">Keep v1.</text>
+    <text x="30" y="204" font-size="18">Do not run invoice gate.</text>
+
+    <rect x="16" y="236" width="328" height="137" rx="12" fill="#fff2dc" stroke="#8b6220" stroke-width="2"/>
+    <text x="30" y="267" font-size="23" font-weight="bold">2 · Wrong invoice</text>
+    <text x="30" y="298" font-size="20">Health passes · 1,000 ≠ 900</text>
+    <text x="30" y="333" font-size="22" font-weight="bold">Keep v1.</text>
+
+    <rect x="16" y="388" width="328" height="137" rx="12" fill="#e9f1ed" stroke="#294c60" stroke-width="2"/>
+    <text x="30" y="419" font-size="23" font-weight="bold">3 · v2 passes</text>
+    <text x="30" y="450" font-size="20">Health · invoice · ID pass</text>
+    <text x="30" y="485" font-size="21" font-weight="bold">Send traffic to v2.</text>
+    <text x="30" y="512" font-size="18">Then drain v1.</text>
+
+    <text x="18" y="555" font-size="17" fill="#405966">One invoice is only one test.</text>
+    <text x="18" y="581" font-size="17" fill="#405966">Local router; no ECS test.</text>
+  </g>
+</svg>

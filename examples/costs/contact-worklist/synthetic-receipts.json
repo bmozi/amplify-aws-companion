@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "scope": "Invented receipts for a manual two-page due check, a worklist read, and a repeated due check after a lost reply",
+  "invocations": [
+    {
+      "invocation_id": "due-1",
+      "pass_id": "due-first",
+      "action": "check_due",
+      "requested_cursor": null,
+      "response": {
+        "next_cursor": {"pk": "fictional-page-boundary"},
+        "capacity_observations": [
+          {"operation": "contact_due_scan", "outcome": "succeeded", "reported": true, "total_capacity_units": "5", "read_capacity_units": "5"},
+          {"operation": "contact_due_transaction", "outcome": "succeeded", "reported": true, "total_capacity_units": "2", "write_capacity_units": "2"}
+        ]
+      }
+    },
+    {
+      "invocation_id": "due-2",
+      "pass_id": "due-first",
+      "action": "check_due",
+      "requested_cursor": {"pk": "fictional-page-boundary"},
+      "response": {
+        "capacity_observations": [
+          {"operation": "contact_due_scan", "outcome": "succeeded", "reported": true, "total_capacity_units": "3", "read_capacity_units": "3"},
+          {"operation": "contact_due_transaction", "outcome": "canceled", "reported": false}
+        ]
+      }
+    },
+    {
+      "invocation_id": "open-1",
+      "pass_id": "worklist-first",
+      "action": "read_open",
+      "requested_cursor": null,
+      "response": {
+        "capacity_observations": [
+          {"operation": "contact_worklist_scan", "outcome": "succeeded", "reported": true, "total_capacity_units": "2", "read_capacity_units": "2"},
+          {"operation": "contact_worklist_contact_read", "outcome": "succeeded", "reported": true, "total_capacity_units": "1", "read_capacity_units": "1"},
+          {"operation": "contact_worklist_request_read", "outcome": "succeeded", "reported": true, "total_capacity_units": "1", "read_capacity_units": "1"}
+        ]
+      }
+    },
+    {
+      "invocation_id": "due-repeat-1",
+      "pass_id": "due-repeat",
+      "action": "check_due",
+      "requested_cursor": null,
+      "response": {
+        "capacity_observations": [
+          {"operation": "contact_due_scan", "outcome": "succeeded", "reported": true, "total_capacity_units": "8", "read_capacity_units": "8"},
+          {"operation": "contact_due_transaction", "outcome": "canceled", "reported": true, "total_capacity_units": "1.5"}
+        ]
+      }
+    }
+  ]
+}

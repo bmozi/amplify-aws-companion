@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 470" role="img" aria-labelledby="title desc">
+  <title id="title">A mainframe batch migration is gated by business reconciliation</title>
+  <desc id="desc">Online claims enter a daily cutoff. The old batch still sends the bank file. A proposed batch runs without payment authority and its output is compared with the old output before a business acceptance gate.</desc>
+  <rect width="960" height="470" fill="#f9fbff"/>
+  <path d="M25 30h910M25 440h910" stroke="#b8cce2" stroke-width="2"/>
+  <g font-family="Arial,sans-serif" fill="#102d4d">
+    <text x="35" y="67" font-size="24" font-weight="bold">THE PROMISE: CORRECT PAYMENTS BY 06:00</text>
+    <text x="35" y="95" font-size="15">A new runtime matters only if the business result survives.</text>
+  </g>
+  <g font-family="Arial,sans-serif" font-size="17" text-anchor="middle">
+    <rect x="35" y="155" width="150" height="65" rx="9" fill="#dcecf9" stroke="#26649d" stroke-width="2"/><text x="110" y="183" fill="#102d4d">Online claims</text><text x="110" y="204" fill="#102d4d">and corrections</text>
+    <rect x="235" y="155" width="135" height="65" rx="9" fill="#fff0ce" stroke="#b07815" stroke-width="2"/><text x="302" y="183" fill="#503907">Daily cutoff</text><text x="302" y="204" fill="#503907">and snapshot</text>
+    <rect x="428" y="135" width="155" height="65" rx="9" fill="#dcecf9" stroke="#26649d" stroke-width="2"/><text x="505" y="164" fill="#102d4d">Old batch</text><text x="505" y="185" fill="#102d4d">payment writer</text>
+    <rect x="428" y="245" width="155" height="65" rx="9" fill="#e6e2f7" stroke="#6650a3" stroke-width="2"/><text x="505" y="273" fill="#30235d">Proposed batch</text><text x="505" y="294" fill="#30235d">no bank authority</text>
+    <rect x="650" y="135" width="145" height="65" rx="9" fill="#e1f1e6" stroke="#3d8054" stroke-width="2"/><text x="722" y="164" fill="#1e4b2a">Bank file</text><text x="722" y="185" fill="#1e4b2a">and receipt</text>
+    <rect x="650" y="255" width="260" height="85" rx="9" fill="#fff0ce" stroke="#b07815" stroke-width="2"/><text x="780" y="284" fill="#503907">Compare outputs</text><text x="780" y="306" fill="#503907">counts · cents · status</text><text x="780" y="328" fill="#503907">restart · timing · effects</text>
+  </g>
+  <g stroke="#cc7413" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M185 188h50m135 0h58m-125 32v58h125m155-110h67m-67 110h67m72-78v55"/>
+    <path d="m224 181 11 7-11 7m193-14 11 7-11 7m-11 83 11 7-11 7m211-125 11 7-11 7m0 103 11 7-11 7"/>
+  </g>
+  <text x="42" y="390" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#102d4d">STOP GATE</text>
+  <text x="42" y="417" font-family="Arial,sans-serif" font-size="16" fill="#102d4d">Business owner accepts repeated cycles and bank-effect tests before payment authority changes.</text>
+</svg>

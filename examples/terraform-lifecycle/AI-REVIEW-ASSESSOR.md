@@ -1,0 +1,9 @@
+# Answer guide: check the plan's scope
+
+A no-change plan is a statement about the configuration, state and any provider observations used for that plan at its creation time. Normal planning refreshes existing objects by default, but options such as `-refresh=false` can suppress that refresh; the excerpt does not say which options were used. It also does not identify the intended account, Region, workspace, backend, role, lineage or time, and it does not show customer data. It cannot establish that a deleted database or its rows were restored. A plan by itself does not perform a restore.
+
+A defensible response holds the proposed announcement and apply. It first verifies the target and state history using appropriately authorized, read-only evidence; compares current service inventory and configuration; and separately restores or checks data through an approved recovery process and customer-level test. Changes since a saved plan, uncertain identity or mismatched environment require a fresh reviewed plan or a stop, not a blind apply. Do not imply that a fresh no-op establishes business recovery. The local `terraform_data` lab has no real database or AWS provider, so its output tests interpretation of a model, not a cloud recovery.
+
+In the changed case, `-target` focuses planning on the named resource and its dependencies. If the database is outside that scope, a no-change result for the targeted path says nothing about the database's condition. Check the actual target and included resources; do not assume every object is included. HashiCorp recommends targeting only for exceptional circumstances. Even an untargeted, refreshed plan does not prove that customer data was restored.
+
+Codex can suggest questions and summarize sanitized observations, but it cannot infer missing account identity or verify a service outcome from this excerpt. A generated explanation is an assisted answer; retain the learner's initial answer separately.

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="616" viewBox="0 0 360 616" role="img" aria-labelledby="title desc">
+<title id="title">Three checks before using a private address range</title>
+<desc id="desc">A proposed CIDR passes pool rules, a complete list of known address claims, and real route and permission evidence. A paper fit remains a review, not an AWS allocation.</desc>
+<rect width="360" height="616" fill="#f8fbff"/>
+<g font-family="Arial, sans-serif" fill="#102a43">
+<text x="20" y="35" font-size="22" font-weight="700">The address book</text>
+<text x="20" y="62" font-size="22" font-weight="700">is not the road</text>
+<text x="20" y="89" font-size="16">Maya proposes 10.20.4.0/24</text>
+<rect x="18" y="111" width="324" height="109" rx="12" fill="#e5f0fb" stroke="#2165a1" stroke-width="2"/>
+<text x="34" y="144" font-size="20" font-weight="700">1  Pool rules</text>
+<text x="34" y="174" font-size="16">Region, tag, prefix size,</text>
+<text x="34" y="198" font-size="16">and known pool space</text>
+<path d="M180 222v27" stroke="#2165a1" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="18" y="254" width="324" height="145" rx="12" fill="#fff1dd" stroke="#a5650b" stroke-width="2"/>
+<text x="34" y="287" font-size="20" font-weight="700">2  Who already uses it?</text>
+<text x="34" y="317" font-size="16">Managed, unmanaged, ignored,</text>
+<text x="34" y="341" font-size="16">and connected outside AWS</text>
+<text x="34" y="376" font-size="17" fill="#8a3a17" font-weight="700">Known overlap? Hold.</text>
+<path d="M180 401v27" stroke="#2165a1" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="18" y="433" width="324" height="145" rx="12" fill="#e8f4ed" stroke="#28764e" stroke-width="2"/>
+<text x="34" y="466" font-size="20" font-weight="700">3  Prove the real path</text>
+<text x="34" y="496" font-size="16">IPAM allocation and routes</text>
+<text x="34" y="520" font-size="16">Return path and permission</text>
+<text x="34" y="544" font-size="16">Customer operation</text>
+<text x="20" y="606" font-size="16" fill="#38566d">Paper fit = review, not approval</text>
+</g>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0 0l10 5-10 5z" fill="#2165a1"/></marker></defs>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 690" role="img" aria-labelledby="title desc">
+<title id="title">Four signals call for four different response controllers</title>
+<desc id="desc">Four independent response choices. An object or service event can route through an S3 notification or EventBridge to a duplicate-safe queue or handler. A CloudWatch metric can change alarm state and notify or start a scoped action; alarm state does not prove receipt. A service-specific scaling controller can adjust bounded capacity from a useful demand measure. A fresh AWS Config finding can lead to reviewed, manual or bounded Systems Manager remediation through the owner of desired state. Health checks govern traffic routes, while customer completion must be measured separately. No action is installed by this figure.</desc>
+<defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#193747}.title{font-size:18px;font-weight:700}.head{font-size:16px;font-weight:700}.body{font-size:14px}.note{font-size:13px}.box{stroke-width:1.5}</style></defs>
+<rect width="360" height="690" fill="#f6f8f8"/>
+<text x="14" y="29" class="title">Match controller to signal</text>
+<text x="14" y="48" class="note">Four choices, not four steps to run.</text>
+<rect x="14" y="58" width="332" height="122" rx="10" fill="#eaf3f7" stroke="#315c70" class="box"/>
+<text x="27" y="82" class="head">1  A thing happened</text>
+<text x="27" y="104" class="body">S3 notification or EventBridge</text>
+<text x="27" y="122" class="body">→ queue or handler → bounded,</text>
+<text x="27" y="140" class="body">duplicate-safe work.</text>
+<text x="27" y="165" class="note">Check output; avoid event loops.</text>
+<rect x="14" y="190" width="332" height="112" rx="10" fill="#fff1da" stroke="#a46b29" class="box"/>
+<text x="27" y="214" class="head">2  A metric crossed a rule</text>
+<text x="27" y="236" class="body">CloudWatch alarm changes state;</text>
+<text x="27" y="254" class="body">SNS or scoped action may respond.</text>
+<text x="27" y="280" class="note">Check delivery and customer result.</text>
+<rect x="14" y="312" width="332" height="112" rx="10" fill="#e6f3eb" stroke="#37714d" class="box"/>
+<text x="27" y="336" class="head">3  Demand needs capacity</text>
+<text x="27" y="358" class="body">Service controller adjusts workers;</text>
+<text x="27" y="376" class="body">bound min/max, warmup and quota.</text>
+<text x="27" y="402" class="note">Measure useful work and cost.</text>
+<rect x="14" y="434" width="332" height="122" rx="10" fill="#f0eafa" stroke="#6b5288" class="box"/>
+<text x="27" y="458" class="head">4  A setting violates a rule</text>
+<text x="27" y="480" class="body">Check fresh AWS Config finding</text>
+<text x="27" y="498" class="body">and desired-state owner; review</text>
+<text x="27" y="516" class="body">bounded Systems Manager action.</text>
+<text x="27" y="542" class="note">Re-read setting and customer result.</text>
+<rect x="14" y="566" width="332" height="108" rx="10" fill="#fff" stroke="#9eabb2" class="box"/>
+<text x="27" y="590" class="head">Each needs an outcome check</text>
+<text x="27" y="612" class="body">Health checks govern routes, not</text>
+<text x="27" y="630" class="body">full customer completion.</text>
+<text x="27" y="658" class="note">Decision map; no action is installed.</text>
+</svg>

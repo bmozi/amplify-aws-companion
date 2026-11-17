@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+<title id="title">A green page load cannot prove a private note was saved</title>
+<desc id="desc">Four steps run left to right: Hosting delivers page, Cognito signs in, AppSync and DynamoDB save a note, and a refreshed browser confirms the note. Each step has a distinct evidence receipt. A green page response reaches only the first step; the save can remain unconfirmed.</desc>
+<rect width="1200" height="560" fill="#f7fafb"/>
+<text x="54" y="58" font-family="Arial, sans-serif" font-size="31" font-weight="700" fill="#173648">A page can load while a private note fails</text>
+<text x="54" y="93" font-family="Arial, sans-serif" font-size="18" fill="#395867">Follow the customer task through four separate evidence boundaries.</text>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3e697a"/></marker></defs>
+<g font-family="Arial, sans-serif">
+<rect x="54" y="142" width="250" height="160" rx="15" fill="#e3f2f3" stroke="#2e6972" stroke-width="2"/>
+<text x="74" y="183" font-size="22" font-weight="700" fill="#173648">1. Page delivered</text>
+<text x="74" y="216" font-size="17" fill="#224b5b">Amplify Hosting</text>
+<text x="74" y="247" font-size="16" fill="#224b5b">HTML and assets load</text>
+<rect x="74" y="264" width="127" height="25" rx="12" fill="#c0e8d4"/><text x="88" y="282" font-size="14" font-weight="700" fill="#20533b">200 observed</text>
+<rect x="344" y="142" width="250" height="160" rx="15" fill="#e3f2f3" stroke="#2e6972" stroke-width="2"/>
+<text x="364" y="183" font-size="22" font-weight="700" fill="#173648">2. User signed in</text>
+<text x="364" y="216" font-size="17" fill="#224b5b">Cognito identity</text>
+<text x="364" y="247" font-size="16" fill="#224b5b">Session reaches the app</text>
+<rect x="634" y="142" width="250" height="160" rx="15" fill="#fff0e2" stroke="#b35b35" stroke-width="2"/>
+<text x="654" y="183" font-size="22" font-weight="700" fill="#583524">3. Save attempted</text>
+<text x="654" y="216" font-size="17" fill="#583524">AppSync → DynamoDB</text>
+<text x="654" y="247" font-size="16" fill="#583524">Write outcome uncertain</text>
+<rect x="924" y="142" width="222" height="160" rx="15" fill="#fff0e2" stroke="#b35b35" stroke-width="2"/>
+<text x="944" y="183" font-size="22" font-weight="700" fill="#583524">4. Note confirmed</text>
+<text x="944" y="216" font-size="17" fill="#583524">Refresh as same owner</text>
+<text x="944" y="247" font-size="16" fill="#583524">Read durable record</text>
+<path d="M307 222H329M597 222H619M887 222H909" stroke="#3e697a" stroke-width="3"/><path d="M329 213L343 222L329 231ZM619 213L633 222L619 231ZM909 213L923 222L909 231Z" fill="#3e697a"/>
+<text x="54" y="357" font-size="20" font-weight="700" fill="#173648">Evidence needed at each step</text>
+<rect x="54" y="375" width="250" height="75" rx="10" fill="#fff" stroke="#aac5ca"/>
+<text x="70" y="404" font-size="16" fill="#234b5b">Exact URL and served bytes</text>
+<text x="70" y="429" font-size="15" fill="#526b75">Does not prove sign-in or save</text>
+<rect x="344" y="375" width="250" height="75" rx="10" fill="#fff" stroke="#aac5ca"/>
+<text x="360" y="404" font-size="16" fill="#234b5b">Authenticated user path</text>
+<text x="360" y="429" font-size="15" fill="#526b75">Does not prove a stored note</text>
+<rect x="634" y="375" width="250" height="75" rx="10" fill="#fff" stroke="#d1a884"/>
+<text x="650" y="404" font-size="16" fill="#583524">Request and dependency result</text>
+<text x="650" y="429" font-size="15" fill="#785642">Error class, time, coverage</text>
+<rect x="924" y="375" width="222" height="75" rx="10" fill="#fff" stroke="#d1a884"/>
+<text x="940" y="404" font-size="16" fill="#583524">Refreshed note visible</text>
+<text x="940" y="429" font-size="15" fill="#785642">Customer outcome receipt</text>
+<rect x="54" y="478" width="1092" height="47" rx="8" fill="#e9edf0"/>
+<text x="72" y="508" font-size="16" fill="#344f5b">This is an observation design, not deployed monitoring. Missing events remain unknown; telemetry has privacy and cost.</text>
+</g>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="1250" viewBox="0 0 780 1250" role="img" aria-labelledby="title desc">
+  <title id="title">Four receipts for one release</title>
+  <desc id="desc">A fictional release follows four checks: match the reviewed source to the built artifact; inspect the infrastructure change and its owner; inspect every intended account and Region; then test the running artifact and customer booking. A green top-level StackSet operation can still hide a failed destination. Hold and repair the first failed boundary before reopening. This is a review method, not a deployed system.</desc>
+  <defs><style>.bg{fill:#f5f8fa}.ink{fill:#15374b;font:700 33px sans-serif}.body{fill:#254d62;font:27px sans-serif}.small{fill:#3f6172;font:24px sans-serif}.blue{fill:#e6f1f8;stroke:#568aa8;stroke-width:3}.gold{fill:#fff0d5;stroke:#bc8a32;stroke-width:3}.red{fill:#fbe8e5;stroke:#b85d52;stroke-width:3}.green{fill:#e4f3e9;stroke:#5e9d73;stroke-width:3}.arrow{stroke:#5a7888;stroke-width:5;fill:none;marker-end:url(#head)}</style><marker id="head" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M1 1 11 6 1 11Z" fill="#5a7888"/></marker></defs>
+  <rect class="bg" width="780" height="1250"/>
+  <text x="38" y="62" class="ink">A release needs four receipts</text>
+  <text x="38" y="103" class="small">Follow the same reviewed change all the way through.</text>
+  <rect x="38" y="135" width="704" height="163" rx="18" class="blue"/>
+  <text x="65" y="183" class="ink">1  Source and artifact</text>
+  <text x="65" y="226" class="body">Which commit produced this exact image?</text>
+  <text x="65" y="265" class="small">Record the build, test and image identity.</text>
+  <path class="arrow" d="M390 303v34"/>
+  <rect x="38" y="350" width="704" height="163" rx="18" class="gold"/>
+  <text x="65" y="398" class="ink">2  Infrastructure</text>
+  <text x="65" y="441" class="body">Who owns each proposed change?</text>
+  <text x="65" y="480" class="small">Read the plan, change set and events.</text>
+  <path class="arrow" d="M390 518v34"/>
+  <rect x="38" y="565" width="704" height="163" rx="18" class="red"/>
+  <text x="65" y="613" class="ink">3  Destinations</text>
+  <text x="65" y="656" class="body">Did every intended account and Region finish?</text>
+  <text x="65" y="695" class="small">A green operation can hide a failed instance.</text>
+  <path class="arrow" d="M390 733v34"/>
+  <rect x="38" y="780" width="704" height="163" rx="18" class="green"/>
+  <text x="65" y="828" class="ink">4  Customer outcome</text>
+  <text x="65" y="871" class="body">Is the new image running with usable capacity?</text>
+  <text x="65" y="910" class="small">Confirm a known booking on each required path.</text>
+  <path class="arrow" d="M390 948v34"/>
+  <rect x="38" y="995" width="704" height="139" rx="18" class="gold"/>
+  <text x="65" y="1046" class="ink">If a receipt fails: HOLD</text>
+  <text x="65" y="1090" class="body">Repair the first failed boundary; check again.</text>
+  <text x="38" y="1187" class="small">Fictional review path. No deployment or customer</text>
+  <text x="38" y="1219" class="small">traffic was tested; budget overlap and cleanup.</text>
+</svg>

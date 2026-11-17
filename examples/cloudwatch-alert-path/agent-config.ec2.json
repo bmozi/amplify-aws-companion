@@ -1,0 +1,26 @@
+{
+  "agent": {
+    "metrics_collection_interval": 60
+  },
+  "metrics": {
+    "namespace": "AmplifyAWS/BookingHost",
+    "metrics_collected": {
+      "mem": {
+        "measurement": ["mem_used_percent"]
+      }
+    }
+  },
+  "logs": {
+    "logs_collected": {
+      "files": {
+        "collect_list": [
+          {
+            "file_path": "/var/log/booking/booking.jsonl",
+            "log_group_name": "/amplify-aws/amplify-aws-local/booking",
+            "log_stream_name": "{instance_id}"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+# Assessor: one claim, uncertain outside result
+
+Read after recording your first answers. The fixture is a one-host concurrency analogy, not a calibrated assessment or a real credit system.
+
+1. Keep `op-17` pending. A new ID could cause a second outside effect. Use the provider's authoritative operation lookup or other trusted reconciliation path, tied to the original ID and customer/job, before deciding what happened. If that path cannot settle the result, preserve the pending claim and escalate; silence does not mean failure.
+2. The claim is bound to actor, job, amount and approval. The 1,300-cent proposal conflicts with the stored 1,200-cent claim, so the ledger returns `conflict`. A real handler must also recheck the current trusted intent and approval before any new effect.
+3. The pending claim consumes the one local slot. The other ID gets `limit_reached`. A dashboard that is quiet or delayed does not prove the first provider action failed; freeing the slot requires an authorized, evidence-backed resolution rule.
+4. One empty eventually consistent lookup leaves the effect unknown. Require a documented provider idempotency key and status/settlement contract with suitable timing and coverage before a retry or cancellation rule. If that evidence is unavailable, hold and investigate rather than inventing a safe resend.
+5. `confirm()` checks only that the supplied string is nonempty, names an existing local operation and does not conflict with an already stored receipt. It cannot authenticate the provider. A real integration needs a trusted response or authenticated reconciliation read, exact operation and customer matching, and a record of who or what accepted the result.
+
+The two-worker tests prove that this SQLite file serializes the selected local claims. They do not prove behavior across hosts, Regions or a provider, and the fixture does not run the earlier authorization gate in the same transaction. A DynamoDB conditional write is a possible cloud primitive for one operation key, but the full limit, effective policy, current approval, external idempotency, recovery and cost need their own design and tests. Do not award a real-world exactly-once claim from this exercise.

@@ -1,0 +1,22 @@
+# Deploy the code; preserve the data — assessor notes
+
+This is a reasoning guide, not a fixed architecture prescription. A strong answer starts with what must survive and who must access it, then chooses an interface and deployment owner. It separates code artifacts from application state and states unresolved platform/version facts.
+
+1. **Consent file:** EC2 instance store is temporary; data disappears when its instance stops, hibernates or terminates. A root EBS volume's fate on termination depends on DeleteOnTermination (attached at launch, it is commonly set to delete by default). A retained EBS volume continues to incur storage cost. Changing the AMI changes the machine image; it does not back up or reconcile the authoritative consent records. A strong answer puts the real records in a suitable data service, or explicitly manages a separate volume/snapshot migration and restore path, and checks schema/record parity before retiring the old instance.
+2. **Uploads:** A container writable layer belongs to that container and disappears with it. If workers need a shared mounted file interface, investigate EFS integration and network/identity permissions; if files are addressed and authorized as objects, evaluate S3 APIs, object keys, metadata, versioning/retention and access policies. Neither service is automatic: design tenant/user authorization, cleanup/retention, backups/recovery and request/storage cost. The requirement decides the interface.
+3. **EKS:** A persistent volume is separate from a pod lifecycle, but storage-driver support and placement matter. EBS is zonal block storage with a CSI driver and access/attachment constraints; AWS notes the EBS CSI driver cannot mount EBS volumes to Fargate pods. EFS can serve shared file needs when its EKS driver/network path and permissions are configured. Object storage is an API access pattern, not a POSIX file mount by default. Scratch/configuration can be ephemeral if the application can recreate it. Verify cluster mode, workload platform, driver, storage class, topology, access mode, backup/snapshot behavior and cost from current docs.
+4. **Lambda:** `/tmp` is temporary storage for an execution environment, useful for downloaded processing inputs and intermediate outputs. Warm reuse is an optimization observation, not a durable guarantee or business record store. Persist an invoice to an approved durable service with idempotent writes, least-privilege access, retry handling, retention/deletion policy and reconciliation. Confirm current service quota/price only if a live test is separately planned.
+5. **Tools:** Image Builder creates/tests/distributes a reusable AMI or container image; it does not by itself roll application traffic to a running fleet. CodeDeploy supports EC2/On-Premises, ECS and Lambda with different mechanics; the EC2 path requires its agent. ECS blue/green may use CodeDeploy or CloudFormation; the ECS controller's supported rollout choices also matter. EKS uses Kubernetes workload controllers/cluster delivery workflows rather than CodeDeploy. Amplify Hosting provides a Git-connected web-app build and hosting workflow, not a universal fleet agent.
+
+## Common reasoning misses
+
+- Treating “durable” as an unqualified promise, ignoring termination settings, availability zone, access configuration, snapshots, retention or deletion.
+- Treating an AMI, container image or release ZIP as the application's only data backup.
+- Using the container writable layer or Lambda `/tmp` as the only business record because one local or warm test happened to work.
+- Assuming EBS, EFS, S3 and databases share the same protocol, concurrency or consistency behavior.
+- Selecting shared storage without defining who can read, write, list, delete or recover another customer's objects.
+- Assuming CodeDeploy covers EKS because both are AWS deployment services, or that Image Builder performs the entire application deployment.
+- Omitting costs for running image-build instances, EBS snapshots/volumes, EFS, S3 requests/storage, ECR image transfer, logs, and temporary blue/green overlap. Check current price details for the region and chosen configuration.
+- Calling a plan safe without a concrete preflight, failure observation, stop condition and cleanup inventory.
+
+No AWS deployment, storage setup, bill, organization share or independent learner outcome was observed. The worksheet remains design-only.

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "scope": "selected public Ohio S3 on-demand meters; pre-credit gross estimate only",
+  "checked_at_utc": "2026-10-21T00:23:03.183139+00:00",
+  "source": {
+    "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonS3/current/us-east-2/index.json",
+    "sha256": "52b93329ad3e132d8195b27b027907322a7a142fafef301d55073605826452da",
+    "publication_date": "2026-10-15T17:35:40Z",
+    "version": "20261015173540"
+  },
+  "rates": {
+    "standard_storage": {
+      "sku": "YPGKVRB2EKTVDJDT",
+      "usage_type": "USE2-TimedStorage-ByteHrs",
+      "unit": "GB-Mo",
+      "begin_range": "0",
+      "usd_per_unit": "0.0230000000"
+    },
+    "ia_storage": {
+      "sku": "FNWV6QQJ34ZTYY9U",
+      "usage_type": "USE2-TimedStorage-SIA-ByteHrs",
+      "unit": "GB-Mo",
+      "begin_range": "0",
+      "usd_per_unit": "0.0125000000"
+    },
+    "ia_small_floor": {
+      "sku": "V2ARAHA4T9964FN5",
+      "usage_type": "USE2-TimedStorage-SIA-SmObjects",
+      "unit": "GB-Mo",
+      "begin_range": "0",
+      "usd_per_unit": "0.0125000000"
+    },
+    "standard_put": {
+      "sku": "GJKK9PMSTKPNGZS9",
+      "usage_type": "USE2-Requests-Tier1",
+      "unit": "Requests",
+      "begin_range": "0",
+      "usd_per_unit": "0.0000050000"
+    },
+    "ia_put": {
+      "sku": "VHQYNB4HK92W7HCD",
+      "usage_type": "USE2-Requests-SIA-Tier1",
+      "unit": "Requests",
+      "begin_range": "0",
+      "usd_per_unit": "0.0000100000"
+    },
+    "ia_early_storage": {
+      "sku": "TYYBB3K5HTXZS3CW",
+      "usage_type": "USE2-EarlyDelete-SIA",
+      "unit": "GB-Mo",
+      "begin_range": "0",
+      "usd_per_unit": "0.0125000000"
+    },
+    "ia_early_small_floor": {
+      "sku": "CZM8DDXKKEQKFKSG",
+      "usage_type": "USE2-EarlyDelete-SIA-SmObjects",
+      "unit": "GB-Mo",
+      "begin_range": "0",
+      "usd_per_unit": "0.0125000000"
+    }
+  }
+}

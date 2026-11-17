@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 780" role="img" aria-labelledby="title desc">
+  <title id="title">Choose an artifact repository by its lookup contract</title>
+  <desc id="desc">Three independent comparisons: a package library belongs in a package repository such as CodeArtifact and is selected by package format, name and version; a container image belongs in ECR and exact identity uses its digest rather than a movable tag; a ZIP or static release bundle belongs in S3 and is selected by bucket, key and, when enabled, version ID. For any choice, review publisher and reader, trusted origin, retention, recovery and cost. Storage does not itself prove deployment or customer behavior.</desc>
+  <rect width="720" height="780" fill="#fff"/>
+  <g font-family="Arial,sans-serif" fill="#173243">
+    <text x="42" y="46" font-size="27" font-weight="700">Choose by how the next tool finds it</text>
+    <text x="42" y="76" font-size="18" fill="#49606a">Three artifact shapes need three different lookup contracts.</text>
+    <g stroke-width="2.2">
+      <rect x="42" y="105" width="636" height="150" rx="14" fill="#f0ebfa" stroke="#78649c"/>
+      <rect x="42" y="272" width="636" height="150" rx="14" fill="#e8f2fb" stroke="#3c7194"/>
+      <rect x="42" y="439" width="636" height="150" rx="14" fill="#e9f5ed" stroke="#43816a"/>
+    </g>
+    <g font-size="22" font-weight="700">
+      <text x="64" y="145">Package library → CodeArtifact</text>
+      <text x="64" y="312">Container image → Amazon ECR</text>
+      <text x="64" y="479">Release ZIP or static files → Amazon S3</text>
+    </g>
+    <g font-size="18">
+      <text x="64" y="181">Find by package format, name and version.</text>
+      <text x="64" y="211">Record the exact package identity and digest.</text>
+      <text x="64" y="348">Find by repository and image digest.</text>
+      <text x="64" y="378">A tag can move unless immutability is configured.</text>
+      <text x="64" y="515">Find by bucket and object key.</text>
+      <text x="64" y="545">Record version ID when enabled, plus digest.</text>
+    </g>
+    <rect x="42" y="623" width="636" height="128" rx="12" fill="#fff3dc" stroke="#ab7b2b" stroke-width="2"/>
+    <text x="62" y="655" font-size="20" font-weight="700">For each handoff, ask:</text>
+    <text x="62" y="685" font-size="17">Who publishes and reads? Which origin is trusted?</text>
+    <text x="62" y="710" font-size="17">How long is it kept? Can it be recovered? What costs money?</text>
+    <text x="62" y="736" font-size="16">Stored bytes alone do not prove deployment or customer results.</text>
+  </g>
+</svg>

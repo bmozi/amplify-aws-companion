@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1242" role="img" aria-labelledby="title desc">
+<title id="title">A one-Region request has several different recovery decisions</title>
+<desc id="desc">A customer may resolve an endpoint through Route 53; a cached answer can persist. The request then reaches an Application Load Balancer, which selects application target A or B in different Availability Zones using configured routing and health signals. Both targets can use an optional RDS Proxy to reach the current database writer. A separate Multi-AZ standby can become writer after failover; it is not a normal request hop. The diagram does not show a second Region. A healthy route alone does not prove a correct customer booking. Route tables, traces and backups are explained in the adjacent table.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#294c60"/></marker></defs>
+<rect width="360" height="1242" fill="#fff"/>
+<g font-family="Arial,sans-serif" fill="#142e3c">
+<text x="18" y="45" font-size="25" font-weight="bold">One Region, several</text>
+<text x="18" y="76" font-size="22" font-weight="bold">switching jobs</text>
+<text x="18" y="101" font-size="17">A live route is not a correct booking</text>
+<rect x="18" y="122" width="324" height="140" rx="12" fill="#e8f3f5" stroke="#294c60" stroke-width="2"/>
+<text x="34" y="154" font-size="20" font-weight="bold">1 · Route 53 lookup</text>
+<text x="34" y="185" font-size="18">Returns the endpoint.</text>
+<text x="34" y="211" font-size="18">A client may keep its</text>
+<text x="34" y="237" font-size="18">old cached answer.</text>
+<path d="M180 265V284" stroke="#294c60" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="18" y="293" width="324" height="140" rx="12" fill="#e9f1ed" stroke="#294c60" stroke-width="2"/>
+<text x="34" y="325" font-size="20" font-weight="bold">2 · Load balancer</text>
+<text x="34" y="356" font-size="18">Listener and health rules</text>
+<text x="34" y="382" font-size="18">select an app target.</text>
+<text x="34" y="408" font-size="18">Capacity still matters.</text>
+<path d="M180 436V455" stroke="#294c60" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="18" y="464" width="324" height="166" rx="12" fill="#f0f3f7" stroke="#607181" stroke-width="2"/>
+<text x="34" y="496" font-size="20" font-weight="bold">3 · Target A or B</text>
+<text x="34" y="527" font-size="18">A runs in Zone A.</text>
+<text x="34" y="553" font-size="18">B runs in Zone B.</text>
+<text x="34" y="579" font-size="18">The selected app must</text>
+<text x="34" y="605" font-size="18">complete the booking.</text>
+<path d="M180 633V652" stroke="#294c60" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="18" y="661" width="324" height="140" rx="12" fill="#eceafa" stroke="#515b80" stroke-width="2"/>
+<text x="34" y="693" font-size="20" font-weight="bold">4 · Optional RDS Proxy</text>
+<text x="34" y="724" font-size="18">Manages supported</text>
+<text x="34" y="750" font-size="18">database connections.</text>
+<text x="34" y="776" font-size="18">In-flight work may fail.</text>
+<path d="M180 804V823" stroke="#294c60" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="18" y="832" width="324" height="140" rx="12" fill="#fff2dc" stroke="#8b6220" stroke-width="2"/>
+<text x="34" y="864" font-size="20" font-weight="bold">5 · Current DB writer</text>
+<text x="34" y="895" font-size="18">Stores the booking.</text>
+<text x="34" y="921" font-size="18">Check the customer result,</text>
+<text x="34" y="947" font-size="18">not only a healthy route.</text>
+<text x="18" y="1010" font-size="19" font-weight="bold">SEPARATE FAILOVER CANDIDATE</text>
+<rect x="18" y="1026" width="324" height="140" rx="12" fill="#f0f3f7" stroke="#607181" stroke-width="2"/>
+<text x="34" y="1058" font-size="20" font-weight="bold">Multi-AZ standby</text>
+<text x="34" y="1089" font-size="18">May become the writer</text>
+<text x="34" y="1115" font-size="18">after failover. It is not</text>
+<text x="34" y="1141" font-size="18">a normal request hop.</text>
+<text x="18" y="1204" font-size="17">One Region only.</text>
+<text x="18" y="1230" font-size="17">No second-Region path shown.</text>
+</g>
+</svg>

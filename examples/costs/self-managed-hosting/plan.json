@@ -1,0 +1,32 @@
+{
+  "mode": "self_managed_preview",
+  "price_basis": "fictional_teaching_rates",
+  "scenario": "static_site_30_days",
+  "features": {
+    "monitoring": true,
+    "custom_domain": false,
+    "waf": false,
+    "access_logging": false,
+    "ssr": false,
+    "managed_pipeline": false
+  },
+  "meters": [
+    {"name": "cloudfront_transfer_gb", "state": "estimated", "quantity": "5", "rate_usd": "0.20", "basis": "Invented visitor traffic and rate"},
+    {"name": "cloudfront_requests", "state": "estimated", "quantity": "10000", "rate_usd": "0.00001", "basis": "Invented requests and per-request rate"},
+    {"name": "s3_storage_gb_month", "state": "estimated", "quantity": "1", "rate_usd": "0.05", "basis": "Invented build storage and rate"},
+    {"name": "s3_requests", "state": "estimated", "quantity": "1000", "rate_usd": "0.00004", "basis": "Invented deployment requests and rate"},
+    {"name": "cloudwatch_alarms", "state": "estimated", "quantity": "2", "rate_usd": "0.06", "basis": "Invented count and rate; verify actual generated alarms"},
+    {"name": "sns_notifications", "state": "estimated", "quantity": "1", "rate_usd": "0.03", "basis": "Invented allowance for default topic/activity"},
+    {"name": "build_execution", "state": "estimated", "quantity": "1", "rate_usd": "0", "basis": "Build on local laptop in this invented route; review external CI under its separate biller"},
+    {"name": "backend_services", "state": "estimated", "quantity": "1", "rate_usd": "0.30", "basis": "Invented auth/data/function usage allowance"},
+    {"name": "retained_resources", "state": "estimated", "quantity": "1", "rate_usd": "0.10", "basis": "Invented post-test storage and logs allowance"},
+    {"name": "domain_dns_certificate", "state": "not_applicable", "reason": "No custom domain selected"},
+    {"name": "waf_acl_rules_requests", "state": "not_applicable", "reason": "WAF is off in this design"},
+    {"name": "access_log_storage_requests", "state": "not_applicable", "reason": "CloudFront access logging is off"},
+    {"name": "ssr_compute_requests_duration", "state": "not_applicable", "reason": "Static Vite page; no server rendering"},
+    {"name": "managed_pipeline", "state": "not_applicable", "reason": "No CodePipeline selected"}
+  ],
+  "contingency_usd": "0.50",
+  "fictional_credit_balance_usd": "105",
+  "reserve_usd": "100"
+}

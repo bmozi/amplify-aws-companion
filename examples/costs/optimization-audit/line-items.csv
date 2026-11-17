@@ -1,0 +1,15 @@
+period,resource_id,service,meter,quantity,unit,precredit_usd,project
+baseline,worker,EC2,compute,100,hours,40.00,repair
+baseline,database,RDS,compute,100,hours,30.00,repair
+baseline,delivery,Network,internet_out,20,GB,2.00,
+baseline,snapshot,S3,retained_copy,8,GB-month,8.00,repair
+baseline,old-volume,EBS,volume_storage,6,GB-month,6.00,
+baseline,logs,CloudWatch,ingestion,3,GB,3.00,
+baseline,identity,Shared,platform,100,hours,12.00,shared
+current,worker,EC2,compute,100,hours,40.00,repair
+current,database,RDS,compute,100,hours,30.00,repair
+current,delivery,Network,internet_out,180,GB,18.00,
+current,snapshot,S3,retained_copy,8,GB-month,8.00,repair
+current,old-volume,EBS,volume_storage,6,GB-month,6.00,
+current,logs,CloudWatch,ingestion,3,GB,3.00,
+current,identity,Shared,platform,100,hours,12.00,shared

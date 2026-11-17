@@ -1,0 +1,380 @@
+{
+  "currency": "USD",
+  "region": "us-east-2",
+  "checked_date": "2026-10-19",
+  "run_review": {
+    "status": "pending",
+    "account_id": "REPLACE_WITH_CONFIRMED_ACCOUNT",
+    "architecture": "A02/A03",
+    "hold_mode": "query_due",
+    "schedule_mode": "scheduled_due_tick",
+    "cost_drivers": {
+      "data_transfer": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "tax": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "shared_resources": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "retries": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "repeat_runs": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "retained_storage": {
+        "decision": "pending",
+        "reason": ""
+      },
+      "cleanup_delay": {
+        "decision": "pending",
+        "reason": ""
+      }
+    },
+    "schedule_review": {
+      "operator": "pending",
+      "inspection_interval_minutes": 0,
+      "delivery_failure_procedure": "pending",
+      "execution_failure_procedure": "pending",
+      "backlog_reconciliation_procedure": "pending",
+      "cleanup_deadline_epoch": 0
+    }
+  },
+  "contingency_percent": 100,
+  "items": [
+    {
+      "meter_id": "lambda_requests",
+      "name": "Lambda requests including retries",
+      "quantity": 500,
+      "unit": "request",
+      "usd_per_unit": "2.000E-7",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSLambda/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "lambda_compute",
+      "name": "Lambda compute at 128 MiB and ten-second maximum for 500 invocations",
+      "quantity": 625,
+      "unit": "GB-second",
+      "usd_per_unit": "0.0000166667",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSLambda/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "table_writes",
+      "name": "DynamoDB writes including transactional preparation and retries",
+      "quantity": 5000,
+      "unit": "write request unit",
+      "usd_per_unit": "6.250E-7",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "table_reads",
+      "name": "DynamoDB reads including scans, conditions and retries",
+      "quantity": 10000,
+      "unit": "read request unit",
+      "usd_per_unit": "1.250E-7",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "table_storage",
+      "name": "DynamoDB data retained through cleanup",
+      "quantity": 0.001,
+      "unit": "GB-month",
+      "usd_per_unit": "0.2500000000",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "due_gsi_writes",
+      "name": "DynamoDB due-holds GSI write work including backfill if applicable",
+      "quantity": 5000,
+      "unit": "write request unit",
+      "usd_per_unit": "6.250E-7",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "due_gsi_reads",
+      "name": "DynamoDB due-holds GSI query reads and retries",
+      "quantity": 1000,
+      "unit": "read request unit",
+      "usd_per_unit": "1.250E-7",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "due_gsi_storage",
+      "name": "DynamoDB due-holds GSI data retained through cleanup",
+      "quantity": 0.001,
+      "unit": "GB-month",
+      "usd_per_unit": "0.2500000000",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "sqs_standard_requests",
+      "name": "SQS send receive delete and polling",
+      "quantity": 400000,
+      "unit": "request unit",
+      "usd_per_unit": "4.000E-7",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSQueueService/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "logs_ingest",
+      "name": "CloudWatch log ingestion",
+      "quantity": 0.01,
+      "unit": "GB ingested",
+      "usd_per_unit": "0.5000000000",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "logs_retention",
+      "name": "CloudWatch log retention until deletion",
+      "quantity": 0.001,
+      "unit": "GB-month",
+      "usd_per_unit": "0.0300000000",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "eventbridge_scheduler_invocations",
+      "name": "EventBridge Scheduler deliveries and retries",
+      "quantity": 242,
+      "unit": "request",
+      "usd_per_unit": "0.0000010000",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSEvents/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "tick_delivery_sqs_requests",
+      "name": "Scheduler delivery failure queue sends receives and deletes",
+      "quantity": 200,
+      "unit": "request unit",
+      "usd_per_unit": "4.000E-7",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSQueueService/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "tick_execution_sqs_requests",
+      "name": "Lambda execution failure queue sends receives and deletes",
+      "quantity": 200,
+      "unit": "request unit",
+      "usd_per_unit": "4.000E-7",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSQueueService/current/us-east-2/index.json"
+    },
+    {
+      "meter_id": "tick_alarm_months",
+      "name": "Four CloudWatch alarms through a two-hour run and cleanup buffer",
+      "quantity": 0.03,
+      "unit": "alarm-month",
+      "usd_per_unit": "0.1000000000",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/us-east-2/index.json"
+    }
+  ],
+  "limitations": [
+    "Pending teaching scenario, not a complete reviewed live-run estimate, AWS bill or spending cap.",
+    "Public paid-tier rates are used without Free Tier or credits; verify service pricing pages, account eligibility and current offer dimensions before a run.",
+    "A Scheduler paid-tier dimension starts after 14 million account-level invocations; using it here is a conservative no-free-allowance estimate, not a claim this account crossed that tier.",
+    "Quantities are invented buffers; delivery retries, Lambda replays, index lag, failure inspection, repeated runs and cleanup can differ.",
+    "Standard SQS retention has no separate GB-month price; review request, applicable transfer and any chosen KMS costs.",
+    "Account, scoped identity, exact Terraform plan, operator, due-backlog procedure, all cost-driver decisions and later billing remain unverified."
+  ],
+  "scenario": {
+    "kind": "illustrative_not_authorized",
+    "planned_handler_window_hours": 2,
+    "scheduler_occurrences": "121 baseline minute boundaries, plus one delivery retry per occurrence as a planning buffer; not a billing cap",
+    "failure_queue_requests": "200 per queue for inspection/polling and possible send/receive/delete work; not observed usage",
+    "sqs_original_workload": "400000 standard requests for the original A02 queue stress assumption, separate from both failure-queue rows",
+    "alarm_months": "0.03 alarm-month equals four standard alarms for about 5.4 hours in a 720-hour month, a buffer beyond the planned two-hour run and one-hour cleanup",
+    "storage": "Table, GSI and logs use GB-month buffers; standard SQS retention has no separate storage row"
+  },
+  "price_evidence": {
+    "checked_at_utc": "2026-10-19T22:28:38.862346+00:00",
+    "source": "AWS public Price List Bulk offer files",
+    "services": {
+      "AWSLambda": {
+        "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSLambda/current/us-east-2/index.json",
+        "publication_date": "2026-10-16T18:23:59Z",
+        "sha256": "65fda01ecb393ba5a0d10ac8f769e1a5fdc260dfc171198979af422bdc37a5e0"
+      },
+      "AmazonDynamoDB": {
+        "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/us-east-2/index.json",
+        "publication_date": "2026-09-11T12:44:22Z",
+        "sha256": "6fb852c04a82fb5b92affa62d4b25d2c2e22f4ef6c961b49b98d42309ce73cf3"
+      },
+      "AWSQueueService": {
+        "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSQueueService/current/us-east-2/index.json",
+        "publication_date": "2026-09-11T12:46:07Z",
+        "sha256": "f78db035d72477c7972e79cfaa9120a595900313b67dc210a1ba4ea17f4141f8"
+      },
+      "AmazonCloudWatch": {
+        "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/us-east-2/index.json",
+        "publication_date": "2026-10-07T11:55:40Z",
+        "sha256": "a63198fe9401b27344b8f7824c1254b2cc5c22024497a7f696534b2321914ed0"
+      },
+      "AWSEvents": {
+        "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSEvents/current/us-east-2/index.json",
+        "publication_date": "2026-09-24T16:39:03Z",
+        "sha256": "1fedc8cc588813237deb6a63a49dd886bc20ff1adb73896596ef6cbf119378d5"
+      }
+    },
+    "meters": {
+      "lambda_requests": {
+        "service": "AWSLambda",
+        "sku": "ZEA64MMVK5QRB5TC",
+        "usage_type": "USE2-Request",
+        "aws_unit": "Request",
+        "begin_range": "0",
+        "price_dimension": "ZEA64MMVK5QRB5TC.JRTCKXETXF.6YS6EN2CT7",
+        "description": "AWS Lambda - Total Requests - US East (Ohio)",
+        "worksheet_unit": "request"
+      },
+      "lambda_compute": {
+        "service": "AWSLambda",
+        "sku": "3BYZH4NKJN8TJUQ6",
+        "usage_type": "USE2-Lambda-GB-Second",
+        "aws_unit": "Lambda-GB-Second",
+        "begin_range": "0",
+        "price_dimension": "3BYZH4NKJN8TJUQ6.JRTCKXETXF.CUKFZ388N3",
+        "description": "AWS Lambda - Total Compute - US East (Ohio)-Tier-1",
+        "worksheet_unit": "GB-second"
+      },
+      "table_writes": {
+        "service": "AmazonDynamoDB",
+        "sku": "GGQSXTNTRBHRVS56",
+        "usage_type": "USE2-WriteRequestUnits",
+        "aws_unit": "WriteRequestUnits",
+        "begin_range": "0",
+        "price_dimension": "GGQSXTNTRBHRVS56.JRTCKXETXF.6YS6EN2CT7",
+        "description": "$0.625 per million write request units (Ohio)",
+        "worksheet_unit": "write request unit"
+      },
+      "table_reads": {
+        "service": "AmazonDynamoDB",
+        "sku": "SGMZJPDKSWXTY4VE",
+        "usage_type": "USE2-ReadRequestUnits",
+        "aws_unit": "ReadRequestUnits",
+        "begin_range": "0",
+        "price_dimension": "SGMZJPDKSWXTY4VE.JRTCKXETXF.6YS6EN2CT7",
+        "description": "$0.125 per million read request units (Ohio)",
+        "worksheet_unit": "read request unit"
+      },
+      "table_storage": {
+        "service": "AmazonDynamoDB",
+        "sku": "GAHPNMT39TQ47AGG",
+        "usage_type": "USE2-TimedStorage-ByteHrs",
+        "aws_unit": "GB-Mo",
+        "begin_range": "25",
+        "price_dimension": "GAHPNMT39TQ47AGG.JRTCKXETXF.VYAP54KATQ",
+        "description": "$0.25 per GB-Month of storage used beyond first 25 free GB-Months",
+        "worksheet_unit": "GB-month"
+      },
+      "due_gsi_writes": {
+        "service": "AmazonDynamoDB",
+        "sku": "GGQSXTNTRBHRVS56",
+        "usage_type": "USE2-WriteRequestUnits",
+        "aws_unit": "WriteRequestUnits",
+        "begin_range": "0",
+        "price_dimension": "GGQSXTNTRBHRVS56.JRTCKXETXF.6YS6EN2CT7",
+        "description": "$0.625 per million write request units (Ohio)",
+        "worksheet_unit": "write request unit"
+      },
+      "due_gsi_reads": {
+        "service": "AmazonDynamoDB",
+        "sku": "SGMZJPDKSWXTY4VE",
+        "usage_type": "USE2-ReadRequestUnits",
+        "aws_unit": "ReadRequestUnits",
+        "begin_range": "0",
+        "price_dimension": "SGMZJPDKSWXTY4VE.JRTCKXETXF.6YS6EN2CT7",
+        "description": "$0.125 per million read request units (Ohio)",
+        "worksheet_unit": "read request unit"
+      },
+      "due_gsi_storage": {
+        "service": "AmazonDynamoDB",
+        "sku": "GAHPNMT39TQ47AGG",
+        "usage_type": "USE2-TimedStorage-ByteHrs",
+        "aws_unit": "GB-Mo",
+        "begin_range": "25",
+        "price_dimension": "GAHPNMT39TQ47AGG.JRTCKXETXF.VYAP54KATQ",
+        "description": "$0.25 per GB-Month of storage used beyond first 25 free GB-Months",
+        "worksheet_unit": "GB-month"
+      },
+      "sqs_standard_requests": {
+        "service": "AWSQueueService",
+        "sku": "9C8YFGPNBKF9HP9A",
+        "usage_type": "USE2-Requests-Tier1",
+        "aws_unit": "Requests",
+        "begin_range": "0",
+        "price_dimension": "9C8YFGPNBKF9HP9A.JRTCKXETXF.VXGXCWQKTY",
+        "description": "$0.40 per million Amazon SQS standard requests in Tier1 in US East (Ohio)",
+        "worksheet_unit": "request unit"
+      },
+      "logs_ingest": {
+        "service": "AmazonCloudWatch",
+        "sku": "5T6Z6V26DSR7SZ49",
+        "usage_type": "USE2-DataProcessing-Bytes",
+        "aws_unit": "GB",
+        "begin_range": "0",
+        "price_dimension": "5T6Z6V26DSR7SZ49.JRTCKXETXF.6YS6EN2CT7",
+        "description": "$0.50 per GB custom log data ingested in Standard log class - US East (Ohio)",
+        "worksheet_unit": "GB ingested"
+      },
+      "logs_retention": {
+        "service": "AmazonCloudWatch",
+        "sku": "X7X4WD4A95NDR9U5",
+        "usage_type": "USE2-TimedStorage-ByteHrs",
+        "aws_unit": "GB-Mo",
+        "begin_range": "0",
+        "price_dimension": "X7X4WD4A95NDR9U5.JRTCKXETXF.6YS6EN2CT7",
+        "description": "$0.03 per GB-mo of log storage - US East (Ohio)",
+        "worksheet_unit": "GB-month"
+      },
+      "eventbridge_scheduler_invocations": {
+        "service": "AWSEvents",
+        "sku": "534HQFPF6VT4G9Y5",
+        "usage_type": "USE2-ScheduledInvocation",
+        "aws_unit": "Invocations",
+        "begin_range": "14000000",
+        "price_dimension": "534HQFPF6VT4G9Y5.JRTCKXETXF.AGTZK4FFDN",
+        "description": "$1.00 per million scheduled invocations in US East (Ohio)",
+        "worksheet_unit": "request"
+      },
+      "tick_delivery_sqs_requests": {
+        "service": "AWSQueueService",
+        "sku": "9C8YFGPNBKF9HP9A",
+        "usage_type": "USE2-Requests-Tier1",
+        "aws_unit": "Requests",
+        "begin_range": "0",
+        "price_dimension": "9C8YFGPNBKF9HP9A.JRTCKXETXF.VXGXCWQKTY",
+        "description": "$0.40 per million Amazon SQS standard requests in Tier1 in US East (Ohio)",
+        "worksheet_unit": "request unit"
+      },
+      "tick_execution_sqs_requests": {
+        "service": "AWSQueueService",
+        "sku": "9C8YFGPNBKF9HP9A",
+        "usage_type": "USE2-Requests-Tier1",
+        "aws_unit": "Requests",
+        "begin_range": "0",
+        "price_dimension": "9C8YFGPNBKF9HP9A.JRTCKXETXF.VXGXCWQKTY",
+        "description": "$0.40 per million Amazon SQS standard requests in Tier1 in US East (Ohio)",
+        "worksheet_unit": "request unit"
+      },
+      "tick_alarm_months": {
+        "service": "AmazonCloudWatch",
+        "sku": "28VSMYRVQXUWCTMA",
+        "usage_type": "USE2-CW:AlarmMonitorUsage",
+        "aws_unit": "Alarms",
+        "begin_range": "0",
+        "price_dimension": "28VSMYRVQXUWCTMA.JRTCKXETXF.6YS6EN2CT7",
+        "description": "$0.10 per alarm metric month (standard resolution) - US East (Ohio)",
+        "worksheet_unit": "alarm-month"
+      }
+    },
+    "service_pricing_pages": {
+      "AWSLambda": "https://aws.amazon.com/lambda/pricing/",
+      "AmazonDynamoDB": "https://aws.amazon.com/dynamodb/pricing/",
+      "AWSQueueService": "https://aws.amazon.com/sqs/pricing/",
+      "AmazonCloudWatch": "https://aws.amazon.com/cloudwatch/pricing/",
+      "AWSEvents": "https://aws.amazon.com/eventbridge/pricing/"
+    }
+  }
+}

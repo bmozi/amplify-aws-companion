@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: impossible-worker
+  labels:
+    app: impossible-worker
+spec:
+  automountServiceAccountToken: false
+  containers:
+    - name: worker
+      image: amplify-k8s-reality:local
+      imagePullPolicy: Never
+      env:
+        - name: BOOKING_AMOUNT
+          value: "2300"
+      resources:
+        requests:
+          cpu: "1000"
+          memory: 32Mi

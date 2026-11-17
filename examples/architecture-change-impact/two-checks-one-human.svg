@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-labelledby="title desc">
+  <title id="title">A graph, a shared checklist and a human review catch different omissions</title>
+  <desc id="desc">A changed promise feeds an authored dependency graph and a separately authored seven-question foundation map. The graph detects a disconnected known node. The foundation map detects a known obligation whose node vanished. Both feed human review, which still must discover unique business needs that neither author recorded.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#31576b"/></marker>
+  </defs>
+  <rect width="960" height="440" fill="#fff"/>
+  <g font-family="Arial,sans-serif" fill="#19364b">
+    <text x="30" y="43" font-size="27" font-weight="bold">Two checks help; a person still owns the design</text>
+    <text x="30" y="73" font-size="17">Example: restore Shop A without losing Shop B's newer requests.</text>
+    <rect x="30" y="151" width="211" height="135" rx="14" fill="#e2edf5" stroke="#31576b" stroke-width="2.5"/>
+    <text x="48" y="187" font-size="21" font-weight="bold">Changed promise</text>
+    <text x="48" y="220" font-size="17">One shop recovers.</text>
+    <text x="48" y="246" font-size="17">Shop B stays current.</text>
+    <rect x="303" y="101" width="307" height="128" rx="14" fill="#e6f2ed" stroke="#39745b" stroke-width="2.5"/>
+    <text x="321" y="134" font-size="21" font-weight="bold">1  Follow the authored graph</text>
+    <text x="321" y="163" font-size="17">Reach every written decision?</text>
+    <text x="321" y="190" font-size="16">An unlinked decision is visible.</text>
+    <rect x="303" y="245" width="307" height="157" rx="14" fill="#fff0d9" stroke="#9b6a18" stroke-width="2.5"/>
+    <text x="321" y="279" font-size="21" font-weight="bold">2  Check seven foundations</text>
+    <text x="321" y="307" font-size="16">Authority · entry · work · data</text>
+    <text x="321" y="332" font-size="16">Delivery · recovery · whole cost</text>
+    <text x="321" y="370" font-size="16">A deleted known node stays listed.</text>
+    <rect x="675" y="151" width="255" height="176" rx="14" fill="#eee8f6" stroke="#70528d" stroke-width="2.5"/>
+    <text x="693" y="185" font-size="21" font-weight="bold">3  Human challenge</text>
+    <text x="693" y="216" font-size="17">What did both authors miss?</text>
+    <text x="693" y="243" font-size="17">Who owns the promise?</text>
+    <text x="693" y="270" font-size="17">What result would reject</text>
+    <text x="693" y="296" font-size="17">the chosen design?</text>
+    <text x="30" y="427" font-size="15" fill="#536775">Passing checks means the written map is coherent; it does not prove the business or AWS behavior.</text>
+  </g>
+  <g stroke="#31576b" stroke-width="3.5" fill="none" marker-end="url(#arrow)">
+    <path d="M242 191H289"/>
+    <path d="M242 247H269V324H289"/>
+    <path d="M612 165H660"/>
+    <path d="M612 324H638V286H660"/>
+  </g>
+</svg>

@@ -1,0 +1,17 @@
+# Assessor: required conversations
+
+Read after making and saving a first attempt. A different design can be defensible if it preserves the stated customer and data boundaries and names what would prove them. These are fictional checks, not actual AWS permission evaluation.
+
+| Change | Local result | Architecture lesson |
+| --- | --- | --- |
+| Baseline | Five required tuples allowed, three forbidden tuples blocked | The chosen route and rule layers agree in this simplified contract. It says nothing about real packets or IAM. |
+| Supplier route removed | Worker → supplier reports missing `route` and `supplier-egress-route` | The S3 gateway endpoint is not a general internet egress route. A supplier call needs its own eligible route and authentication. |
+| DB reply removed | App → DB reports missing `subnet-reply` | A stateful security group cannot override a stateless subnet ACL return rule. The lab omits real ephemeral port ranges and rule ordering. |
+| S3 endpoint allowance removed | Worker → S3 reports `endpoint-policy` | An endpoint route alone does not authorize S3 use. |
+| S3 identity allowance removed | Worker → S3 reports `identity-permission` | This fictional caller also needs an identity allow for the selected operation. Actual IAM evaluation can combine policies differently and can include explicit denies. |
+| Restricted bucket allowance removed | Worker → S3 reports `bucket-permission` | The chosen *restricted bucket* has an additional modeled condition. This is not a claim that every same-account bucket requires an explicit bucket-policy allow. |
+| Worker DB egress and DB ingress added | Forbidden worker → DB becomes allowed | Both directions of the resource rule now admit an unnecessary conversation. The application still needs separate data authorization. |
+
+For the changed cases, removing a now-unneeded public supplier call may permit removing its NAT path **if no other required egress uses it**. Check the actual worker's destinations before claiming a saving. A new justified worker DB write needs a narrow identity and operation contract as well as route/port permission; a service API can preserve a smaller DB caller set but adds its own capacity and failure boundary. Broad DB ingress alone does not complete worker → DB in this fixture because worker egress remains narrow; it is still a structural weakness that could become exploitable after a later change. An S3 denial may come from the selected endpoint policy, caller identity, bucket policy, key permissions or another effective control, so record the exact principal, action, resource, route and error before changing policy. A missing ACL reply requires actual direction, numbered rules and ephemeral-port analysis rather than “open all ports.”
+
+Primary AWS references: [security-group rule behavior](https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html), [stateless network ACLs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html), [S3 gateway routes](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html), [endpoint-policy scope](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-access.html) and [bucket restriction examples](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies-vpc-endpoint.html). Their supported features and account-specific behavior require fresh review before configuration.

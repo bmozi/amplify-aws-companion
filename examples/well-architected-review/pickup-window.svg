@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+  <title id="title">Dispatch success can hide a pickup bottleneck</title>
+  <desc id="desc">In a fictional two-stage library model, all 460 holds leave five-second dispatch within 30 minutes, but only 79 are ready after a 30-second FIFO pickup worker. Rotating pickup work raises timely results to 95, helping quiet branches while the burst branch loses deadlines. Neither rule meets every borrower's promise.</desc>
+  <rect width="1200" height="660" fill="#f7f9fc"/>
+  <text x="48" y="66" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#172c45">A fast first step can hide a slow second step</text>
+  <text x="48" y="106" font-family="Arial,sans-serif" font-size="22" fill="#344861">Invented 460 holds · 30-minute clock starts when a borrower places a hold</text>
+  <rect x="48" y="154" width="305" height="108" rx="16" fill="#dcecff" stroke="#2870b8" stroke-width="3"/>
+  <text x="72" y="195" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#172c45">Hold accepted</text>
+  <text x="72" y="232" font-family="Arial,sans-serif" font-size="21" fill="#344861">Customer clock begins</text>
+  <path d="M355 208 H403" stroke="#344861" stroke-width="5" marker-end="url(#arrow)"/>
+  <rect x="417" y="154" width="305" height="108" rx="16" fill="#e1f3ee" stroke="#178367" stroke-width="3"/>
+  <text x="441" y="195" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#172c45">Dispatch: 5 sec/job</text>
+  <text x="441" y="232" font-family="Arial,sans-serif" font-size="21" fill="#344861">460 / 460 timely</text>
+  <path d="M724 208 H772" stroke="#344861" stroke-width="5" marker-end="url(#arrow)"/>
+  <rect x="786" y="154" width="366" height="108" rx="16" fill="#fff0dc" stroke="#b26b08" stroke-width="3"/>
+  <text x="810" y="195" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#172c45">Pickup: 30 sec/job</text>
+  <text x="810" y="232" font-family="Arial,sans-serif" font-size="21" fill="#344861">Ready is the customer result</text>
+  <text x="48" y="334" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#172c45">Same arrivals and two workers; only pickup order changes</text>
+  <rect x="48" y="365" width="1104" height="92" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="72" y="400" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#172c45">Pickup FIFO</text>
+  <text x="72" y="434" font-family="Arial,sans-serif" font-size="21" fill="#344861">A: 67 / 400 ready in time</text>
+  <text x="502" y="434" font-family="Arial,sans-serif" font-size="21" fill="#344861">B, C, D: 4 / 20 each</text>
+  <text x="930" y="420" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="#8d4b07">79 / 460</text>
+  <rect x="48" y="474" width="1104" height="92" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="72" y="509" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#172c45">Pickup rotation</text>
+  <text x="72" y="543" font-family="Arial,sans-serif" font-size="21" fill="#344861">A: 35 / 400 ready in time</text>
+  <text x="502" y="543" font-family="Arial,sans-serif" font-size="21" fill="#344861">B, C, D: 20 / 20 each</text>
+  <text x="930" y="529" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="#146c57">95 / 460</text>
+  <text x="48" y="618" font-family="Arial,sans-serif" font-size="20" fill="#344861">A modeled ready time is still not a real book, AWS result, or service guarantee.</text>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#344861"/></marker></defs>
+</svg>

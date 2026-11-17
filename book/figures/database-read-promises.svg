@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 650" role="img" aria-labelledby="title desc">
+<title id="title">Three questions take three read paths</title>
+<desc id="desc">A booking confirmation routes to the authoritative writer and a matching commit receipt. A manager report may route to a separately selected read replica only while its measured lag meets the fictional one-minute bound; the writer copies changes to that replica asynchronously. A reusable service description may route to an authorized cache with a defined key and expiry. A Multi-AZ DB instance standby is for failover, not read traffic; a Multi-AZ DB cluster with readers is a different deployment type. Conceptual design only.</desc>
+<rect width="360" height="650" rx="12" fill="#fff"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#173544">
+<text x="18" y="30" font-size="21" font-weight="700">Three questions, three reads</text>
+<text x="18" y="52" font-size="15">Choose by allowed age and evidence.</text>
+<rect x="18" y="68" width="324" height="126" rx="10" fill="#f4f9fa" stroke="#8baab7" stroke-width="2"/>
+<text x="30" y="95" font-size="19" font-weight="700">1  Confirm a booking</text>
+<text x="30" y="119" font-size="16">Fresh now: use the writer's commit.</text>
+<text x="30" y="143" font-size="16">Check booking ID and state.</text>
+<text x="30" y="167" font-size="15">A stale copy cannot confirm it.</text>
+<rect x="18" y="208" width="324" height="150" rx="10" fill="#f4f9fa" stroke="#8baab7" stroke-width="2"/>
+<text x="30" y="235" font-size="19" font-weight="700">2  Read a manager report</text>
+<text x="30" y="259" font-size="16">Example: at most one minute old.</text>
+<text x="30" y="283" font-size="16">Use a reader; check lag and time.</text>
+<text x="30" y="307" font-size="16">Pause or review fallback if late.</text>
+<text x="30" y="331" font-size="15" fill="#386548">Writer copies asynchronously.</text>
+<rect x="18" y="372" width="324" height="102" rx="10" fill="#f4f9fa" stroke="#8baab7" stroke-width="2"/>
+<text x="30" y="399" font-size="19" font-weight="700">3  Reuse a description</text>
+<text x="30" y="423" font-size="16">Use an authorized cache.</text>
+<text x="30" y="447" font-size="16">Check key, access and expiry.</text>
+<rect x="18" y="488" width="324" height="108" rx="10" fill="#fff1d7" stroke="#8b6018" stroke-width="2"/>
+<text x="30" y="515" font-size="18" font-weight="700">Availability is not a read path</text>
+<text x="30" y="540" font-size="16">Multi-AZ instance standby: no reads.</text>
+<text x="30" y="564" font-size="16">Multi-AZ cluster: reader instances.</text>
+<text x="18" y="621" font-size="15">Confirm engine and deployment type.</text>
+<text x="18" y="640" font-size="14">Conceptual; no AWS database configured.</text>
+</g></svg>

@@ -1,0 +1,11 @@
+{
+  "now": 3602,
+  "other_table_items": 37,
+  "requests": [
+    {"id": "R1", "accepted_at": 0, "contact_at": null},
+    {"id": "R2", "accepted_at": 0, "contact_at": 3500},
+    {"id": "R3", "accepted_at": 0, "contact_at": null},
+    {"id": "R4", "accepted_at": 3550, "contact_at": null}
+  ],
+  "index_visible": ["R2", "R3"]
+}

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="790" viewBox="0 0 400 790" role="img" aria-labelledby="title desc">
+<title id="title">One table contains data with several lifecycles</title>
+<desc id="desc">A02 and A03 share one DynamoDB table with customer records, workflow records, and temporary hold state. Queue and log copies have separate retention. A proposed, not configured, table backup would restore into a new table with data from the selected restore point. Authorization, selective reconciliation, customer checks, and cleanup are needed before cutover.</desc>
+<rect width="400" height="790" fill="#fff"/>
+<g font-family="Arial,sans-serif" fill="#18313b">
+<text x="20" y="34" font-size="20" font-weight="700">One table, several kinds of data</text>
+<text x="20" y="58" font-size="14">Not every record has the same clock.</text>
+<rect x="20" y="77" width="360" height="173" rx="10" fill="#eaf3f7" stroke="#49798b" stroke-width="2"/>
+<text x="34" y="104" font-size="17" font-weight="700">A02/A03 teaching table</text>
+<text x="34" y="131" font-size="14">Customer records: bookings and requests</text>
+<text x="34" y="155" font-size="14">Workflow state: outbox and claims</text>
+<text x="34" y="179" font-size="14">Temporary holds: business deadline</text>
+<text x="34" y="218" font-size="13">Teaching configuration: no table TTL or PITR.</text>
+<rect x="20" y="262" width="360" height="135" rx="10" fill="#fbf5e6" stroke="#a08443" stroke-width="2"/>
+<text x="34" y="290" font-size="17" font-weight="700">Separate copies</text>
+<text x="34" y="317" font-size="14">Work queue: 1 hour</text>
+<text x="34" y="341" font-size="14">Failed queue and logs: 1 day</text>
+<text x="34" y="373" font-size="13">Each copy needs its own rule.</text>
+<rect x="20" y="409" width="360" height="150" rx="10" fill="#edf5ed" stroke="#5e8966" stroke-width="2"/>
+<text x="34" y="437" font-size="17" font-weight="700">Proposed restore path</text>
+<text x="34" y="464" font-size="14">Restore creates a new table.</text>
+<text x="34" y="488" font-size="14">Old records may return; reconcile first.</text>
+<text x="34" y="526" font-size="13">Backup is not configured here.</text>
+<rect x="20" y="571" width="360" height="154" rx="10" fill="#f1f3f4" stroke="#84979e" stroke-width="2"/>
+<text x="34" y="599" font-size="17" font-weight="700">Before a production change</text>
+<text x="34" y="626" font-size="14">Classify records; approve recovery and</text>
+<text x="34" y="649" font-size="14">denial rules; check customers.</text>
+<text x="34" y="683" font-size="13">Price backup, restore, transfer and cleanup.</text>
+</g></svg>

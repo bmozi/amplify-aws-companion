@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 690" role="img" aria-labelledby="title desc">
+<title id="title">One visit can create several AWS usage meters</title>
+<desc id="desc">A fictional Field Lab visitor always receives a hosted page. Signing in may count a distinct Cognito monthly active user. Opening live notes may cause AppSync operations and data reads or writes. Uploading or inspecting may add S3 requests and storage, Lambda work and CloudWatch logs. Estimate the actual action mix, retained resources, missing work and cleanup before applying current prices. This is not measured account usage or a spending cap.</desc>
+<rect width="360" height="690" fill="#ffffff"/>
+<g font-family="Arial,sans-serif" fill="#142e3c">
+  <text x="20" y="39" font-size="24" font-weight="bold">One visit, several meters</text>
+  <text x="20" y="64" font-size="17">Count actions before pricing services.</text>
+
+  <path d="M30 110 V518" fill="none" stroke="#28779c" stroke-width="4"/>
+  <circle cx="30" cy="119" r="7" fill="#28779c"/>
+  <circle cx="30" cy="227" r="7" fill="#28779c"/>
+  <circle cx="30" cy="335" r="7" fill="#28779c"/>
+  <circle cx="30" cy="454" r="7" fill="#28779c"/>
+
+  <rect x="50" y="86" width="290" height="89" rx="11" fill="#e8f3f5" stroke="#28779c" stroke-width="2"/>
+  <text x="65" y="111" font-size="18" font-weight="bold">Page load · Hosting</text>
+  <text x="65" y="137" font-size="17">Bytes delivered</text>
+  <text x="65" y="159" font-size="17">Site files retained</text>
+
+  <rect x="50" y="194" width="290" height="89" rx="11" fill="#f4f7fa" stroke="#567287" stroke-width="2"/>
+  <text x="65" y="219" font-size="18" font-weight="bold">If signed in · Cognito</text>
+  <text x="65" y="245" font-size="17">Distinct active users</text>
+  <text x="65" y="267" font-size="17">Counted by month, not visit</text>
+
+  <rect x="50" y="302" width="290" height="100" rx="11" fill="#f4f7fa" stroke="#567287" stroke-width="2"/>
+  <text x="65" y="327" font-size="18" font-weight="bold">If notes open · AppSync</text>
+  <text x="65" y="353" font-size="17">API calls + live activity</text>
+  <text x="65" y="378" font-size="17">Data reads and writes may follow</text>
+
+  <rect x="50" y="421" width="290" height="111" rx="11" fill="#f4f7fa" stroke="#567287" stroke-width="2"/>
+  <text x="65" y="446" font-size="18" font-weight="bold">If file or inspect work</text>
+  <text x="65" y="472" font-size="17">S3 requests + stored bytes</text>
+  <text x="65" y="497" font-size="17">Lambda work + logs may follow</text>
+  <text x="65" y="520" font-size="16">Count transfer destinations too</text>
+
+  <rect x="20" y="553" width="320" height="93" rx="11" fill="#fff2dc" stroke="#8b6220" stroke-width="2"/>
+  <text x="35" y="580" font-size="18" font-weight="bold">Review the whole run</text>
+  <text x="35" y="605" font-size="17">Action mix + retained resources</text>
+  <text x="35" y="630" font-size="17">Rates, omissions, stop + cleanup</text>
+  <text x="20" y="673" font-size="16" fill="#405966">Example quantities are not a bill or cap.</text>
+</g>
+</svg>

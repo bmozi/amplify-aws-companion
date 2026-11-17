@@ -1,0 +1,10 @@
+# DOP-C02 task 5.1 knowledge review
+
+Status: two individual knowledge entries mapped as **partial**, not a completed certification task. Reviewed against the current official [Domain 5 task page](https://docs.aws.amazon.com/aws-certification/latest/devops-engineer-professional-02/devops-engineer-professional-02-domain5.html), which names AWS Health, EventBridge, CloudTrail, fan-out, streaming and queuing. The accepted source-bullet digests are retained in `knowledge-inventory.csv`; they match entries 01 and 02 of the checked inventory. AWS can revise certification pages, so refresh before release.
+
+| Inventory entry | Teaching and assessment evidence | Why partial |
+| --- | --- | --- |
+| Knowledge 01: AWS services that generate, capture and process events | Unit 14 distinguishes AWS Health notices from CloudTrail API activity and EventBridge matching; it teaches delivery Region versus affected `eventRegion`, public versus account-specific notices, capture prerequisites and source correlation. E22 changes account, Region, resource and capture assumptions. | The local lab uses fictional simplified envelopes. It does not prove current AWS schemas, account Health state, CloudTrail selectors, IAM, event delivery, retries or permissions. |
+| Knowledge 02: event-driven architectures including fan-out, streams and queues | Unit 14 compares independent SNS/EventBridge notification paths, SNS-to-SQS or separate queues, competing queue workers and independent Kinesis positions. E22 requires a consumer-contract choice and a changed-condition redesign. The local parallel-checkpoint case makes an unfinished earlier position visible beneath a later completion, with a failing highest-finished contrast. | There is no deployed topology, distributed consumer protocol, measured cloud delivery/replay, current priced comparison, independent technical assessment or learner result. |
+
+The local lab is a deterministic policy illustration, not a service emulator. Organization-wide event aggregation and remediation remain design-only. No AWS account, resources, credentials, budget or credits were queried or changed for this review.

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 575" role="img" aria-labelledby="title desc">
+  <title id="title">A Bedrock request crosses named account and evidence boundaries</title>
+  <desc id="desc">A shop application starts in a workload account. It may call Bedrock in the same account, or assume a reviewed role into a separate AI account before calling Bedrock there. The inference account and source Region own the model call, local invocation logging configuration and cost attribution. A processing-profile decision separately checks every possible destination Region. A security account receives only a separately approved evidence export; raw prompt logging is not automatically centralized.</desc>
+  <rect width="360" height="575" fill="#fff"/>
+  <g font-family="Arial,Helvetica,sans-serif" fill="#173746">
+    <text x="16" y="35" font-size="22" font-weight="bold">Name the account of the call</text>
+    <text x="16" y="61" font-size="17">A useful answer needs a trusted path.</text>
+    <rect x="16" y="81" width="328" height="92" rx="10" fill="#eaf3f7" stroke="#315c70" stroke-width="2"/>
+    <text x="29" y="109" font-size="20" font-weight="bold">Workload account</text>
+    <text x="29" y="136" font-size="17">Authenticated app checks user scope.</text>
+    <text x="29" y="159" font-size="17">Keep private sources protected.</text>
+    <path d="M180 176v32" stroke="#315c70" stroke-width="3"/>
+    <path d="M173 200l7 8 7-8" fill="none" stroke="#315c70" stroke-width="3"/>
+    <rect x="16" y="212" width="328" height="84" rx="10" fill="#fff2dc" stroke="#8b6220" stroke-width="2"/>
+    <text x="29" y="240" font-size="20" font-weight="bold">Account choice</text>
+    <text x="29" y="266" font-size="17">Same account, or reviewed role</text>
+    <text x="29" y="287" font-size="17">into a separate AI account.</text>
+    <path d="M180 299v31" stroke="#315c70" stroke-width="3"/>
+    <path d="M173 322l7 8 7-8" fill="none" stroke="#315c70" stroke-width="3"/>
+    <rect x="16" y="334" width="328" height="111" rx="10" fill="#edf3ec" stroke="#446c53" stroke-width="2"/>
+    <text x="29" y="362" font-size="20" font-weight="bold">Inference account + Region</text>
+    <text x="29" y="389" font-size="17">Bedrock call and chosen profile.</text>
+    <text x="29" y="413" font-size="17">Check processing destinations.</text>
+    <text x="29" y="436" font-size="17">Logging and cost live here.</text>
+    <path d="M180 448v31" stroke="#315c70" stroke-width="3"/>
+    <path d="M173 471l7 8 7-8" fill="none" stroke="#315c70" stroke-width="3"/>
+    <rect x="16" y="483" width="328" height="74" rx="10" fill="#f2eff6" stroke="#6b5b82" stroke-width="2"/>
+    <text x="29" y="510" font-size="19" font-weight="bold">Security evidence</text>
+    <text x="29" y="536" font-size="17">Export only approved facts.</text>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+# Professional architecture learning map
+
+The AWS Certified Solutions Architect – Professional exam asks you to make decisions across security, organizational complexity, cost, resilience and ongoing improvement. Use the current [official exam guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-03/solutions-architect-professional-03.html) for your scheduled exam version and its current scope. A link between a lesson and a topic is a starting point for practice, not evidence that you have mastered every skill or will pass an exam.
+
+## Choose a learning route
+
+1. **Start with the business promise.** Identify the customer, workload, security boundary, recovery objective and budget before selecting services. Use the [learning routes](../curriculum/LEARNING-ROUTES.md) and record unfamiliar prerequisites.
+2. **Study one domain at a time.** The [domain 1 map](../curriculum/SAP-C03-DOMAIN-1-EVIDENCE.md) explores cloud architecture design and implementation; [domain 2](../curriculum/SAP-C03-DOMAIN-2-EVIDENCE.md) considers security, compliance and governance; [domain 3](../curriculum/SAP-C03-DOMAIN-3-EVIDENCE.md) examines cost; [domain 4](../curriculum/SAP-C03-DOMAIN-4-EVIDENCE.md) covers resilience, migration and business continuity; and [domain 5](../curriculum/SAP-C03-DOMAIN-5-EVIDENCE.md) addresses operational excellence and automation. Confirm names and exam scope against AWS's current guide.
+3. **Make a decision before reading the assessor.** Explain why your choice meets the stated constraints and why one plausible alternative does not. Then change a fact, reconsider, and note which evidence would prove or disprove your proposal.
+4. **Carry the answer into practice.** Use the [certification-to-application exercises](../curriculum/CERTIFICATION-TO-APPLICATION.md) to identify the actual permissions, observations, cost assumptions and cleanup that an implementation would need. A paper architecture does not prove a cloud deployment works.
+
+Ask Codex to challenge your reasoning after you save your own answer: “Identify a missing requirement and a plausible alternative. Cite current AWS documentation and do not assume the design was deployed.” Verify its claims in the cited sources. Before any cloud lab, choose a suitable account, estimate the whole run, set a limit and reserve, name a stop condition and verify cleanup. Organization-dependent exercises in this companion are design-only unless an appropriate environment is separately authorized.

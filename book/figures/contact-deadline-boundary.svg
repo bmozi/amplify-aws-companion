@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="520" viewBox="0 0 700 520" role="img" aria-labelledby="title desc">
+<title id="title">A request receipt, overdue work and a supplied contact record are separate facts</title>
+<desc id="desc">Four fictional clock readings are separate. At minute zero the request is accepted and its one-hour clock starts once; a retry keeps that time. At minute sixty, a supplied first-contact time can still meet the local rule. At sixty minutes plus one second, a local checker records overdue work but does not alert or contact anyone. A supplied first-contact time at hour four stays late. The fixture does not verify that a person reached the customer or that an AWS deadline service ran.</desc>
+<rect width="700" height="520" fill="#f7fafb"/>
+<g font-family="Arial,sans-serif" fill="#193743">
+<text x="34" y="43" font-size="27" font-weight="700">A receipt does not make the contact promise</text>
+<text x="34" y="72" font-size="17">Four different facts in one fictional repair request.</text>
+
+<rect x="34" y="93" width="632" height="76" rx="13" fill="#e7f2f5" stroke="#4c7e90" stroke-width="2"/>
+<circle cx="65" cy="131" r="18" fill="#39788a"/><text x="59" y="138" font-size="20" font-weight="700" fill="white">1</text>
+<text x="96" y="126" font-size="21" font-weight="700">0 min — request accepted</text>
+<text x="96" y="153" font-size="18">The clock starts once; a retry keeps the original time.</text>
+
+<rect x="34" y="178" width="632" height="76" rx="13" fill="#fff3dc" stroke="#a57a38" stroke-width="2"/>
+<circle cx="65" cy="216" r="18" fill="#977038"/><text x="59" y="223" font-size="20" font-weight="700" fill="white">2</text>
+<text x="96" y="211" font-size="21" font-weight="700">60 min — last on-time moment</text>
+<text x="96" y="238" font-size="18">A supplied contact time here meets the fixture rule.</text>
+
+<rect x="34" y="263" width="632" height="76" rx="13" fill="#faeae7" stroke="#a95e51" stroke-width="2"/>
+<circle cx="65" cy="301" r="18" fill="#a35043"/><text x="59" y="308" font-size="20" font-weight="700" fill="white">3</text>
+<text x="96" y="296" font-size="21" font-weight="700">60 min + 1 s — overdue work recorded</text>
+<text x="96" y="323" font-size="18">The local checker opens work; it makes no call.</text>
+
+<rect x="34" y="348" width="632" height="76" rx="13" fill="#eeeafa" stroke="#76609c" stroke-width="2"/>
+<circle cx="65" cy="386" r="18" fill="#705b94"/><text x="59" y="393" font-size="20" font-weight="700" fill="white">4</text>
+<text x="96" y="381" font-size="21" font-weight="700">4 hours — supplied first-contact time</text>
+<text x="96" y="408" font-size="18">The fixture marks it late; real contact is unverified.</text>
+
+<text x="34" y="462" font-size="17" font-weight="700">An open worklist is not an alert, assigned owner or customer message.</text>
+<text x="34" y="490" font-size="16">Local design only; no AWS service or observed human delivery.</text>
+</g>
+</svg>

@@ -1,0 +1,12 @@
+# Assessor reasoning: preview hosting cost inventory
+
+Use after recording a first answer. These are authored expectations, not learner results or AWS billing evidence.
+
+1. The missing alarm row fails the inventory check. AWS documents monitoring alarms as enabled by default and creation of an SNS topic if no ARN is supplied. A configuration may generate a different actual count than this invented two-alarm fixture; inspect the synthesized resources. Idle charges can accrue while a demo appears inactive.
+2. Selecting WAF makes the WAF row mandatory. A real plan needs the selected Web ACL/rules and request volume, regional or global scope, current rates and cleanup. A zero with no evidence is not the same as `not_applicable`.
+3. The managed Amplify Hosting subtotal belongs to a different service-meter model. Count the self-managed S3, CloudFront and selected services directly. The checker rejects the invented wrong row; it cannot prove that every possible generated resource was included.
+4. USD 1.74 + USD 4 = USD 5.74, above the fixture's fictional USD 5 estimate ceiling. With USD 2.24 restored, USD 101 − USD 2.24 = USD 98.76, below its fictional USD 100 reserve. These are arithmetic inputs, not a hard AWS spending cap or a current balance.
+5. SSR introduces selected compute/request/duration and potentially image, logs or queue meters; a managed CodePipeline has its own executions/artifacts and trigger/role review. The offline inventory uses grouped rows as prompts, not a complete AWS bill. The existing manual GitHub publication flag does not control a separately created pipeline or external CI route.
+6. A retained build bucket, logging bucket, old artifacts, logs or alarms can outlive a release trigger. Record exact resource IDs, retention setting, cleanup owner/deadline and later usage/billing evidence. A deleted stack can still leave intentionally retained resources; verify those resources explicitly.
+
+The fixture's fictional base is `1.00 + 0.10 + 0.05 + 0.04 + 0.12 + 0.03 + 0 + 0.30 + 0.10 = USD 1.74`; contingency is USD 0.50 (over 25% of base). The zero is an explicitly local laptop build; external CI has another biller. No real rate, credit balance, deployment or teardown was observed. See AWS [configuration](https://docs.amplify.aws/react/deploy-and-host/self-hosting/define-hosting/) and [getting started](https://docs.amplify.aws/react/deploy-and-host/self-hosting/getting-started/) for resource behavior; refresh them before relying on a real package version.

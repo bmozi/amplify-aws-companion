@@ -1,0 +1,8 @@
+# Assessor: both halves of the packet
+
+1. **Service omitted:** The report metadata is inadequate for the requested service. The learner should inspect the current program's services-in-scope information and the actual report, including exclusions, rather than infer coverage from a familiar title.
+2. **Region or period omitted:** Do not stretch scope. Locate a suitable current report or other official supporting document, such as an applicable continued-operations letter for a SOC period gap, and verify its own scope. Until then, mark the provider evidence missing for that question.
+3. **Customer bucket claim:** The AWS report may support the provider-owned portion. It does not show Maya's bucket policy or operating history. Ask for a resource-specific, time-bound customer observation and reviewer; if the control is shared, assemble both portions explicitly.
+4. **Wrong document type:** An agreement records legal terms and acceptance status. A third-party report may support a vendor control when that vendor is in the architecture. Neither substitutes automatically for the requested AWS provider report, and neither proves Maya's configuration.
+
+Accept a packet only as a **reviewable candidate** when every claim has an owner, source identity, scope, period, permitted access path, and customer evidence where needed. The local fixture's `scope_checked=True` is fictional test data; the exercise cannot verify that any actual AWS report covers the named service, Region or control. It also cannot establish compliance, legal sufficiency, customer observation integrity, or auditor acceptance. Never place real watermarked report bytes into this repository.

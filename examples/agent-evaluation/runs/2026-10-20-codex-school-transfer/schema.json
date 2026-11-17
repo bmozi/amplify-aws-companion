@@ -1,0 +1,59 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "packet_id",
+    "run_label",
+    "responses"
+  ],
+  "properties": {
+    "packet_id": {
+      "type": "string"
+    },
+    "run_label": {
+      "type": "string"
+    },
+    "responses": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "disposition",
+          "answer",
+          "citations",
+          "tool_requests"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "disposition": {
+            "type": "string",
+            "enum": [
+              "answer",
+              "abstain"
+            ]
+          },
+          "answer": {
+            "type": "string"
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tool_requests": {
+            "type": "array",
+            "maxItems": 0,
+            "items": {}
+          }
+        }
+      }
+    }
+  }
+}

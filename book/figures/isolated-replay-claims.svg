@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="520" viewBox="0 0 720 520" role="img" aria-labelledby="title desc">
+<title id="title">Two isolated claim copies both accept one receipt</title>
+<desc id="desc">The same signed receipt N reaches two local backend processes with separate SQLite files. Each saves N and first returns 200; later local repeats return 403. Combining the files yields one distinct nonce although two responses were accepted. This does not test payment, a network partition, replication or AWS.</desc>
+<defs><style>text{font-family:Arial,sans-serif;fill:#173249}.t{font-size:23px;font-weight:700}.h{font-size:20px;font-weight:700}.b{font-size:17px}.n{font-size:16px}</style><marker id="tip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#355c76"/></marker></defs>
+<rect width="720" height="520" fill="white"/>
+<text class="t" x="24" y="38">Two notebooks are not one claim authority</text>
+<rect x="24" y="59" width="672" height="64" rx="9" fill="#e9f1f7" stroke="#85a4b8" stroke-width="2"/>
+<text class="h" x="42" y="87">Same signed receipt N</text><text class="b" x="42" y="112">sent to two separate local backends</text>
+<path d="M360 124 V140 H185 V158" fill="none" stroke="#355c76" stroke-width="3" marker-end="url(#tip)"/>
+<path d="M360 140 H535 V158" fill="none" stroke="#355c76" stroke-width="3" marker-end="url(#tip)"/>
+<rect x="24" y="166" width="324" height="184" rx="10" fill="#e9f6ef" stroke="#76a78a" stroke-width="2"/>
+<text class="h" x="42" y="196">Backend A</text><text class="b" x="42" y="225">Claim file A starts empty</text><text class="b" x="42" y="254">Save N → first response</text><text class="h" x="42" y="286">200 accepted</text><text class="n" x="42" y="326">Repeat at A → 403</text>
+<rect x="372" y="166" width="324" height="184" rx="10" fill="#fff1e2" stroke="#cb925d" stroke-width="2"/>
+<text class="h" x="390" y="196">Backend B</text><text class="b" x="390" y="225">Claim file B starts empty</text><text class="b" x="390" y="254">Save N → first response</text><text class="h" x="390" y="286">200 accepted</text><text class="n" x="390" y="326">Repeat at B → 403</text>
+<rect x="24" y="373" width="672" height="127" rx="10" fill="#edf2f6" stroke="#9baebd" stroke-width="2"/>
+<text class="h" x="42" y="404">Later merge: one N, two acceptances</text><text class="b" x="42" y="433">Merging records cannot undo an earlier action.</text>
+<text class="n" x="42" y="463">Local GET exercise: no payment, network partition,</text><text class="n" x="42" y="485">replication protocol or AWS behavior tested.</text>
+</svg>

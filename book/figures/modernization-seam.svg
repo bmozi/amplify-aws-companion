@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="535" viewBox="0 0 1000 535" role="img" aria-labelledby="title desc">
+  <title id="title">Move the booking promise first, then add a report path</title>
+  <desc id="desc">Phase one sends a customer request through chosen application compute to one authoritative booking ledger, while the application uses a separately chosen drawing interface. Phase two commits a booking and outbox row together, relays possibly repeated work through a queue, and uses an idempotent worker to make a derived report. Reconcile that report with the booking ledger before accepting the change. This is a conceptual design, not deployed AWS infrastructure.</desc>
+  <defs>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #193240; }
+      .title { font-size: 32px; font-weight: 700; }
+      .sub { font-size: 23px; }
+      .head { font-size: 26px; font-weight: 700; }
+      .boxhead { font-size: 24px; font-weight: 700; }
+      .body { font-size: 21px; }
+      .note { font-size: 20px; }
+      .arrow { stroke: #365d70; stroke-width: 3; fill: none; marker-end: url(#tip); }
+    </style>
+    <marker id="tip" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#365d70"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="535" fill="#fff"/>
+  <text class="title" x="40" y="42">Keep one booking authority as the design changes</text>
+  <text class="sub" x="40" y="74">Move the customer promise first. Add the slow report path later.</text>
+
+  <rect x="40" y="93" width="920" height="177" rx="15" fill="#f4f9fa" stroke="#6d929e" stroke-width="2"/>
+  <text class="head" x="62" y="126">1 · Choose a target for each job</text>
+  <rect x="62" y="143" width="188" height="60" rx="10" fill="#e8f2f5" stroke="#50819a" stroke-width="2"/>
+  <text class="boxhead" x="80" y="181">Customer</text>
+  <path class="arrow" d="M252 173 H300"/>
+  <rect x="309" y="143" width="238" height="60" rx="10" fill="#e8f2f5" stroke="#50819a" stroke-width="2"/>
+  <text class="boxhead" x="328" y="168">Chosen app</text>
+  <text class="body" x="328" y="192">compute</text>
+  <path class="arrow" d="M549 173 H600"/>
+  <rect x="609" y="143" width="328" height="60" rx="10" fill="#e9f3ec" stroke="#5d9371" stroke-width="2"/>
+  <text class="boxhead" x="627" y="168">Booking ledger</text>
+  <text class="body" x="627" y="192">one write authority</text>
+  <path class="arrow" d="M428 205 V215"/>
+  <rect x="309" y="221" width="385" height="37" rx="9" fill="#e9f3ec" stroke="#5d9371" stroke-width="2"/>
+  <text class="body" x="328" y="247">Separate drawing interface</text>
+
+  <rect x="40" y="284" width="920" height="186" rx="15" fill="#fff8ed" stroke="#b18b56" stroke-width="2"/>
+  <text class="head" x="62" y="319">2 · Add one reliable report seam</text>
+  <rect x="62" y="335" width="266" height="70" rx="10" fill="#e9f3ec" stroke="#5d9371" stroke-width="2"/>
+  <text class="boxhead" x="79" y="362">Booking + outbox</text>
+  <text class="body" x="79" y="390">one database commit</text>
+  <path class="arrow" d="M330 370 H365"/>
+  <rect x="374" y="335" width="226" height="70" rx="10" fill="#fff0d7" stroke="#bd8c43" stroke-width="2"/>
+  <text class="boxhead" x="391" y="362">Relay → queue</text>
+  <text class="body" x="391" y="390">may send again</text>
+  <path class="arrow" d="M602 370 H637"/>
+  <rect x="646" y="335" width="291" height="70" rx="10" fill="#fff0d7" stroke="#bd8c43" stroke-width="2"/>
+  <text class="boxhead" x="663" y="362">Report worker</text>
+  <text class="body" x="663" y="390">deduplicate event ID</text>
+  <text class="body" x="63" y="448">Derived report: reconcile IDs and amounts with the booking ledger.</text>
+  <text class="note" x="41" y="514">Conceptual design only; selected AWS services and customer recovery remain untested.</text>
+</svg>

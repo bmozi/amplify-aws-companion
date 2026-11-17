@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="640" viewBox="0 0 360 640" role="img" aria-labelledby="title desc">
+<title id="title">Local workers do not always mean a local control plane</title>
+<desc id="desc">ECS Anywhere and EKS Hybrid Nodes place workers on site with a regional control plane. EKS Anywhere and EKS local clusters on Outposts have an on-site control plane. Every option still needs a tested local customer path.</desc>
+<rect width="360" height="640" fill="#f8fbff"/>
+<g font-family="Arial, sans-serif" fill="#102a43">
+<text x="18" y="32" font-size="20" font-weight="700">Where is the conductor?</text>
+<text x="18" y="58" font-size="16">Factory must accept new work</text>
+<text x="18" y="80" font-size="16">during a 15-minute WAN loss</text>
+<rect x="17" y="100" width="326" height="126" rx="12" fill="#e6effb" stroke="#24639b" stroke-width="2"/>
+<text x="31" y="132" font-size="18" font-weight="700">Regional control plane</text>
+<text x="31" y="159" font-size="16">ECS Anywhere external hosts</text>
+<text x="31" y="183" font-size="16">EKS Hybrid Nodes</text>
+<text x="31" y="209" font-size="16" fill="#8a3a17">Hold new-work offline promise</text>
+<path d="M180 230v30" stroke="#24639b" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="17" y="266" width="326" height="136" rx="12" fill="#e8f4ed" stroke="#28764e" stroke-width="2"/>
+<text x="31" y="298" font-size="18" font-weight="700">On-site control plane</text>
+<text x="31" y="325" font-size="16">EKS Anywhere: you operate it</text>
+<text x="31" y="349" font-size="16">EKS local cluster: Outposts</text>
+<text x="31" y="378" font-size="16" fill="#286146">Candidate for a real drill</text>
+<path d="M180 406v30" stroke="#24639b" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="17" y="442" width="326" height="159" rx="12" fill="#fff1dd" stroke="#a5650b" stroke-width="2"/>
+<text x="31" y="475" font-size="18" font-weight="700">Still prove the customer path</text>
+<text x="31" y="502" font-size="16">Local image and identity</text>
+<text x="31" y="526" font-size="16">Local data and ingress</text>
+<text x="31" y="550" font-size="16">Power, repair, reconciliation</text>
+<text x="31" y="578" font-size="16" fill="#8a3a17">No product name proves this</text>
+<text x="18" y="628" font-size="15" fill="#38566d">Paper decision ≠ outage result</text>
+</g>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0 0l10 5-10 5z" fill="#24639b"/></marker></defs>
+</svg>

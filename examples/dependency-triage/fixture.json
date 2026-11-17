@@ -1,0 +1,8 @@
+{
+  "metadata": {"vulnerabilities": {"total": 3}},
+  "vulnerabilities": {
+    "parent-tool": {"isDirect": true, "via": ["nested-library"]},
+    "nested-library": {"isDirect": false, "via": [{"url": "https://example.invalid/advisory-one"}]},
+    "other-tool": {"isDirect": false, "via": ["nested-library"]}
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "source": ["aws.cloudwatch"],
+  "detail-type": ["CloudWatch Alarm State Change"],
+  "account": ["111122223333"],
+  "region": ["us-east-2"],
+  "detail": {
+    "alarmName": ["amplify-aws-local-booking-server-errors"],
+    "state": {
+      "value": ["ALARM"]
+    }
+  }
+}

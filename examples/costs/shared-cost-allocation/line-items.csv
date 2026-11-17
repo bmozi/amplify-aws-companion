@@ -1,0 +1,6 @@
+id,kind,owner,pool,cents
+repair-direct,direct,Repair,,6000
+sales-direct,direct,Sales,,4000
+shared-network,shared,,Network,3000
+shared-ai,shared,,AI,2000
+unknown-usage,unallocated,,,1000

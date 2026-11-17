@@ -1,0 +1,12 @@
+{
+  "contact_calls": 4,
+  "contact_transaction_attempts": 4,
+  "due_scan_evaluated_items": 120,
+  "due_scan_pages": 6,
+  "overdue_requests_returned": 8,
+  "overdue_transaction_attempts": 8,
+  "worklist_scan_evaluated_items": 60,
+  "worklist_scan_pages": 3,
+  "worklist_escalations": 6,
+  "worklist_open_escalations": 2
+}

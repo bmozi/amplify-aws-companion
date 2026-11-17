@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 640" role="img" aria-labelledby="title description">
+  <title id="title">A vendor role has an entry gate and a work gate</title>
+  <desc id="description">A vendor principal in one account asks to assume a customer role. Caller permission, customer trust and a customer-specific external ID govern entry. Temporary role credentials then request a customer object; role and session permissions, resource rules and explicit denies govern the work. A passed entry gate does not prove the object read.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#35576d"/></marker></defs>
+  <rect width="600" height="640" rx="20" fill="#f8faf9"/>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+    <text x="300" y="43" fill="#183747" font-size="27" font-weight="700">Two gates for a vendor</text>
+    <rect x="70" y="68" width="460" height="76" rx="16" fill="#e7eff7" stroke="#4b7190" stroke-width="3"/>
+    <text x="300" y="102" fill="#183747" font-size="24" font-weight="700">Vendor account</text>
+    <text x="300" y="130" fill="#35576d" font-size="20">Named caller asks to assume a role</text>
+    <path d="M300 147V182" stroke="#35576d" stroke-width="4" marker-end="url(#arrow)"/>
+    <rect x="48" y="187" width="504" height="118" rx="17" fill="#fff2df" stroke="#ac732e" stroke-width="3"/>
+    <text x="300" y="221" fill="#65410f" font-size="24" font-weight="700">Gate 1: enter customer role</text>
+    <text x="300" y="253" fill="#65410f" font-size="20">Caller permission + role trust</text>
+    <text x="300" y="281" fill="#65410f" font-size="19">Customer-specific external ID</text>
+    <path d="M300 308V343" stroke="#35576d" stroke-width="4" marker-end="url(#arrow)"/>
+    <rect x="83" y="348" width="434" height="65" rx="15" fill="#e7f2eb" stroke="#47765a" stroke-width="3"/>
+    <text x="300" y="389" fill="#1c4c32" font-size="23" font-weight="700">Temporary role session</text>
+    <path d="M300 416V451" stroke="#35576d" stroke-width="4" marker-end="url(#arrow)"/>
+    <rect x="48" y="456" width="504" height="119" rx="17" fill="#e9f0f7" stroke="#4b7190" stroke-width="3"/>
+    <text x="300" y="490" fill="#183747" font-size="24" font-weight="700">Gate 2: do the work</text>
+    <text x="300" y="522" fill="#35576d" font-size="20">Role + session permissions</text>
+    <text x="300" y="550" fill="#35576d" font-size="19">Resource rules and explicit denies</text>
+    <text x="300" y="615" fill="#5b4a31" font-size="20">Entry alone never proves the read.</text>
+  </g>
+</svg>

@@ -1,0 +1,31 @@
+{
+  "scope": "Fictional evidence pack; not AWS telemetry or an actual outage",
+  "clock": "seconds after scenario start; all listed sources use this same synthetic clock",
+  "completion_deadline_seconds": 60,
+  "incident_snapshot_at": 120,
+  "followup_snapshot_at": 200,
+  "deployment": {"at": 15, "component": "frontend", "change": "button label only", "backend_revision_before": "worker-7", "backend_revision_after": "worker-7"},
+  "jobs": [
+    {"id": "r1", "accepted": 0, "completed_at_incident": 20, "completed_at_followup": 20},
+    {"id": "r2", "accepted": 10, "completed_at_incident": 30, "completed_at_followup": 30},
+    {"id": "r3", "accepted": 20, "completed_at_incident": null, "completed_at_followup": 145},
+    {"id": "r4", "accepted": 30, "completed_at_incident": null, "completed_at_followup": 155},
+    {"id": "r5", "accepted": 40, "completed_at_incident": 110, "completed_at_followup": 110},
+    {"id": "r6", "accepted": 70, "completed_at_incident": null, "completed_at_followup": 160}
+  ],
+  "worker_observations": [
+    {"at": 25, "job": "r3", "dependency_status": 503, "effect_receipt": null},
+    {"at": 35, "job": "r4", "dependency_status": 503, "effect_receipt": null},
+    {"at": 55, "job": "r3", "dependency_status": 503, "effect_receipt": null},
+    {"at": 85, "job": "r3", "dependency_status": 503, "effect_receipt": null},
+    {"at": 110, "job": "r5", "dependency_status": 200, "effect_receipt": "assignment-r5"},
+    {"at": 145, "job": "r3", "dependency_status": 200, "effect_receipt": "assignment-r3"},
+    {"at": 155, "job": "r4", "dependency_status": 200, "effect_receipt": "assignment-r4"},
+    {"at": 160, "job": "r6", "dependency_status": 200, "effect_receipt": "assignment-r6"},
+    {"at": 170, "job": "r3", "outcome": "duplicate_delivery_existing_receipt", "effect_receipt": "assignment-r3"}
+  ],
+  "dependency_observation": {"at": 35, "source": "separate synthetic direct probe", "status": 503},
+  "actions": [{"at": 125, "actor": "scenario operator", "action": "keep worker concurrency bounded and investigate dependency; no rollback performed"}],
+  "followup_business_receipts": ["assignment-r1", "assignment-r2", "assignment-r3", "assignment-r4", "assignment-r5", "assignment-r6"],
+  "unknowns": ["Why the dependency failed", "Whether real alert delivery worked", "Real AWS permissions", "Any jobs outside this six-job fixture", "Causal effect of the operator action"]
+}

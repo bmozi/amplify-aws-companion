@@ -1,0 +1,4 @@
+{
+  "AlarmName": ["amplify-aws-local-booking-server-errors"],
+  "AutomationAssumeRole": ["arn:aws:iam::111122223333:role/amplify-aws-read-alarm-only"]
+}

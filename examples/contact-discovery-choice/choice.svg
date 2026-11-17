@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+  <title id="title">Two ways to discover overdue contact work</title>
+  <desc id="desc">A manual full-table scan sees all 41 fictional items and can find R1 and R3. A proposed sparse index returns R2 and R3 but temporarily misses R1. A base read rejects contacted R2, a final condition protects a racing contact, and periodic full-table reconciliation finds R1. Both paths need cost and operator review.</desc>
+  <rect width="1000" height="560" fill="#ffffff"/>
+  <text x="42" y="52" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#173447">Find overdue work without mistaking discovery for proof</text>
+  <text x="42" y="82" font-family="Arial,sans-serif" font-size="17" fill="#3d5665">Fictional A02 case • local design exercise • no AWS deployment</text>
+  <rect x="42" y="112" width="440" height="322" rx="12" fill="#f1f7f9" stroke="#8faeba" stroke-width="2"/>
+  <rect x="518" y="112" width="440" height="322" rx="12" fill="#f9f6ed" stroke="#b6a66b" stroke-width="2"/>
+  <text x="65" y="149" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#173447">Current manual scan</text>
+  <text x="541" y="149" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#173447">Proposed sparse index</text>
+  <rect x="70" y="174" width="384" height="58" rx="8" fill="#ffffff" stroke="#8faeba"/>
+  <text x="88" y="199" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173447">Whole table: 41 items</text>
+  <text x="88" y="220" font-family="Arial,sans-serif" font-size="15" fill="#3d5665">3 pages at a 20-item teaching limit</text>
+  <path d="M262 232v28" stroke="#3d6e83" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  <rect x="70" y="267" width="384" height="58" rx="8" fill="#ffffff" stroke="#8faeba"/>
+  <text x="88" y="291" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173447">Filter after reading</text>
+  <text x="88" y="312" font-family="Arial,sans-serif" font-size="15" fill="#3d5665">R1 and R3 remain overdue</text>
+  <path d="M262 325v28" stroke="#3d6e83" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  <rect x="70" y="360" width="384" height="51" rx="8" fill="#e0f0e8" stroke="#6c9b81"/>
+  <text x="88" y="391" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#24563d">Final condition opens R1 and R3</text>
+  <rect x="546" y="174" width="384" height="58" rx="8" fill="#ffffff" stroke="#b6a66b"/>
+  <text x="564" y="199" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173447">Index returns R2 and R3</text>
+  <text x="564" y="220" font-family="Arial,sans-serif" font-size="15" fill="#6b5c35">R1 has not appeared yet</text>
+  <path d="M738 232v28" stroke="#9b7930" stroke-width="3" marker-end="url(#arrowGold)"/>
+  <rect x="546" y="267" width="384" height="58" rx="8" fill="#ffffff" stroke="#b6a66b"/>
+  <text x="564" y="291" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173447">Read base request</text>
+  <text x="564" y="312" font-family="Arial,sans-serif" font-size="15" fill="#6b5c35">R2 has contact: reject stale entry</text>
+  <path d="M738 325v28" stroke="#9b7930" stroke-width="3" marker-end="url(#arrowGold)"/>
+  <rect x="546" y="360" width="384" height="51" rx="8" fill="#fff0d7" stroke="#bb8f3a"/>
+  <text x="564" y="391" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#6b4f18">Final condition rechecks R3</text>
+  <rect x="42" y="457" width="916" height="71" rx="10" fill="#e9f0f4" stroke="#9bb2bd"/>
+  <text x="64" y="484" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#173447">Periodic reconciliation finds missing R1</text>
+  <text x="64" y="510" font-family="Arial,sans-serif" font-size="16" fill="#3d5665">Price table reads, index reads and writes, base reads, transactions, storage, retries and cleanup.</text>
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d6e83"/></marker>
+    <marker id="arrowGold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#9b7930"/></marker>
+  </defs>
+</svg>

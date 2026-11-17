@@ -1,0 +1,11 @@
+{
+  "common": {"ops_hourly_rate": "60"},
+  "phases": [
+    {"name": "two-month pilot", "months": 2, "jobs_per_month": 1000},
+    {"name": "ten-month growth", "months": 10, "jobs_per_month": 500000}
+  ],
+  "designs": {
+    "managed": {"fixed": "12", "per_job": "0.0015", "storage": "8", "transfer": "6", "logs": "4", "ops_hours": "2", "license": "0"},
+    "self_operated": {"fixed": "150", "per_job": "0.0003", "storage": "8", "transfer": "6", "logs": "4", "ops_hours": "8", "license": "40"}
+  }
+}

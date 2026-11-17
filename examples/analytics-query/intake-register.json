@@ -1,0 +1,7 @@
+{
+  "business_day": "fictional-day-1",
+  "source": "supplied fictional checkout receipt register",
+  "receipts": [["a", 100], ["b", 180], ["late", 50]],
+  "closing_count": 3,
+  "closing_total_cents": 330
+}

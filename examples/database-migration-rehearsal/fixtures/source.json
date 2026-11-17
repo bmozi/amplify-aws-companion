@@ -1,0 +1,26 @@
+[
+  {
+    "booking_id": "B101",
+    "customer": "Ada",
+    "amount_cents": 12000,
+    "status": "confirmed"
+  },
+  {
+    "booking_id": "B102",
+    "customer": "Ben",
+    "amount_cents": 8000,
+    "status": "confirmed"
+  },
+  {
+    "booking_id": "B103",
+    "customer": "Chen",
+    "amount_cents": 5000,
+    "status": "cancelled"
+  },
+  {
+    "booking_id": "B104",
+    "customer": "Dee",
+    "amount_cents": 15000,
+    "status": "confirmed"
+  }
+]

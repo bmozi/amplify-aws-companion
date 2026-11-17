@@ -1,0 +1,488 @@
+{
+  "generated_utc": "2026-10-19T04:23:23.585939+00:00",
+  "fetched_this_run": true,
+  "source_fetch_utc": "2026-10-19T04:23:23.568218+00:00",
+  "sources": [
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/devops-engineer-professional-02/devops-engineer-professional-02-domain1.md",
+      "sha256": "04b66f2cbe775bf3d16eb987eb145863dd7d124675ca812597e3a24de457513d"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/devops-engineer-professional-02/devops-engineer-professional-02-domain2.md",
+      "sha256": "a074d527f50c233b7c2f0d58a1a3725737d22899fb18866141869bb80f8fc607"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/devops-engineer-professional-02/devops-engineer-professional-02-domain3.md",
+      "sha256": "c704a707b41cf8c2e8651bff928dfbc9da4542ec8d905528285ed6b9647cba24"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/devops-engineer-professional-02/devops-engineer-professional-02-domain4.md",
+      "sha256": "a7632bb304af3a713097b5e9a9fcb812c56393aaa64dcda0d2f1a15c9b6ac608"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/devops-engineer-professional-02/devops-engineer-professional-02-domain5.md",
+      "sha256": "d134a477b982124df73ee4f09fc29ccf0ee9aca91ffab028dd16ec7a9857f074"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/devops-engineer-professional-02/devops-engineer-professional-02-domain6.md",
+      "sha256": "f9cab4aeb6ab80506d700b4fd6686ec2c70766b26b7180eecf655eaeae1f1211"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain1.md",
+      "sha256": "d810efd72bb4de4aaea8c5f8f80318653cd8c22b82f9531065a053deaf058962"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain2.md",
+      "sha256": "23b2af5036a5ed0531a7dcd7d7df8f12fc8d7a084efe17e45780381e765bcfb7"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain3.md",
+      "sha256": "c7b3109febeec88b03448a7bc4fb4ee49cceb5d297ccb690c7d883e6e986100a"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain4.md",
+      "sha256": "7722cb4c6178791cd1acb8cbcfc604be6849add3cca4af8b3dd068991e139e5b"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-02/solutions-architect-professional-02-domain1.md",
+      "sha256": "ca8878df177e9ce623ebaa512f471a9947d04319fe2f2d7d7eb1fddb65d0d4b5"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-02/solutions-architect-professional-02-domain2.md",
+      "sha256": "dfefd5b4899b7c539463185b147595adc8df09fcc2ad8c109571ef57d9bf2cb8"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-02/solutions-architect-professional-02-domain3.md",
+      "sha256": "2e044f453062be07cb522396deb49b3b1b61990a346b24e8b5e1d060cfa6f544"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-02/solutions-architect-professional-02-domain4.md",
+      "sha256": "9f1001c6f7844c60be0540582c5aba22d3311152b273a6447ae6a579b0ec411d"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/sysops-administrator-associate-03/sysops-administrator-associate-03-domain1.md",
+      "sha256": "7f02a3fb18e297d87bc75591fd73e48684c75eb616994b28b07a0d8db48b1413"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/sysops-administrator-associate-03/sysops-administrator-associate-03-domain2.md",
+      "sha256": "eaf02888baec6d53cf86f45be2098ec07cc10ff642dd6a17e36131aa9e78fbc9"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/sysops-administrator-associate-03/sysops-administrator-associate-03-domain3.md",
+      "sha256": "d34975578bf6c65a47e31a7d83b7fcff2f4026b29bc51f4a8bb6455f04935c05"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/sysops-administrator-associate-03/sysops-administrator-associate-03-domain4.md",
+      "sha256": "9ecb9b8637fed2670cdac813e68cf2bcaa87b30e5d196f24591b6500da9a2e1e"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/sysops-administrator-associate-03/sysops-administrator-associate-03-domain5.md",
+      "sha256": "49eccafd9d46f4e58450f032669ac0db94920891ef67e452fc0f149fb2e47ffa"
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "SAA-C03:1.1",
+      "knowledge_count": 5,
+      "skill_count": 6,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAA-C03:1.2",
+      "knowledge_count": 6,
+      "skill_count": 4,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAA-C03:1.3",
+      "knowledge_count": 4,
+      "skill_count": 7,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAA-C03:2.1",
+      "knowledge_count": 16,
+      "skill_count": 7,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAA-C03:2.2",
+      "knowledge_count": 12,
+      "skill_count": 8,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAA-C03:3.1",
+      "knowledge_count": 3,
+      "skill_count": 2,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAA-C03:3.2",
+      "knowledge_count": 6,
+      "skill_count": 4,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAA-C03:3.3",
+      "knowledge_count": 8,
+      "skill_count": 5,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAA-C03:3.4",
+      "knowledge_count": 4,
+      "skill_count": 4,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAA-C03:3.5",
+      "knowledge_count": 7,
+      "skill_count": 7,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAA-C03:4.1",
+      "knowledge_count": 11,
+      "skill_count": 10,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAA-C03:4.2",
+      "knowledge_count": 9,
+      "skill_count": 6,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAA-C03:4.3",
+      "knowledge_count": 9,
+      "skill_count": 5,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAA-C03:4.4",
+      "knowledge_count": 7,
+      "skill_count": 7,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SOA-C03:1.1",
+      "knowledge_count": 0,
+      "skill_count": 5,
+      "knowledge_structure": "no separate list in checked task"
+    },
+    {
+      "task_id": "SOA-C03:1.2",
+      "knowledge_count": 0,
+      "skill_count": 3,
+      "knowledge_structure": "no separate list in checked task"
+    },
+    {
+      "task_id": "SOA-C03:1.3",
+      "knowledge_count": 0,
+      "skill_count": 6,
+      "knowledge_structure": "no separate list in checked task"
+    },
+    {
+      "task_id": "SOA-C03:2.1",
+      "knowledge_count": 0,
+      "skill_count": 3,
+      "knowledge_structure": "no separate list in checked task"
+    },
+    {
+      "task_id": "SOA-C03:2.2",
+      "knowledge_count": 0,
+      "skill_count": 2,
+      "knowledge_structure": "no separate list in checked task"
+    },
+    {
+      "task_id": "SOA-C03:2.3",
+      "knowledge_count": 0,
+      "skill_count": 4,
+      "knowledge_structure": "no separate list in checked task"
+    },
+    {
+      "task_id": "SOA-C03:3.1",
+      "knowledge_count": 0,
+      "skill_count": 6,
+      "knowledge_structure": "no separate list in checked task"
+    },
+    {
+      "task_id": "SOA-C03:3.2",
+      "knowledge_count": 0,
+      "skill_count": 2,
+      "knowledge_structure": "no separate list in checked task"
+    },
+    {
+      "task_id": "SOA-C03:4.1",
+      "knowledge_count": 0,
+      "skill_count": 5,
+      "knowledge_structure": "no separate list in checked task"
+    },
+    {
+      "task_id": "SOA-C03:4.2",
+      "knowledge_count": 0,
+      "skill_count": 5,
+      "knowledge_structure": "no separate list in checked task"
+    },
+    {
+      "task_id": "SOA-C03:5.1",
+      "knowledge_count": 0,
+      "skill_count": 4,
+      "knowledge_structure": "no separate list in checked task"
+    },
+    {
+      "task_id": "SOA-C03:5.2",
+      "knowledge_count": 0,
+      "skill_count": 3,
+      "knowledge_structure": "no separate list in checked task"
+    },
+    {
+      "task_id": "SOA-C03:5.3",
+      "knowledge_count": 0,
+      "skill_count": 5,
+      "knowledge_structure": "no separate list in checked task"
+    },
+    {
+      "task_id": "DOP-C02:1.1",
+      "knowledge_count": 2,
+      "skill_count": 5,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "DOP-C02:1.2",
+      "knowledge_count": 2,
+      "skill_count": 5,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "DOP-C02:1.3",
+      "knowledge_count": 3,
+      "skill_count": 3,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "DOP-C02:1.4",
+      "knowledge_count": 4,
+      "skill_count": 4,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "DOP-C02:2.1",
+      "knowledge_count": 3,
+      "skill_count": 4,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "DOP-C02:2.2",
+      "knowledge_count": 1,
+      "skill_count": 4,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "DOP-C02:2.3",
+      "knowledge_count": 2,
+      "skill_count": 4,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "DOP-C02:3.1",
+      "knowledge_count": 4,
+      "skill_count": 5,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "DOP-C02:3.2",
+      "knowledge_count": 4,
+      "skill_count": 5,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "DOP-C02:3.3",
+      "knowledge_count": 3,
+      "skill_count": 3,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "DOP-C02:4.1",
+      "knowledge_count": 5,
+      "skill_count": 8,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "DOP-C02:4.2",
+      "knowledge_count": 5,
+      "skill_count": 5,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "DOP-C02:4.3",
+      "knowledge_count": 4,
+      "skill_count": 7,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "DOP-C02:5.1",
+      "knowledge_count": 2,
+      "skill_count": 2,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "DOP-C02:5.2",
+      "knowledge_count": 2,
+      "skill_count": 3,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "DOP-C02:5.3",
+      "knowledge_count": 3,
+      "skill_count": 2,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "DOP-C02:6.1",
+      "knowledge_count": 4,
+      "skill_count": 4,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "DOP-C02:6.2",
+      "knowledge_count": 3,
+      "skill_count": 4,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "DOP-C02:6.3",
+      "knowledge_count": 3,
+      "skill_count": 4,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:1.1",
+      "knowledge_count": 5,
+      "skill_count": 5,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:1.2",
+      "knowledge_count": 4,
+      "skill_count": 4,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:1.3",
+      "knowledge_count": 3,
+      "skill_count": 4,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:1.4",
+      "knowledge_count": 3,
+      "skill_count": 3,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:1.5",
+      "knowledge_count": 3,
+      "skill_count": 3,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:2.1",
+      "knowledge_count": 4,
+      "skill_count": 4,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:2.2",
+      "knowledge_count": 5,
+      "skill_count": 6,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:2.3",
+      "knowledge_count": 6,
+      "skill_count": 6,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:2.4",
+      "knowledge_count": 6,
+      "skill_count": 6,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:2.5",
+      "knowledge_count": 4,
+      "skill_count": 5,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:2.6",
+      "knowledge_count": 5,
+      "skill_count": 4,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:3.1",
+      "knowledge_count": 5,
+      "skill_count": 5,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:3.2",
+      "knowledge_count": 7,
+      "skill_count": 8,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:3.3",
+      "knowledge_count": 4,
+      "skill_count": 5,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:3.4",
+      "knowledge_count": 6,
+      "skill_count": 4,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:3.5",
+      "knowledge_count": 4,
+      "skill_count": 5,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:4.1",
+      "knowledge_count": 4,
+      "skill_count": 3,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:4.2",
+      "knowledge_count": 6,
+      "skill_count": 5,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:4.3",
+      "knowledge_count": 4,
+      "skill_count": 4,
+      "knowledge_structure": "separate list"
+    },
+    {
+      "task_id": "SAP-C02:4.4",
+      "knowledge_count": 5,
+      "skill_count": 5,
+      "knowledge_structure": "separate list"
+    }
+  ],
+  "knowledge_entries": 259,
+  "by_exam": {
+    "SAA-C03": 107,
+    "DOP-C02": 59,
+    "SAP-C02": 93
+  },
+  "scope": "Editorial ordinal inventory; source hashes detect change, not semantic coverage. No learner or certification readiness claim."
+}

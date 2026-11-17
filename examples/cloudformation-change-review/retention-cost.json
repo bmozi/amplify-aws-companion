@@ -1,0 +1,24 @@
+{
+  "study_only": true,
+  "days_both_buckets_exist": 14,
+  "fictional_usd_per_gib_month": "0.03",
+  "old_bucket": {
+    "current_gib": "18",
+    "noncurrent_gib": "12"
+  },
+  "new_bucket": {
+    "current_gib": "18",
+    "noncurrent_gib": "0"
+  },
+  "unpriced_categories": [
+    "copy requests and possible transfer",
+    "application reads and writes",
+    "logging and monitoring",
+    "version growth and future retention"
+  ],
+  "old_object_inventory_recorded": false,
+  "copied_objects_reconciled": false,
+  "customer_read_tested": false,
+  "cleanup_owner_named": false,
+  "old_bucket_deletion_verified": false
+}

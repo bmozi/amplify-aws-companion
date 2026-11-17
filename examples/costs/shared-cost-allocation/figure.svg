@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 700" role="img" aria-labelledby="title desc">
+  <title id="title">A shared-cost allocation that reconciles to one bill</title>
+  <desc id="desc">A fictional 160 dollar pre-credit bill has 60 dollars direct Repair, 40 dollars direct Sales, 30 dollars shared Network, 20 dollars shared AI, and 10 dollars Unallocated. Network and AI driver weights assign the shared pools. Final showback is 94 dollars 50 cents Repair, 55 dollars 50 cents Sales, and 10 dollars Unallocated. The assigned totals equal the original bill.</desc>
+  <rect width="1160" height="700" fill="#f8fbfd"/>
+  <path d="M0 50H1160 M0 100H1160 M0 150H1160 M0 200H1160 M0 250H1160 M0 300H1160 M0 350H1160 M0 400H1160 M0 450H1160 M0 500H1160 M0 550H1160 M0 600H1160 M0 650H1160" stroke="#e7eef3" stroke-width="1"/>
+  <text x="45" y="48" fill="#0e3150" font-family="Arial,sans-serif" font-size="30" font-weight="bold">ONE BILL. SEVERAL OWNERS. NO LOST CENTS.</text>
+  <text x="45" y="79" fill="#3b5a70" font-family="Arial,sans-serif" font-size="18">Fictional pre-credit dollars; weights are declared business rules, not AWS observations.</text>
+  <rect x="45" y="132" width="332" height="382" rx="15" fill="#edf4f9" stroke="#598ab0" stroke-width="2"/>
+  <text x="67" y="170" fill="#143c5c" font-family="Arial,sans-serif" font-size="22" font-weight="bold">Source bill  $160.00</text>
+  <text x="67" y="215" fill="#385d78" font-family="Arial,sans-serif" font-size="18">Repair direct</text><text x="297" y="215" fill="#385d78" font-family="Arial,sans-serif" font-size="18">$60</text>
+  <text x="67" y="266" fill="#385d78" font-family="Arial,sans-serif" font-size="18">Sales direct</text><text x="297" y="266" fill="#385d78" font-family="Arial,sans-serif" font-size="18">$40</text>
+  <text x="67" y="317" fill="#385d78" font-family="Arial,sans-serif" font-size="18">Shared Network</text><text x="297" y="317" fill="#385d78" font-family="Arial,sans-serif" font-size="18">$30</text>
+  <text x="67" y="368" fill="#385d78" font-family="Arial,sans-serif" font-size="18">Shared AI</text><text x="297" y="368" fill="#385d78" font-family="Arial,sans-serif" font-size="18">$20</text>
+  <text x="67" y="419" fill="#385d78" font-family="Arial,sans-serif" font-size="18">Unallocated</text><text x="297" y="419" fill="#385d78" font-family="Arial,sans-serif" font-size="18">$10</text>
+  <text x="67" y="477" fill="#607c8e" font-family="Arial,sans-serif" font-size="16">Original line IDs retained</text>
+  <rect x="420" y="184" width="284" height="279" rx="15" fill="#fff6e8" stroke="#cd9b45" stroke-width="2"/>
+  <text x="443" y="226" fill="#6e4d17" font-family="Arial,sans-serif" font-size="22" font-weight="bold">Allocation rules</text>
+  <text x="443" y="274" fill="#795e32" font-family="Arial,sans-serif" font-size="18">Network: 3 : 1</text>
+  <text x="443" y="316" fill="#795e32" font-family="Arial,sans-serif" font-size="18">AI: 1200 : 800</text>
+  <text x="443" y="369" fill="#795e32" font-family="Arial,sans-serif" font-size="17">Exact cents + tie rule</text>
+  <text x="443" y="409" fill="#795e32" font-family="Arial,sans-serif" font-size="17">Disputes revise drivers</text>
+  <rect x="747" y="132" width="368" height="382" rx="15" fill="#eaf6f2" stroke="#448e7e" stroke-width="2"/>
+  <text x="771" y="170" fill="#155b50" font-family="Arial,sans-serif" font-size="22" font-weight="bold">Showback  $160.00</text>
+  <text x="771" y="211" fill="#32695f" font-family="Arial,sans-serif" font-size="18">Repair  $94.50</text>
+  <rect x="771" y="225" width="284" height="20" rx="4" fill="#2b8c86"/>
+  <text x="771" y="290" fill="#32695f" font-family="Arial,sans-serif" font-size="18">Sales  $55.50</text>
+  <rect x="771" y="304" width="167" height="20" rx="4" fill="#63aeb0"/>
+  <text x="771" y="369" fill="#32695f" font-family="Arial,sans-serif" font-size="18">Unallocated  $10.00</text>
+  <rect x="771" y="383" width="30" height="20" rx="4" fill="#d6a04f"/>
+  <text x="771" y="476" fill="#567b73" font-family="Arial,sans-serif" font-size="16">Owner totals = source bill</text>
+  <path d="M378 324H418 M705 324H745" stroke="#1b496b" stroke-width="3"/>
+  <path d="M412 319L420 324L412 329 M739 319L747 324L739 329" fill="none" stroke="#1b496b" stroke-width="3"/>
+  <rect x="45" y="556" width="1070" height="86" rx="13" fill="#f1eef8" stroke="#8b77ac" stroke-width="2"/>
+  <text x="68" y="592" fill="#554270" font-family="Arial,sans-serif" font-size="19" font-weight="bold">Dispute: one Network unit belongs to Platform.</text>
+  <text x="68" y="622" fill="#6d5b82" font-family="Arial,sans-serif" font-size="17">Repair becomes $87.00; Platform receives $7.50; source bill remains $160.00.</text>
+  <text x="45" y="674" fill="#5b7180" font-family="Arial,sans-serif" font-size="15">Illustrative internal allocation • not a CUR rewrite, AWS charge or finance-approved rule</text>
+</svg>

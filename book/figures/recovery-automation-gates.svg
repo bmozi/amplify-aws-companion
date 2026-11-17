@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 790" role="img" aria-labelledby="title desc">
+  <title id="title">Prepare and prove a recovery candidate before moving traffic</title>
+  <desc id="desc">A suspected incident is checked against a fresh, independent customer signal and assigned to an owner. Repeatable restore steps prepare a separate recovery candidate. Business records, key access, old-writer isolation and capacity are then checked. Passing these preparation steps does not itself authorize traffic cutover; the cutover decision is a separate gate.</desc>
+  <defs><style>
+    .bg{fill:#f6f9fa}.title{font:700 30px Arial,sans-serif;fill:#173748}.sub{font:20px Arial,sans-serif;fill:#365363}.head{font:700 24px Arial,sans-serif;fill:#173748}.body{font:21px Arial,sans-serif;fill:#173748}.note{font:20px Arial,sans-serif;fill:#365363}.blue{fill:#e8f3f8;stroke:#305b76;stroke-width:2}.gold{fill:#fff3dd;stroke:#9a6428;stroke-width:2}.red{fill:#fbe9e7;stroke:#a54737;stroke-width:2}.line{stroke:#305b76;stroke-width:3}
+  </style></defs>
+  <rect width="800" height="790" class="bg"/>
+  <text x="42" y="60" class="title">Prepare a candidate. Keep traffic still.</text>
+  <text x="42" y="91" class="sub">A recovery runbook can execute steps; it cannot invent evidence.</text>
+  <rect x="42" y="126" width="716" height="132" rx="14" class="blue"/>
+  <text x="64" y="167" class="head">1  Confirm the incident</text>
+  <text x="64" y="204" class="body">Check a fresh, independent customer signal.</text>
+  <text x="64" y="235" class="body">Name the affected scope and responsible owner.</text>
+  <path d="M400 258 V282" class="line"/>
+  <rect x="42" y="282" width="716" height="133" rx="14" class="blue"/>
+  <text x="64" y="323" class="head">2  Prepare a separate candidate</text>
+  <text x="64" y="360" class="body">Choose a recovery point and restore it.</text>
+  <text x="64" y="391" class="body">Automate the repeatable actions.</text>
+  <path d="M400 415 V439" class="line"/>
+  <rect x="42" y="439" width="716" height="164" rx="14" class="gold"/>
+  <text x="64" y="480" class="head">3  Prove readiness</text>
+  <text x="64" y="517" class="body">Reconcile bookings; test keys and dependencies.</text>
+  <text x="64" y="548" class="body">Fence the old writer; test capacity.</text>
+  <text x="64" y="579" class="note">A completed restore job alone is not this proof.</text>
+  <rect x="42" y="636" width="716" height="106" rx="14" class="red"/>
+  <text x="64" y="678" class="head">Stop here if evidence is missing or stale.</text>
+  <text x="64" y="712" class="body">Do not move the customer route yet.</text>
+  <text x="42" y="776" class="note">Teaching sequence only; not an installed AWS workflow or timing guarantee.</text>
+</svg>

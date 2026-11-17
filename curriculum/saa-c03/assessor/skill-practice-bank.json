@@ -1,0 +1,264 @@
+{
+  "scope": "Original learner prompts separated from existing internal review criteria; not a calibrated exam",
+  "items": [
+    {
+      "id": "SAA-C03:1.1:skill-01",
+      "title": "Protect human and root access",
+      "prompt": "A publisher cannot deploy, so a teammate proposes a root access key. Explain the difference between the helper's root rejection, MFA, role permissions and successful publication. The recovery mailbox is shared: what risk remains? Compare protection of a standalone account with centralized root access for an Organizations member account. Name the evidence still missing.",
+      "source_review": "curriculum/skill-reviews/SAA-1-1.md",
+      "source_heading": "Skill 01 \u2014 Protect human and root access"
+    },
+    {
+      "id": "SAA-C03:1.1:skill-02",
+      "title": "Compose an authorization model",
+      "prompt": "Maya hires a publisher, a backend engineer and an investigator. Assign responsibilities and compare direct user grants, IAM user groups and assumable roles. Explain why an IAM user group is not a principal in a resource policy.",
+      "source_review": "curriculum/skill-reviews/SAA-1-1.md",
+      "source_heading": "Skill 02 \u2014 Compose an authorization model"
+    },
+    {
+      "id": "SAA-C03:1.1:skill-03",
+      "title": "Design role-based access",
+      "prompt": "The publisher's entry role looks narrow, but it can pass an administrator execution role. Trace the resulting authority. Then propose a partner-account role path without assuming that one policy document alone completes cross-account access.",
+      "source_review": "curriculum/skill-reviews/SAA-1-1.md",
+      "source_heading": "Skill 03 \u2014 Design role-based access"
+    },
+    {
+      "id": "SAA-C03:1.1:skill-04",
+      "title": "Design account-level controls",
+      "prompt": "A production OU restriction blocks the recovery operator. Use the governance exercise to explain the inherited policy path and a staged correction. Identify why a role named BreakGlass is not automatically exempt.",
+      "source_review": "curriculum/skill-reviews/SAA-1-1.md",
+      "source_heading": "Skill 04 \u2014 Design account-level controls"
+    },
+    {
+      "id": "SAA-C03:1.1:skill-05",
+      "title": "Choose resource-policy access",
+      "prompt": "A partner needs one approved export. Compare a resource-policy grant with access through an assumed role. List the principals, resource scope, encryption-key dependencies and required negative tests before selecting either.",
+      "source_review": "curriculum/skill-reviews/SAA-1-1.md",
+      "source_heading": "Skill 05 \u2014 Choose resource-policy access"
+    },
+    {
+      "id": "SAA-C03:1.1:skill-06",
+      "title": "Decide when workforce federation fits",
+      "prompt": "The company already has a staff directory. A contractor changes teams and later leaves while holding a temporary session. Compare a separate IAM-user lifecycle with federation, and identify sign-in, assignment, session and recovery dependencies.",
+      "source_review": "curriculum/skill-reviews/SAA-1-1.md",
+      "source_heading": "Skill 06 \u2014 Decide when workforce federation fits"
+    },
+    {
+      "id": "SAA-C03:1.2:skill-01",
+      "title": "Combine network controls",
+      "prompt": "The application connection times out after a subnet ACL change, although the security group allows the service port. Draw both directions and identify the next read-only check. Then explain why a more permissive security group might not fix the failure.",
+      "source_review": "curriculum/skill-reviews/SAA-1-2.md",
+      "source_heading": "Skill 01 \u2014 Combine network controls"
+    },
+    {
+      "id": "SAA-C03:1.2:skill-02",
+      "title": "Segment by required communication",
+      "prompt": "A team calls a subnet private while requiring its workers to download supplier data. Propose the necessary paths and explain how database access differs from worker egress. Change the constraint: only one supported AWS service is needed.",
+      "source_review": "curriculum/skill-reviews/SAA-1-2.md",
+      "source_heading": "Skill 02 \u2014 Segment by required communication"
+    },
+    {
+      "id": "SAA-C03:1.2:skill-03",
+      "title": "Combine application protections",
+      "prompt": "A firewall accepts a request for another customer's invoice. Separately, half the workers fail after a supplier credential changes. Identify the enforcing component for each problem and the observations needed to resolve it. Explain what a WAF Count rule does during evaluation.",
+      "source_review": "curriculum/skill-reviews/SAA-1-2.md",
+      "source_heading": "Skill 03 \u2014 Combine application protections"
+    },
+    {
+      "id": "SAA-C03:1.2:skill-04",
+      "title": "Secure the external path",
+      "prompt": "A company proposes Direct Connect and assumes its traffic is encrypted. Its two VPN tunnels also share one office router. Explain confidentiality and availability separately, then add overlapping address ranges and private DNS to the design.",
+      "source_review": "curriculum/skill-reviews/SAA-1-2.md",
+      "source_heading": "Skill 04 \u2014 Secure the external path"
+    },
+    {
+      "id": "SAA-C03:1.3:skill-01",
+      "title": "Translate obligations into controls",
+      "prompt": "Maya's fictional retention periods appear in the lesson. A learner proposes reusing them for a medical business because the storage is encrypted. Explain what information is missing and propose a requirement-to-control evidence record.",
+      "source_review": "curriculum/skill-reviews/SAA-1-3.md",
+      "source_heading": "Skill 01 \u2014 Translate obligations into controls"
+    },
+    {
+      "id": "SAA-C03:1.3:skill-02",
+      "title": "Protect stored data",
+      "prompt": "An encrypted object is downloaded by an authorized worker, which prints the content in a diagnostic log. Explain what storage encryption did protect, what it did not, and how envelope encryption relates the content key to its protecting key.",
+      "source_review": "curriculum/skill-reviews/SAA-1-3.md",
+      "source_heading": "Skill 02 \u2014 Protect stored data"
+    },
+    {
+      "id": "SAA-C03:1.3:skill-03",
+      "title": "Protect data connections",
+      "prompt": "The browser uses HTTPS to the entry service, which opens another connection to the application. A valid certificate is shown, but one customer receives another customer's invoice. Identify three separate questions to investigate.",
+      "source_review": "curriculum/skill-reviews/SAA-1-3.md",
+      "source_heading": "Skill 03 \u2014 Protect data connections"
+    },
+    {
+      "id": "SAA-C03:1.3:skill-04",
+      "title": "Authorize key use",
+      "prompt": "An operator can fetch an object but decryption fails. A teammate proposes attaching a broad IAM allow. Identify the key, Region, caller, key policy, applicable IAM/grant path and service integration before deciding a remedy.",
+      "source_review": "curriculum/skill-reviews/SAA-1-3.md",
+      "source_heading": "Skill 04 \u2014 Authorize key use"
+    },
+    {
+      "id": "SAA-C03:1.3:skill-05",
+      "title": "Protect recoverable copies",
+      "prompt": "A restore creates a database successfully, but its application cannot decrypt the records. A replica also contains yesterday's mistaken changes. Explain why neither observation proves business recovery.",
+      "source_review": "curriculum/skill-reviews/SAA-1-3.md",
+      "source_heading": "Skill 05 \u2014 Protect recoverable copies"
+    },
+    {
+      "id": "SAA-C03:1.3:skill-06",
+      "title": "Govern access and lifecycle",
+      "prompt": "A customer record is removed from the live application but remains in an export and a backup. A later restore makes it visible again. Draw the copy inventory and a reconciliation step before access resumes. Then add a hold on one object version.",
+      "source_review": "curriculum/skill-reviews/SAA-1-3.md",
+      "source_heading": "Skill 06 \u2014 Govern access and lifecycle"
+    },
+    {
+      "id": "SAA-C03:1.3:skill-07",
+      "title": "Maintain keys and certificates",
+      "prompt": "A plaintext data key leaks. The team rotates KMS material and declares the existing content safe. Separately, an imported certificate approaches expiry while another regional certificate renews. Explain the two mistaken assumptions and name the next evidence needed.",
+      "source_review": "curriculum/skill-reviews/SAA-1-3.md",
+      "source_heading": "Skill 07 \u2014 Maintain keys and certificates"
+    },
+    {
+      "id": "SAA-C03:2.1:skill-01",
+      "title": "Design boundaries from requirements",
+      "prompt": "Maya's acceptance API is fast, but photos take several minutes to process. Compare a modular synchronous application and a separate asynchronous processor. The accepted-work write succeeds while queue dispatch fails: explain what each design promises and how the pending work can be found.",
+      "source_review": "curriculum/skill-reviews/SAA-2-1.md",
+      "source_heading": "Skill 01 \u2014 Design boundaries from requirements"
+    },
+    {
+      "id": "SAA-C03:2.1:skill-02",
+      "title": "Choose scaling by the limiting resource",
+      "prompt": "Use this separate fictional steady-rate model: arrivals are 17 jobs per second; each worker can finish two jobs per second; a shared supplier caps total completions at 18 jobs per second. Assume durable queued work, constant rates, no retries or startup delay, and an initially empty backlog. Compare eight and twelve workers. Then the supplier stops all completions for five minutes while arrivals continue. Calculate the backlog and whether each fleet can clear it after supplier recovery while new jobs continue arriving. Identify which real measurements could invalidate the calculation.",
+      "source_review": "curriculum/skill-reviews/SAA-2-1.md",
+      "source_heading": "Skill 02 \u2014 Choose scaling by the limiting resource"
+    },
+    {
+      "id": "SAA-C03:2.1:skill-03",
+      "title": "Choose a decoupling mechanism",
+      "prompt": "One photo needs processing, while two departments each need the completion notice. Decide where a work queue, subscriber distribution or event routing fits. Explain why putting both departments on one competing-consumer queue does not establish independent delivery to each.",
+      "source_review": "curriculum/skill-reviews/SAA-2-1.md",
+      "source_heading": "Skill 03 \u2014 Choose a decoupling mechanism"
+    },
+    {
+      "id": "SAA-C03:2.1:skill-04",
+      "title": "Decide whether containers fit",
+      "prompt": "A worker requires an existing custom runtime, and the team wants predictable artifact packaging. Compare a container path with a function or machine, then change the requirement to an operating-system capability unavailable in the proposed managed runtime.",
+      "source_review": "curriculum/skill-reviews/SAA-2-1.md",
+      "source_heading": "Skill 04 \u2014 Decide whether containers fit"
+    },
+    {
+      "id": "SAA-C03:2.1:skill-05",
+      "title": "Decide whether serverless fits",
+      "prompt": "A brief event handler bursts in demand, but its database supports a limited number of active connections. Explain why removing server administration does not remove that bottleneck and identify the invocation/concurrency behavior to inspect.",
+      "source_review": "curriculum/skill-reviews/SAA-2-1.md",
+      "source_heading": "Skill 05 \u2014 Decide whether serverless fits"
+    },
+    {
+      "id": "SAA-C03:2.1:skill-06",
+      "title": "Select the whole technology path",
+      "prompt": "The same company needs a keyed booking update, shared legacy file access and a flexible relational report. Compare interfaces and consistency needs before choosing compute, storage, networking and database services. Explain which choice forces changes elsewhere.",
+      "source_review": "curriculum/skill-reviews/SAA-2-1.md",
+      "source_heading": "Skill 06 \u2014 Select the whole technology path"
+    },
+    {
+      "id": "SAA-C03:2.1:skill-07",
+      "title": "Prefer a supported service when its contract fits",
+      "prompt": "A team proposes building a custom queue server because it can demonstrate enqueue/dequeue quickly. Compare it with a managed queue using durability, duplicate handling, maintenance, permissions, recovery and cost. Name one requirement that would force the service selection to be reconsidered.",
+      "source_review": "curriculum/skill-reviews/SAA-2-1.md",
+      "source_heading": "Skill 07 \u2014 Prefer a supported service when its contract fits"
+    },
+    {
+      "id": "SAA-C03:3.1:skill-01",
+      "title": "Match storage to performance requirements",
+      "prompt": "Maya has photographs accessed by key, a Linux application needing a shared directory and a machine workload expecting a disk. Compare suitable interfaces before naming services. Then change the workload to many small operations rather than large sequential reads, and explain what must be measured.",
+      "source_review": "curriculum/skill-reviews/SAA-3-1.md",
+      "source_heading": "Skill 01 \u2014 Match storage to performance requirements"
+    },
+    {
+      "id": "SAA-C03:3.1:skill-02",
+      "title": "Plan storage growth",
+      "prompt": "The same total byte count changes from a few large objects to millions of small ones. Separately, the shared file application doubles its clients and an EBS volume grows without a visible file-system increase. Explain three different scaling problems and the evidence needed for each. Add an office-disconnection requirement.",
+      "source_review": "curriculum/skill-reviews/SAA-3-1.md",
+      "source_heading": "Skill 02 \u2014 Plan storage growth"
+    },
+    {
+      "id": "SAA-C03:3.2:skill-01",
+      "title": "Separate independently scaling work",
+      "prompt": "A web application accepts photographs and transforms each one before replying. Traffic rises, but only transformation needs additional capacity. Propose a boundary and explain how the customer learns that work finished. Then introduce a failure between saving the request and sending the message.",
+      "source_review": "curriculum/skill-reviews/SAA-3-2.md",
+      "source_heading": "Skill 01 \u2014 Separate independently scaling work"
+    },
+    {
+      "id": "SAA-C03:3.2:skill-02",
+      "title": "Choose scaling signals and conditions",
+      "prompt": "Eight workers complete at most 16 jobs per second; arrivals rise to 17. The supplier caps the whole fleet at 18. Explain why the backlog grows, what 12 workers change, and why a CPU percentage alone cannot decide whether customers receive timely service. Now make the supplier temporarily unavailable.",
+      "source_review": "curriculum/skill-reviews/SAA-3-2.md",
+      "source_heading": "Skill 02 \u2014 Choose scaling signals and conditions"
+    },
+    {
+      "id": "SAA-C03:3.2:skill-03",
+      "title": "Match compute characteristics to requirements",
+      "prompt": "A sustained image transform runs quickly at first on a burstable machine, then its performance or charges change. A colleague proposes changing to Arm and doubling the instance size together. Explain which observations and compatibility checks you need before approving either change. Change the scenario so most elapsed time is a supplier call.",
+      "source_review": "curriculum/skill-reviews/SAA-3-2.md",
+      "source_heading": "Skill 03 \u2014 Match compute characteristics to requirements"
+    },
+    {
+      "id": "SAA-C03:3.2:skill-04",
+      "title": "Choose resource size from outcomes",
+      "prompt": "Use a new fictional benchmark: P allocates 0.5 GiB and takes 2.4 seconds; Q allocates 1 GiB and takes 1.0 second; R allocates 2 GiB and takes 0.8 seconds. All return correct results for the supplied input. Calculate GiB-seconds, then choose the lowest-resource-time eligible candidate for a 1.2-second execution target and for a 0.9-second target. Explain why neither choice establishes a monthly bill or a p95 customer-response guarantee. Finally, suppose R produces incorrect output on the largest valid input. What can you conclude for the 0.9-second requirement?",
+      "source_review": "curriculum/skill-reviews/SAA-3-2.md",
+      "source_heading": "Skill 04 \u2014 Choose resource size from outcomes"
+    },
+    {
+      "id": "SAA-C03:3.3:skill-03",
+      "title": "Select an engine against actual compatibility needs",
+      "prompt": "An existing PostgreSQL application uses PostGIS and stored procedures. Its owner requests a hosting migration, but the proposed target is MySQL because both use SQL. Explain the scope change, nominate a managed PostgreSQL candidate and alternative, and identify compatibility evidence needed for acceptance. Then suppose an invoice-total test differs despite matching row counts.",
+      "source_review": "curriculum/skill-reviews/SAA-3-3.md",
+      "source_heading": "Skill 03 \u2014 Select an engine against actual compatibility needs"
+    },
+    {
+      "id": "SAA-C03:3.3:skill-04",
+      "title": "Select a database type from access and correctness requirements",
+      "prompt": "A high-volume device-status service has specified keyed reads and updates. Recommend a candidate and one credible alternative. Change the requirement to frequent unplanned relationship queries, then add a last-seat invariant. Explain which changes affect the decision and why transactions do not uniquely identify SQL.",
+      "source_review": "curriculum/skill-reviews/SAA-3-3.md",
+      "source_heading": "Skill 04 \u2014 Select a database type from access and correctness requirements"
+    },
+    {
+      "id": "SAA-C03:3.3:skill-05",
+      "title": "Integrate caching against requirements",
+      "prompt": "A class listing shows one seat after another customer has booked it. The team says a ten-second TTL guarantees every answer is at most ten seconds old and deleting the cache after a database update prevents all stale results. Draw a counterexample involving a paused reader. Decide where the booking rule must be enforced. Then remove the cache during a busy period and explain the new source-load risk.",
+      "source_review": "curriculum/skill-reviews/SAA-3-3.md",
+      "source_heading": "Skill 05 \u2014 Integrate caching against requirements"
+    },
+    {
+      "id": "SAA-C03:3.4:skill-01",
+      "title": "Draw the topology from required flows",
+      "prompt": "A company has an office parts API and a cloud booking service. Draw the request and return paths for office staff, the cloud worker's parts lookup, and both directions of private name resolution. Add a newly acquired office that overlaps the original private address range. Explain what is ambiguous and compare renumbering with a narrowly scoped application-access boundary.",
+      "source_review": "curriculum/skill-reviews/SAA-3-4.md",
+      "source_heading": "Skill 01 \u2014 Draw the topology from required flows"
+    },
+    {
+      "id": "SAA-C03:3.4:skill-03",
+      "title": "Place resources using the complete operation",
+      "prompt": "A booking performs six sequential parts lookups across a fictional 40-millisecond round-trip path. A proposed change moves only the web server nearer the browser. Explain the unmeasured assumption in claiming that booking becomes fast. Calculate the network contribution from those lookups; compare a semantically equivalent batch. Then change the requirement: one Availability Zone must be lost without violating the business response objective.",
+      "source_review": "curriculum/skill-reviews/SAA-3-4.md",
+      "source_heading": "Skill 03 \u2014 Place resources using the complete operation"
+    },
+    {
+      "id": "SAA-C03:3.5:skill-02",
+      "title": "Give independent consumers recoverable progress",
+      "prompt": "A sales source feeds an operational dashboard and a fraud application. The dashboard needs fresh results; fraud must recompute the preceding seven days after a rule repair. Deliveries can repeat or arrive late, and either consumer may be unavailable independently. Compare a shared work queue with independently progressing consumers over retained history. Draw event identity, each consumer's progress, access boundaries, retained source and output version. Trace a crash before the effect and one after the effect but before progress. Then start a long replay near the retention limit. Explain the risk, the margin or alternative source needed, and why rebuilding analysis differs from resending customer receipts.",
+      "source_review": "curriculum/skill-reviews/SAA-3-5.md",
+      "source_heading": "Skill 02 \u2014 Give independent consumers recoverable progress"
+    },
+    {
+      "id": "SAA-C03:3.5:skill-07",
+      "title": "Preserve meaning while changing representation",
+      "prompt": "A CSV-to-Parquet conversion must preserve the identifier `001`, distinguish literal `NULL` from a missing value, handle refunds and require a timezone marker. Before running the conversion exercise, specify accepted and rejected inputs and an independent comparison of complete rows. Explain how a defect could preserve the total and row count while changing identity. Now introduce a second currency, explicit timestamp offsets, a missing historical channel and an unknown schema version. State compatibility decisions, expected results, unknown facts and publication/retention rules without inventing historical data. Compare whole-batch rejection with durable quarantine and identify concurrency and crash-recovery limits.",
+      "source_review": "curriculum/skill-reviews/SAA-3-5.md",
+      "source_heading": "Skill 07 \u2014 Preserve meaning while changing representation"
+    }
+  ]
+}

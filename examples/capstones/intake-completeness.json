@@ -1,0 +1,13 @@
+{
+  "scope": "Fictional independent intake register; authority and completeness are supplied assumptions",
+  "as_of_second": 120,
+  "accepted": [
+    {"id": "r1", "accepted": 0},
+    {"id": "r2", "accepted": 10},
+    {"id": "r3", "accepted": 20},
+    {"id": "r4", "accepted": 30},
+    {"id": "r5", "accepted": 40},
+    {"id": "r7", "accepted": 50},
+    {"id": "r6", "accepted": 70}
+  ]
+}

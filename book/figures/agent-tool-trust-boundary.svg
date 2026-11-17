@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1030" role="img" aria-labelledby="title desc">
+<title id="title">A model can propose a tool action; the application decides whether it may run</title>
+<desc id="desc">The application verifies the current caller and scopes retrieved evidence before a model sees it. Retrieved text and the model's proposed tool, target and amount remain untrusted. An application-owned gate independently checks the current caller and tenant, allowed tool and exact target, a separate trusted request for the exact job and amount, exact approval with revision and expiry, an action limit, and a stable operation identity. A failed check denies the action with no fictional effect. An allowed action records one fictional effect, receipt and audit decision; replay returns the earlier receipt. The local lab uses trusted fixtures and an in-memory effect, with no actual model, human authentication, payment or AWS call.</desc>
+<defs><style>text{font-family:Arial,sans-serif;fill:#173340}.title{font-size:30px;font-weight:700}.head{font-size:25px;font-weight:700}.body{font-size:22px}.note{font-size:20px}.line{stroke:#315b6a;stroke-width:3;fill:none;marker-end:url(#arrow)}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#315b6a"/></marker></defs>
+<rect width="800" height="1030" fill="#fff"/>
+<text class="title" x="34" y="50">A model proposes; the app decides</text>
+<text class="body" x="34" y="88">Fictional credit example: reading is not authority to act.</text>
+<rect x="32" y="120" width="736" height="127" rx="14" fill="#edf5f6" stroke="#315b6a" stroke-width="2"/>
+<text class="head" x="55" y="160">Application verifies caller and evidence</text>
+<text class="body" x="55" y="201">Derive actor/tenant; retrieve permitted sources.</text>
+<path class="line" d="M400 247 V276"/>
+<rect x="32" y="282" width="736" height="129" rx="14" fill="#fff2dd" stroke="#92651f" stroke-width="2"/>
+<text class="head" x="55" y="322">Model proposes a tool action</text>
+<text class="body" x="55" y="363">Tool, target and amount may be wrong or hostile.</text>
+<path class="line" d="M400 411 V440"/>
+<rect x="32" y="446" width="736" height="304" rx="14" fill="#f1f1f6" stroke="#62598b" stroke-width="2"/>
+<text class="head" x="55" y="486">Application-owned action gate</text>
+<text class="body" x="55" y="526">1 · Actor, tenant, allowed tool + exact target</text>
+<text class="body" x="55" y="566">2 · Separate trusted request: job + amount</text>
+<text class="body" x="55" y="606">3 · Exact approval, revision and expiry</text>
+<text class="body" x="55" y="646">4 · Action limit + stable operation identity</text>
+<text class="note" x="55" y="705">Prompt text cannot supply any of these grants.</text>
+<rect x="32" y="783" width="353" height="131" rx="14" fill="#f9e9e5" stroke="#9b493c" stroke-width="2"/>
+<text class="head" x="55" y="825">Denied</text>
+<text class="body" x="55" y="864">No effect; keep evidence.</text>
+<rect x="415" y="783" width="353" height="131" rx="14" fill="#e9f3ec" stroke="#39704b" stroke-width="2"/>
+<text class="head" x="438" y="825">Allowed</text>
+<text class="body" x="438" y="864">One effect + receipt.</text>
+<text class="note" x="34" y="958">Local fixture only: no model, real sign-in, payment,</text>
+<text class="note" x="34" y="990">distributed race or AWS call.</text>
+</svg>

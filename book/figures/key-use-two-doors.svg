@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760" role="img" aria-labelledby="title desc">
+<title id="title">An encrypted object read passes an S3 door and a KMS door</title>
+<desc id="desc">The reader role asks S3 for one approved object version. S3 access decides whether those bytes may be fetched. S3 then needs KMS key use on the reader's behalf for SSE-KMS decryption. Only after both decisions can the application receive plaintext, which it must handle within its approved audience.</desc>
+<rect width="600" height="760" fill="#f7f9fb"/>
+<g font-family="Arial,sans-serif" fill="#102c4c">
+<text x="35" y="53" font-size="28" font-weight="700">Two doors to one encrypted export</text>
+<rect x="40" y="82" width="520" height="92" rx="12" fill="#d9ecf8" stroke="#276496" stroke-width="3"/>
+<text x="67" y="120" font-size="23" font-weight="700">Recovery reader</text>
+<text x="67" y="153" font-size="20">Asks for approved version A</text>
+<path d="M300 176v39" stroke="#34587a" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="40" y="220" width="520" height="118" rx="12" fill="#fff0cc" stroke="#af7116" stroke-width="3"/>
+<text x="67" y="260" font-size="23" font-weight="700">Door 1: S3 object version</text>
+<text x="67" y="293" font-size="20">Correct role, object and version?</text>
+<text x="67" y="322" font-size="18" fill="#a53e38">Other version or current object: deny</text>
+<path d="M300 341v43" stroke="#34587a" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="320" y="369" font-size="17">if permitted</text>
+<rect x="40" y="390" width="520" height="137" rx="12" fill="#eee8f5" stroke="#76528d" stroke-width="3"/>
+<text x="67" y="430" font-size="23" font-weight="700">Door 2: KMS key use</text>
+<text x="67" y="464" font-size="20">S3 calls for reader, with context</text>
+<text x="67" y="495" font-size="18">Right key, service path and object?</text>
+<path d="M300 530v43" stroke="#34587a" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="320" y="558" font-size="17">if permitted</text>
+<rect x="40" y="580" width="520" height="110" rx="12" fill="#e0f0e6" stroke="#35764e" stroke-width="3"/>
+<text x="67" y="620" font-size="23" font-weight="700">Application receives plaintext</text>
+<text x="67" y="655" font-size="19">Keep it within the approved audience</text>
+<text x="40" y="729" font-size="18">A policy file is a proposal, not a read result.</text>
+</g>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0l10 5-10 5z" fill="#34587a"/></marker></defs>
+</svg>

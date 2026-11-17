@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="755" viewBox="0 0 360 755" role="img" aria-labelledby="title desc">
+  <title id="title">A changed promise fans out across design decisions</title>
+  <desc id="desc">One-shop restore is the example. The change affects records and other shops, photos and access, workflow and outside effects, plus cost, an operator runbook and customer observation. A human must check whether the authored map omitted anything.</desc>
+  <rect width="360" height="755" fill="#f5f8fb"/>
+  <g font-family="Arial,Helvetica,sans-serif" fill="#19364b">
+    <text x="16" y="31" font-size="20" font-weight="700">A changed promise affects</text>
+    <text x="16" y="54" font-size="20" font-weight="700">the whole path</text>
+    <rect x="12" y="70" width="336" height="93" rx="12" fill="#dceaf3" stroke="#39708b" stroke-width="2"/>
+    <text x="26" y="98" font-size="17" font-weight="700">Restore one shop</text>
+    <text x="26" y="123" font-size="15">without rolling back another shop</text>
+    <text x="26" y="147" font-size="13" fill="#466578">New business promise</text>
+    <text x="22" y="182" font-size="13" font-weight="700" fill="#49677c">Check all three affected areas:</text>
+    <rect x="12" y="190" width="336" height="102" rx="12" fill="#e5f2eb" stroke="#39745b" stroke-width="2"/>
+    <text x="26" y="219" font-size="17" font-weight="700">Records + other shops</text>
+    <text x="26" y="247" font-size="15">Which records? Which revision?</text>
+    <text x="26" y="272" font-size="15">Who may write during restore?</text>
+    <text x="167" y="310" font-size="13" font-weight="700" fill="#49677c">AND</text>
+    <rect x="12" y="317" width="336" height="102" rx="12" fill="#fff0d9" stroke="#9b6a18" stroke-width="2"/>
+    <text x="26" y="346" font-size="17" font-weight="700">Photos + access</text>
+    <text x="26" y="374" font-size="15">Which object versions and copies?</text>
+    <text x="26" y="399" font-size="15">Who can read them after restore?</text>
+    <text x="167" y="437" font-size="13" font-weight="700" fill="#49677c">AND</text>
+    <rect x="12" y="444" width="336" height="102" rx="12" fill="#eee8f6" stroke="#70528d" stroke-width="2"/>
+    <text x="26" y="473" font-size="17" font-weight="700">Workflow + outside effects</text>
+    <text x="26" y="501" font-size="15">Scheduler receipt and retries</text>
+    <text x="26" y="526" font-size="15">must not repeat completed effects.</text>
+    <text x="22" y="563" font-size="13" font-weight="700" fill="#49677c">Then review the combined worklist:</text>
+    <rect x="12" y="571" width="336" height="137" rx="12" fill="#e2eaf1" stroke="#49677c" stroke-width="2"/>
+    <text x="26" y="600" font-size="17" font-weight="700">Human review of the worklist</text>
+    <text x="26" y="628" font-size="15">Cost, cleanup and operator runbook</text>
+    <text x="26" y="654" font-size="15">Customer-visible rejection test</text>
+    <text x="26" y="685" font-size="15" font-style="italic">What link did we omit?</text>
+    <text x="16" y="737" font-size="13" fill="#466578">Authored map; verify the real system.</text>
+  </g>
+</svg>

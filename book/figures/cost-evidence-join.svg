@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 525" role="img" aria-labelledby="title desc">
+<title id="title">Join billing rows with resource and customer evidence before optimizing cost</title>
+<desc id="desc">Three numbered evidence cards ask what the bill measured, what resources still exist and how they behaved at peak, and whether customers received correct timely work. An owner decision panel covers verified waste, peak and recovery testing, customer promises and alert delivery. A separate credit note says credits change payment rather than usage. This is a fictional reasoning aid, not an AWS bill or configured alert.</desc>
+<defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#18313d}.title{font-size:18px;font-weight:700}.head{font-size:17px;font-weight:700}.body{font-size:14px}.card{stroke-width:1.5}</style></defs>
+<rect width="360" height="525" fill="#fff"/>
+<text x="16" y="27" class="title">A smaller bill is not the whole decision</text>
+<rect class="card" x="16" y="44" width="328" height="66" rx="8" fill="#edf5f6" stroke="#315c6e"/>
+<text x="29" y="69" class="head">1 · Bill</text><text x="29" y="94" class="body">Period, meter, shared + unknown rows</text>
+<rect class="card" x="16" y="121" width="328" height="66" rx="8" fill="#fff8e8" stroke="#a17929"/>
+<text x="29" y="146" class="head">2 · Resources</text><text x="29" y="171" class="body">Owner, retained state, peak + recovery</text>
+<rect class="card" x="16" y="198" width="328" height="66" rx="8" fill="#eef7f0" stroke="#3d7b5c"/>
+<text x="29" y="223" class="head">3 · Customer result</text><text x="29" y="248" class="body">Correct, on-time work; latency + restore</text>
+<rect class="card" x="16" y="275" width="328" height="174" rx="8" fill="#f3eff9" stroke="#726099"/>
+<text x="29" y="301" class="head">Bring all three to the owner</text>
+<text x="29" y="326" class="body">Remove only verified waste.</text>
+<text x="29" y="350" class="body">Test peak + recovery first.</text>
+<text x="29" y="374" class="body">Protect the customer promise.</text>
+<text x="29" y="398" class="body">Confirm alert delivery.</text>
+<text x="29" y="422" class="body">Then measure the actual result.</text>
+<rect class="card" x="16" y="464" width="328" height="45" rx="8" fill="#edf5f6" stroke="#315c6e"/>
+<text x="29" y="491" class="body">Credits change payment, not usage.</text>
+</svg>

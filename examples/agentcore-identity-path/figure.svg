@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+  <title id="title">Five gates between an agent proposal and Maya's calendar</title>
+  <desc id="desc">An authenticated Maya request reaches an agent workload, then a user-bound credential provider and token vault, then an application gate for the exact repair and operation, and finally the outside calendar. Wrong user, wrong provider, revoked grant, rejected token and replay stop the action.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1c496a"/></marker></defs>
+  <rect width="1200" height="660" fill="#f8fbfd"/>
+  <path d="M0 50H1200 M0 100H1200 M0 150H1200 M0 200H1200 M0 250H1200 M0 300H1200 M0 350H1200 M0 400H1200 M0 450H1200 M0 500H1200 M0 550H1200 M0 600H1200" stroke="#e7eef3" stroke-width="1"/>
+  <text x="46" y="49" fill="#0e3150" font-family="Arial,sans-serif" font-size="30" font-weight="bold">WHOSE CALENDAR CAN THE AGENT CHANGE?</text>
+  <text x="46" y="80" fill="#3b5970" font-family="Arial,sans-serif" font-size="18">A credential can open a door; it cannot approve every action behind it.</text>
+  <rect x="45" y="170" width="190" height="210" rx="15" fill="#e8f2fa" stroke="#4b88b8" stroke-width="2"/>
+  <text x="64" y="209" fill="#153d5e" font-family="Arial,sans-serif" font-size="21" font-weight="bold">1  Caller</text>
+  <text x="64" y="250" fill="#355c76" font-family="Arial,sans-serif" font-size="18">Maya signs in</text>
+  <text x="64" y="282" fill="#355c76" font-family="Arial,sans-serif" font-size="17">JWT / IAM path</text>
+  <text x="64" y="340" fill="#61798b" font-family="Arial,sans-serif" font-size="15">Who is asking?</text>
+  <rect x="280" y="170" width="190" height="210" rx="15" fill="#e9f7f5" stroke="#318f89" stroke-width="2"/>
+  <text x="299" y="209" fill="#145954" font-family="Arial,sans-serif" font-size="21" font-weight="bold">2  Workload</text>
+  <text x="299" y="250" fill="#326a66" font-family="Arial,sans-serif" font-size="17">repair-agent</text>
+  <text x="299" y="282" fill="#326a66" font-family="Arial,sans-serif" font-size="17">provider allowlist</text>
+  <text x="299" y="340" fill="#61798b" font-family="Arial,sans-serif" font-size="15">Which agent?</text>
+  <rect x="515" y="170" width="190" height="210" rx="15" fill="#eef0fa" stroke="#7c81b0" stroke-width="2"/>
+  <text x="534" y="209" fill="#353e75" font-family="Arial,sans-serif" font-size="21" font-weight="bold">3  Credential</text>
+  <text x="534" y="250" fill="#555e86" font-family="Arial,sans-serif" font-size="17">Maya + 3LO</text>
+  <text x="534" y="282" fill="#555e86" font-family="Arial,sans-serif" font-size="17">calendar.write</text>
+  <text x="534" y="340" fill="#61798b" font-family="Arial,sans-serif" font-size="15">Whose consent?</text>
+  <rect x="750" y="170" width="190" height="210" rx="15" fill="#fff4e8" stroke="#d69a40" stroke-width="2"/>
+  <text x="769" y="209" fill="#70501c" font-family="Arial,sans-serif" font-size="21" font-weight="bold">4  Action</text>
+  <text x="769" y="250" fill="#806334" font-family="Arial,sans-serif" font-size="17">repair-17 grant</text>
+  <text x="769" y="282" fill="#806334" font-family="Arial,sans-serif" font-size="17">op-17 approval</text>
+  <text x="769" y="340" fill="#61798b" font-family="Arial,sans-serif" font-size="15">May it happen now?</text>
+  <rect x="985" y="170" width="170" height="210" rx="15" fill="#f6edf4" stroke="#a3719c" stroke-width="2"/>
+  <text x="1004" y="209" fill="#693e67" font-family="Arial,sans-serif" font-size="21" font-weight="bold">5  Provider</text>
+  <text x="1004" y="250" fill="#775b74" font-family="Arial,sans-serif" font-size="17">Calendar API</text>
+  <text x="1004" y="282" fill="#775b74" font-family="Arial,sans-serif" font-size="17">accepts token?</text>
+  <text x="1004" y="340" fill="#61798b" font-family="Arial,sans-serif" font-size="15">Effect + receipt</text>
+  <path d="M235 277H279 M470 277H514 M705 277H749 M940 277H984" stroke="#1c496a" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="45" y="456" fill="#a0432b" font-family="Arial,sans-serif" font-size="18" font-weight="bold">STOP CONDITIONS</text>
+  <text x="45" y="493" fill="#74524b" font-family="Arial,sans-serif" font-size="17">Wrong user or agent • wrong credential provider • provider revocation • lost repair grant</text>
+  <text x="45" y="528" fill="#74524b" font-family="Arial,sans-serif" font-size="17">Unapproved tool or operation • duplicate effect after a lost response</text>
+  <text x="45" y="601" fill="#5e7484" font-family="Arial,sans-serif" font-size="16">Offline decision map only • no real token, booking, AWS configuration or revocation test</text>
+</svg>

@@ -1,0 +1,11 @@
+# Assessor: a matching document is still only a starting point
+
+This key evaluates the synthetic [learner lab](README.md); it is not a measured AWS role.
+
+1. `declared_documents` returns `matched` because the fixture supplies the expected account/provider, exact repository-branch trust, one intended inline policy, no attached policy, and no boundary. It proves that **these supplied documents** agree. It cannot establish that the real role has those documents now, that the GitHub job obtains a session, or that Amplify accepts and serves the artifact.
+2. `extra_attached_policy` returns `review_required`. An inline policy's omission of an action is not an explicit deny, so an additional applicable policy can add a grant. Read the managed policy's default version and evaluate its action, resource and conditions alongside every other applicable policy. Do not infer its contents or danger merely from the name `ExtraAccess`.
+3. `unreadable_attachment_list` also returns `review_required`. Access denied to the *reviewer* is missing evidence about the *publisher*. It is not an empty attachment list. Use an authorized read-only identity or have an administrator produce a fresh, complete inventory; do not promote the incomplete result.
+
+Changing the trust subject or replacing one branch ARN with `*` breaks document alignment. A strict mismatch is an investigation trigger, not a full IAM verdict. A legitimate scoped boundary or harmless statement-order difference may need human interpretation. The checker normalizes order of statements and simple action/resource lists, but intentionally does not claim semantic equivalence for arbitrary IAM documents.
+
+A strong learner answer distinguishes **desired recipe**, **collected account documents**, **effective session authorization**, **service execution**, and **customer-visible publication**. It names the exact missing evidence and proposes a safe read or disposable target before any live negative test. AWS policy simulation and static comparison are useful, but a mismatched resource type or nonexistent target cannot prove the intended boundary. No live AWS access, role installation, billing observation or learner score is supplied by this case.

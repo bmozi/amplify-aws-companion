@@ -1,0 +1,12 @@
+# DOP-C02 task 6.2 skill review
+
+Each map is partial and design-focused. The local exercise validates a supplied fictional matrix, not AWS behavior or effective controls.
+
+| Skill | Teaching and assessment evidence | Remaining evidence |
+| --- | --- | --- |
+| Automate controls across multiple accounts and Regions with Security Hub, Organizations, Control Tower and Systems Manager | Unit 31 distinguishes organization structure, landing-zone controls, Security Hub CSPM central configuration, Config evaluation, GuardDuty and Systems Manager roles. The figure separates governance from account/Region scope. E26 requires target, authority, freshness, owner and drift decisions; E18 remains the multi-account design prerequisite. | No Organization, landing zone, delegated admin, configuration policy, SSM target or cross-Region integration was configured. Requires a separately authorized multi-account test environment. |
+| Combine controls for defense in depth | Unit 31 traces routing, Network Firewall, subnet NACL, WAF/Shield, security group and application authorization without merging their jobs. E26 requires a packet/return path and failure behavior. | No live network path, WAF rule, Config rule, Security Hub CSPM control or detection source was tested. Rule behavior and prices need resource/Region-specific verification. |
+| Automate sensitive-data discovery at scale with Macie | Unit 31 explains S3-only scope, representative sampling and coverage limits; E26 and the local matrix require explicit scope and freshness. The existing security finding review teaches why a no-finding result does not prove full inspection. | No Macie account enrollment, bucket inventory, automated discovery, job, cost estimate or live finding was observed; trial/free-tier eligibility is unverified. |
+| Encrypt data in transit and at rest with KMS, CloudHSM and ACM | Units 19 and 31 separate TLS identity, certificate lifecycle, KMS service/key integration, data access, recovery and CloudHSM custody/availability tradeoffs. E26 asks for an upload-to-restore path. | No certificate was issued, key used, CloudHSM cluster created or service integration tested. No restore demonstrated key availability. |
+
+Source: the [official DOP-C02 Domain 6 objective](https://docs.aws.amazon.com/aws-certification/latest/devops-engineer-professional-02/devops-engineer-professional-02-domain6.html#dop-02-task-6-2), checked 2026-10-19. Organization-dependent work remains design-only. No costs or credits were consumed for these local materials.
