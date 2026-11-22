@@ -1,6 +1,6 @@
 # Find the chapter in the book
 
-The full chapter text is in **AMPLIFY AWS**, not this lab packet. Use the chapter number and section heading below with your ebook's search or your print contents. Some entries identify internal planning references and suggest where to look instead.
+The full chapter text is in **Thinking in AWS**, not this lab packet. Use the chapter number and section heading below with your ebook's search or your print contents. Some entries identify internal planning references and suggest where to look instead.
 
 <a id="book-16b52b3769a877e6"></a>
 

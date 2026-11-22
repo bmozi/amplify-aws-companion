@@ -28,7 +28,7 @@ From this directory, run `python3 scripts/check-companion.py --lab-only` for the
 
 For SAA-C03 preparation, start with the [self-paced study route](curriculum/saa-c03/README.md). Save the diagnostic first attempt before opening any answer key; the route supplies a task-by-task reading and practice sequence.
 
-Suppose a customer presses **Save note**. A page may say “saved,” but which service accepted the request, where is the note, who may read it, and what happens when a reply is lost? *AMPLIFY AWS* starts with questions like these. The companion gives you small ways to test the reasoning before you spend money in an AWS account.
+Suppose a customer presses **Save note**. A page may say “saved,” but which service accepted the request, where is the note, who may read it, and what happens when a reply is lost? *Thinking in AWS* starts with questions like these. The companion gives you small ways to test the reasoning before you spend money in an AWS account.
 
 The book follows 34 chapters from a customer request through identity, cost, networking, data, operations, recovery and architecture decisions. Source filenames retain older unit numbers; use the **chapter number in the book's contents** for reading order. The [learning routes](curriculum/LEARNING-ROUTES.md) offer beginner, operator, architect and certification-study paths without treating one route as a universal prerequisite list.
 
