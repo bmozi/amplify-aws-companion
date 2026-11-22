@@ -25,8 +25,8 @@
     <form data-model="request">
       <fieldset><legend>Access decision</legend><label><input type="radio" name="allowed" value="yes" checked> Customer may create this repair</label><label><input type="radio" name="allowed" value="no"> Customer is refused access</label></fieldset>
       <fieldset><legend>Connection outcome when access is allowed</legend><label><input type="radio" name="failure" value="after" checked> Reply lost after the write</label><label><input type="radio" name="failure" value="before"> Connection lost before the write</label><label><input type="radio" name="failure" value="none"> Confirmation reaches the browser</label></fieldset>
-      <label>Your prediction<textarea name="prediction" rows="3" placeholder="Does a repair exist? What does the customer know?"></textarea></label>
-      <button type="submit">Trace this request</button>
+      <label>Your prediction<textarea rows="3" placeholder="Does a repair exist? What does the customer know?"></textarea></label>
+      <button type="button" disabled>Trace this request</button>
       <div class="result" aria-live="polite" hidden></div>
     </form>
     <p class="transfer">Change the connection outcome. Could the customer see the same symptom even when the stored result differs?</p>
@@ -40,8 +40,8 @@
       <label><input type="checkbox" name="retry" checked> The customer retries once</label>
       <label><input type="checkbox" name="sameKey" checked> The retry uses the original request key</label>
       <label><input type="checkbox" name="deduplicate" checked> The server atomically checks the key and records acceptance</label>
-      <label>Your prediction<textarea name="prediction" rows="3" placeholder="How many repair records will exist, and why?"></textarea></label>
-      <button type="submit">Inspect the repair records</button>
+      <label>Your prediction<textarea rows="3" placeholder="How many repair records will exist, and why?"></textarea></label>
+      <button type="button" disabled>Inspect the repair records</button>
       <div class="result" aria-live="polite" hidden></div>
     </form>
     <p class="transfer">Keep the key unchanged but remove the atomic acceptance rule. Is a request key alone enough?</p>
@@ -58,8 +58,8 @@
         <label>Maximum acceptable lost minutes of updates<input name="lossTarget" type="number" min="0" max="1440" value="15" required></label>
         <label>Maximum acceptable recovery minutes<input name="timeTarget" type="number" min="0" max="10080" value="60" required></label>
       </div>
-      <label>Your prediction<textarea name="prediction" rows="3" placeholder="Which promise can this plan meet under its assumptions?"></textarea></label>
-      <button type="submit">Compare the recovery promises</button>
+      <label>Your prediction<textarea rows="3" placeholder="Which promise can this plan meet under its assumptions?"></textarea></label>
+      <button type="button" disabled>Compare the recovery promises</button>
       <div class="result" aria-live="polite" hidden></div>
     </form>
     <p class="transfer">Reduce the snapshot interval without changing recovery time. Which promise improves? What would a rehearsal still need to establish?</p>

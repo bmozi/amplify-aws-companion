@@ -7,10 +7,10 @@
   "commercial_manuscript_included": false,
   "files": {
     "reader/interactive/README.md": "7503fd64636181d226f76b90d4e312cc2365f9c476037b0b7c72b37c491d9f9b",
-    "reader/interactive/index.html": "ad26d08349bd4a3fae1a8fc7df3e33ce3bb18c4f34b29fd11756f0a894a71908",
+    "reader/interactive/index.html": "900650256314102ee009a91e6a789eb61af324c43b55a60f545af9d26a132bc7",
     "reader/interactive/models.js": "766ea320266d88863339b0ab6ea7d900cb51a1eb02a88af2d53df840c57d1876",
     "reader/interactive/models.test.cjs": "8550a51e9a27b868c2e0fec8cb6912c57cb84f80585dc3bb7cc6309611f6e5dc",
-    "reader/interactive/practice.css": "f123bacba58a40f9940c871ce8c7e4a34d7359d5e59893613751d213d915618c",
-    "reader/interactive/practice.js": "e188c0a191b74daeec5dea4e5098ca31d788d4e562274693b2a3a2c0dae1b6c0"
+    "reader/interactive/practice.css": "e633832f79409bfc944c62df075d899c976cf1ab3adec39b6c4d403707cd2ac0",
+    "reader/interactive/practice.js": "fc30a4ece53ecebbc059112d6b0a781aa2ab951b4ba7cb83dcda5727f72868bd"
   }
 }

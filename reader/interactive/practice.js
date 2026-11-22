@@ -2,8 +2,9 @@
 document.querySelectorAll('form[data-model]').forEach(form => {
   const output = form.querySelector('.result');
   form.addEventListener('input', () => { output.hidden = true; output.replaceChildren(); });
-  form.addEventListener('submit', event => {
+  const run = event => {
     event.preventDefault();
+    if (!form.reportValidity()) return;
     const values = new FormData(form);
     const kind = form.dataset.model;
     let result, title;
@@ -28,5 +29,9 @@ document.querySelectorAll('form[data-model]').forEach(form => {
     }
     const explanation = document.createElement('p'); explanation.textContent = result.lesson;
     output.append(explanation); output.hidden = false;
-  });
+  };
+  form.addEventListener('submit', run);
+  const button = form.querySelector('button');
+  button.addEventListener('click', run);
+  if (typeof AwsLearningModels !== 'undefined') button.disabled = false;
 });
