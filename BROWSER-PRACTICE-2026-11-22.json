@@ -1,0 +1,16 @@
+{
+  "purpose": "Optional browser activities for paperback and Kindle readers",
+  "source": "John Briggs, Thinking in AWS companion",
+  "preserved_baseline": "b2c7eab899b9fbf0621ae1cd912a6d981b4cda72",
+  "cloud_calls": false,
+  "learner_data_saved": false,
+  "commercial_manuscript_included": false,
+  "files": {
+    "reader/interactive/README.md": "7503fd64636181d226f76b90d4e312cc2365f9c476037b0b7c72b37c491d9f9b",
+    "reader/interactive/index.html": "ad26d08349bd4a3fae1a8fc7df3e33ce3bb18c4f34b29fd11756f0a894a71908",
+    "reader/interactive/models.js": "766ea320266d88863339b0ab6ea7d900cb51a1eb02a88af2d53df840c57d1876",
+    "reader/interactive/models.test.cjs": "8550a51e9a27b868c2e0fec8cb6912c57cb84f80585dc3bb7cc6309611f6e5dc",
+    "reader/interactive/practice.css": "f123bacba58a40f9940c871ce8c7e4a34d7359d5e59893613751d213d915618c",
+    "reader/interactive/practice.js": "e188c0a191b74daeec5dea4e5098ca31d788d4e562274693b2a3a2c0dae1b6c0"
+  }
+}

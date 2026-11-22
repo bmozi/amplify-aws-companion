@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thinking in AWS practice desk</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="practice.css">
+</head>
+<body>
+<a class="skip" href="#practice">Skip to the exercises</a>
+<header>
+  <p>Thinking in AWS · John Briggs</p>
+  <h1>What happens after Save?</h1>
+  <p>Change one condition in Maya’s repair business. Predict the result, inspect the model, and explain what changed.</p>
+  <nav aria-label="Exercises"><a href="https://bmozi.net/books/thinking-in-aws">Book resources (online)</a><a href="#request">Follow a request</a><a href="#retry">Retry a request</a><a href="#recovery">Recover the service</a></nav>
+</header>
+<main id="practice">
+  <p class="scope">These simplified models run on your device. They create no AWS resources, send no data, and save no answers. Keep any notes you want before closing the page.</p>
+  <noscript><p>Enable JavaScript to run the models. You can still read the situations and questions below; the book contains the underlying explanations.</p></noscript>
+  <section id="request" aria-labelledby="request-title">
+    <p class="chapter">Read alongside Chapters 1, 3, and 19</p>
+    <h2 id="request-title">Follow a request</h2>
+    <p>A customer submits a repair. The browser, access check, database write, and reply have different jobs. Where could a lost connection leave the customer uncertain?</p>
+    <form data-model="request">
+      <fieldset><legend>Access decision</legend><label><input type="radio" name="allowed" value="yes" checked> Customer may create this repair</label><label><input type="radio" name="allowed" value="no"> Customer is refused access</label></fieldset>
+      <fieldset><legend>Connection outcome when access is allowed</legend><label><input type="radio" name="failure" value="after" checked> Reply lost after the write</label><label><input type="radio" name="failure" value="before"> Connection lost before the write</label><label><input type="radio" name="failure" value="none"> Confirmation reaches the browser</label></fieldset>
+      <label>Your prediction<textarea name="prediction" rows="3" placeholder="Does a repair exist? What does the customer know?"></textarea></label>
+      <button type="submit">Trace this request</button>
+      <div class="result" aria-live="polite" hidden></div>
+    </form>
+    <p class="transfer">Change the connection outcome. Could the customer see the same symptom even when the stored result differs?</p>
+  </section>
+  <section id="retry" aria-labelledby="retry-title">
+    <p class="chapter">Read alongside Chapters 19, 20, and 24</p>
+    <h2 id="retry-title">Retry a request</h2>
+    <p>The customer received no confirmation. A retry can recover missing work or create a second job. Decide what the server must remember.</p>
+    <form data-model="retry">
+      <label><input type="checkbox" name="firstSaved" checked> The first request committed a repair record</label>
+      <label><input type="checkbox" name="retry" checked> The customer retries once</label>
+      <label><input type="checkbox" name="sameKey" checked> The retry uses the original request key</label>
+      <label><input type="checkbox" name="deduplicate" checked> The server atomically checks the key and records acceptance</label>
+      <label>Your prediction<textarea name="prediction" rows="3" placeholder="How many repair records will exist, and why?"></textarea></label>
+      <button type="submit">Inspect the repair records</button>
+      <div class="result" aria-live="polite" hidden></div>
+    </form>
+    <p class="transfer">Keep the key unchanged but remove the atomic acceptance rule. Is a request key alone enough?</p>
+    <p class="assumption">Assumption: the key remains valid and identifies the same customer operation and payload. A retry reaches the server successfully. External effects such as payments need their own duplicate handling.</p>
+  </section>
+  <section id="recovery" aria-labelledby="recovery-title">
+    <p class="chapter">Read alongside Chapters 16, 17, and 18</p>
+    <h2 id="recovery-title">Recover the service</h2>
+    <p>Maya needs recent repairs back and customers able to use the service again. A recent backup and a quick recovery answer different questions.</p>
+    <form data-model="recovery">
+      <div class="fields">
+        <label>Minutes between snapshots<input name="interval" type="number" min="1" max="1440" value="60" required></label>
+        <label>Minutes for end-to-end recovery<input name="restore" type="number" min="1" max="10080" value="45" required></label>
+        <label>Maximum acceptable lost minutes of updates<input name="lossTarget" type="number" min="0" max="1440" value="15" required></label>
+        <label>Maximum acceptable recovery minutes<input name="timeTarget" type="number" min="0" max="10080" value="60" required></label>
+      </div>
+      <label>Your prediction<textarea name="prediction" rows="3" placeholder="Which promise can this plan meet under its assumptions?"></textarea></label>
+      <button type="submit">Compare the recovery promises</button>
+      <div class="result" aria-live="polite" hidden></div>
+    </form>
+    <p class="transfer">Reduce the snapshot interval without changing recovery time. Which promise improves? What would a rehearsal still need to establish?</p>
+    <p class="assumption">Assumption: every scheduled snapshot succeeds and is recoverable. The recovery duration includes restoring data, reconnecting dependencies, checking authorization, and verifying a customer task. This model does not represent continuous recovery or measure an actual system.</p>
+  </section>
+  <footer>After each experiment, return to the chapter and explain the mechanism in your own words. A model result helps you reason; it does not verify an AWS deployment.</footer>
+</main>
+<script src="models.js"></script>
+<script src="practice.js"></script>
+</body>
+</html>

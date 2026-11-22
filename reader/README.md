@@ -21,6 +21,10 @@ Use the [learning record](../curriculum/LEARNING-RECORD.md) to separate your fir
 
 Before copying any command, use the [command-scope field card](COMMAND-SCOPE.md). It shows which examples inspect files, which change your computer, and which contact or change an AWS account. Predict the effect first; a command labeled “lab” is not automatically cloud-free.
 
+## Browser practice
+
+Use the [shared paperback and Kindle resources](https://bmozi.net/books/thinking-in-aws), or open the [offline activity instructions](interactive/README.md). Follow a request, inspect duplicate acceptance, and compare recovery promises before returning to the named chapters.
+
 ## Your first three stops
 
 For unfamiliar terms, use the [vocabulary stories](VOCABULARY-STORIES.md).

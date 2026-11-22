@@ -1,8 +1,14 @@
-# AMPLIFY AWS companion
+# Thinking in AWS companion
 
-This source companion accompanies AMPLIFY AWS by John Briggs. It contains learning routes, cloud-free exercises, diagrams and source specimens. The commercial manuscript, cover artwork and private owner records are not included.
+This source companion supports Thinking in AWS by John Briggs (earlier working title: AMPLIFY AWS). It contains learning routes, cloud-free exercises, diagrams and source specimens. The commercial manuscript, cover artwork and private owner records are not included.
 
 Start with [the reader route](reader/README.md), [the first local exercise](docs/FIRST-LOCAL-EXERCISE.md), and [command scope](reader/COMMAND-SCOPE.md). Use the book locators when a lesson points to a chapter. Local checks run without an AWS account.
+
+## Browser practice for paperback and Kindle readers
+
+Open [Thinking in AWS book resources](https://bmozi.net/books/thinking-in-aws) for request-flow, retry, and recovery activities. The same resources support both editions. You can also download this repository and open `reader/interactive/index.html` locally; the browser activities need no AWS account or installation.
+
+Existing exercise names, book locators, and command paths remain supported. If your book links to the [original companion revision](https://github.com/bmozi/amplify-aws-companion/tree/b2c7eab899b9fbf0621ae1cd912a6d981b4cda72), that snapshot is preserved. Continue using it for the matching source, or use these optional browser activities alongside it.
 
 ## Inspection-only cloud source
 
