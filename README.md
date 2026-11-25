@@ -72,3 +72,12 @@ Most examples use invented data and run locally. Read a lab's cost and prerequis
 Codex can ask you to defend a choice, trace a request, inspect a diagram or challenge a missing assumption. Keep its suggestion beside your original answer and verify technical claims in current AWS documentation and observed behavior. Do not paste credentials, private account receipts or customer data into a public exercise.
 
 Copyright © 2026 John Briggs. All rights reserved.
+
+## Citation and corrections
+
+Use [CITATION.cff](CITATION.cff) to attribute this companion, and record the
+commit or release you actually used. Citation information does not change the
+existing licensing terms, book edition, or evidence status of these materials.
+Report corrections through the repository’s [Issues](https://github.com/bmozi/amplify-aws-companion/issues)
+with the affected file, expected result, actual result, and a safe example. Do
+not include credentials, confidential material, or personal records.
